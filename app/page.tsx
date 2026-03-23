@@ -136,8 +136,8 @@ export default function HomePage() {
             <p className="disease-copy-desktop">HD destroys nerve cells — likened to experiencing <strong>Parkinson&apos;s, ALS, and Alzheimer&apos;s simultaneously.</strong> It is always fatal. There is no treatment that slows it. If your parent has HD, flip a coin. That is your statistical chance of inheriting it.</p>
           </ScrollReveal>
 
-          {/* Facts grid — mobile: 1 col (body hidden). Desktop: 2×2 with body */}
-          <div className="facts-grid">
+          {/* ── DESKTOP: 2×2 white fact cards with body text ── */}
+          <div className="facts-grid facts-desktop">
             {[
               { n: '01', head: 'No cure exists', body: 'Every family affected right now needs support — not promises about research.' },
               { n: '02', head: 'The cycle can be broken', body: 'IVF with genetic testing means a child can be born HD-free. The mutation stops here.' },
@@ -148,9 +148,60 @@ export default function HomePage() {
                 <div style={{ background: 'var(--white)', padding: 'clamp(1.5rem,3vw,3rem)', height: '100%' }}>
                   <div style={{ fontFamily: 'var(--serif)', fontSize: '0.68rem', color: 'var(--blue)', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.75rem' }}>{n}</div>
                   <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.6rem', lineHeight: 1.2 }}>{head}</h3>
-                  <p className="fact-body" style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'var(--ink-dim)', margin: 0 }}>{body}</p>
+                  <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'var(--ink-dim)', margin: 0 }}>{body}</p>
                 </div>
               </ScrollReveal>
+            ))}
+          </div>
+
+          {/* ── MOBILE: Full-width impact statements — alternating dark/light, stat + punch line ── */}
+          <div className="facts-mobile">
+            {[
+              {
+                dark: true,
+                stat: 'No cure.',
+                sub: 'Not yet. Maybe not in time for your family.',
+                line: 'HD is always fatal. Every family fighting it right now needs care — not a promise.',
+                accent: 'var(--blue)',
+              },
+              {
+                dark: false,
+                stat: '50% chance.',
+                sub: "If your parent has HD, that's your odds.",
+                line: "Inherited. Irreversible. Most people find out after they've already had children.",
+                accent: 'var(--blue)',
+              },
+              {
+                dark: true,
+                stat: '90 families.',
+                sub: 'One clinic. 130 miles from home.',
+                line: 'UC Davis HD Center is the only specialist care in reach of Northern Nevada. It runs on private donation.',
+                accent: 'var(--blue)',
+              },
+              {
+                dark: false,
+                stat: '$100.',
+                sub: 'Keeps a family in care.',
+                line: 'Your donation goes directly to the clinic. Zero overhead. One hundred percent impact.',
+                accent: 'var(--blue)',
+              },
+            ].map(({ dark, stat, sub, line, accent }, i) => (
+              <div key={i} style={{
+                background: dark ? 'var(--navy)' : 'var(--white)',
+                padding: '2.25rem 1.5rem',
+                borderLeft: `4px solid ${accent}`,
+                borderBottom: '1px solid rgba(0,0,0,0.06)',
+              }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.4rem,10vw,3.5rem)', fontWeight: 600, color: dark ? '#fff' : 'var(--ink)', lineHeight: 0.95, marginBottom: '0.5rem', letterSpacing: '-0.025em' }}>
+                  {stat}
+                </div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', fontWeight: 700, color: accent, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.85rem' }}>
+                  {sub}
+                </div>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: dark ? 'rgba(249,248,246,0.65)' : 'var(--ink-mid)', margin: 0 }}>
+                  {line}
+                </p>
+              </div>
             ))}
           </div>
 
@@ -421,6 +472,7 @@ export default function HomePage() {
         .disease-copy-mobile { display: none; font-size: 1rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: clamp(2rem,4vw,4rem); }
         .disease-copy-desktop { font-size: clamp(1rem,1.5vw,1.15rem); line-height: 1.9; color: var(--ink-mid); max-width: 640px; font-weight: 300; margin-bottom: clamp(3rem,5vw,6rem); }
         .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--cream-3); margin-bottom: 1.5px; }
+        .facts-mobile { display: none; }
         .rylee-block { background: var(--navy); padding: clamp(2rem,4vw,4.5rem); }
         .rylee-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem,2.5vw,2.2rem); font-weight: 300; color: #fff; line-height: 1.35; margin-bottom: 1rem; }
         .rylee-ctas { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
@@ -461,8 +513,8 @@ export default function HomePage() {
           /* Disease: no walls */
           .disease-copy-mobile  { display: block; }
           .disease-copy-desktop { display: none; }
-          .facts-grid { grid-template-columns: 1fr !important; }
-          .fact-body  { display: none; }
+          .facts-desktop { display: none !important; }
+          .facts-mobile  { display: block !important; }
           .rylee-block { padding: 2rem 1.5rem; }
           .rylee-ctas { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
 
