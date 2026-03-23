@@ -42,7 +42,7 @@ export default function CausesPage() {
         <div className="inner">
           <ScrollReveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: 'clamp(2.5rem,4vw,4rem)', flexWrap: 'wrap' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(5rem,10vw,9rem)', fontWeight: 300, color: 'rgba(28,26,22,0.06)', lineHeight: 1, userSelect: 'none' }}>2026</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(6rem,12vw,11rem)', fontWeight: 700, color: 'rgba(17,24,39,0.1)', lineHeight: 1, userSelect: 'none', letterSpacing: '-0.03em' }}>2026</div>
               <div>
                 <div style={{ display: 'inline-block', background: 'rgba(139,105,20,0.1)', border: '1px solid rgba(139,105,20,0.3)', color: 'var(--gold-dark)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', marginBottom: '0.75rem', fontWeight: 700 }}>
                   ✦ Current Year — Active
@@ -98,7 +98,7 @@ export default function CausesPage() {
         <div className="inner" style={{ position: 'relative', zIndex: 1 }}>
           <ScrollReveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: 'clamp(2.5rem,4vw,4rem)', flexWrap: 'wrap' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(5rem,10vw,9rem)', fontWeight: 300, color: 'rgba(245,242,234,0.04)', lineHeight: 1, userSelect: 'none' }}>2025</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(6rem,12vw,11rem)', fontWeight: 700, color: 'rgba(255,255,255,0.12)', lineHeight: 1, userSelect: 'none', letterSpacing: '-0.03em' }}>2025</div>
               <div>
                 <div style={{ display: 'inline-block', border: '1px solid rgba(245,242,234,0.12)', color: 'var(--white-dimmer)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', marginBottom: '0.75rem', fontWeight: 500 }}>Completed</div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2.5rem)', color: '#fff' }}>UC Davis HD Center of Excellence</div>
@@ -124,7 +124,7 @@ export default function CausesPage() {
         <div className="inner">
           <ScrollReveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: 'clamp(2.5rem,4vw,4rem)', flexWrap: 'wrap' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(5rem,10vw,9rem)', fontWeight: 300, color: 'rgba(28,26,22,0.05)', lineHeight: 1, userSelect: 'none' }}>2024</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(6rem,12vw,11rem)', fontWeight: 700, color: 'rgba(17,24,39,0.1)', lineHeight: 1, userSelect: 'none', letterSpacing: '-0.03em' }}>2024</div>
               <div>
                 <div style={{ display: 'inline-block', background: 'var(--cream-2)', border: '1px solid var(--cream-3)', color: 'var(--ink-dimmer)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', marginBottom: '0.75rem', fontWeight: 500 }}>Inaugural Year · Sold Out</div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2.5rem)', color: 'var(--ink)' }}>HelpCureHD — IVF for HD Families</div>
