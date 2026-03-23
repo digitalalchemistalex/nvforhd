@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: '/story',     label: 'Our Story',  sub: '$50K raised · 3 years' },
   { href: '/impact',    label: 'Impact',     sub: 'The Puccini family · IVF success' },
   { href: '/causes',    label: 'Causes',     sub: '2024 HelpCureHD · 2025/26 UC Davis' },
+  { href: '/blog',      label: 'Blog',       sub: 'HD education, stories & event news' },
   { href: '/gallery',   label: 'Gallery',    sub: '47 photos from the 2024 tournament' },
   { href: '/sponsors',  label: 'Sponsors',   sub: 'Aguirre Riley · UC Davis · C-Hawk' },
   { href: '/about',     label: 'About Us',   sub: 'Meet the 4-member board' },
@@ -172,15 +173,6 @@ export default function Nav() {
         </div>
       </div>
 
-      <style>{\`
-        @media (max-width: 1100px) {
-          .desktop-nav { display: none !important; }
-          .hamburger   { display: flex !important; }
-        }
-        @media (min-width: 1101px) {
-          .hamburger { display: none !important; }
-        }
-      \`}</style>
     </>
   )
 }

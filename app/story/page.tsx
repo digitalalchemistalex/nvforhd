@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import MobileCTADock from '@/components/MobileCTADock'
 
 export const metadata: Metadata = {
-  title: 'Our Story — Three Years of Fighting HD | NVforHD',
+  title: "Our Story - Three Years of Fighting HD | NVforHD",
   description: 'From $25,000 raised in 2024 to funding UC Davis HD Center of Excellence in 2025 and 2026. The NVforHD story year by year.',
 }
 
@@ -50,7 +50,7 @@ export default function StoryPage() {
                 year: '2024',
                 tag: 'Inaugural · Sold Out',
                 title: '$25,000 for HelpCureHD',
-                body: 'Our first event at Old Greenwood Golf Club sold out completely. Every dollar funded IVF through HelpCureHD so Brandon and Rylee Puccini could have a child free from Huntington's Disease. Rylee became pregnant. The cycle of HD ends with their family.',
+                body: "Our first event at Old Greenwood Golf Club sold out completely. Every dollar funded IVF through HelpCureHD so Brandon and Rylee Puccini could have a child free from Huntington's Disease. Rylee became pregnant. The cycle of HD ends with their family.",
                 detail: 'Beneficiary: HelpCureHD · Venue: Old Greenwood, Truckee CA',
                 cta: 'Their story →',
                 href: '/impact',
@@ -68,7 +68,7 @@ export default function StoryPage() {
                 year: '2026',
                 tag: "May 29 · Gray's Crossing",
                 title: 'UC Davis — Again',
-                body: 'Gray's Crossing Golf Club. Peter Jacobsen design. 12PM shotgun start. This clinic operates on private donation — your round of golf or $100 donation directly funds care for 90+ Northern Nevada HD families.',
+                body: "Gray's Crossing Golf Club. Peter Jacobsen design. 12PM shotgun start. This clinic operates on private donation - your round of golf or $100 donation directly funds care for 90+ Northern Nevada HD families.",
                 detail: "Venue: Gray's Crossing, Truckee CA · Date: May 29, 2026 · Shotgun: 12PM",
                 cta: 'Join us →',
                 href: GOLF,

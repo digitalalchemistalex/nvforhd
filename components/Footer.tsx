@@ -25,7 +25,7 @@ export default function Footer() {
         <div>
           <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', marginBottom: '1.2rem', fontWeight: 600 }}>Navigate</div>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-            {[['/', 'Home'], ['/about', 'About Us'], ['/causes', 'Causes'], ['/gallery', 'Gallery'], ['/sponsors', 'Sponsors'], ['/contact', 'Contact']].map(([href, label]) => (
+            {[['/', 'Home'], ['/about', 'About Us'], ['/causes', 'Causes'], ['/blog', 'Blog'], ['/gallery', 'Gallery'], ['/sponsors', 'Sponsors'], ['/contact', 'Contact']].map(([href, label]) => (
               <li key={href}>
                 <Link href={href} style={{ color: 'rgba(245,242,234,0.52)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 300, transition: 'color 0.2s' }}>{label}</Link>
               </li>
