@@ -48,7 +48,7 @@ export default function PageHero({ kicker, headline, sub, photo, photoPosition =
       }} />
 
       {/* Gold top bar */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2))', zIndex: 2 }} />
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)', zIndex: 2 }} />
 
       {/* Content */}
       <div className="inner" style={{
@@ -62,11 +62,11 @@ export default function PageHero({ kicker, headline, sub, photo, photoPosition =
         <div style={{
           display: 'flex', alignItems: 'center', gap: '0.875rem',
           fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase',
-          color: 'var(--gold)', fontFamily: 'var(--sans)', fontWeight: 600,
+          color: 'var(--blue-faint)', fontFamily: 'var(--sans)', fontWeight: 600,
           marginBottom: '1.5rem',
           animation: 'fadeup 0.8s var(--ease) 0.1s both',
         }}>
-          <span style={{ width: '24px', height: '1px', background: 'var(--gold)', display: 'inline-block' }} />
+          <span style={{ width: '24px', height: '1px', background: 'var(--blue-faint)', display: 'inline-block' }} />
           {kicker}
         </div>
 
@@ -106,7 +106,7 @@ export default function PageHero({ kicker, headline, sub, photo, photoPosition =
           }}>
             {stats.map((s, i) => s && (
               <div key={i} style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                <span style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.8rem,3.5vw,3rem)', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{s.n}</span>
+                <span style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.8rem,3.5vw,3rem)', fontWeight: 300, color: 'var(--blue-faint)', lineHeight: 1 }}>{s.n}</span>
                 <span style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(245,242,234,0.45)', fontWeight: 500 }}>{s.label}</span>
               </div>
             ))}
@@ -115,7 +115,7 @@ export default function PageHero({ kicker, headline, sub, photo, photoPosition =
       </div>
 
       {/* Bottom divider */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent)', zIndex: 2 }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(29,78,216,0.4),transparent)', zIndex: 2 }} />
     </div>
   )
 }

@@ -54,7 +54,7 @@ export default function Nav() {
         padding: scrolled || menuOpen ? '0.85rem clamp(1.25rem,4vw,4rem)' : '1.6rem clamp(1.25rem,4vw,4rem)',
         background: navBg,
         backdropFilter: 'blur(24px)',
-        borderBottom: scrolled || menuOpen ? '1px solid rgba(201,168,76,0.14)' : '1px solid transparent',
+        borderBottom: scrolled || menuOpen ? '1px solid rgba(29,78,216,0.2)' : '1px solid transparent',
         transition: 'padding 0.4s ease, background 0.4s ease, border-color 0.4s ease',
       }}>
         <Link href="/" onClick={close} style={{ flexShrink: 0, zIndex: 10 }}>
@@ -75,8 +75,8 @@ export default function Nav() {
                 fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase',
                 fontWeight: 400, transition: 'color 0.2s', fontFamily: 'var(--sans)',
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(245,242,234,0.68)')}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--blue-light)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(249,248,246,0.68)')}
               >{label}</Link>
             </li>
           ))}
@@ -104,9 +104,9 @@ export default function Nav() {
             flexDirection: 'column', justifyContent: 'center', gap: '5px',
           }}
         >
-          <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--gold)', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(4.5px,4.5px)' : 'none' }} />
-          <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--gold)', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
-          <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--gold)', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(4.5px,-4.5px)' : 'none' }} />
+          <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--snow)', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(4.5px,4.5px)' : 'none' }} />
+          <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--snow)', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--snow)', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(4.5px,-4.5px)' : 'none' }} />
         </button>
       </nav>
 
@@ -124,7 +124,7 @@ export default function Nav() {
         display: 'flex',
         flexDirection: 'column',
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, var(--gold), rgba(201,168,76,0.3))' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, var(--blue), rgba(29,78,216,0.3))' }} />
 
         <nav style={{ flex: 1 }}>
           {NAV_LINKS.map(({ href, label, sub }, i) => (

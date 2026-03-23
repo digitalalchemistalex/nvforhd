@@ -6,8 +6,8 @@ const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfo
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--navy-deep)', borderTop: '1px solid rgba(201,168,76,0.15)', padding: 'clamp(3rem,5vw,6rem) var(--px) 0', paddingBottom: 'calc(80px + env(safe-area-inset-bottom,0px))' }}>
-      <div style={{ width: '48px', height: '2px', background: 'var(--gold)', marginBottom: '3rem', opacity: 0.8 }} />
+    <footer style={{ background: 'var(--navy-deep)', borderTop: '1px solid rgba(29,78,216,0.15)', padding: 'clamp(3rem,5vw,6rem) var(--px) 0', paddingBottom: 'calc(80px + env(safe-area-inset-bottom,0px))' }}>
+      <div style={{ width: '48px', height: '2px', background: 'var(--blue)', marginBottom: '3rem', opacity: 0.8 }} />
 
       <div className="inner footer-grid" style={{ paddingBottom: '3.5rem', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         <div>
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', marginBottom: '1.2rem', fontWeight: 600 }}>Navigate</div>
+          <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(29,78,216,0.7)', marginBottom: '1.2rem', fontWeight: 600 }}>Navigate</div>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
             {[['/', 'Home'], ['/about', 'About Us'], ['/causes', 'Causes'], ['/blog', 'Blog'], ['/gallery', 'Gallery'], ['/sponsors', 'Sponsors'], ['/contact', 'Contact']].map(([href, label]) => (
               <li key={href}>
@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', marginBottom: '1.2rem', fontWeight: 600 }}>Legal</div>
+          <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(29,78,216,0.7)', marginBottom: '1.2rem', fontWeight: 600 }}>Legal</div>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
             <li><Link href="/terms" style={{ color: 'rgba(245,242,234,0.52)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 300 }}>Terms &amp; Conditions</Link></li>
             <li><Link href="/cancellation" style={{ color: 'rgba(245,242,234,0.52)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 300 }}>Cancellation Policy</Link></li>
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', marginBottom: '1.2rem', fontWeight: 600 }}>Join the Fight</div>
+          <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(29,78,216,0.7)', marginBottom: '1.2rem', fontWeight: 600 }}>Join the Fight</div>
           <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,234,0.5)', fontWeight: 300, lineHeight: 1.75, marginBottom: '1.2rem' }}>
             May 29, 2026<br />Gray&apos;s Crossing, Truckee CA
           </p>
