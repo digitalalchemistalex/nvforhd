@@ -211,3 +211,97 @@ a { color: inherit; }
 .noise > * { position:relative; z-index:1; }
 
 .speakable {}
+
+/* ─────────────────────────────────────────
+   MOBILE — full responsive layer
+   Applied globally, not per-component
+───────────────────────────────────────── */
+
+/* Fluid type scale */
+@media (max-width: 640px) {
+  :root {
+    --px:    1.25rem;
+    --py-xl: 4rem;
+    --py-lg: 3rem;
+    --py-md: 2.5rem;
+  }
+}
+
+/* Touch targets — all clickable elements */
+@media (max-width: 900px) {
+  .btn, .btn-primary, .btn-secondary, .btn-gold, .btn-outline-gold {
+    padding: 1rem 1.75rem !important;
+    font-size: 0.72rem !important;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  /* No hover states on touch */
+  .btn:hover, .btn-primary:hover, .btn-gold:hover { transform: none !important; }
+
+  /* Nav CTA buttons — mobile sizes */
+  .btn-gold[style*="padding:0.6"], .btn-outline-gold[style*="padding:0.6"] {
+    padding: 0.7rem 1rem !important;
+  }
+}
+
+/* Stats grids — 2 col on mobile */
+@media (max-width: 900px) {
+  .stats-grid  { grid-template-columns: 1fr 1fr !important; }
+  .grid-3      { grid-template-columns: 1fr !important; }
+  .grid-4      { grid-template-columns: 1fr 1fr !important; }
+  .footer-main-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+}
+@media (max-width: 540px) {
+  .grid-4, .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .footer-main-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Cards — no transforms on mobile */
+@media (max-width: 900px) {
+  .year-block:hover { transform: none !important; }
+  .card:hover       { transform: none !important; }
+}
+
+/* Gallery */
+@media (max-width: 900px)  { .gallery-grid { columns: 2; } }
+@media (max-width: 480px)  { .gallery-grid { columns: 1; } }
+
+/* Mobile dock — always bottom-pinned on small screens */
+.mobile-cta-dock { display: none; }
+@media (max-width: 900px)  { .mobile-cta-dock { display: flex; } }
+
+/* Ken Burns on mobile hero images */
+@media (max-width: 900px) {
+  .hero-kb { animation: drift 20s ease-in-out infinite alternate; }
+}
+
+/* Sponsor intent grid */
+@media (max-width: 640px) {
+  .intent-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY — mobile text sizing
+───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .display { line-height: 1; }
+  /* Prevent text walls — max 3 lines readable blocks */
+  .speakable p { font-size: 0.9rem !important; }
+}
+
+/* ─────────────────────────────────────────
+   SCROLL SMOOTH + focus styles
+───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────
+   ADDITIONAL DARK SECTION HELPERS
+───────────────────────────────────────── */
+.on-dark p        { color: var(--snow-dim); }
+.on-dark p strong { color: var(--snow); }
+.on-dark h1, .on-dark h2, .on-dark h3 { color: var(--snow); }
+.on-dark .ink-dimmer { color: var(--snow-faint); }
