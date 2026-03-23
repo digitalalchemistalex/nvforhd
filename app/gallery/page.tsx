@@ -79,7 +79,7 @@ export default function GalleryPage() {
       <div style={{
         position: 'relative',
         background: 'var(--deep)',
-        padding: '11rem 5rem 5rem',
+        padding: 'clamp(7rem,12vw,11rem) var(--px) clamp(2rem,4vw,5rem)',
         overflow: 'hidden',
       }}>
         {/* Real event photo as texture */}
@@ -122,7 +122,7 @@ export default function GalleryPage() {
       </div>
 
       {/* Gallery — masonry with lightbox */}
-      <section style={{ background: 'var(--void)', padding: '4rem 2rem' }}>
+      <section style={{ background: 'var(--void)', padding: 'clamp(2rem,4vw,4rem) clamp(0.5rem,2vw,2rem)' }}>
         <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
           <div className="gallery-grid">
             {PHOTOS.map((photo, idx) => (
@@ -172,7 +172,7 @@ export default function GalleryPage() {
       )}
 
       {/* CTA — join 2026 */}
-      <section style={{ background: 'var(--deep)', padding: '6rem 5rem', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--deep)', padding: 'var(--py-md) var(--px)', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: "url('/images/event-foursome-2.jpg')",
