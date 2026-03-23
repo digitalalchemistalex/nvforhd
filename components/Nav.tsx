@@ -8,15 +8,15 @@ const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfo
 const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-golf'
 
 const NAV_LINKS = [
-  { href: '/',          label: 'Home',         sub: null },
-  { href: '/#cause',    label: 'The Cause',    sub: 'What is Huntington\'s Disease' },
-  { href: '/#years',    label: 'Our Story',    sub: '$50K raised · 3 years' },
-  { href: '/#letter',   label: 'Impact',       sub: 'The Puccini family · IVF success' },
-  { href: '/causes',    label: 'Causes',       sub: '2024 HelpCureHD · 2025/26 UC Davis' },
-  { href: '/gallery',   label: 'Gallery',      sub: '47 photos from the 2024 tournament' },
-  { href: '/sponsors',  label: 'Sponsors',     sub: 'Aguirre Riley · UC Davis · C-Hawk' },
-  { href: '/about',     label: 'About Us',     sub: 'Meet the 4-member board' },
-  { href: '/contact',   label: 'Contact',      sub: 'info@nvforhd.com · 775-691-8860' },
+  { href: '/',          label: 'Home',       sub: null },
+  { href: '/cause',     label: 'The Cause',  sub: 'What is Huntington\'s Disease' },
+  { href: '/story',     label: 'Our Story',  sub: '$50K raised · 3 years' },
+  { href: '/impact',    label: 'Impact',     sub: 'The Puccini family · IVF success' },
+  { href: '/causes',    label: 'Causes',     sub: '2024 HelpCureHD · 2025/26 UC Davis' },
+  { href: '/gallery',   label: 'Gallery',    sub: '47 photos from the 2024 tournament' },
+  { href: '/sponsors',  label: 'Sponsors',   sub: 'Aguirre Riley · UC Davis · C-Hawk' },
+  { href: '/about',     label: 'About Us',   sub: 'Meet the 4-member board' },
+  { href: '/contact',   label: 'Contact',    sub: 'info@nvforhd.com · 775-691-8860' },
 ]
 
 export default function Nav() {
@@ -30,10 +30,8 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close drawer on route change
   useEffect(() => { setMenuOpen(false) }, [pathname])
 
-  // Lock body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -58,7 +56,6 @@ export default function Nav() {
         borderBottom: scrolled || menuOpen ? '1px solid rgba(201,168,76,0.14)' : '1px solid transparent',
         transition: 'padding 0.4s ease, background 0.4s ease, border-color 0.4s ease',
       }}>
-        {/* Logo */}
         <Link href="/" onClick={close} style={{ flexShrink: 0, zIndex: 10 }}>
           <Image
             src="/images/logo.png"
@@ -69,7 +66,6 @@ export default function Nav() {
           />
         </Link>
 
-        {/* Desktop links */}
         <ul className="desktop-nav" style={{ display: 'flex', gap: '1.8rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
           {NAV_LINKS.filter(l => l.href !== '/').map(({ href, label }) => (
             <li key={href}>
@@ -85,7 +81,6 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* Desktop CTAs */}
         <div className="desktop-nav" style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
           <a href={DONATE} target="_blank" rel="noopener" className="btn-gold"
             style={{ padding: '0.6rem 1.3rem', fontSize: '0.66rem' }}>
@@ -97,7 +92,6 @@ export default function Nav() {
           </a>
         </div>
 
-        {/* Hamburger — mobile only */}
         <button
           onClick={() => setMenuOpen(o => !o)}
           className="hamburger"
@@ -115,7 +109,6 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* ── MOBILE DRAWER ── */}
       <div style={{
         position: 'fixed', inset: 0, zIndex: 680,
         background: 'rgba(8,12,24,0.98)',
@@ -130,10 +123,8 @@ export default function Nav() {
         display: 'flex',
         flexDirection: 'column',
       }}>
-        {/* Gold top bar */}
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, var(--gold), rgba(201,168,76,0.3))' }} />
 
-        {/* Nav items */}
         <nav style={{ flex: 1 }}>
           {NAV_LINKS.map(({ href, label, sub }, i) => (
             <Link
@@ -158,7 +149,6 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* CTA buttons at bottom of drawer */}
         <div style={{
           marginTop: '2.5rem',
           display: 'flex', flexDirection: 'column', gap: '0.75rem',
@@ -182,7 +172,7 @@ export default function Nav() {
         </div>
       </div>
 
-      <style>{`
+      <style>{\`
         @media (max-width: 1100px) {
           .desktop-nav { display: none !important; }
           .hamburger   { display: flex !important; }
@@ -190,7 +180,7 @@ export default function Nav() {
         @media (min-width: 1101px) {
           .hamburger { display: none !important; }
         }
-      `}</style>
+      \`}</style>
     </>
   )
 }
