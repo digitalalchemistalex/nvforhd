@@ -46,7 +46,7 @@ const packages = [
     price: 220,
     highlight: false,
     badge: '⛳ Golf',
-    desc: 'Single golfer & box lunch. Perfect if you're flying solo.',
+    desc: "Single golfer & box lunch. Perfect if you're flying solo.",
     cta: 'Book Single',
   },
   {
@@ -55,7 +55,7 @@ const packages = [
     price: 500,
     highlight: false,
     badge: '💛 Donate',
-    desc: 'Can't make it to the tournament? Sponsor from afar. Your name recognised.',
+    desc: "Can't make it to the tournament? Sponsor from afar. Your name recognised.",
     cta: 'Become Silver Sponsor',
   },
   {
