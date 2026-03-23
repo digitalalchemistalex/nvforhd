@@ -19,15 +19,25 @@ export default function Nav() {
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 600,
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      padding: scrolled ? '1rem 5rem' : '2rem 5rem',
-      background: scrolled ? 'rgba(5,6,10,0.96)' : 'rgba(5,6,10,0.3)',
+      padding: scrolled ? '0.9rem 5rem' : '1.8rem 5rem',
+      background: scrolled ? 'rgba(5,6,10,0.97)' : 'rgba(5,6,10,0.25)',
       backdropFilter: 'blur(20px)',
       borderBottom: scrolled ? '1px solid rgba(201,168,76,0.12)' : '1px solid transparent',
       transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)',
     }}>
-      <Link href="/" style={{ flexShrink: 0 }}>
-        <Image src="/images/logo.png" alt="NVforHD — Cure Huntington's Disease" width={120} height={87}
-          style={{ height: '40px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.9 }} priority />
+      <Link href="/" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+        {/* Real NVforHD logo — mix-blend-mode:multiply removes white bg on dark nav */}
+        <Image
+          src="/images/logo.png"
+          alt="NVforHD — Cure Huntington's Disease"
+          width={110} height={80}
+          style={{
+            height: '42px', width: 'auto',
+            mixBlendMode: 'screen',
+            filter: 'brightness(1.1)',
+          }}
+          priority
+        />
       </Link>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>
@@ -42,12 +52,12 @@ export default function Nav() {
           ].map(({ href, label }) => (
             <li key={href}>
               <Link href={href} style={{
-                color: 'rgba(245,242,234,0.72)', textDecoration: 'none',
+                color: 'rgba(245,242,234,0.75)', textDecoration: 'none',
                 fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase',
                 fontWeight: 400, transition: 'color 0.2s', fontFamily: 'var(--sans)',
               }}
               onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(245,242,234,0.72)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(245,242,234,0.75)')}
               >{label}</Link>
             </li>
           ))}
