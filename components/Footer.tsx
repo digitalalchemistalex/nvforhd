@@ -6,9 +6,22 @@ const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfo
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#08090F', padding: 'clamp(3rem,6vw,7rem) var(--px) 0', borderTop: '1px solid rgba(201,168,76,0.12)', paddingBottom: 'calc(80px + env(safe-area-inset-bottom, 0px))' }}>
+    <footer style={{
+      background: '#08090F',
+      padding: 'clamp(3rem,6vw,7rem) var(--px) 0',
+      borderTop: '1px solid rgba(201,168,76,0.12)',
+      paddingBottom: 'calc(80px + env(safe-area-inset-bottom, 0px))',
+    }}>
       <div style={{ width: '64px', height: '2px', background: 'var(--gold)', marginBottom: '3rem', opacity: 0.7 }} />
-      <div className="inner footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '4rem', paddingBottom: '4rem', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+
+      <div className="inner" style={{
+        display: 'grid',
+        gridTemplateColumns: '2fr 1fr 1fr 1fr',
+        gap: '3rem',
+        paddingBottom: '4rem',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
+      }}>
+        {/* Brand */}
         <div>
           <Image src="/images/logo.png" alt="NVforHD" width={130} height={95}
             style={{ height: '50px', width: 'auto', mixBlendMode: 'screen', filter: 'brightness(1.15)', marginBottom: '1.5rem', display: 'block' }} />
@@ -24,6 +37,8 @@ export default function Footer() {
             <a href="https://www.golfthehighsierra.com?utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-gths" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Golf The High Sierra</a>
           </p>
         </div>
+
+        {/* Navigate */}
         <div>
           <div style={{ fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.8)', marginBottom: '1.2rem', fontWeight: 600 }}>Navigate</div>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -32,6 +47,8 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+
+        {/* Legal */}
         <div>
           <div style={{ fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.8)', marginBottom: '1.2rem', fontWeight: 600 }}>Legal</div>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -39,6 +56,8 @@ export default function Footer() {
             <li><Link href="/cancellation" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 300 }}>Cancellation Policy</Link></li>
           </ul>
         </div>
+
+        {/* CTA */}
         <div>
           <div style={{ fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.8)', marginBottom: '1.2rem', fontWeight: 600 }}>Join the Fight</div>
           <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.52)', fontWeight: 300, lineHeight: 1.75, marginBottom: '1.2rem' }}>
@@ -48,10 +67,24 @@ export default function Footer() {
           <a href={GOLF} target="_blank" rel="noopener" className="btn-outline-gold" style={{ display: 'block', textAlign: 'center', fontSize: '0.65rem', padding: '0.75rem 1rem' }}>Play Golf — May 29 ↗</a>
         </div>
       </div>
+
       <div className="inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0 2rem', fontSize: '0.72rem', color: 'rgba(255,255,255,0.28)', flexWrap: 'wrap', gap: '0.5rem' }}>
         <span>© 2026 NVforHD. All rights reserved. · 2600 Mill St. #400, Reno NV 89502</span>
         <span>NVforHD event photography</span>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .footer-inner-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .footer-inner-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+      `}</style>
     </footer>
   )
 }
