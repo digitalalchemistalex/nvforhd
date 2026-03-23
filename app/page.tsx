@@ -277,20 +277,45 @@ export default function HomePage() {
                   Their baby will never have Huntington&apos;s Disease. <strong style={{ color: '#fff' }}>That baby exists because people bought a round of golf.</strong>
                 </p>
 
-                {/* Donate inline */}
-                <div style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)', padding: 'clamp(1.5rem,3vw,2.5rem)', backdropFilter: 'blur(20px)' }}>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.2rem,2vw,1.6rem)', color: '#fff', marginBottom: '0.5rem' }}>Fund the next family.</div>
-                  <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.55)', marginBottom: '1.75rem', lineHeight: 1.7 }}>
-                    In 2026 your donation funds the UC Davis clinic that serves 90+ families right now. Every amount matters.
-                  </p>
-                  <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1rem', alignItems: 'flex-end' }}>
-                    <a href={D100} target="_blank" rel="noopener" className="amt-btn on-dark">$100</a>
-                    <a href={D100} target="_blank" rel="noopener" className="amt-btn on-dark featured" style={{ marginTop: '1.2rem' }}>$250</a>
-                    <a href={D100} target="_blank" rel="noopener" className="amt-btn on-dark">$500</a>
+                {/* Donate inline — SOLID WHITE CARD. Cuts through the dark photo. */}
+                <div style={{ background: '#fff', padding: 'clamp(1.75rem,3vw,2.75rem)' }}>
+                  {/* Header row */}
+                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', color: 'var(--ink)', fontWeight: 400 }}>
+                      Fund the next family.
+                    </div>
+                    <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--blue)', fontWeight: 700 }}>
+                      100% to UC Davis HD
+                    </div>
                   </div>
-                  <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>
-                    Prefer to play golf? Book May 29 →
-                  </a>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--ink-dim)', marginBottom: '1.5rem', lineHeight: 1.65 }}>
+                    Every dollar keeps the only HD specialist clinic serving 90+ Northern Nevada families open.
+                  </p>
+
+                  {/* Amount buttons — solid, high contrast, one clearly featured */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.6rem', marginBottom: '1rem' }}>
+                    <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1rem 0.5rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
+                      <span style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.5rem,2.5vw,2rem)', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$100</span>
+                      <span style={{ fontSize: '0.58rem', color: 'var(--ink-dim)', marginTop: '0.35rem', textAlign: 'center', lineHeight: 1.3 }}>Keeps a family in care</span>
+                    </a>
+                    <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1rem 0.5rem', background: 'var(--blue)', border: '2px solid var(--blue)', textDecoration: 'none', cursor: 'pointer', position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)', background: 'var(--gold-light)', color: 'var(--navy-deep)', fontSize: '0.48rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 800, padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>★ Most Chosen</div>
+                      <span style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.5rem,2.5vw,2rem)', fontWeight: 600, color: '#fff', lineHeight: 1 }}>$250</span>
+                      <span style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.8)', marginTop: '0.35rem', textAlign: 'center', lineHeight: 1.3 }}>Most impactful</span>
+                    </a>
+                    <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1rem 0.5rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
+                      <span style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.5rem,2.5vw,2rem)', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$500</span>
+                      <span style={{ fontSize: '0.58rem', color: 'var(--ink-dim)', marginTop: '0.35rem', textAlign: 'center', lineHeight: 1.3 }}>Funds a month of care</span>
+                    </a>
+                  </div>
+
+                  {/* Secondary CTA */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid var(--cream-3)', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--ink-dim)' }}>No account needed. Processed securely.</span>
+                    <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.68rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--blue)', textDecoration: 'none', fontWeight: 600 }}>
+                      Play golf instead →
+                    </a>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
