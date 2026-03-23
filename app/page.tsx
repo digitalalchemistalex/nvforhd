@@ -69,9 +69,9 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           THE DISEASE — LIGHT section
       ══════════════════════════════════════ */}
-      <section className="section-light on-light" style={{ padding: 'var(--py-lg) var(--px)', position: 'relative' }}>
+      <section id="cause" className="section-light on-light" style={{ padding: 'var(--py-lg) var(--px)', position: 'relative' }}>
         <div className="divider-dark" />
-        {/* HD ghost text */}
+        {/* HD ghost text */
         <div style={{ position: 'absolute', right: '-1rem', bottom: '-3rem', fontFamily: 'var(--serif)', fontSize: 'clamp(10rem,18vw,22rem)', fontWeight: 300, fontStyle: 'italic', color: 'rgba(28,26,22,0.04)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>HD</div>
 
         <div className="inner grid-2">
@@ -141,7 +141,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           TIMELINE — Light section
       ══════════════════════════════════════ */}
-      <section className="section-light on-light" style={{ padding: 'var(--py-lg) var(--px)', position: 'relative' }}>
+      <section id="years" className="section-light on-light" style={{ padding: 'var(--py-lg) var(--px)', position: 'relative' }}>
         <div className="divider-dark" />
         <div className="inner">
           <ScrollReveal>
@@ -186,3 +186,4 @@ export default function HomePage() {
     </>
   )
 }
+
