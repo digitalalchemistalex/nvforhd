@@ -17,16 +17,18 @@ export default function ScrollReveal({ children, delay = 0, className = '', styl
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.opacity = '1'
-          el.style.transform = 'translateY(0)'
+          setTimeout(() => {
+            el.style.opacity = '1'
+            el.style.transform = 'translateY(0)'
+          }, delay * 1000)
           obs.unobserve(el)
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     )
     obs.observe(el)
     return () => obs.disconnect()
-  }, [])
+  }, [delay])
 
   return (
     <div
@@ -34,8 +36,8 @@ export default function ScrollReveal({ children, delay = 0, className = '', styl
       className={className}
       style={{
         opacity: 0,
-        transform: 'translateY(28px)',
-        transition: `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
+        transform: 'translateY(32px)',
+        transition: `opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
         ...style,
       }}
     >
