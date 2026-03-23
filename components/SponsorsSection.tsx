@@ -167,10 +167,6 @@ export default function SponsorsSection() {
               background: 'var(--white)',
               border: '2px solid var(--blue)',
               padding: 'clamp(2.5rem,4vw,4rem)',
-              display: 'grid',
-              gridTemplateColumns: '1fr auto',
-              gap: 'clamp(2rem,4vw,4rem)',
-              alignItems: 'center',
               position: 'relative',
               overflow: 'hidden',
             }} className="sponsor-cta-grid">
@@ -187,7 +183,7 @@ export default function SponsorsSection() {
                   <strong style={{ color: 'var(--ink)' }}>Your logo on the course. Your name in the fight. 100% goes to UC Davis HD families.</strong>
                 </p>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'stretch', flexShrink: 0, minWidth: '180px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'stretch', flexShrink: 0 }}>
                 <a
                   href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=sponsors-cta"
                   style={{

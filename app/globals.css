@@ -310,3 +310,24 @@ a { color: inherit; }
 @media (max-width: 768px) {
   body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)) !important; }
 }
+
+/* ─── SPONSOR CTA GRID ─── */
+.sponsor-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(2rem,4vw,4rem);
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .sponsor-cta-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ─── FOOTER CTA BAND ─── */
+@media (max-width: 768px) {
+  .footer-cta-inner { grid-template-columns: 1fr !important; }
+  .footer-cols { grid-template-columns: 1fr 1fr !important; gap: 1.75rem !important; }
+  .footer-col-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .footer-cols { grid-template-columns: 1fr !important; }
+}
