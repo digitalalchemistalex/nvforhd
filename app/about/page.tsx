@@ -64,7 +64,7 @@ export default function AboutPage() {
       <Nav />
 
       {/* Header with event crowd photo */}
-      <div style={{ position: 'relative', background: 'var(--deep)', padding: '11rem 5rem 5rem', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', background: 'var(--deep)', padding: 'clamp(7rem,12vw,11rem) var(--px) clamp(2rem,4vw,5rem)', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/event-crowd.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%', opacity: 0.1, filter: 'grayscale(20%)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,12,20,0.8) 0%, rgba(10,12,20,0.95) 100%)' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(201,168,76,0.25),transparent)' }} />
@@ -80,13 +80,13 @@ export default function AboutPage() {
       </div>
 
       {/* Board grid */}
-      <section style={{ background: 'var(--void)', padding: '7rem 5rem' }}>
+      <section style={{ background: 'var(--void)', padding: 'var(--py-md) var(--px)' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(201,168,76,0.06)' }}>
           {board.map(({ name, role, img, bio }, i) => (
             <ScrollReveal key={name} delay={i % 2 === 0 ? 0 : 0.1}>
               <div style={{
                 background: 'var(--void)',
-                padding: '5rem',
+                padding: 'clamp(2rem,4vw,5rem)',
                 display: 'grid',
                 gridTemplateColumns: '280px 1fr',
                 gap: '5rem',
