@@ -6,7 +6,7 @@ export default function SponsorsSection() {
   return (
     <section id="sponsors" style={{
       background: 'var(--deep)',
-      padding: '9rem 5rem',
+      padding: 'var(--py-md) var(--px)',
       position: 'relative',
       overflow: 'hidden',
     }}>
@@ -66,7 +66,7 @@ export default function SponsorsSection() {
 
             {/* Logo side */}
             <div style={{
-              padding: '4rem 5rem',
+              padding: 'clamp(2rem,4vw,4rem) clamp(1.5rem,4vw,4rem)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               borderRight: '1px solid rgba(201,168,76,0.12)',
               background: '#fff',
@@ -81,7 +81,7 @@ export default function SponsorsSection() {
             </div>
 
             {/* Info side */}
-            <div style={{ padding: '4rem 5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ padding: 'clamp(2rem,4vw,4rem) clamp(1.5rem,4vw,4rem)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -104,7 +104,7 @@ export default function SponsorsSection() {
         </ScrollReveal>
 
         {/* ── PLATINUM + GOLD — side by side, prominent ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', marginBottom: '2px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', marginBottom: '2px' }} className="sponsors-pair">
 
           {/* UC Davis Health — Platinum */}
           <ScrollReveal>
@@ -130,7 +130,7 @@ export default function SponsorsSection() {
             >
               <div style={{ height: '2px', background: 'linear-gradient(90deg, #C0C8D8, transparent)' }} />
               {/* Logo block */}
-              <div style={{ background: '#fff', padding: '3rem 4rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px' }}>
+              <div style={{ background: '#fff', padding: 'clamp(1.5rem,3vw,3rem) clamp(1.5rem,3vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px' }}>
                 <Image
                   src="/images/uc-davis.png"
                   alt="UC Davis Health — HD Center of Excellence"
@@ -138,7 +138,7 @@ export default function SponsorsSection() {
                   style={{ width: '100%', maxWidth: '220px', height: 'auto', objectFit: 'contain', display: 'block' }}
                 />
               </div>
-              <div style={{ padding: '2.5rem 3rem', flex: 1 }}>
+              <div style={{ padding: 'clamp(1.5rem,2.5vw,2.5rem) clamp(1.2rem,2.5vw,3rem)', flex: 1 }}>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: '#C0C8D8', fontWeight: 600, marginBottom: '0.75rem' }}>⭐ Platinum Sponsor · 2025 &amp; 2026 Charity Partner</div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: '1.5rem', fontWeight: 300, color: '#fff', marginBottom: '0.6rem' }}>UC Davis Health</div>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,234,0.55)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
@@ -172,7 +172,7 @@ export default function SponsorsSection() {
               }}
             >
               {/* Logo block — green bg matches C-Hawk brand */}
-              <div style={{ background: '#1A4A1A', padding: '3rem 4rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px' }}>
+              <div style={{ background: '#1A4A1A', padding: 'clamp(1.5rem,3vw,3rem) clamp(1.5rem,3vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px' }}>
                 <Image
                   src="/images/c-hawk.png"
                   alt="C-Hawk Technology — Advanced Manufacturing & Engineering"
@@ -180,7 +180,7 @@ export default function SponsorsSection() {
                   style={{ width: '100%', maxWidth: '200px', height: 'auto', objectFit: 'contain', display: 'block' }}
                 />
               </div>
-              <div style={{ padding: '2.5rem 3rem', flex: 1 }}>
+              <div style={{ padding: 'clamp(1.5rem,2.5vw,2.5rem) clamp(1.2rem,2.5vw,3rem)', flex: 1 }}>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--gold-d)', fontWeight: 600, marginBottom: '0.75rem' }}>🥇 Gold Sponsor</div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: '1.5rem', fontWeight: 300, color: '#fff', marginBottom: '0.6rem' }}>C-Hawk Technology</div>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,234,0.55)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
@@ -281,8 +281,8 @@ export default function SponsorsSection() {
           <div style={{
             marginTop: '5rem',
             display: 'grid', gridTemplateColumns: '1fr auto',
-            gap: '4rem', alignItems: 'center',
-            padding: '3.5rem 4rem',
+            gap: '2rem', alignItems: 'center',
+            padding: 'clamp(2rem,3vw,3.5rem) clamp(1.5rem,3vw,4rem)',
             background: 'linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.03) 100%)',
             border: '1px solid rgba(201,168,76,0.2)',
           }}>
