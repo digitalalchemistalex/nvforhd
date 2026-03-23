@@ -213,13 +213,13 @@ export default function Nav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        @media (max-width: 1100px) {
+        @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .hamburger   { display: flex !important; }
           .mobile-tab-bar { display: flex !important; }
           body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)) !important; }
         }
-        @media (min-width: 1101px) {
+        @media (min-width: 769px) {
           .hamburger { display: none !important; }
           .mobile-tab-bar { display: none !important; }
         }

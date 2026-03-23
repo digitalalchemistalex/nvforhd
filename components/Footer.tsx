@@ -267,7 +267,7 @@ export default function Footer() {
         }
 
         /* ─── MOBILE ─── */
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
           .footer-cta-inner {
             grid-template-columns: 1fr !important;
             gap: 2.5rem;
@@ -280,7 +280,7 @@ export default function Footer() {
           .footer-col-brand { grid-column: 1 / -1; }
           .footer-brand-copy { max-width: 100%; }
         }
-        @media (max-width: 540px) {
+        @media (max-width: 480px) {
           .footer-cols { grid-template-columns: 1fr 1fr !important; }
           .footer-btn-primary, .footer-btn-secondary { font-size: 0.7rem; padding: 1rem; }
           .footer-bottom { flex-direction: column; text-align: center; }

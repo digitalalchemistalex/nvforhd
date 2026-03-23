@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
 import PackagesSection from '@/components/PackagesSection'
 import SponsorsSection from '@/components/SponsorsSection'
-import MobileCTADock from '@/components/MobileCTADock'
 import AnimatedCounter from '@/components/AnimatedCounter'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: "Let's Cure HD — NVforHD Charity Golf Tournament May 29, 2026",
@@ -33,9 +33,9 @@ const faqSchema = {
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: "What is Huntington's Disease?", acceptedAnswer: { '@type': 'Answer', text: "Huntington's Disease is a hereditary, fatal brain disorder with no known cure. It causes progressive breakdown of nerve cells — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of an HD parent has a 50% chance of inheriting it." } },
-    { '@type': 'Question', name: 'What does NVforHD do?', acceptedAnswer: { '@type': 'Answer', text: "NVforHD is a Nevada non-profit that hosts an annual charity golf tournament and directs 100% of proceeds to one chosen HD cause each year." } },
+    { '@type': 'Question', name: 'What does NVforHD do?', acceptedAnswer: { '@type': 'Answer', text: "NVforHD hosts an annual charity golf tournament and directs 100% of proceeds to one chosen HD cause each year." } },
     { '@type': 'Question', name: 'When is the 2026 NVforHD golf tournament?', acceptedAnswer: { '@type': 'Answer', text: "Friday, May 29, 2026 at Gray's Crossing Golf Club in Truckee, California. 12:00 PM shotgun start." } },
-    { '@type': 'Question', name: 'How can I donate to NVforHD without playing golf?', acceptedAnswer: { '@type': 'Answer', text: "Direct donations start at $100. Email info@nvforhd.com or call 775-691-8860." } },
+    { '@type': 'Question', name: 'How can I donate without playing golf?', acceptedAnswer: { '@type': 'Answer', text: "Direct donations start at $100. Email info@nvforhd.com or call 775-691-8860." } },
   ],
 }
 
@@ -43,157 +43,127 @@ export default function HomePage() {
   return (
     <>
       <Nav />
-      <MobileCTADock />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ══════════════════════════════════════
-          HERO — Full bleed human photo.
-          DESKTOP: Split layout — dark photo left, cream story right
-          MOBILE: Full bleed photo, text overlay bottom, CTA pinned
+          HERO
+          LCP: hero-couple.jpg preloaded, priority=true
+          DESKTOP: left-heavy gradient, text left
+          MOBILE: full-bleed photo, text bottom-pinned, 2 CTAs visible above fold
       ══════════════════════════════════════ */}
-      <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0 }}>
-          <Image src="/images/hero-couple.jpg" alt="A couple embracing — every HD family" fill
-            style={{ objectFit: 'cover', objectPosition: 'center 28%' }} priority quality={90} className="hero-kb" />
-        </div>
-        {/* Desktop: heavy left gradient, photo breathes right */}
-        <div className="hero-gradient-desktop" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(110deg, rgba(6,13,26,0.96) 0%, rgba(6,13,26,0.85) 45%, rgba(6,13,26,0.25) 100%)' }} />
-        {/* Mobile: bottom gradient so text readable */}
-        <div className="hero-gradient-mobile" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,13,26,0.97) 0%, rgba(6,13,26,0.6) 50%, rgba(6,13,26,0.2) 100%)' }} />
+      <section style={{ position: 'relative', height: '100vh', minHeight: '600px', maxHeight: '900px', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
+        <Image src="/images/hero-couple.jpg" alt="A couple embracing — every HD family" fill
+          style={{ objectFit: 'cover', objectPosition: 'center 28%' }} priority quality={85} sizes="100vw" />
+
+        {/* Desktop gradient: left heavy */}
+        <div className="hero-grad-desktop" />
+        {/* Mobile gradient: bottom heavy — text needs to be readable at bottom */}
+        <div className="hero-grad-mobile" />
+
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)', zIndex: 3 }} />
 
-        <div className="inner" style={{ position: 'relative', zIndex: 2, padding: 'var(--px)', paddingTop: 'clamp(6rem,14vw,10rem)', paddingBottom: 'clamp(4rem,8vw,6rem)', width: '100%' }}>
-          <div style={{ maxWidth: '620px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem', animation: 'fadeup 0.8s var(--ease) 0.2s both' }}>
-              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
-              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'rgba(29,78,216,0.9)' }}>For every family living with HD</span>
-            </div>
-
-            {/* MOBILE headline — short, punchy, 2 lines max */}
-            <h1 className="hero-h1-mobile" style={{ display: 'none', fontFamily: 'var(--serif)', fontSize: 'clamp(3rem,11vw,4.5rem)', fontWeight: 300, lineHeight: 0.92, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.025em', animation: 'fadeup 1s var(--ease) 0.35s both' }}>
-              HD takes everything.<br /><em style={{ color: 'rgba(255,255,255,0.4)' }}>We fight back.</em>
-            </h1>
-
-            {/* DESKTOP headline */}
-            <h1 className="hero-h1-desktop" style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3.5rem,7vw,8rem)', fontWeight: 300, lineHeight: 0.9, color: '#fff', marginBottom: '2rem', letterSpacing: '-0.025em', animation: 'fadeup 1s var(--ease) 0.35s both' }}>
-              HD takes<br />everything.<br /><em style={{ color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>We fight back.</em>
-            </h1>
-
-            <div style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '1.5rem', marginBottom: '2.5rem', animation: 'fadeup 0.9s var(--ease) 0.55s both' }}>
-              {/* MOBILE — max 3 lines */}
-              <p className="hero-copy-mobile" style={{ display: 'none', fontSize: 'clamp(0.95rem,3.5vw,1rem)', lineHeight: 1.75, color: 'rgba(255,255,255,0.82)', fontWeight: 300 }}>
-                Sean&apos;s wife Christine has HD. He raised $50,000 and funded a family&apos;s future.
-              </p>
-              {/* DESKTOP */}
-              <p className="hero-copy-desktop" style={{ fontSize: 'clamp(1rem,1.5vw,1.1rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.82)', fontWeight: 300 }}>
-                Sean Schaeffer&apos;s wife Christine was diagnosed with Huntington&apos;s Disease — a fatal, hereditary brain disorder with no cure. He didn&apos;t grieve quietly.{' '}
-                <strong style={{ color: '#fff', fontWeight: 600 }}>He raised $50,000 and funded a family&apos;s future.</strong>
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', animation: 'fadeup 0.9s var(--ease) 0.7s both' }}>
-              <a href={D100} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '1.1rem 2.2rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-                Donate Now →
-              </a>
-              <a href={GOLF} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'transparent', color: 'rgba(255,255,255,0.7)', border: '1.5px solid rgba(255,255,255,0.3)', padding: '1.05rem 1.75rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-                Play Golf May 29
-              </a>
-            </div>
-            <p style={{ marginTop: '1.25rem', fontSize: '0.68rem', color: 'rgba(255,255,255,0.3)', animation: 'fadeup 0.9s var(--ease) 0.85s both' }}>
-              100% → UC Davis HD Center of Excellence
-            </p>
+        <div className="hero-content">
+          {/* Eyebrow */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.25rem', animation: 'fadeup 0.7s ease 0.2s both' }}>
+            <div style={{ width: '16px', height: '2px', background: 'var(--blue)', flexShrink: 0 }} />
+            <span style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', letterSpacing: '0.26em', textTransform: 'uppercase', fontWeight: 600, color: 'rgba(29,78,216,0.9)' }}>For every family living with HD</span>
           </div>
+
+          {/* Headline — different sizes per device, same copy */}
+          <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem,8vw,8rem)', fontWeight: 300, lineHeight: 0.92, color: '#fff', letterSpacing: '-0.025em', marginBottom: '1.5rem', animation: 'fadeup 1s ease 0.35s both' }}>
+            HD takes<br />everything.<br /><em style={{ color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}>We fight back.</em>
+          </h1>
+
+          {/* Body — mobile: 1 sentence. Desktop: 2 sentences via CSS */}
+          <div style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '1.25rem', marginBottom: '2rem', animation: 'fadeup 0.9s ease 0.5s both' }}>
+            <p className="hero-body-mobile">Sean&apos;s wife Christine has HD. He raised $50,000 and funded a family&apos;s future.</p>
+            <p className="hero-body-desktop">Sean Schaeffer&apos;s wife Christine was diagnosed with HD — a fatal, hereditary brain disorder with no cure. He didn&apos;t grieve quietly. <strong style={{ color: '#fff' }}>He raised $50,000 and funded a family&apos;s future.</strong></p>
+          </div>
+
+          {/* CTAs — stacked on mobile, side by side on desktop */}
+          <div className="hero-ctas" style={{ animation: 'fadeup 0.9s ease 0.65s both' }}>
+            <a href={D100} target="_blank" rel="noopener" className="hero-btn-donate">Donate Now →</a>
+            <a href={GOLF} target="_blank" rel="noopener" className="hero-btn-golf">Play Golf May 29</a>
+          </div>
+
+          <p style={{ marginTop: '1rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.28)', animation: 'fadeup 0.9s ease 0.8s both' }}>
+            100% → UC Davis HD Center of Excellence
+          </p>
         </div>
       </section>
 
       {/* ══════════════════════════════════════
-          STATS — Animated counters.
-          DESKTOP: 4 col, giant numbers
-          MOBILE: 2×2 grid, slightly smaller
+          STATS — Animated counters
+          MOBILE: 2×2, compact padding
+          DESKTOP: 4-col, large
       ══════════════════════════════════════ */}
-      <section style={{ background: 'var(--white)', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
-        <div className="inner stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
+      <section className="stats-section">
+        <div className="stats-grid-4">
           {[
-            { n: 50000, prefix: '$', suffix: 'K+', label: 'Raised', sub: 'In 2 years. From zero.', blue: false },
-            { n: 90,    prefix: '',  suffix: '+',  label: 'HD Families', sub: 'Served at UC Davis', blue: false },
-            { n: 1,     prefix: '',  suffix: '',   label: 'HD-Free Baby', sub: 'Funded. On the way.', blue: true },
-            { n: 0,     prefix: '',  suffix: '',   label: 'Known Cures', sub: "That's why we fight.", blue: false },
-          ].map(({ n, prefix, suffix, label, sub, blue }, i) => (
-            <ScrollReveal key={label} delay={i * 0.08} style={{ padding: 'clamp(2.5rem,4vw,4.5rem) clamp(1.5rem,3vw,3rem)', borderRight: i < 3 ? '1px solid var(--cream-3)' : 'none', textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem,6vw,7rem)', fontWeight: 600, lineHeight: 1, color: blue ? 'var(--blue)' : 'var(--ink)', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>
-                {n === 50000
-                  ? <><AnimatedCounter target={50} prefix="$" suffix="K+" duration={2000} /></>
-                  : n > 1
-                  ? <><AnimatedCounter target={n} suffix={suffix} duration={1600} /></>
-                  : <>{prefix}{n}{suffix}</>
-                }
+            { target: 50, prefix: '$', suffix: 'K+', label: 'Raised', sub: 'In 2 years', blue: false },
+            { target: 90, prefix: '',  suffix: '+',  label: 'HD Families', sub: 'At UC Davis', blue: false },
+            { target: 1,  prefix: '',  suffix: '',   label: 'HD-Free Baby', sub: 'Funded', blue: true },
+            { target: 0,  prefix: '',  suffix: '',   label: 'Known Cures', sub: "That's why we fight", blue: false },
+          ].map(({ target, prefix, suffix, label, sub, blue }, i) => (
+            <ScrollReveal key={label} delay={i * 0.07} style={{ padding: 'clamp(2rem,4vw,4rem) clamp(1rem,3vw,3rem)', borderRight: i < 3 ? '1px solid var(--cream-3)' : 'none', textAlign: 'center' }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,6.5rem)', fontWeight: 600, lineHeight: 1, color: blue ? 'var(--blue)' : 'var(--ink)', letterSpacing: '-0.03em', marginBottom: '0.4rem' }}>
+                {target > 1 ? <AnimatedCounter target={target} prefix={prefix} suffix={suffix} duration={1600} /> : <>{prefix}{target}{suffix}</>}
               </div>
-              <div style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', fontWeight: 700, color: 'var(--ink)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>{label}</div>
-              <div style={{ fontSize: '0.68rem', color: 'var(--ink-dim)' }}>{sub}</div>
+              <div style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--ink)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.2rem', fontFamily: 'var(--sans)' }}>{label}</div>
+              <div style={{ fontSize: '0.65rem', color: 'var(--ink-dim)' }}>{sub}</div>
             </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* ══════════════════════════════════════
-          DISEASE SECTION
-          DESKTOP: Big pull quote + 2×2 fact grid
-          MOBILE: Single column, short copy blocks
+          DISEASE — Mobile: 3 facts stacked, no walls
+          Desktop: pull quote + 2×2 grid
       ══════════════════════════════════════ */}
-      <section id="cause" style={{ background: 'var(--cream)', padding: 'var(--py-xl) var(--px)', position: 'relative', overflow: 'hidden' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', right: '-2rem', top: '50%', transform: 'translateY(-50%)', fontFamily: 'var(--serif)', fontSize: 'clamp(12rem,20vw,26rem)', fontWeight: 700, fontStyle: 'italic', color: 'rgba(17,24,39,0.03)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none', letterSpacing: '-0.05em' }}>HD</div>
+      <section className="disease-section">
         <div className="inner" style={{ position: 'relative', zIndex: 1 }}>
+
           <ScrollReveal>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2.5rem' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
               <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
               <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>Huntington&apos;s Disease</span>
             </div>
-            <div style={{ maxWidth: '860px', marginBottom: 'clamp(3.5rem,6vw,7rem)' }} className="speakable">
-              <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,6vw,7rem)', fontWeight: 300, lineHeight: 0.95, color: 'var(--ink)', marginBottom: '2rem', letterSpacing: '-0.025em' }}>
-                Terminal. Hereditary.<br /><em style={{ color: 'var(--ink-dim)' }}>No cure.</em>
-              </h2>
-              {/* MOBILE copy — max 3 lines */}
-              <p className="cause-copy-mobile" style={{ display: 'none', fontSize: '1rem', lineHeight: 1.8, color: 'var(--ink-mid)', maxWidth: '560px' }}>
-                HD destroys the brain — <strong style={{ color: 'var(--ink)' }}>Parkinson&apos;s, ALS, and Alzheimer&apos;s simultaneously.</strong> If your parent has it, flip a coin. That&apos;s your chance.
-              </p>
-              {/* DESKTOP copy */}
-              <p className="cause-copy-desktop" style={{ fontSize: 'clamp(1.05rem,1.6vw,1.2rem)', lineHeight: 1.9, color: 'var(--ink-mid)', maxWidth: '640px', fontWeight: 300 }}>
-                HD destroys nerve cells — a process likened to experiencing <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>Parkinson&apos;s, ALS, and Alzheimer&apos;s simultaneously.</strong> It is always fatal. There is no approved treatment that slows it. If your parent has HD, flip a coin. That is your statistical chance of inheriting it.
-              </p>
-            </div>
+            <h2 className="disease-h2">Terminal. Hereditary.<br /><em style={{ color: 'var(--ink-dim)' }}>No cure.</em></h2>
+            {/* Mobile: short, visceral */}
+            <p className="disease-copy-mobile">HD destroys the brain. <strong>Parkinson&apos;s + ALS + Alzheimer&apos;s simultaneously.</strong> Your parent has it? Flip a coin. That&apos;s your chance of inheriting it.</p>
+            {/* Desktop: fuller */}
+            <p className="disease-copy-desktop">HD destroys nerve cells — likened to experiencing <strong>Parkinson&apos;s, ALS, and Alzheimer&apos;s simultaneously.</strong> It is always fatal. There is no treatment that slows it. If your parent has HD, flip a coin. That is your statistical chance of inheriting it.</p>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5px', background: 'var(--cream-3)' }} className="facts-grid">
+          {/* Facts grid — mobile: 1 col (body hidden). Desktop: 2×2 with body */}
+          <div className="facts-grid">
             {[
-              { n: '01', head: 'No cure exists', body: 'Researchers are making real progress — but today there is no drug that stops HD. Every family affected right now needs support, not promises.' },
-              { n: '02', head: 'The cycle can be broken', body: 'IVF with genetic testing means a child can be born HD-free permanently. The mutation stops here. That is what your donation buys.' },
-              { n: '03', head: '90+ families, one clinic', body: 'The UC Davis HD Center is the only specialist HD care within reach of Northern Nevada. 130 miles from Reno. Runs on private donation.' },
-              { n: '04', head: 'This is local', body: 'Reno, Sparks, the Sierra Foothills. Your $100 keeps the clinic open for families who have nowhere else to go.' },
+              { n: '01', head: 'No cure exists', body: 'Every family affected right now needs support — not promises about research.' },
+              { n: '02', head: 'The cycle can be broken', body: 'IVF with genetic testing means a child can be born HD-free. The mutation stops here.' },
+              { n: '03', head: '90+ families, one clinic', body: 'UC Davis HD Center — the only specialist HD care within reach of Northern Nevada. 130 miles from Reno.' },
+              { n: '04', head: '$100 keeps it open', body: 'The clinic runs on private donation. Your $100 keeps the lights on for families who have nowhere else to go.' },
             ].map(({ n, head, body }) => (
               <ScrollReveal key={n}>
-                <div style={{ background: 'var(--white)', padding: 'clamp(1.75rem,3vw,3.5rem)', height: '100%' }}>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: '0.7rem', color: 'var(--blue)', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '1rem' }}>{n}</div>
-                  <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.1rem,2vw,1.5rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.75rem', lineHeight: 1.2 }}>{head}</h3>
-                  <p style={{ fontSize: '0.88rem', lineHeight: 1.8, color: 'var(--ink-dim)' }} className="fact-body">{body}</p>
+                <div style={{ background: 'var(--white)', padding: 'clamp(1.5rem,3vw,3rem)', height: '100%' }}>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: '0.68rem', color: 'var(--blue)', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.75rem' }}>{n}</div>
+                  <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.6rem', lineHeight: 1.2 }}>{head}</h3>
+                  <p className="fact-body" style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'var(--ink-dim)', margin: 0 }}>{body}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
 
-          <ScrollReveal delay={0.1} style={{ marginTop: '1.5px' }}>
-            <div style={{ background: 'var(--navy)', padding: 'clamp(2.5rem,5vw,5rem)', display: 'grid', gridTemplateColumns: '1fr auto', gap: '3rem', alignItems: 'center' }} className="quote-cta-grid">
-              <div>
-                <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'clamp(1.2rem,2.8vw,2.5rem)', fontWeight: 300, color: '#fff', lineHeight: 1.35, marginBottom: '1.25rem' }}>
-                  &ldquo;Thank you for gifting us life that is Huntington&apos;s free.&rdquo;
-                </div>
-                <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-light)', fontWeight: 600 }}>
-                  — Rylee Puccini · Funded by the 2024 Tournament
-                </div>
+          {/* Rylee quote block */}
+          <ScrollReveal delay={0.1}>
+            <div className="rylee-block">
+              <div className="rylee-quote">&ldquo;Thank you for gifting us life that is Huntington&apos;s free.&rdquo;</div>
+              <div style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-light)', fontWeight: 600, marginBottom: '1.5rem' }}>
+                — Rylee Puccini · Funded by the 2024 Tournament
               </div>
-              <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <a href={D100} target="_blank" rel="noopener" style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1rem 2rem', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', whiteSpace: 'nowrap' }}>Fund a Family →</a>
-                <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', textAlign: 'center' }}>or play golf May 29</a>
+              <div className="rylee-ctas">
+                <a href={D100} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '0.9rem 1.75rem', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>Fund a Family →</a>
+                <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>or play golf May 29</a>
               </div>
             </div>
           </ScrollReveal>
@@ -201,65 +171,52 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════
-          TIMELINE — DESKTOP: Horizontal scroll
-          MOBILE: Vertical stacked cards
-          This is the core desktop psychology:
-          the visitor scrolls THROUGH time
+          TIMELINE
+          DESKTOP: 3-col with track line + photos
+          MOBILE: 3 tap-to-go photo cards, full-bleed
       ══════════════════════════════════════ */}
-      <section id="years" style={{ background: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'var(--cream-3)' }} />
-
-        {/* ── DESKTOP: Horizontal pin + scroll ── */}
-        <div className="timeline-desktop" style={{ padding: 'var(--py-lg) var(--px)' }}>
-          <div className="inner">
-            <ScrollReveal style={{ marginBottom: 'clamp(3rem,5vw,5rem)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem' }}>
+      <section style={{ background: 'var(--white)', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
+        {/* Desktop */}
+        <div className="timeline-desktop-wrapper">
+          <div className="inner" style={{ padding: 'var(--py-lg) var(--px)' }}>
+            <ScrollReveal style={{ marginBottom: 'clamp(3rem,5vw,5rem)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '2rem', flexWrap: 'wrap' }}>
               <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
                   <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
                   <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>Three Years. Real Results.</span>
                 </div>
-                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,6rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 0.95, letterSpacing: '-0.025em' }}>
+                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,5.5rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 0.95, letterSpacing: '-0.025em' }}>
                   Year by year.<br /><em style={{ color: 'var(--ink-dim)' }}>Cause by cause.</em>
                 </h2>
               </div>
-              <p style={{ maxWidth: '220px', fontSize: '0.85rem', lineHeight: 1.85, color: 'var(--ink-dim)', textAlign: 'right' }}>
-                Every dollar to one cause. No overhead. No splitting.
-              </p>
+              <p style={{ maxWidth: '200px', fontSize: '0.82rem', lineHeight: 1.85, color: 'var(--ink-dim)', textAlign: 'right' }}>Every dollar to one cause. No overhead.</p>
             </ScrollReveal>
 
-            {/* Horizontal timeline track */}
             <div style={{ position: 'relative', paddingBottom: '2rem' }}>
-              {/* Track line */}
-              <div style={{ position: 'absolute', top: '28px', left: 0, right: 0, height: '2px', background: 'var(--cream-3)', zIndex: 0 }} />
-              <div style={{ position: 'absolute', top: '28px', left: 0, width: '66%', height: '2px', background: 'var(--blue)', zIndex: 1 }} />
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '3rem', position: 'relative', zIndex: 2 }}>
+              <div style={{ position: 'absolute', top: '28px', left: 0, right: 0, height: '2px', background: 'var(--cream-3)' }} />
+              <div style={{ position: 'absolute', top: '28px', left: 0, width: '66%', height: '2px', background: 'var(--blue)' }} />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
                 {[
-                  { year: '2024', done: true,  tag: 'Inaugural · Sold Out', title: '$25,000 for HelpCureHD', body: "Sold out. Every dollar funded IVF for Brandon & Rylee Puccini. Rylee is now pregnant with an HD-free baby.", href: '/causes', cta: 'Their story →', img: '/images/event-crowd.jpg' },
-                  { year: '2025', done: true,  tag: 'UC Davis · 90+ Families', title: 'HD Center of Excellence', body: 'Funded the only HD specialist clinic in Northern Nevada — 2 neurologists, 2 psychiatrists, a genetic counselor, social worker, and physical therapists.', href: '/causes', cta: 'Read more →', img: '/images/event-group-2.jpg' },
-                  { year: '2026', done: false, tag: "May 29 · Register Now", title: 'UC Davis — Again', body: "Returning to protect the clinic. One round of golf or a $100 donation keeps care open for 90+ Northern Nevada HD families.", href: GOLF, cta: 'Join us →', img: '/images/course-1.jpg' },
+                  { year: '2024', done: true, tag: 'Sold Out', title: '$25,000 for HelpCureHD', body: "Funded IVF for Brandon & Rylee Puccini. Their baby will never have HD.", href: '/causes', cta: 'Their story →', img: '/images/event-crowd.jpg' },
+                  { year: '2025', done: true, tag: '90+ Families', title: 'UC Davis HD Center', body: 'Funded the only HD specialist clinic in Northern Nevada.', href: '/causes', cta: 'Read more →', img: '/images/event-group-2.jpg' },
+                  { year: '2026', done: false, tag: 'Open Now', title: 'UC Davis — Again', body: "May 29 · Gray's Crossing, Truckee. One round keeps the clinic open.", href: GOLF, cta: 'Register →', img: '/images/course-1.jpg' },
                 ].map(({ year, done, tag, title, body, href, cta, img }, i) => (
-                  <ScrollReveal key={year} delay={i * 0.15}>
-                    {/* Year node */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-                      <div style={{ width: '14px', height: '14px', borderRadius: '50%', background: done ? 'var(--blue)' : 'var(--white)', border: `3px solid ${done ? 'var(--blue)' : 'var(--cream-3)'}`, flexShrink: 0, boxShadow: done ? '0 0 0 4px rgba(29,78,216,0.15)' : 'none', transition: 'all 0.3s' }} />
-                      <span style={{ fontFamily: 'var(--serif)', fontSize: '1.1rem', fontWeight: 600, color: done ? 'var(--blue)' : 'var(--ink-dim)', letterSpacing: '-0.01em' }}>{year}</span>
+                  <ScrollReveal key={year} delay={i * 0.12}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
+                      <div style={{ width: '14px', height: '14px', borderRadius: '50%', background: done ? 'var(--blue)' : 'var(--white)', border: `3px solid ${done ? 'var(--blue)' : 'var(--cream-3)'}`, flexShrink: 0, boxShadow: done ? '0 0 0 4px rgba(29,78,216,0.12)' : 'none' }} />
+                      <span style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 600, color: done ? 'var(--blue)' : 'var(--ink-dim)' }}>{year}</span>
                     </div>
-
-                    {/* Card with photo */}
-                    <div style={{ background: 'var(--white)', border: `1px solid ${!done ? 'var(--blue)' : 'var(--cream-3)'}`, borderTop: `3px solid ${done ? 'var(--blue)' : 'var(--cream-3)'}`, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                      <div style={{ position: 'relative', height: '160px', overflow: 'hidden', flexShrink: 0 }}>
-                        <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%', filter: done ? 'none' : 'brightness(1.05)' }} />
-                        {!done && <div style={{ position: 'absolute', top: '0.75rem', right: '0.75rem', background: 'var(--blue)', color: '#fff', fontSize: '0.52rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, padding: '0.25rem 0.65rem', fontFamily: 'var(--sans)' }}>Open Now</div>}
+                    <div style={{ border: `1px solid ${!done ? 'var(--blue)' : 'var(--cream-3)'}`, borderTop: `3px solid ${done ? 'var(--blue)' : 'var(--cream-3)'}`, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ position: 'relative', height: '140px', flexShrink: 0 }}>
+                        <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} />
+                        {!done && <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', background: 'var(--blue)', color: '#fff', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, padding: '0.2rem 0.55rem', fontFamily: 'var(--sans)' }}>Open Now</div>}
                       </div>
-                      <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'inline-block', background: !done ? 'var(--blue-light)' : 'var(--cream-2)', border: !done ? '1px solid var(--blue-faint)' : '1px solid var(--cream-3)', color: !done ? 'var(--blue)' : 'var(--ink-dim)', fontSize: '0.56rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '0.22rem 0.65rem', marginBottom: '0.85rem', fontWeight: 600, fontFamily: 'var(--sans)' }}>{tag}</div>
-                        <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.6vw,1.25rem)', fontWeight: 400, color: 'var(--ink)', lineHeight: 1.25, marginBottom: '0.75rem' }}>{title}</div>
-                        <p style={{ fontSize: '0.82rem', lineHeight: 1.8, color: 'var(--ink-dim)', fontWeight: 300, flex: 1, marginBottom: '1.25rem' }}>{body}</p>
+                      <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'inline-block', background: !done ? 'var(--blue-light)' : 'var(--cream-2)', color: !done ? 'var(--blue)' : 'var(--ink-dim)', fontSize: '0.54rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '0.2rem 0.6rem', marginBottom: '0.75rem', fontWeight: 600, fontFamily: 'var(--sans)', border: !done ? '1px solid var(--blue-faint)' : '1px solid var(--cream-3)' }}>{tag}</div>
+                        <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(0.95rem,1.6vw,1.15rem)', fontWeight: 400, color: 'var(--ink)', lineHeight: 1.25, marginBottom: '0.6rem' }}>{title}</div>
+                        <p style={{ fontSize: '0.8rem', lineHeight: 1.8, color: 'var(--ink-dim)', flex: 1, marginBottom: '1rem' }}>{body}</p>
                         <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener' : undefined}
-                          style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--blue)', textDecoration: 'none' }}>
-                          {cta}
-                        </a>
+                          style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.9rem', color: 'var(--blue)', textDecoration: 'none' }}>{cta}</a>
                       </div>
                     </div>
                   </ScrollReveal>
@@ -269,34 +226,25 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ── MOBILE: Vertical stacked, full-bleed photos ── */}
-        <div className="timeline-mobile" style={{ display: 'none' }}>
-          <div style={{ padding: 'var(--py-lg) var(--px)' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
-              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>Our Track Record</span>
-            </div>
-          </div>
+        {/* Mobile — 3 full-bleed tap cards */}
+        <div className="timeline-mobile-wrapper">
           {[
-            { year: '2024', tag: 'Sold Out', title: '$25,000 raised', sub: 'Brandon & Rylee Puccini — HD-free baby funded.', href: '/causes', img: '/images/event-crowd.jpg', done: true },
-            { year: '2025', tag: '90+ Families', title: 'UC Davis funded', sub: 'The only HD specialist clinic in Northern Nevada.', href: '/causes', img: '/images/event-group-2.jpg', done: true },
-            { year: '2026', tag: 'Open Now', title: 'May 29 — Join us', sub: "Gray's Crossing, Truckee. Register today.", href: GOLF, img: '/images/course-1.jpg', done: false },
+            { year: '2024', tag: 'Sold Out', title: '$25,000 raised', sub: 'Brandon & Rylee — HD-free baby.', href: '/causes', img: '/images/event-crowd.jpg', done: true },
+            { year: '2025', tag: '90+ Families', title: 'UC Davis funded', sub: 'The only HD clinic in Northern NV.', href: '/causes', img: '/images/event-group-2.jpg', done: true },
+            { year: '2026', tag: 'Register Now', title: 'May 29 — Join us', sub: "Gray's Crossing, Truckee. Open.", href: GOLF, img: '/images/course-1.jpg', done: false },
           ].map(({ year, tag, title, sub, href, img, done }) => (
             <a key={year} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener' : undefined}
-              style={{ display: 'block', textDecoration: 'none', marginBottom: '1rem', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'relative', height: '200px' }}>
-                <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,13,26,0.92) 0%, rgba(6,13,26,0.2) 60%)' }} />
-                {done && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)' }} />}
-                {!done && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)' }} />}
-                <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.25rem', right: '1.25rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
-                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: '#fff' }}>{year}</span>
-                    <span style={{ background: !done ? 'var(--blue)' : 'rgba(255,255,255,0.15)', color: '#fff', fontSize: '0.52rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, padding: '0.2rem 0.6rem', fontFamily: 'var(--sans)' }}>{tag}</span>
-                  </div>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem' }}>{title}</div>
-                  <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.65)' }}>{sub}</div>
+              style={{ display: 'block', textDecoration: 'none', position: 'relative', overflow: 'hidden', height: '180px' }}>
+              <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,13,26,0.93) 0%, rgba(6,13,26,0.18) 60%)' }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: done ? 'var(--blue)' : 'var(--gold-light)' }} />
+              <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.25rem', right: '1.25rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.3rem' }}>
+                  <span style={{ fontFamily: 'var(--serif)', fontSize: '1.3rem', fontWeight: 600, color: '#fff' }}>{year}</span>
+                  <span style={{ background: !done ? 'var(--blue)' : 'rgba(255,255,255,0.15)', color: '#fff', fontSize: '0.5rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, padding: '0.18rem 0.55rem', fontFamily: 'var(--sans)' }}>{tag}</span>
                 </div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', color: '#fff', marginBottom: '0.15rem' }}>{title}</div>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)' }}>{sub}</div>
               </div>
             </a>
           ))}
@@ -304,105 +252,126 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════
-          PUCCINI — The conversion moment.
-          Full-bleed pregnant sunset. Baby hands.
-          MOBILE: Stacked, photo full-bleed top, white card below
-          DESKTOP: Side by side
+          PUCCINI — The conversion moment
+          MOBILE: photo top, white donate card below
+          DESKTOP: side by side
       ══════════════════════════════════════ */}
       <section style={{ position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <Image src="/images/pregnant-sunset.jpg" alt="Rylee and Brandon — funded by NVforHD 2024" fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} quality={85} />
+          <Image src="/images/pregnant-sunset.jpg" alt="Rylee and Brandon — funded by NVforHD" fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} quality={80} />
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(6,13,26,0.88)' }} />
         </div>
-        <div className="inner" style={{ position: 'relative', zIndex: 2, padding: 'var(--py-xl) var(--px)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(3rem,6vw,8rem)', alignItems: 'center' }} className="puccini-grid">
-            <ScrollReveal>
-              <div style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '-12px', left: '-12px', right: '12px', bottom: '12px', border: '1px solid rgba(29,78,216,0.4)', zIndex: 0 }} />
-                <Image src="/images/baby-hands.jpg" alt="Two parents' hands holding their HD-free newborn" width={800} height={600}
-                  style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 1, boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }} quality={90} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2, padding: '1.5rem 1.75rem 1.75rem', background: 'linear-gradient(to top, rgba(6,13,26,0.9), transparent)' }}>
-                  <div style={{ fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>Brandon & Rylee Puccini · 2025 · HD-Free</div>
-                </div>
+        <div className="inner puccini-grid" style={{ position: 'relative', zIndex: 2, padding: 'var(--py-xl) var(--px)' }}>
+          <ScrollReveal>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '-12px', right: '12px', bottom: '12px', border: '1px solid rgba(29,78,216,0.4)', zIndex: 0 }} className="puccini-frame" />
+              <Image src="/images/baby-hands.jpg" alt="Two parents holding their HD-free newborn" width={800} height={600}
+                style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 1, boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }} quality={85} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2, padding: '1.25rem 1.5rem 1.5rem', background: 'linear-gradient(to top, rgba(6,13,26,0.9), transparent)' }}>
+                <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>Brandon & Rylee Puccini · 2025 · HD-Free</div>
               </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.15}>
-              <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
-                  <div style={{ width: '18px', height: '2px', background: 'var(--gold-light)' }} />
-                  <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--gold-light)' }}>What your money did in 2024</span>
-                </div>
-                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.8rem,5.5vw,6rem)', fontWeight: 300, lineHeight: 0.95, color: '#fff', marginBottom: '2rem', letterSpacing: '-0.02em' }}>
-                  &ldquo;Rylee is<br />pregnant.&rdquo;
-                </h2>
-                {/* MOBILE — 3 lines */}
-                <p className="puccini-copy-mobile" style={{ display: 'none', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.75)', marginBottom: '2rem' }}>
-                  $25,000 from the 2024 tournament funded IVF for Brandon & Rylee. <strong style={{ color: '#fff' }}>Their baby will never have HD.</strong>
-                </p>
-                {/* DESKTOP */}
-                <p className="puccini-copy-desktop" style={{ fontSize: 'clamp(1rem,1.4vw,1.1rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.72)', marginBottom: '1.25rem', fontWeight: 300 }}>
-                  The 2024 tournament raised $25,000. That money funded IVF with genetic screening for Brandon and Rylee Puccini. The embryo transfer was successful. They heard the heartbeat.
-                </p>
-                <p className="puccini-copy-desktop" style={{ fontSize: 'clamp(1rem,1.4vw,1.1rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.72)', marginBottom: '2.5rem', fontWeight: 300 }}>
-                  <strong style={{ color: '#fff' }}>Their baby will never have Huntington&apos;s Disease. That baby exists because people bought a round of golf.</strong>
-                </p>
+            </div>
+          </ScrollReveal>
 
-                {/* White donate card */}
-                <div style={{ background: '#fff', padding: 'clamp(1.5rem,3vw,2.5rem)' }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.2rem,2vw,1.6rem)', color: 'var(--ink)', fontWeight: 400 }}>Fund the next family.</div>
-                    <div style={{ fontSize: '0.58rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--blue)', fontWeight: 700, fontFamily: 'var(--sans)' }}>100% to UC Davis HD</div>
-                  </div>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--ink-dim)', marginBottom: '1.25rem', lineHeight: 1.65 }}>Every dollar keeps the only HD specialist clinic serving 90+ Northern Nevada families open.</p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.6rem', marginBottom: '1rem' }}>
-                    <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.9rem 0.4rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
-                      <span style={{ fontFamily: 'var(--serif)', fontSize: '1.6rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$100</span>
-                      <span style={{ fontSize: '0.55rem', color: 'var(--ink-dim)', marginTop: '0.3rem', textAlign: 'center' }}>Keeps a family in care</span>
-                    </a>
-                    <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.9rem 0.4rem', background: 'var(--blue)', border: '2px solid var(--blue)', textDecoration: 'none', cursor: 'pointer', position: 'relative' }}>
-                      <div style={{ position: 'absolute', top: '-9px', left: '50%', transform: 'translateX(-50%)', background: 'var(--gold-light)', color: 'var(--navy-deep)', fontSize: '0.45rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 800, padding: '0.18rem 0.5rem', whiteSpace: 'nowrap', fontFamily: 'var(--sans)' }}>★ Most Chosen</div>
-                      <span style={{ fontFamily: 'var(--serif)', fontSize: '1.6rem', fontWeight: 600, color: '#fff', lineHeight: 1 }}>$250</span>
-                      <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.75)', marginTop: '0.3rem', textAlign: 'center' }}>Most impactful</span>
-                    </a>
-                    <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.9rem 0.4rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
-                      <span style={{ fontFamily: 'var(--serif)', fontSize: '1.6rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$500</span>
-                      <span style={{ fontSize: '0.55rem', color: 'var(--ink-dim)', marginTop: '0.3rem', textAlign: 'center' }}>Funds a month of care</span>
-                    </a>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '0.85rem', borderTop: '1px solid var(--cream-3)', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <span style={{ fontSize: '0.68rem', color: 'var(--ink-faint)' }}>No account needed.</span>
-                    <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.66rem', color: 'var(--blue)', textDecoration: 'none', fontWeight: 600 }}>Play golf instead →</a>
-                  </div>
+          <ScrollReveal delay={0.12}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}>
+                <div style={{ width: '16px', height: '2px', background: 'var(--gold-light)' }} />
+                <span style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', letterSpacing: '0.26em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--gold-light)' }}>What your money did in 2024</span>
+              </div>
+              <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,5.5rem)', fontWeight: 300, lineHeight: 0.95, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+                &ldquo;Rylee is pregnant.&rdquo;
+              </h2>
+              {/* Mobile: 2 lines */}
+              <p className="puccini-copy-mobile" style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.75)', marginBottom: '2rem' }}>
+                $25,000. IVF. <strong style={{ color: '#fff' }}>Their baby will never have Huntington&apos;s Disease.</strong>
+              </p>
+              {/* Desktop: full */}
+              <p className="puccini-copy-desktop">The 2024 tournament raised $25,000. That funded IVF for Brandon and Rylee Puccini. The transfer was successful. <strong style={{ color: '#fff' }}>That baby exists because people bought a round of golf.</strong></p>
+
+              {/* Donate card — white, high contrast */}
+              <div style={{ background: '#fff', padding: 'clamp(1.25rem,2.5vw,2rem)' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.4rem', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.1rem,1.8vw,1.4rem)', color: 'var(--ink)', fontWeight: 400 }}>Fund the next family.</div>
+                  <div style={{ fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--blue)', fontWeight: 700, fontFamily: 'var(--sans)' }}>100% to UC Davis</div>
+                </div>
+                <p style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', marginBottom: '1rem', lineHeight: 1.6 }}>90+ families depend on the only HD specialist clinic in Northern Nevada.</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', marginBottom: '0.85rem' }}>
+                  <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.75rem 0.25rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
+                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$100</span>
+                    <span style={{ fontSize: '0.5rem', color: 'var(--ink-dim)', marginTop: '0.25rem', textAlign: 'center' }}>Keeps care going</span>
+                  </a>
+                  <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.75rem 0.25rem', background: 'var(--blue)', border: '2px solid var(--blue)', textDecoration: 'none', cursor: 'pointer', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-8px', left: '50%', transform: 'translateX(-50%)', background: 'var(--gold-light)', color: '#0B1628', fontSize: '0.42rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 800, padding: '0.15rem 0.45rem', whiteSpace: 'nowrap', fontFamily: 'var(--sans)' }}>★ Chosen</div>
+                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: '#fff', lineHeight: 1 }}>$250</span>
+                    <span style={{ fontSize: '0.5rem', color: 'rgba(255,255,255,0.75)', marginTop: '0.25rem', textAlign: 'center' }}>Most impactful</span>
+                  </a>
+                  <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.75rem 0.25rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
+                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$500</span>
+                    <span style={{ fontSize: '0.5rem', color: 'var(--ink-dim)', marginTop: '0.25rem', textAlign: 'center' }}>Month of care</span>
+                  </a>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '0.75rem', borderTop: '1px solid var(--cream-3)', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  <span style={{ fontSize: '0.62rem', color: 'var(--ink-faint)' }}>No account needed.</span>
+                  <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'var(--blue)', textDecoration: 'none', fontWeight: 600 }}>Play golf instead →</a>
                 </div>
               </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <PackagesSection />
+      {/* Packages + Sponsors — only on desktop, mobile too long */}
+      <div className="packages-desktop"><PackagesSection /></div>
+      <div className="packages-mobile">
+        <section style={{ background: 'var(--cream)', padding: 'var(--py-lg) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+          <div className="inner">
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
+              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
+              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>May 29, 2026 · Join Us</span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+              {[
+                { price: '$220', label: 'Single Golfer', sub: 'Full round + lunch' },
+                { price: '$880', label: 'Foursome', sub: 'Golf for 4 + lunch' },
+                { price: '$100', label: 'Donate', sub: 'No golf needed' },
+                { price: '$100+', label: 'Hole Sign', sub: 'Your name on course' },
+              ].map(({ price, label, sub }) => (
+                <a key={label} href={GOLF} target="_blank" rel="noopener" style={{ display: 'block', background: 'var(--white)', border: '1px solid var(--cream-3)', padding: '1.25rem 1rem', textDecoration: 'none' }}>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: '1.5rem', fontWeight: 600, color: 'var(--blue)', lineHeight: 1, marginBottom: '0.3rem' }}>{price}</div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--ink)', fontFamily: 'var(--sans)' }}>{label}</div>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--ink-dim)' }}>{sub}</div>
+                </a>
+              ))}
+            </div>
+            <a href={GOLF} target="_blank" rel="noopener" style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.1rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+              Register for May 29 →
+            </a>
+          </div>
+        </section>
+      </div>
+
       <SponsorsSection />
 
       {/* FAQ */}
       <section style={{ background: 'var(--white)', padding: 'var(--py-lg) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
         <div className="inner" style={{ maxWidth: '800px' }}>
-          <ScrollReveal style={{ marginBottom: '3rem' }}>
+          <ScrollReveal style={{ marginBottom: '2.5rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
               <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
               <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>Common Questions</span>
             </div>
           </ScrollReveal>
           {[
-            { q: "What is Huntington's Disease?", a: "Huntington's Disease is a hereditary, fatal brain disorder with no known cure. It causes progressive breakdown of nerve cells — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of a parent with HD has a 50% chance of inheriting it." },
-            { q: "What does NVforHD do with tournament proceeds?", a: "100% of proceeds to one chosen HD cause — zero overhead. In 2024: IVF for Brandon & Rylee Puccini (now expecting an HD-free baby). In 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families." },
-            { q: "When and where is the 2026 tournament?", a: "Friday, May 29, 2026 at Gray's Crossing Golf Club in Truckee, California. 12:00 PM shotgun start. Four-person scramble. Discount hotel rooms at Atlantis and Peppermill — call Sean: 775-691-8860." },
-            { q: "Can I donate without playing golf?", a: "Yes. Direct donations start at $100. Email info@nvforhd.com or call 775-691-8860." },
-            { q: "What is the UC Davis HD Center of Excellence?", a: "The only HD specialty clinic within reach of Northern Nevada — 2 neurologists, 2 psychiatrists, 1 genetic counselor, 1 social worker, 2 physical therapists, 3 research coordinators. 130 miles from Reno. Runs entirely on private donation." },
+            { q: "What is Huntington's Disease?", a: "A hereditary, fatal brain disorder with no known cure — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of a parent with HD has a 50% chance of inheriting it." },
+            { q: "Where does my money go?", a: "100% to one chosen HD cause — zero overhead. In 2024: IVF for the Puccini family (HD-free baby on the way). In 2025 & 2026: UC Davis HD Center of Excellence, serving 90+ Northern Nevada families." },
+            { q: "When and where is the 2026 tournament?", a: "May 29, 2026 · Gray's Crossing Golf Club · Truckee, CA · 12:00 PM shotgun · Four-person scramble. Hotel discounts at Atlantis & Peppermill — call Sean: 775-691-8860." },
+            { q: "Can I donate without playing?", a: "Yes. $100 minimum. Email info@nvforhd.com or call 775-691-8860. 100% goes directly to the cause." },
           ].map(({ q, a }, i) => (
             <ScrollReveal key={i} delay={i * 0.04}>
-              <div style={{ borderBottom: '1px solid var(--cream-3)', padding: '1.75rem 0' }}>
-                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.3rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.8rem', lineHeight: 1.3 }}>{q}</h3>
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--ink-dim)' }} className="speakable">{a}</p>
+              <div style={{ borderBottom: '1px solid var(--cream-3)', padding: '1.5rem 0' }}>
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(0.95rem,1.6vw,1.2rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.7rem', lineHeight: 1.3 }}>{q}</h3>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-dim)', margin: 0 }} className="speakable">{a}</p>
               </div>
             </ScrollReveal>
           ))}
@@ -412,36 +381,104 @@ export default function HomePage() {
       <Footer />
 
       <style dangerouslySetInnerHTML={{ __html: `
-        /* ── DESKTOP ONLY ── */
-        @media (min-width: 901px) {
-          .hero-gradient-mobile  { display: none; }
-          .hero-h1-mobile        { display: none !important; }
-          .hero-copy-mobile      { display: none !important; }
-          .cause-copy-mobile     { display: none !important; }
-          .puccini-copy-mobile   { display: none !important; }
-          .timeline-mobile       { display: none !important; }
+        /* ── HERO ── */
+        .hero-grad-desktop {
+          position: absolute; inset: 0;
+          background: linear-gradient(110deg, rgba(6,13,26,0.96) 0%, rgba(6,13,26,0.82) 45%, rgba(6,13,26,0.2) 100%);
+        }
+        .hero-grad-mobile { display: none; }
+        .hero-content {
+          position: relative; z-index: 2;
+          padding: var(--px);
+          padding-bottom: clamp(4rem,7vw,6rem);
+          width: 100%;
+          max-width: calc(var(--max) + var(--px) * 2);
+          margin: 0 auto;
+        }
+        .hero-body-mobile { display: none; font-size: clamp(0.92rem,3vw,1rem); line-height: 1.75; color: rgba(255,255,255,0.82); font-weight: 300; margin: 0; }
+        .hero-body-desktop { font-size: clamp(0.98rem,1.4vw,1.05rem); line-height: 1.9; color: rgba(255,255,255,0.82); font-weight: 300; margin: 0; }
+        .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .hero-btn-donate {
+          display: inline-block; background: var(--blue); color: #fff;
+          padding: 1.05rem 2rem; font-size: 0.7rem; letter-spacing: 0.1em;
+          text-transform: uppercase; font-weight: 700; text-decoration: none;
+          font-family: var(--sans);
+        }
+        .hero-btn-golf {
+          display: inline-block; background: transparent; color: rgba(255,255,255,0.7);
+          border: 1.5px solid rgba(255,255,255,0.28); padding: 1rem 1.5rem;
+          font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+          font-weight: 400; text-decoration: none; font-family: var(--sans);
         }
 
-        /* ── MOBILE ONLY ── */
-        @media (max-width: 900px) {
-          .hero-gradient-desktop { display: none; }
-          .hero-h1-desktop       { display: none !important; }
-          .hero-copy-desktop     { display: none !important; }
-          .cause-copy-desktop    { display: none !important; }
-          .puccini-copy-desktop  { display: none !important; }
-          .timeline-desktop      { display: none !important; }
-          .timeline-mobile       { display: block !important; }
+        /* ── STATS ── */
+        .stats-section { background: var(--white); border-top: 1px solid var(--cream-3); border-bottom: 1px solid var(--cream-3); }
+        .stats-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); }
 
-          .stats-grid   { grid-template-columns: 1fr 1fr !important; }
-          .facts-grid   { grid-template-columns: 1fr !important; }
-          .quote-cta-grid { grid-template-columns: 1fr !important; }
-          .puccini-grid { grid-template-columns: 1fr !important; }
+        /* ── DISEASE ── */
+        .disease-section { background: var(--cream); padding: var(--py-xl) var(--px); position: relative; overflow: hidden; }
+        .disease-h2 { font-family: var(--serif); font-size: clamp(2.5rem,6vw,7rem); font-weight: 300; line-height: 0.95; color: var(--ink); margin-bottom: 1.75rem; letter-spacing: -0.025em; }
+        .disease-copy-mobile { display: none; font-size: 1rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: clamp(2rem,4vw,4rem); }
+        .disease-copy-desktop { font-size: clamp(1rem,1.5vw,1.15rem); line-height: 1.9; color: var(--ink-mid); max-width: 640px; font-weight: 300; margin-bottom: clamp(3rem,5vw,6rem); }
+        .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--cream-3); margin-bottom: 1.5px; }
+        .rylee-block { background: var(--navy); padding: clamp(2rem,4vw,4.5rem); }
+        .rylee-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem,2.5vw,2.2rem); font-weight: 300; color: #fff; line-height: 1.35; margin-bottom: 1rem; }
+        .rylee-ctas { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 
-          /* Mobile: fact bodies short */
-          .fact-body { display: none; }
+        /* ── TIMELINE ── */
+        .timeline-desktop-wrapper { display: block; }
+        .timeline-mobile-wrapper { display: none; }
 
-          /* Mobile hero: text at bottom, photo full bleed */
-          section:first-of-type .inner { padding-top: 60vh !important; padding-bottom: 2rem !important; }
+        /* ── PUCCINI ── */
+        .puccini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,7rem); align-items: center; }
+        .puccini-copy-mobile { display: none; }
+        .puccini-copy-desktop { font-size: clamp(0.95rem,1.3vw,1.05rem); line-height: 1.9; color: rgba(255,255,255,0.72); margin-bottom: 2rem; font-weight: 300; }
+
+        /* ── PACKAGES ── */
+        .packages-desktop { display: block; }
+        .packages-mobile  { display: none; }
+
+        /* ═════════════════════════════════
+           MOBILE — 768px and below
+           True separate experience
+        ═════════════════════════════════ */
+        @media (max-width: 768px) {
+          /* Hero: full bleed photo, text at bottom */
+          .hero-grad-desktop { display: none; }
+          .hero-grad-mobile {
+            display: block; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(6,13,26,0.98) 0%, rgba(6,13,26,0.55) 50%, rgba(6,13,26,0.15) 100%);
+          }
+          .hero-content { padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px)); }
+          .hero-body-mobile  { display: block; }
+          .hero-body-desktop { display: none; }
+          .hero-ctas { flex-direction: column; gap: 0.6rem; }
+          .hero-btn-donate, .hero-btn-golf { width: 100%; text-align: center; padding: 1rem; }
+
+          /* Stats: 2×2 compact */
+          .stats-grid-4 { grid-template-columns: 1fr 1fr !important; }
+
+          /* Disease: no walls */
+          .disease-copy-mobile  { display: block; }
+          .disease-copy-desktop { display: none; }
+          .facts-grid { grid-template-columns: 1fr !important; }
+          .fact-body  { display: none; }
+          .rylee-block { padding: 2rem 1.5rem; }
+          .rylee-ctas { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+
+          /* Timeline: mobile cards */
+          .timeline-desktop-wrapper { display: none; }
+          .timeline-mobile-wrapper  { display: block; }
+
+          /* Puccini: stack */
+          .puccini-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+          .puccini-frame { display: none; }
+          .puccini-copy-mobile  { display: block; }
+          .puccini-copy-desktop { display: none; }
+
+          /* Packages: mobile version */
+          .packages-desktop { display: none; }
+          .packages-mobile  { display: block; }
         }
       ` }} />
     </>
