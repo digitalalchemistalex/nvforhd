@@ -26,7 +26,7 @@ export default function CausesPage() {
       <Nav />
 
       {/* Header — event photo as texture */}
-      <div style={{ position: 'relative', background: 'var(--deep)', padding: '11rem 5rem 5rem', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', background: 'var(--deep)', padding: 'clamp(7rem,12vw,11rem) var(--px) clamp(2rem,4vw,5rem)', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/hd-ribbon.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.07, filter: 'grayscale(20%)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,12,20,0.7) 0%, rgba(10,12,20,0.95) 100%)' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(201,168,76,0.25),transparent)' }} />
@@ -42,7 +42,7 @@ export default function CausesPage() {
       </div>
 
       {/* 2026 — current */}
-      <section style={{ background: 'var(--void)', padding: '7rem 5rem', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--void)', padding: 'var(--py-md) var(--px)', position: 'relative', overflow: 'hidden' }}>
         {/* Subtle event photo bg */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/event-green.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%', opacity: 0.06, filter: 'grayscale(30%)' }} />
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(201,168,76,0.25),transparent)' }} />
@@ -62,7 +62,7 @@ export default function CausesPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(2rem,5vw,6rem)', alignItems: 'start' }}>
             <ScrollReveal>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.95, color: 'rgba(245,242,234,0.75)', fontWeight: 300, marginBottom: '1.5rem' }}>
                 For 2026 we are returning to support the <strong style={{ color: '#fff', fontWeight: 600 }}>UC Davis Huntington&apos;s Disease Center of Excellence</strong> — the only specialty HD clinic serving Northern Nevada and our own beautiful Christine.
@@ -100,7 +100,7 @@ export default function CausesPage() {
       </section>
 
       {/* 2025 */}
-      <section style={{ background: 'var(--deep)', padding: '7rem 5rem', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--deep)', padding: 'var(--py-md) var(--px)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(245,242,234,0.08),transparent)' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/event-group-1.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.05, filter: 'grayscale(40%)' }} />
 
@@ -136,7 +136,7 @@ export default function CausesPage() {
       </section>
 
       {/* 2024 — with real Puccini letter image */}
-      <section style={{ background: 'var(--void)', padding: '7rem 5rem', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--void)', padding: 'var(--py-md) var(--px)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(245,242,234,0.08),transparent)' }} />
 
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
@@ -154,7 +154,7 @@ export default function CausesPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(2rem,5vw,6rem)', alignItems: 'start' }}>
             <div>
               <ScrollReveal>
                 <p style={{ fontSize: '1.05rem', lineHeight: 1.95, color: 'rgba(245,242,234,0.72)', fontWeight: 300, marginBottom: '1.5rem' }}>
