@@ -162,37 +162,50 @@ export default function SponsorsSection() {
 
           {/* ── Become sponsor CTA ── */}
           <ScrollReveal style={{ marginTop: '4rem' }}>
+            {/* Flip: white card on cream section — maximum contrast, stands out from dark sponsors above */}
             <div style={{
+              background: 'var(--white)',
+              border: '2px solid var(--blue)',
+              padding: 'clamp(2.5rem,4vw,4rem)',
               display: 'grid',
               gridTemplateColumns: '1fr auto',
-              gap: '3rem',
+              gap: 'clamp(2rem,4vw,4rem)',
               alignItems: 'center',
-              padding: 'clamp(2rem,3vw,3rem) clamp(2rem,3vw,3.5rem)',
-              background: 'var(--navy)',
-              borderLeft: '4px solid var(--blue-hd)',
-              flexWrap: 'wrap',
-            }}>
-              <div>
-                <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--white-dimmer)', fontWeight: 600, marginBottom: '0.75rem' }}>2026 Opportunities</div>
-                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2.2rem)', fontWeight: 300, color: '#fff', marginBottom: '0.5rem' }}>Become a 2026 Sponsor</h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--white-dim)', lineHeight: 1.7 }}>
-                  Title ($3,500), Gold ($3,000), Lunch ($3,000), hole signs ($100), and custom partnerships available.
+              position: 'relative',
+              overflow: 'hidden',
+            }} className="sponsor-cta-grid">
+              {/* Attention corner — can't miss it */}
+              <div style={{ position: 'absolute', top: 0, left: 0, background: 'var(--blue)', color: '#fff', fontSize: '0.52rem', letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 700, padding: '0.35rem 1rem' }}>
+                Limited Spots · 2026
+              </div>
+              <div style={{ paddingTop: '1rem' }}>
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3vw,2.8rem)', fontWeight: 300, color: 'var(--ink)', marginBottom: '0.75rem', lineHeight: 1.1 }}>
+                  Put your name on the fight<br />against Huntington's Disease.
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--ink-mid)', lineHeight: 1.75, marginBottom: '0' }}>
+                  Title ($3,500) · Gold ($3,000) · Lunch ($3,000) · Hole signs ($100) · Custom packages available.<br />
+                  <strong style={{ color: 'var(--ink)' }}>Your logo on the course. Your name in the fight. 100% goes to UC Davis HD families.</strong>
                 </p>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', alignItems: 'center', flexShrink: 0 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'stretch', flexShrink: 0, minWidth: '180px' }}>
                 <a
                   href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=sponsors-cta"
                   style={{
-                    background: 'var(--blue-hd)', color: '#fff', padding: '1rem 2.2rem',
-                    fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-                    fontWeight: 700, textDecoration: 'none', display: 'inline-block',
-                    fontFamily: 'var(--sans)', whiteSpace: 'nowrap', transition: 'background 0.25s',
+                    display: 'block', textAlign: 'center',
+                    background: 'var(--blue)', color: '#fff',
+                    padding: '1.1rem 1.5rem',
+                    fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+                    fontWeight: 700, textDecoration: 'none',
+                    fontFamily: 'var(--sans)', whiteSpace: 'nowrap',
+                    transition: 'background 0.2s, transform 0.2s',
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.background='#1A3A9E')}
-                  onMouseLeave={e => (e.currentTarget.style.background='var(--blue-hd)')}>
-                  Enquire Now →
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--blue-dark)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'var(--blue)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}>
+                  Get Sponsorship Info →
                 </a>
-                <a href="tel:7756918860" style={{ fontSize: '0.68rem', color: 'var(--white-dimmer)', textDecoration: 'none' }}>775-691-8860</a>
+                <a href="tel:7756918860" style={{ display: 'block', textAlign: 'center', fontSize: '0.72rem', color: 'var(--ink-dim)', textDecoration: 'none', fontWeight: 500 }}>
+                  📞 775-691-8860 · Call Sean
+                </a>
               </div>
             </div>
           </ScrollReveal>
