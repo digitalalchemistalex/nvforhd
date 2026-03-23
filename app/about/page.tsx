@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About Us — Board Members',
+  title: 'About Us — Board Members | NVforHD',
   description: "Meet the NVforHD board: Sean Schaeffer (founder), Mike Milligan, Michael Eskuchen, and John McGinnes. United by one mission — cure Huntington's Disease.",
 }
 
@@ -48,83 +49,58 @@ const board = [
   },
 ]
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  itemListElement: board.map((m, i) => ({
-    '@type': 'ListItem', position: i + 1,
-    item: { '@type': 'Person', name: m.name, jobTitle: m.role, worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD' } },
-  })),
-}
-
 export default function AboutPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <Nav />
+      <PageHero
+        kicker="About NVforHD"
+        headline={<>The people<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.35)' }}>behind</em> the fight.</>}
+        sub="Four board members united by a single mission — raise awareness, raise funds, and fight Huntington's Disease until there is a cure."
+        photo="/images/event-crowd.jpg"
+        photoPosition="center 30%"
+        stat1={{ n: '4', label: 'Board Members' }}
+        stat2={{ n: '$50K+', label: 'Raised together' }}
+        stat3={{ n: '3', label: 'Years fighting' }}
+      />
 
-      {/* Header with event crowd photo */}
-      <div style={{ position: 'relative', background: 'var(--deep)', padding: 'clamp(7rem,12vw,11rem) var(--px) clamp(2rem,4vw,5rem)', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/event-crowd.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%', opacity: 0.1, filter: 'grayscale(20%)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,12,20,0.8) 0%, rgba(10,12,20,0.95) 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(201,168,76,0.25),transparent)' }} />
-        <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative' }}>
-          <div className="kicker" style={{ marginBottom: '1.5rem' }}>About NVforHD</div>
-          <h1 className="display" style={{ fontSize: 'clamp(3rem,6vw,7rem)', marginBottom: '1.5rem' }}>
-            The people<br /><em>behind the fight.</em>
-          </h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(245,242,234,0.62)', fontWeight: 300, maxWidth: '560px', lineHeight: 1.8 }}>
-            Four board members united by a single mission — raise awareness, raise funds, and fight Huntington&apos;s Disease until there is a cure.
-          </p>
-        </div>
-      </div>
-
-      {/* Board grid */}
-      <section style={{ background: 'var(--void)', padding: 'var(--py-md) var(--px)' }}>
-        <div style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(201,168,76,0.06)' }}>
-          {board.map(({ name, role, img, bio }, i) => (
-            <ScrollReveal key={name} delay={i % 2 === 0 ? 0 : 0.1}>
-              <div style={{
-                background: 'var(--void)',
-                padding: 'clamp(2rem,4vw,5rem)',
-                display: 'grid',
-                gridTemplateColumns: '280px 1fr',
-                gap: '5rem',
-                alignItems: 'start',
-              }}>
-                {/* Photo */}
-                <div>
-                  <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '2px' }}>
-                    <Image
-                      src={img}
-                      alt={`${name} — ${role}, NVforHD`}
-                      width={280} height={340}
-                      style={{ width: '100%', height: '340px', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(10%)', display: 'block', transition: 'filter 0.3s' }}
-                    />
-                    {/* Gold border on hover handled via CSS would need client — keep simple */}
-                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
-                  </div>
-                  <div style={{ marginTop: '1.5rem' }}>
-                    <div style={{ fontFamily: 'var(--serif)', fontSize: '1.5rem', fontWeight: 400, color: '#fff', marginBottom: '0.3rem' }}>{name}</div>
-                    <div style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>{role}</div>
-                  </div>
-                </div>
-
-                {/* Bio */}
-                <div>
-                  {bio.map((p, j) => (
-                    <p key={j} style={{ fontSize: '1rem', lineHeight: 1.9, color: 'rgba(245,242,234,0.7)', fontWeight: 300, marginBottom: j < bio.length - 1 ? '1.2rem' : 0 }}>{p}</p>
-                  ))}
-                </div>
+      {/* Board — alternating light/dark rows */}
+      {board.map(({ name, role, img, bio }, i) => (
+        <section key={name} className={i % 2 === 0 ? 'section-light on-light' : 'section-light on-light'} style={{ background: i % 2 === 0 ? 'var(--cream)' : '#fff', position: 'relative' }}>
+          {i === 0 && <div className="divider-dark" />}
+          <div className="inner" style={{ padding: 'clamp(3rem,5vw,6rem) var(--px)', display: 'grid', gridTemplateColumns: 'clamp(200px,22vw,300px) 1fr', gap: 'clamp(2.5rem,5vw,6rem)', alignItems: 'start' }}>
+            <ScrollReveal delay={0.05}>
+              <div style={{ position: 'relative' }}>
+                <Image
+                  src={img}
+                  alt={`${name} — ${role}, NVforHD`}
+                  width={300} height={360}
+                  style={{ width: '100%', height: 'clamp(220px,30vw,360px)', objectFit: 'cover', objectPosition: 'top', display: 'block', borderRadius: '2px' }}
+                />
+                {/* Gold accent */}
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, var(--gold-dark), transparent)' }} />
+              </div>
+              <div style={{ marginTop: '1.25rem' }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.2rem,2vw,1.6rem)', color: 'var(--ink)', fontWeight: 400 }}>{name}</div>
+                <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold-dark)', fontWeight: 600, marginTop: '0.3rem' }}>{role}</div>
               </div>
             </ScrollReveal>
-          ))}
 
-          {/* 5th member placeholder */}
-          <div style={{ background: 'rgba(245,242,234,0.02)', padding: '3rem 5rem', border: '1px dashed rgba(245,242,234,0.08)', display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            <div style={{ width: '80px', height: '80px', borderRadius: '50%', border: '1px dashed rgba(245,242,234,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(245,242,234,0.2)', fontSize: '1.5rem' }}>?</div>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', fontStyle: 'italic', color: 'rgba(245,242,234,0.25)' }}>5th board member — coming soon</div>
+            <ScrollReveal delay={0.15}>
+              {bio.map((p, j) => (
+                <p key={j} style={{ fontSize: 'clamp(0.9rem,1.2vw,1rem)', lineHeight: 1.9, color: 'var(--ink-dim)', fontWeight: 300, marginBottom: j < bio.length - 1 ? '1.25rem' : 0 }}>{p}</p>
+              ))}
+            </ScrollReveal>
           </div>
+          <div style={{ height: '1px', background: 'var(--cream-3)', margin: '0 var(--px)' }} />
+        </section>
+      ))}
+
+      {/* 5th member placeholder */}
+      <section className="section-light on-light" style={{ background: 'var(--cream)', padding: 'clamp(2rem,4vw,4rem) var(--px)' }}>
+        <div className="inner" style={{ display: 'flex', alignItems: 'center', gap: '2rem', opacity: 0.4 }}>
+          <div style={{ width: '72px', height: '72px', borderRadius: '50%', border: '1.5px dashed var(--ink-dimmer)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--ink-dimmer)', fontSize: '1.5rem', flexShrink: 0 }}>?</div>
+          <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.2rem', color: 'var(--ink-dim)' }}>5th board member — coming soon</div>
         </div>
       </section>
 
