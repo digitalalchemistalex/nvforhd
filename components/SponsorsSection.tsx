@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
@@ -127,7 +128,7 @@ export default function SponsorsSection() {
                 ;(e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(192,200,216,0.15)'
               }}
             >
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, #C0C8D8, transparent)', position: 'relative' as never }} />
+              <div style={{ height: '2px', background: 'linear-gradient(90deg, #C0C8D8, transparent)' }} />
               {/* Logo block */}
               <div style={{ background: '#fff', padding: '3rem 4rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px' }}>
                 <Image
