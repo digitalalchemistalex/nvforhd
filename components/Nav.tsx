@@ -9,7 +9,7 @@ const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfo
 
 const NAV_LINKS = [
   { href: '/',          label: 'Home',       sub: null },
-  { href: '/cause',     label: 'The Cause',  sub: 'What is Huntington\'s Disease' },
+  { href: '/cause',     label: 'The Cause',  sub: "What is Huntington's Disease" },
   { href: '/story',     label: 'Our Story',  sub: '$50K raised · 3 years' },
   { href: '/impact',    label: 'Impact',     sub: 'The Puccini family · IVF success' },
   { href: '/causes',    label: 'Causes',     sub: '2024 HelpCureHD · 2025/26 UC Davis' },
@@ -20,13 +20,26 @@ const NAV_LINKS = [
   { href: '/contact',   label: 'Contact',    sub: 'info@nvforhd.com · 775-691-8860' },
 ]
 
+// Mobile tab bar — 5 primary destinations only
+const TAB_ITEMS = [
+  { href: '/',        label: 'Home',    icon: HomeIcon },
+  { href: '/story',   label: 'Story',   icon: StoryIcon },
+  { href: '/causes',  label: 'Causes',  icon: CausesIcon },
+  { href: DONATE,     label: 'Donate',  icon: HeartIcon,  external: true, primary: true },
+  { href: '/contact', label: 'Contact', icon: ContactIcon },
+]
+
 export default function Nav() {
-  const [scrolled, setScrolled]   = useState(false)
-  const [menuOpen, setMenuOpen]   = useState(false)
+  const [scrolled, setScrolled]     = useState(false)
+  const [menuOpen, setMenuOpen]     = useState(false)
+  const [ctaVisible, setCtaVisible] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60)
+      setCtaVisible(window.scrollY > window.innerHeight * 0.7)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -40,139 +53,221 @@ export default function Nav() {
 
   const close = useCallback(() => setMenuOpen(false), [])
 
-  const navBg = menuOpen
-    ? 'rgba(8,12,24,0.99)'
-    : scrolled
-      ? 'rgba(8,12,24,0.97)'
-      : 'rgba(5,6,10,0.2)'
-
   return (
     <>
+      {/* ── DESKTOP NAV ── */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 700,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: scrolled || menuOpen ? '0.85rem clamp(1.25rem,4vw,4rem)' : '1.6rem clamp(1.25rem,4vw,4rem)',
-        background: navBg,
-        backdropFilter: 'blur(24px)',
-        borderBottom: scrolled || menuOpen ? '1px solid rgba(29,78,216,0.2)' : '1px solid transparent',
+        padding: scrolled ? '0.75rem clamp(1.25rem,4vw,4rem)' : '1.4rem clamp(1.25rem,4vw,4rem)',
+        background: scrolled ? 'rgba(6,13,26,0.97)' : menuOpen ? 'rgba(6,13,26,0.99)' : 'rgba(6,13,26,0.15)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: scrolled ? '1px solid rgba(29,78,216,0.2)' : '1px solid transparent',
         transition: 'padding 0.4s ease, background 0.4s ease, border-color 0.4s ease',
       }}>
+        {/* Logo */}
         <Link href="/" onClick={close} style={{ flexShrink: 0, zIndex: 10 }}>
-          <Image
-            src="/images/logo.png"
-            alt="NVforHD — Cure Huntington's Disease"
-            width={110} height={80}
-            style={{ height: '38px', width: 'auto', mixBlendMode: 'screen', filter: 'brightness(1.15)', display: 'block' }}
-            priority
-          />
+          <Image src="/images/logo.png" alt="NVforHD" width={110} height={80}
+            style={{ height: '36px', width: 'auto', mixBlendMode: 'screen', filter: 'brightness(1.2)', display: 'block' }}
+            priority />
         </Link>
 
-        <ul className="desktop-nav" style={{ display: 'flex', gap: '1.8rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
+        {/* Desktop links */}
+        <ul style={{ display: 'flex', gap: '1.6rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }} className="desktop-nav">
           {NAV_LINKS.filter(l => l.href !== '/').map(({ href, label }) => (
             <li key={href}>
               <Link href={href} style={{
-                color: 'rgba(245,242,234,0.68)', textDecoration: 'none',
-                fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-                fontWeight: 400, transition: 'color 0.2s', fontFamily: 'var(--sans)',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--blue-light)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(249,248,246,0.68)')}
-              >{label}</Link>
+                color: pathname === href ? '#fff' : 'rgba(249,248,246,0.62)',
+                textDecoration: 'none', fontSize: '0.64rem',
+                letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: pathname === href ? 600 : 400,
+                transition: 'color 0.2s', fontFamily: 'var(--sans)',
+                borderBottom: pathname === href ? '1.5px solid var(--blue)' : '1.5px solid transparent',
+                paddingBottom: '2px',
+              }}>
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
 
-        <div className="desktop-nav" style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
-          <a href={DONATE} target="_blank" rel="noopener" className="btn-gold"
-            style={{ padding: '0.6rem 1.3rem', fontSize: '0.66rem' }}>
-            Donate Now
-          </a>
-          <a href={GOLF} target="_blank" rel="noopener" className="btn-outline-gold"
-            style={{ padding: '0.6rem 1.1rem', fontSize: '0.66rem' }}>
+        {/* Desktop CTAs — static + sticky donate after scroll */}
+        <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', transition: 'all 0.3s' }} className="desktop-nav">
+          {ctaVisible && (
+            <a href={DONATE} target="_blank" rel="noopener" style={{
+              background: 'var(--blue)', color: '#fff', padding: '0.6rem 1.3rem',
+              fontSize: '0.64rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+              fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)',
+              animation: 'fadeup 0.3s ease both',
+            }}>
+              Donate Now
+            </a>
+          )}
+          <a href={GOLF} target="_blank" rel="noopener" style={{
+            border: '1.5px solid rgba(249,248,246,0.3)', color: 'rgba(249,248,246,0.8)',
+            padding: '0.58rem 1.1rem', fontSize: '0.64rem', letterSpacing: '0.1em',
+            textTransform: 'uppercase', textDecoration: 'none', fontFamily: 'var(--sans)', fontWeight: 400,
+          }}>
             Play May 29 ↗
           </a>
         </div>
 
-        <button
-          onClick={() => setMenuOpen(o => !o)}
-          className="hamburger"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          style={{
-            background: 'none', border: 'none', cursor: 'pointer',
-            padding: '0.5rem', zIndex: 10, display: 'none',
-            flexDirection: 'column', justifyContent: 'center', gap: '5px',
-          }}
-        >
+        {/* Hamburger — desktop only, hidden on mobile (tab bar handles mobile) */}
+        <button onClick={() => setMenuOpen(o => !o)} className="hamburger"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', zIndex: 10, display: 'none', flexDirection: 'column', justifyContent: 'center', gap: '5px' }}>
           <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--snow)', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(4.5px,4.5px)' : 'none' }} />
           <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--snow)', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
           <span style={{ display: 'block', width: '22px', height: '1.5px', background: 'var(--snow)', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(4.5px,-4.5px)' : 'none' }} />
         </button>
       </nav>
 
+      {/* Desktop slide-down menu */}
       <div style={{
         position: 'fixed', inset: 0, zIndex: 680,
-        background: 'rgba(8,12,24,0.98)',
-        backdropFilter: 'blur(24px)',
+        background: 'rgba(6,13,26,0.98)', backdropFilter: 'blur(24px)',
         transform: menuOpen ? 'translateY(0)' : 'translateY(-100%)',
         transition: 'transform 0.45s cubic-bezier(0.16,1,0.3,1)',
         overflowY: 'auto',
         paddingTop: 'clamp(5rem,14vw,8rem)',
         paddingBottom: 'clamp(2rem,6vw,4rem)',
-        paddingLeft:  'clamp(1.5rem,6vw,3.5rem)',
+        paddingLeft: 'clamp(1.5rem,6vw,3.5rem)',
         paddingRight: 'clamp(1.5rem,6vw,3.5rem)',
-        display: 'flex',
-        flexDirection: 'column',
+        display: 'flex', flexDirection: 'column',
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, var(--blue), rgba(29,78,216,0.3))' }} />
-
         <nav style={{ flex: 1 }}>
           {NAV_LINKS.map(({ href, label, sub }, i) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={close}
-              style={{
-                display: 'block',
-                padding: '1.25rem 0',
-                borderBottom: '1px solid rgba(245,242,234,0.07)',
-                textDecoration: 'none',
-                animation: menuOpen ? `fadeup 0.5s ease ${i * 0.05 + 0.1}s both` : 'none',
-              }}
-            >
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,5vw,2.5rem)', fontWeight: 300, color: '#fff', lineHeight: 1, marginBottom: sub ? '0.35rem' : 0 }}>
-                {label}
-              </div>
-              {sub && (
-                <div style={{ fontSize: '0.72rem', color: 'rgba(245,242,234,0.38)', fontWeight: 300, letterSpacing: '0.02em' }}>{sub}</div>
-              )}
+            <Link key={href} href={href} onClick={close} style={{
+              display: 'block', padding: '1.25rem 0',
+              borderBottom: '1px solid rgba(249,248,246,0.07)',
+              textDecoration: 'none',
+              animation: menuOpen ? `fadeup 0.5s ease ${i * 0.04 + 0.1}s both` : 'none',
+            }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,5vw,2.5rem)', fontWeight: 300, color: pathname === href ? 'var(--blue-faint)' : '#fff', lineHeight: 1, marginBottom: sub ? '0.35rem' : 0 }}>{label}</div>
+              {sub && <div style={{ fontSize: '0.72rem', color: 'rgba(249,248,246,0.38)', fontWeight: 300 }}>{sub}</div>}
             </Link>
           ))}
         </nav>
-
-        <div style={{
-          marginTop: '2.5rem',
-          display: 'flex', flexDirection: 'column', gap: '0.75rem',
-          animation: menuOpen ? 'fadeup 0.5s ease 0.55s both' : 'none',
-        }}>
+        <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', animation: menuOpen ? 'fadeup 0.5s ease 0.5s both' : 'none' }}>
           <a href={DONATE} target="_blank" rel="noopener" onClick={close}
-            className="btn-gold"
-            style={{ display: 'block', textAlign: 'center', padding: '1.1rem', fontSize: '0.75rem' }}>
+            style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
             Donate Now — from $100
           </a>
           <a href={GOLF} target="_blank" rel="noopener" onClick={close}
-            className="btn-outline-gold"
-            style={{ display: 'block', textAlign: 'center', padding: '1.1rem', fontSize: '0.75rem' }}>
+            style={{ display: 'block', textAlign: 'center', border: '1.5px solid rgba(249,248,246,0.25)', color: 'rgba(249,248,246,0.8)', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
             Play Golf — May 29, 2026 ↗
           </a>
           <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
-            <a href="tel:7756918860" style={{ fontSize: '0.78rem', color: 'rgba(245,242,234,0.45)', textDecoration: 'none' }}>
-              📞 775-691-8860 &nbsp;·&nbsp; Call Sean
-            </a>
+            <a href="tel:7756918860" style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.35)', textDecoration: 'none' }}>📞 775-691-8860 · Call Sean</a>
           </div>
         </div>
       </div>
 
+      {/* ══════════════════════════════
+          MOBILE BOTTOM TAB BAR
+          Replaces hamburger on <900px
+          Always visible. 5 primary tabs.
+          Active tab: blue indicator + label
+      ══════════════════════════════ */}
+      <div style={{
+        display: 'none',
+        position: 'fixed',
+        bottom: 0, left: 0, right: 0,
+        zIndex: 800,
+        background: 'rgba(6,13,26,0.98)',
+        backdropFilter: 'blur(20px)',
+        borderTop: '1px solid rgba(29,78,216,0.25)',
+        paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+        height: 'calc(58px + env(safe-area-inset-bottom, 0px))',
+      }} className="mobile-tab-bar">
+        {TAB_ITEMS.map(({ href, label, icon: Icon, external, primary }) => {
+          const isActive = !external && (href === '/' ? pathname === '/' : pathname.startsWith(href))
+          return (
+            <a
+              key={href}
+              href={external ? href : undefined}
+              {...(!external ? { onClick: (e) => { e.preventDefault(); window.location.href = href } } : {})}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener' : undefined}
+              style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                flex: 1, gap: '3px', textDecoration: 'none', cursor: 'pointer',
+                padding: '8px 0',
+                background: primary ? 'var(--blue)' : 'transparent',
+                position: 'relative',
+                transition: 'background 0.2s',
+              }}>
+              {isActive && !primary && (
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '24px', height: '2px', background: 'var(--blue)', borderRadius: '0 0 2px 2px' }} />
+              )}
+              <Icon active={isActive} primary={!!primary} />
+              <span style={{
+                fontSize: '0.56rem', letterSpacing: '0.08em', textTransform: 'uppercase',
+                fontFamily: 'var(--sans)', fontWeight: isActive || primary ? 700 : 400,
+                color: primary ? '#fff' : isActive ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)',
+                lineHeight: 1,
+              }}>{label}</span>
+            </a>
+          )
+        })}
+      </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 900px) {
+          .desktop-nav { display: none !important; }
+          .hamburger   { display: flex !important; }
+          .mobile-tab-bar { display: flex !important; }
+          body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+        }
+        @media (min-width: 901px) {
+          .hamburger { display: none !important; }
+          .mobile-tab-bar { display: none !important; }
+        }
+        .mobile-tab-bar a:active { opacity: 0.7; }
+      ` }} />
     </>
+  )
+}
+
+// ── SVG Tab Icons ──
+function HomeIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  )
+}
+function StoryIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+    </svg>
+  )
+}
+function CausesIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+    </svg>
+  )
+}
+function HeartIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill={primary ? 'rgba(255,255,255,0.3)' : 'none'} stroke={c} strokeWidth={primary ? 2 : active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+    </svg>
+  )
+}
+function ContactIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
   )
 }
