@@ -305,3 +305,8 @@ a { color: inherit; }
 .on-dark p strong { color: var(--snow); }
 .on-dark h1, .on-dark h2, .on-dark h3 { color: var(--snow); }
 .on-dark .ink-dimmer { color: var(--snow-faint); }
+
+/* ─── TAB BAR BODY PADDING ─── */
+@media (max-width: 1100px) {
+  body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)) !important; }
+}

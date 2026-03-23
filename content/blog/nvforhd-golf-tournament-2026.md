@@ -1,85 +1,67 @@
 ---
-title: "NVforHD Golf Tournament 2026: Everything You Need to Know"
-excerpt: "May 29, 2026. Gray's Crossing Golf Club, Truckee, CA. Here is what to expect, how to register, and why this round of golf matters more than most."
-date: "2026-03-01"
+title: "May 29, 2026: Why Gray's Crossing Is Where You Want to Be This Memorial Weekend"
+excerpt: "Peter Jacobsen designed it. The Sierra Nevada surrounds it. And every dollar you spend there goes to families fighting Huntington's Disease. Here's everything you need to know."
+date: "2026-03-20"
 author: "NVforHD"
 category: "Event"
 coverImage: "/images/course-1.jpg"
-coverAlt: "Gray's Crossing Golf Club fairway in Truckee, California"
-readingTime: 4
+coverAlt: "Gray's Crossing Golf Club, Truckee CA — venue for the 2026 NVforHD charity tournament"
+readingTime: 5
 featured: false
 ---
 
-The third annual NVforHD Charity Golf Tournament is happening on **Friday, May 29, 2026** at Gray's Crossing Golf Club in Truckee, California.
+The 2024 event sold out before half of Reno knew it was happening. The 2025 tournament did the same. In 2026, we're giving you more notice.
 
-Our first two events raised over $50,000 combined. Our 2024 tournament sold out. This year we are going bigger — more players, more sponsors, and more impact for the UC Davis Huntington's Disease Center of Excellence.
+**May 29, 2026. Gray's Crossing Golf Club. Truckee, CA. 12:00 PM Shotgun.**
 
-Here is everything you need to know.
+Register before this one fills too.
 
-## The Venue: Gray's Crossing Golf Club
+## The Course
 
-Gray's Crossing is a Truckee classic — a stunning Tom Weiskopf-designed mountain course carved through the Sierra Nevada pines at nearly 6,000 feet elevation.
+Gray's Crossing is a Peter Jacobsen/Jim Hardy design in the Sierra Nevada pines above Truckee, just off Donner Pass Road. Elevation: around 6,000 feet. Views that make you stop mid-swing.
 
-The course is known for its natural beauty, dramatic elevation changes, and conditions that reward every skill level. Whether you are a scratch golfer or a once-a-year hacker, it is a genuinely spectacular place to spend a day.
+The course plays differently than anything in the valley. Narrow tree-lined fairways. Elevation changes that demand course management. A layout that rewards smarts over power.
 
-Truckee sits about 30 minutes north of Lake Tahoe, easily accessible from Reno, Sacramento, the Bay Area, and beyond.
+For the 2024 inaugural event, we played Old Greenwood — another Nicklaus design in the same neighborhood. Gray's Crossing is the upgrade.
 
 ## The Format
 
-The tournament runs as a **four-person scramble** — the most enjoyable format for groups of all abilities. You hit, you pick the best shot, everyone plays from there. No one gets left behind.
+Four-person scramble. Everyone hits, everyone picks the best shot, play continues from there. It's golf that rewards a good team more than an individual handicap.
 
-Expect:
-- Morning shotgun start
-- Full round on the Gray's Crossing course
-- On-course activities and hole competitions
-- Post-round gathering, dinner, and awards
+Box lunch included. Post-round gathering.
 
-Full event schedule details are published closer to the date.
+Discount rooms at Atlantis Casino Resort Spa and Peppermill Resort Spa Casino in Reno — call Sean directly at 775-691-8860 for rates that won't be available anywhere else.
 
-## Where the Money Goes
+## The Cause
 
-Every dollar raised at this tournament is directed to the **UC Davis Huntington's Disease Center of Excellence** in Sacramento.
+100% of proceeds go to the UC Davis Huntington's Disease Center of Excellence in Sacramento — the only HD specialist clinic serving Northern Nevada families.
 
-This clinic is the only HD specialty care within reach of 90+ Northern Nevada and Sierra Foothills families. It operates on private donation. Our tournament funds go directly to keeping the specialized team — neurologists, psychiatrists, genetic counselors, social workers, and physical therapists — operational and accessible.
+No overhead. No administrative cut. The money you spend on your round goes directly to neurologists, psychiatrists, a genetic counselor, a social worker, and physical therapists who specialize in HD.
 
-This is not a vague charity donation. It is targeted, local, and traceable.
+90+ families in Reno, Sparks, and the Sierra Foothills rely on this clinic. They make a 130-mile drive to Sacramento because it is the only option.
 
-## Hotel Deals
+Your round of golf keeps that drive worth making.
 
-Sean Schaeffer has arranged **discounted room blocks** at the Atlantis Casino Resort Spa and the Peppermill Resort in Reno for tournament participants.
+## Packages
 
-📞 Call Sean directly at **775-691-8860** for discount room details and availability.
+**Foursome — $880.** Four golfers, box lunch, all day.
 
-Both properties are about an hour from Truckee — a great option if you want to make a weekend of it in Reno.
+**Single entry — $220.** Play with a group we'll form for you, or bring three friends and submit separately.
 
-## How to Register
+**Sponsorships from $3,500.** Title, Gold, and Lunch sponsorships available. Your logo on the course, in the program, and in front of every golfer all day.
 
-Registration and payment are handled through our booking partner TripSee.
+**Hole signs — $100.** Your name on the course. 18 tee boxes. Every group sees you.
 
-Spots are limited. The 2024 event sold out — do not wait.
+**Can't make it? — From $100.** Donate without attending. Same cause, same impact.
 
-**[Register and reserve your spot →](https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament)**
+## 2024 Sold Out. 2025 Sold Out. Don't Miss 2026.
 
-## Can't Play? Donate Directly.
+The inaugural 2024 event at Old Greenwood raised $25,000 for HelpCureHD. That money funded IVF for Brandon and Rylee Puccini — a young couple carrying the HD gene. Rylee is now pregnant with an HD-free baby.
 
-You do not have to swing a club to make a difference. If you cannot join us on the course, a direct donation to NVforHD goes to the same cause.
+One tournament. One couple. One generation freed from this disease.
 
-Contact us at **info@nvforhd.com** or call **775-691-8860** to donate or ask any questions about the event.
+In 2025 we shifted focus to the UC Davis clinic — protecting specialist care for the 90+ Nevada families already living with HD.
 
-## Sponsorship Opportunities
+In 2026 we return. Same commitment. Different course. Same mission.
 
-Businesses looking for meaningful community visibility can sponsor the tournament at several levels:
-
-- **Title Sponsor** — $3,500
-- **Gold Sponsor** — $3,000
-- **Lunch Sponsor** — $3,000
-- **Hole Sponsor** — $100+
-
-Sponsors receive recognition on the course, on the website, and in all event materials. More importantly, they become part of a community fighting one of the cruelest diseases in medicine.
-
-Email **info@nvforhd.com** to enquire about 2026 sponsorship.
-
----
-
-We will see you on May 29. Bring your A-game — or just bring yourself. Either way, you will be making a real difference.
----
+Book your spot. Call Sean at 775-691-8860 for hotel details, group packages, or sponsorship questions. We'll see you on the course.

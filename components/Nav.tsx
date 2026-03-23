@@ -73,7 +73,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop links */}
-        <ul style={{ display: 'flex', gap: '1.6rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }} className="desktop-nav">
+        <ul style={{ display: 'flex', gap: '1.1rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }} className="desktop-nav">
           {NAV_LINKS.filter(l => l.href !== '/').map(({ href, label }) => (
             <li key={href}>
               <Link href={href} style={{
@@ -213,13 +213,13 @@ export default function Nav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
           .desktop-nav { display: none !important; }
           .hamburger   { display: flex !important; }
           .mobile-tab-bar { display: flex !important; }
-          body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+          body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)) !important; }
         }
-        @media (min-width: 901px) {
+        @media (min-width: 1101px) {
           .hamburger { display: none !important; }
           .mobile-tab-bar { display: none !important; }
         }
