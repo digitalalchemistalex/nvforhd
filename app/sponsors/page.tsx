@@ -96,9 +96,9 @@ export default function SponsorsPage() {
             {/* UC Davis */}
             <ScrollReveal>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div className="sponsor-logo-box" style={{ background: 'var(--cream-2)', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)' }} />
-                  <Image src="/images/uc-davis.png" alt="UC Davis Health" width={280} height={120} style={{ width: '100%', maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
+                <div className="sponsor-logo-box" style={{ background: 'var(--cream-2)', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)', zIndex: 1 }} />
+                  <Image src="/images/uc-davis.png" alt="UC Davis Health" width={400} height={180} style={{ width: '100%', height: '180px', objectFit: 'contain', padding: '2rem' }} />
                 </div>
                 <div style={{ padding: 'clamp(1.75rem,3vw,2.75rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.5rem' }}>UC Davis Health</h3>
@@ -116,9 +116,9 @@ export default function SponsorsPage() {
             {/* C-Hawk */}
             <ScrollReveal delay={0.1}>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div className="sponsor-logo-box" style={{ background: '#1A3A1A', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)' }} />
-                  <Image src="/images/c-hawk.png" alt="C-Hawk Technology" width={280} height={120} style={{ width: '100%', maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
+                <div className="sponsor-logo-box" style={{ background: '#1A3A1A', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)', zIndex: 1 }} />
+                  <Image src="/images/c-hawk.png" alt="C-Hawk Technology" width={400} height={180} style={{ width: '100%', height: '180px', objectFit: 'contain', padding: '2rem' }} />
                 </div>
                 <div style={{ padding: 'clamp(1.75rem,3vw,2.75rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.5rem' }}>C-Hawk Technology</h3>
@@ -136,9 +136,9 @@ export default function SponsorsPage() {
             {/* Fleet Heating & Air Conditioning */}
             <ScrollReveal delay={0.2}>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div className="sponsor-logo-box" style={{ background: '#000', padding: 'clamp(1rem,2vw,2rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
+                <div className="sponsor-logo-box" style={{ background: '#000', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)', zIndex: 1 }} />
-                  <Image src="/images/fleet-heating-ac.png" alt="Fleet Heating & Air Conditioning" width={280} height={120} style={{ width: '100%', maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
+                  <Image src="/images/fleet-heating-ac.png" alt="Fleet Heating & Air Conditioning" width={400} height={180} style={{ width: '100%', height: '180px', objectFit: 'contain', padding: '1rem' }} />
                 </div>
                 <div style={{ padding: 'clamp(1.75rem,3vw,2.75rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.5rem' }}>Fleet Heating &amp; Air Conditioning</h3>
