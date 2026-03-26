@@ -59,7 +59,7 @@ export default function SponsorsSection() {
           </ScrollReveal>
 
           {/* ── UC Davis + C-Hawk side by side ── */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', marginBottom: '2px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2px', marginBottom: '2px' }}>
             {[
               {
                 href: LINKS.ucDavis,
@@ -83,11 +83,20 @@ export default function SponsorsSection() {
                 linkLabel: 'c-hawk.com',
                 accentTop: '#E8C97A',
               },
+              {
+                href: null,
+                logo: '/images/fleet-heating-ac.png', logoBg: '#000',
+                alt: 'Fleet Heating & Air Conditioning',
+                badgeText: 'Gold Sponsor',
+                badgeBg: '#E8C97A', badgeColor: '#0F1729',
+                name: 'Fleet Heating & Air Conditioning',
+                desc: 'Keeping Northern Nevada comfortable — and proudly helping NVforHD keep the fight against Huntington\'s Disease alive.',
+                linkLabel: null,
+                accentTop: '#E8C97A',
+              },
             ].map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
-              <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}`, transition: 'background 0.3s' }}
-                onMouseEnter={e => (e.currentTarget.style.background='rgba(255,255,255,0.06)')}
-                onMouseLeave={e => (e.currentTarget.style.background='rgba(255,255,255,0.03)')}>
+              <div key={name}
+                style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}` }}>
                 <div style={{ background: logoBg, padding: 'clamp(1.5rem,3vw,3rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '130px' }}>
                   <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '180px', height: 'auto', objectFit: 'contain' }} />
                 </div>
@@ -95,11 +104,13 @@ export default function SponsorsSection() {
                   <div style={{ display: 'inline-block', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.75rem', background: badgeBg, color: badgeColor, padding: '0.25rem 0.6rem' }}>{badgeText}</div>
                   <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', color: '#fff', marginBottom: '0.4rem' }}>{name}</div>
                   <p style={{ fontSize: '0.82rem', color: 'var(--white-dim)', lineHeight: 1.65, marginBottom: '1rem' }}>{desc}</p>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem' }}>
-                    {linkLabel} ↗
-                  </div>
+                  {linkLabel && (
+                    <a href={href ?? undefined} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
+                      {linkLabel} ↗
+                    </a>
+                  )}
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
