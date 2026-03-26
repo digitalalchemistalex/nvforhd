@@ -56,7 +56,7 @@ export default function StoryPage() {
             <ScrollReveal delay={0.2}>
               <div style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '1.75rem', marginBottom: '3rem' }}>
                 <p style={{ fontSize: 'clamp(1rem,1.6vw,1.2rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.8)', marginBottom: '1rem', fontWeight: 300 }}>
-                  Sean Schaeffer spent 30 years building companies, running operations, creating things. When his wife Christine was diagnosed with Huntington&apos;s Disease — a terminal, hereditary brain disorder with no cure — he did what builders do.
+                  Our Founder&apos;s wife Christine was diagnosed with Huntington&apos;s Disease in 2023. She&apos;s our inspiration and the reason we decided to join this fight.
                 </p>
                 <p style={{ fontSize: 'clamp(1rem,1.6vw,1.2rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.8)', fontWeight: 300 }}>
                   <strong style={{ color: '#fff' }}>He built something to fight it.</strong>

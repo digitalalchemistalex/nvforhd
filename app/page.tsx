@@ -77,13 +77,13 @@ export default function HomePage() {
 
           {/* Body — mobile: 1 sentence. Desktop: 2 sentences via CSS */}
           <div style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '1.25rem', marginBottom: '2rem', animation: 'fadeup 0.9s ease 0.5s both' }}>
-            <p className="hero-body-mobile">Sean&apos;s wife Christine has HD. He raised $50,000 and funded a family&apos;s future.</p>
-            <p className="hero-body-desktop">Sean Schaeffer&apos;s wife Christine was diagnosed with HD — a fatal, hereditary brain disorder with no cure. He didn&apos;t grieve quietly. <strong style={{ color: '#fff' }}>He raised $50,000 and funded a family&apos;s future.</strong></p>
+            <p className="hero-body-mobile">Someone near and dear to us was diagnosed with HD — a fatal, hereditary brain disorder with no cure. We replaced despair with hope. Join us May 29 at Grays Crossing Golf Club, Truckee, CA.</p>
+            <p className="hero-body-desktop">Someone near and dear to us was diagnosed with HD — a fatal, hereditary brain disorder with no cure. We decided to replace despair with hope and help others wherever we can. Please consider joining us in this fight as we raise funds for those in need via our Annual Golf Tournament. This year&apos;s event will be held at Grays Crossing Golf Club in Truckee, CA.</p>
           </div>
 
           {/* CTAs — stacked on mobile, side by side on desktop */}
           <div className="hero-ctas" style={{ animation: 'fadeup 0.9s ease 0.65s both' }}>
-            <a href={D100} target="_blank" rel="noopener" className="hero-btn-donate">Donate Now →</a>
+            <a href={D100} target="_blank" rel="noopener" className="hero-btn-donate">Reserve Now →</a>
             <a href={GOLF} target="_blank" rel="noopener" className="hero-btn-golf">Play Golf May 29</a>
           </div>
 
@@ -102,9 +102,9 @@ export default function HomePage() {
         <div className="stats-grid-4">
           {[
             { target: 50, prefix: '$', suffix: 'K+', label: 'Raised', sub: 'In 2 years', blue: false },
-            { target: 90, prefix: '',  suffix: '+',  label: 'HD Families', sub: 'At UC Davis', blue: false },
+            { target: 90, prefix: '',  suffix: '+',  label: 'HD Families', sub: "This year's event will help benefit", blue: false },
             { target: 1,  prefix: '',  suffix: '',   label: 'HD-Free Baby', sub: 'Funded', blue: true },
-            { target: 0,  prefix: '',  suffix: '',   label: 'Known Cures', sub: "That's why we fight", blue: false },
+            { target: 0,  prefix: '',  suffix: '',   label: 'Known Cures or Treatments', sub: "That's why we fight", blue: false },
           ].map(({ target, prefix, suffix, label, sub, blue }, i) => (
             <ScrollReveal key={label} delay={i * 0.07} style={{ padding: 'clamp(2rem,4vw,4rem) clamp(1rem,3vw,3rem)', borderRight: i < 3 ? '1px solid var(--cream-3)' : 'none', textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,6.5rem)', fontWeight: 600, lineHeight: 1, color: blue ? 'var(--blue)' : 'var(--ink)', letterSpacing: '-0.03em', marginBottom: '0.4rem' }}>
@@ -139,10 +139,10 @@ export default function HomePage() {
           {/* ── DESKTOP: 2×2 white fact cards with body text ── */}
           <div className="facts-grid facts-desktop">
             {[
-              { n: '01', head: 'No cure exists', body: 'Every family affected right now needs support — not promises about research.' },
-              { n: '02', head: 'The cycle can be broken', body: 'IVF with genetic testing means a child can be born HD-free. The mutation stops here.' },
-              { n: '03', head: '90+ families, one clinic', body: 'UC Davis HD Center — the only specialist HD care within reach of Northern Nevada. 130 miles from Reno.' },
-              { n: '04', head: '$100 keeps it open', body: 'The clinic runs on private donation. Your $100 keeps the lights on for families who have nowhere else to go.' },
+              { n: '01', head: 'No cure or treatments exist', body: 'Every family affected right now needs support, research and guidance.' },
+              { n: '02', head: "We've already helped one family break the cycle", body: 'IVF with genetic testing means a child can be born HD-free. The mutation stops here.' },
+              { n: '03', head: 'UC Davis HD Center of Excellence', body: 'The only HD care within reach of Northern Nevada and the Sierras. 130 miles from Reno.' },
+              { n: '04', head: 'Every little bit helps keep it open', body: 'The clinic runs on private donations. Your participation helps keep the lights on for families that have nowhere else to go.' },
             ].map(({ n, head, body }) => (
               <ScrollReveal key={n}>
                 <div style={{ background: 'var(--white)', padding: 'clamp(1.5rem,3vw,3rem)', height: '100%' }}>
@@ -249,8 +249,8 @@ export default function HomePage() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
                 {[
                   { year: '2024', done: true, tag: 'Sold Out', title: '$25,000 for HelpCureHD', body: "Funded IVF for Brandon & Rylee Puccini. Their baby will never have HD.", href: '/causes', cta: 'Their story →', img: '/images/event-crowd.jpg' },
-                  { year: '2025', done: true, tag: '90+ Families', title: 'UC Davis HD Center', body: 'Funded the only HD specialist clinic in Northern Nevada.', href: '/causes', cta: 'Read more →', img: '/images/event-group-2.jpg' },
-                  { year: '2026', done: false, tag: 'Open Now', title: 'UC Davis — Again', body: "May 29 · Gray's Crossing, Truckee. One round keeps the clinic open.", href: GOLF, cta: 'Register →', img: '/images/course-1.jpg' },
+                  { year: '2025', done: true, tag: '90+ Families', title: 'UC Davis HD Center', body: "Helped fund the only HD Specialty Clinic for families in Northern Nevada and the Sierra's.", href: '/causes', cta: 'Read more →', img: '/images/event-group-2.jpg' },
+                  { year: '2026', done: false, tag: 'Open Now', title: 'UC Davis — Again', body: "May 29 · Grays Crossing, Truckee CA. Play one round of golf and help over 90 families fight this insidious disease.", href: GOLF, cta: 'Register →', img: '/images/course-1.jpg' },
                 ].map(({ year, done, tag, title, body, href, cta, img }, i) => (
                   <ScrollReveal key={year} delay={i * 0.12}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
@@ -339,34 +339,6 @@ export default function HomePage() {
               </p>
               {/* Desktop: full */}
               <p className="puccini-copy-desktop">The 2024 tournament raised $25,000. That funded IVF for Brandon and Rylee Puccini. The transfer was successful. <strong style={{ color: '#fff' }}>That baby exists because people bought a round of golf.</strong></p>
-
-              {/* Donate card — white, high contrast */}
-              <div style={{ background: '#fff', padding: 'clamp(1.25rem,2.5vw,2rem)' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.4rem', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.1rem,1.8vw,1.4rem)', color: 'var(--ink)', fontWeight: 400 }}>Fund the next family.</div>
-                  <div style={{ fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--blue)', fontWeight: 700, fontFamily: 'var(--sans)' }}>100% to UC Davis</div>
-                </div>
-                <p style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', marginBottom: '1rem', lineHeight: 1.6 }}>90+ families depend on the only HD specialist clinic in Northern Nevada.</p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', marginBottom: '0.85rem' }}>
-                  <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.75rem 0.25rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
-                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$100</span>
-                    <span style={{ fontSize: '0.5rem', color: 'var(--ink-dim)', marginTop: '0.25rem', textAlign: 'center' }}>Keeps care going</span>
-                  </a>
-                  <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.75rem 0.25rem', background: 'var(--blue)', border: '2px solid var(--blue)', textDecoration: 'none', cursor: 'pointer', position: 'relative' }}>
-                    <div style={{ position: 'absolute', top: '-8px', left: '50%', transform: 'translateX(-50%)', background: 'var(--gold-light)', color: '#0B1628', fontSize: '0.42rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 800, padding: '0.15rem 0.45rem', whiteSpace: 'nowrap', fontFamily: 'var(--sans)' }}>★ Chosen</div>
-                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: '#fff', lineHeight: 1 }}>$250</span>
-                    <span style={{ fontSize: '0.5rem', color: 'rgba(255,255,255,0.75)', marginTop: '0.25rem', textAlign: 'center' }}>Most impactful</span>
-                  </a>
-                  <a href={D100} target="_blank" rel="noopener" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0.75rem 0.25rem', background: 'var(--cream)', border: '2px solid var(--cream-3)', textDecoration: 'none', cursor: 'pointer' }}>
-                    <span style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--ink)', lineHeight: 1 }}>$500</span>
-                    <span style={{ fontSize: '0.5rem', color: 'var(--ink-dim)', marginTop: '0.25rem', textAlign: 'center' }}>Month of care</span>
-                  </a>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '0.75rem', borderTop: '1px solid var(--cream-3)', flexWrap: 'wrap', gap: '0.4rem' }}>
-                  <span style={{ fontSize: '0.62rem', color: 'var(--ink-faint)' }}>No account needed.</span>
-                  <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'var(--blue)', textDecoration: 'none', fontWeight: 600 }}>Play golf instead →</a>
-                </div>
-              </div>
             </div>
           </ScrollReveal>
         </div>
