@@ -140,8 +140,8 @@ export default function HomePage() {
           <div className="facts-grid facts-desktop">
             {[
               { n: '01', head: 'No cure or treatments exist', body: 'Every family affected right now needs support, research and guidance.' },
-              { n: '02', head: "We've already helped one family break the cycle", body: 'IVF with genetic testing means a child can be born HD-free. The mutation stops here.' },
-              { n: '03', head: 'UC Davis HD Center of Excellence', body: 'The only HD care within reach of Northern Nevada and the Sierras. 130 miles from Reno.' },
+              { n: '02', head: "We've already helped one family break the cycle and have a child via IVF", body: 'IVF with genetic testing means a child can be born HD-free. The mutation stops here.' },
+              { n: '03', head: 'UC Davis HD Center of Excellence is the only HD care within reach of Northern Nevada and the Sierra\'s', body: '' },
               { n: '04', head: 'Every little bit helps keep it open', body: 'The clinic runs on private donations. Your participation helps keep the lights on for families that have nowhere else to go.' },
             ].map(({ n, head, body }) => (
               <ScrollReveal key={n}>

@@ -58,9 +58,6 @@ export default function StoryPage() {
                 <p style={{ fontSize: 'clamp(1rem,1.6vw,1.2rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.8)', marginBottom: '1rem', fontWeight: 300 }}>
                   Our Founder&apos;s wife Christine was diagnosed with Huntington&apos;s Disease in 2023. She&apos;s our inspiration and the reason we decided to join this fight.
                 </p>
-                <p style={{ fontSize: 'clamp(1rem,1.6vw,1.2rem)', lineHeight: 1.9, color: 'rgba(255,255,255,0.8)', fontWeight: 300 }}>
-                  <strong style={{ color: '#fff' }}>He built something to fight it.</strong>
-                </p>
               </div>
             </ScrollReveal>
 
