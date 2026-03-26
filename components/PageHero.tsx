@@ -30,7 +30,7 @@ export default function PageHero({ kicker, headline, sub, photo, photoPosition =
         backgroundImage: `url('${photo}')`,
         backgroundSize: 'cover',
         backgroundPosition: photoPosition,
-        opacity: 0.45,
+        opacity: 0.75,
         animation: 'drift 25s ease-in-out infinite alternate',
         willChange: 'transform',
       }} />
@@ -38,13 +38,13 @@ export default function PageHero({ kicker, headline, sub, photo, photoPosition =
       {/* Gradient overlay — dark at bottom where text sits, lighter at top */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to bottom, rgba(8,12,24,0.35) 0%, rgba(8,12,24,0.55) 40%, rgba(8,12,24,0.92) 80%, rgba(8,12,24,0.98) 100%)',
+        background: 'linear-gradient(to bottom, rgba(8,12,24,0.1) 0%, rgba(8,12,24,0.3) 40%, rgba(8,12,24,0.82) 80%, rgba(8,12,24,0.95) 100%)',
       }} />
 
       {/* Left-side vignette so text is always readable */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to right, rgba(8,12,24,0.85) 0%, rgba(8,12,24,0.4) 50%, transparent 100%)',
+        background: 'linear-gradient(to right, rgba(8,12,24,0.65) 0%, rgba(8,12,24,0.2) 50%, transparent 100%)',
       }} />
 
       {/* Gold top bar */}
