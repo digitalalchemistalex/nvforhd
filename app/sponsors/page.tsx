@@ -136,9 +136,9 @@ export default function SponsorsPage() {
             {/* Fleet Heating & Air Conditioning */}
             <ScrollReveal delay={0.2}>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ background: '#0D1B3E', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)' }} />
-                  <Image src="/images/fleet-heating-ac.png" alt="Fleet Heating & Air Conditioning" width={220} height={90} style={{ height: '56px', width: 'auto', objectFit: 'contain' }} />
+                <div style={{ background: '#000', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)', zIndex: 1 }} />
+                  <Image src="/images/fleet-heating-ac.png" alt="Fleet Heating & Air Conditioning" width={400} height={180} style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }} />
                 </div>
                 <div style={{ padding: 'clamp(1.75rem,3vw,2.75rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.5rem' }}>Fleet Heating &amp; Air Conditioning</h3>
