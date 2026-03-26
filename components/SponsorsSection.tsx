@@ -85,7 +85,7 @@ export default function SponsorsSection() {
               },
               {
                 href: null,
-                logo: '/images/fleet-heating-ac.png', logoBg: 'transparent',
+                logo: '/images/fleet-heating-ac.png', logoBg: '#0D1B3E',
                 alt: 'Fleet Heating & Air Conditioning',
                 badgeText: 'Gold Sponsor',
                 badgeBg: '#E8C97A', badgeColor: '#0F1729',
