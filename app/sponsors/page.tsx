@@ -96,7 +96,7 @@ export default function SponsorsPage() {
             {/* UC Davis */}
             <ScrollReveal>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ background: 'var(--cream-2)', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
+                <div className="sponsor-logo-box" style={{ background: 'var(--cream-2)', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)' }} />
                   <Image src="/images/uc-davis.png" alt="UC Davis Health" width={280} height={120} style={{ width: '100%', maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
                 </div>
@@ -116,7 +116,7 @@ export default function SponsorsPage() {
             {/* C-Hawk */}
             <ScrollReveal delay={0.1}>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ background: '#1A3A1A', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
+                <div className="sponsor-logo-box" style={{ background: '#1A3A1A', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)' }} />
                   <Image src="/images/c-hawk.png" alt="C-Hawk Technology" width={280} height={120} style={{ width: '100%', maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
                 </div>
@@ -136,7 +136,7 @@ export default function SponsorsPage() {
             {/* Fleet Heating & Air Conditioning */}
             <ScrollReveal delay={0.2}>
               <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ background: '#000', padding: 'clamp(1rem,2vw,2rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
+                <div className="sponsor-logo-box" style={{ background: '#000', padding: 'clamp(1rem,2vw,2rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)', zIndex: 1 }} />
                   <Image src="/images/fleet-heating-ac.png" alt="Fleet Heating & Air Conditioning" width={280} height={120} style={{ width: '100%', maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
                 </div>
@@ -253,8 +253,10 @@ export default function SponsorsPage() {
         @media (max-width: 900px) {
           .sponsors-hero-grid  { grid-template-columns: 1fr !important; }
           .sponsor-card-grid   { grid-template-columns: 1fr !important; }
-          .dual-sponsor-grid   { grid-template-columns: 1fr !important; }
+          .dual-sponsor-grid   { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           .sponsor-cta-grid    { grid-template-columns: 1fr !important; }
+          .sponsor-logo-box    { min-height: 140px !important; padding: 2rem !important; }
+          .sponsor-logo-box img { max-width: 220px !important; }
         }
       ` }} />
     </>
