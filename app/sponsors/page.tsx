@@ -91,7 +91,7 @@ export default function SponsorsPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(2rem,4vw,4rem)' }} className="dual-sponsor-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 'clamp(2rem,4vw,4rem)' }} className="dual-sponsor-grid">
 
             {/* UC Davis */}
             <ScrollReveal>
@@ -129,6 +129,23 @@ export default function SponsorsPage() {
                   <a href="https://c-hawk.com?utm_source=nvforhd" target="_blank" rel="noopener" style={{ fontSize: '0.68rem', color: 'var(--ink)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', fontFamily: 'var(--sans)', borderBottom: '1.5px solid var(--ink)', paddingBottom: '2px', alignSelf: 'flex-start' }}>
                     c-hawk.com ↗
                   </a>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Fleet Heating & Air Conditioning */}
+            <ScrollReveal delay={0.2}>
+              <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ background: '#0D1B3E', padding: 'clamp(2.5rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)' }} />
+                  <Image src="/images/fleet-heating-ac.png" alt="Fleet Heating & Air Conditioning" width={220} height={90} style={{ height: '56px', width: 'auto', objectFit: 'contain' }} />
+                </div>
+                <div style={{ padding: 'clamp(1.75rem,3vw,2.75rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.5rem' }}>Fleet Heating &amp; Air Conditioning</h3>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1rem', fontFamily: 'var(--sans)' }}>Gold Sponsor</p>
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--ink-mid)', flex: 1, marginBottom: '1.5rem' }}>
+                    Keeping Northern Nevada comfortable — and proudly helping NVforHD keep the fight against Huntington&apos;s Disease alive.
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
