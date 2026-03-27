@@ -372,7 +372,7 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem,4vw,4rem)' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
-              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>Real Families. Real Impact.</span>
+              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue-bright)' }}>Real Families. Real Impact.</span>
               <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
             </div>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 300, color: '#fff', lineHeight: 0.95, letterSpacing: '-0.02em' }}>

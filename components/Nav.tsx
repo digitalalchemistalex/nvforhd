@@ -78,7 +78,7 @@ export default function Nav() {
           {NAV_LINKS.filter(l => l.href !== '/').map(({ href, label }) => (
             <li key={href}>
               <Link href={href} style={{
-                color: pathname === href ? '#fff' : 'rgba(249,248,246,0.62)',
+                color: pathname === href ? '#fff' : 'rgba(255,255,255,0.85)',
                 textDecoration: 'none', fontSize: '0.64rem',
                 letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: pathname === href ? 600 : 400,
                 transition: 'color 0.2s', fontFamily: 'var(--sans)',
@@ -177,7 +177,7 @@ export default function Nav() {
         zIndex: 800,
         background: 'rgba(6,13,26,0.98)',
         backdropFilter: 'blur(20px)',
-        borderTop: '1px solid rgba(29,78,216,0.25)',
+        borderTop: '1px solid rgba(96,165,250,0.35)',
         paddingBottom: 'env(safe-area-inset-bottom, 0px)',
         height: 'calc(58px + env(safe-area-inset-bottom, 0px))',
       }} className="mobile-tab-bar">
@@ -199,13 +199,13 @@ export default function Nav() {
                 transition: 'background 0.2s',
               }}>
               {isActive && !primary && (
-                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '24px', height: '2px', background: 'var(--blue)', borderRadius: '0 0 2px 2px' }} />
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '32px', height: '3px', background: '#60A5FA', borderRadius: '0 0 3px 3px' }} />
               )}
               <Icon active={isActive} primary={!!primary} />
               <span style={{
                 fontSize: '0.56rem', letterSpacing: '0.08em', textTransform: 'uppercase',
                 fontFamily: 'var(--sans)', fontWeight: isActive || primary ? 700 : 400,
-                color: primary ? '#fff' : isActive ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)',
+                color: primary ? '#fff' : isActive ? 'var(--blue-faint)' : 'rgba(255,255,255,0.75)',
                 lineHeight: 1,
               }}>{label}</span>
             </a>
@@ -232,7 +232,7 @@ export default function Nav() {
 
 // ── SVG Tab Icons ──
 function HomeIcon({ active, primary }: { active: boolean; primary?: boolean }) {
-  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  const c = primary ? '#fff' : active ? '#ffffff' : 'rgba(255,255,255,0.75)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -241,7 +241,7 @@ function HomeIcon({ active, primary }: { active: boolean; primary?: boolean }) {
   )
 }
 function CauseIcon({ active, primary }: { active: boolean; primary?: boolean }) {
-  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  const c = primary ? '#fff' : active ? '#ffffff' : 'rgba(255,255,255,0.75)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -249,7 +249,7 @@ function CauseIcon({ active, primary }: { active: boolean; primary?: boolean }) 
   )
 }
 function CausesIcon({ active, primary }: { active: boolean; primary?: boolean }) {
-  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  const c = primary ? '#fff' : active ? '#ffffff' : 'rgba(255,255,255,0.75)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -257,7 +257,7 @@ function CausesIcon({ active, primary }: { active: boolean; primary?: boolean })
   )
 }
 function HeartIcon({ active, primary }: { active: boolean; primary?: boolean }) {
-  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  const c = primary ? '#fff' : active ? '#ffffff' : 'rgba(255,255,255,0.75)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill={primary ? 'rgba(255,255,255,0.3)' : 'none'} stroke={c} strokeWidth={primary ? 2 : active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -266,7 +266,7 @@ function HeartIcon({ active, primary }: { active: boolean; primary?: boolean }) 
   )
 }
 function GalleryIcon({ active, primary }: { active: boolean; primary?: boolean }) {
-  const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
+  const c = primary ? '#fff' : active ? '#ffffff' : 'rgba(255,255,255,0.75)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
