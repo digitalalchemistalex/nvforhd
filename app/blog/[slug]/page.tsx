@@ -23,12 +23,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: post.coverImage ? [post.coverImage] : ['/images/hero-couple.jpg'],
+      images: [{ url: post.coverImage || '/images/hero-couple.jpg', width: 1200, height: 630, alt: post.title }],
       type: 'article',
     },
-    alternates: {
-      canonical: `https://nvforhd.com/blog/${post.slug}`,
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage || '/images/hero-couple.jpg'],
     },
+    alternates: { canonical: `https://www.nvforhd.com/blog/${post.slug}` },
   }
 }
 
@@ -98,16 +102,27 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    author: { '@type': 'Organization', name: 'NVforHD', url: 'https://nvforhd.com' },
-    publisher: { '@type': 'Organization', name: 'NVforHD', logo: { '@type': 'ImageObject', url: 'https://nvforhd.com/images/logo.png' } },
-    image: post.coverImage ? `https://nvforhd.com${post.coverImage}` : 'https://nvforhd.com/images/hero-couple.jpg',
-    url: `https://nvforhd.com/blog/${post.slug}`,
+    author: { '@type': 'Organization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
+    publisher: { '@type': 'Organization', name: 'NVforHD', logo: { '@type': 'ImageObject', url: 'https://www.nvforhd.com/images/logo.png' } },
+    image: post.coverImage ? `https://www.nvforhd.com${post.coverImage}` : 'https://www.nvforhd.com/images/hero-couple.jpg',
+    url: `https://www.nvforhd.com/blog/${post.slug}`,
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.nvforhd.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.nvforhd.com/blog/${post.slug}` },
+    ],
   }
 
   return (
     <>
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* ── HERO — full bleed cover image ── */}
       <div style={{ position: 'relative', height: 'clamp(380px,55vw,600px)', overflow: 'hidden' }}>

@@ -11,10 +11,17 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Let's Cure HD — NVforHD Charity Golf Tournament May 29, 2026",
   description: "NVforHD raises funds to fight Huntington's Disease. Annual golf tournament May 29, 2026 at Gray's Crossing, Truckee CA. $50K+ raised. One HD-free baby funded. 90+ Nevada families served.",
+  alternates: { canonical: 'https://www.nvforhd.com' },
   openGraph: {
     title: "NVforHD — Let's Cure Huntington's Disease",
     description: "Golf tournament May 29, 2026. $50K+ raised. One HD-free baby funded. 90+ Nevada families served.",
-    images: [{ url: '/images/hero-couple.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/images/hero-couple.jpg', width: 1200, height: 630, alt: "NVforHD Charity Golf Tournament 2026" }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "NVforHD — Let's Cure Huntington's Disease",
+    description: "Golf tournament May 29, 2026 at Gray's Crossing, Truckee CA.",
+    images: ['/images/hero-couple.jpg'],
   },
 }
 
@@ -39,12 +46,21 @@ const faqSchema = {
   ],
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+  ],
+}
+
 export default function HomePage() {
   return (
     <>
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* ══════════════════════════════════════
           HERO

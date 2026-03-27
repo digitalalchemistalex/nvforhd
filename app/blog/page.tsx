@@ -13,11 +13,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog | NVforHD — Huntington\'s Disease News & Stories',
     description: 'Stories, education, and updates from NVforHD.',
+    images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Blog' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | NVforHD — Huntington\'s Disease News & Stories',
+    description: 'Stories, education, and updates from NVforHD.',
     images: ['/images/event-crowd.jpg'],
   },
-  alternates: {
-    canonical: 'https://nvforhd.com/blog',
-  },
+  alternates: { canonical: 'https://www.nvforhd.com/blog' },
 }
 
 const breadcrumbSchema = {

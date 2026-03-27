@@ -11,12 +11,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NVforHD Sponsors — Support the Fight Against HD',
     description: 'Meet our 2025 sponsors and become a 2026 sponsor. Packages from $100.',
-    images: ['/images/event-crowd.jpg'],
+    images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Sponsors' }],
     type: 'website',
   },
-  alternates: {
-    canonical: 'https://nvforhd.com/sponsors',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NVforHD Sponsors — Support the Fight Against HD',
+    description: 'Become a 2026 sponsor. Packages from $100.',
+    images: ['/images/event-crowd.jpg'],
   },
+  alternates: { canonical: 'https://www.nvforhd.com/sponsors' },
 }
 
 const breadcrumbSchema = {

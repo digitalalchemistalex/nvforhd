@@ -11,12 +11,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About NVforHD — Meet the Board',
     description: "Four board members united by one mission — cure Huntington's Disease.",
-    images: ['/images/event-crowd.jpg'],
+    images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Board Members' }],
     type: 'website',
   },
-  alternates: {
-    canonical: 'https://nvforhd.com/about',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About NVforHD — Meet the Board',
+    description: "Four board members united by one mission — cure Huntington's Disease.",
+    images: ['/images/event-crowd.jpg'],
   },
+  alternates: { canonical: 'https://www.nvforhd.com/about' },
 }
 
 const personSchema = {

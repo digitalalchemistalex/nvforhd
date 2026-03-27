@@ -11,21 +11,63 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NVforHD Charity Causes — One Worthy Cause Every Year',
     description: '2024: HelpCureHD IVF funding. 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.',
-    images: ['/images/event-crowd.jpg'],
+    images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Charity Causes' }],
     type: 'website',
   },
-  alternates: {
-    canonical: 'https://nvforhd.com/causes',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NVforHD Charity Causes — One Worthy Cause Every Year',
+    description: '2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.',
+    images: ['/images/event-crowd.jpg'],
   },
+  alternates: { canonical: 'https://www.nvforhd.com/causes' },
 }
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
-    { '@type': 'ListItem', position: 2, name: 'Charity Causes', item: 'https://nvforhd.com/causes' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'Charity Causes', item: 'https://www.nvforhd.com/causes' },
   ],
+}
+
+const causesFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What charity does NVforHD support in 2026?',
+      acceptedAnswer: { '@type': 'Answer', text: 'In 2026 NVforHD is supporting the UC Davis Huntington\'s Disease Center of Excellence in Sacramento, CA — the closest specialist HD care for Northern Nevada families. The clinic serves over 90 families in the region and operates on private donations.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What did NVforHD fund in 2024?',
+      acceptedAnswer: { '@type': 'Answer', text: 'In 2024 NVforHD raised $25,000 for HelpCureHD, funding IVF treatment for Brandon and Rylee Puccini — enabling them to have a baby free from Huntington\'s Disease.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does NVforHD choose its charity cause each year?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Each year NVforHD selects one cause that directly supports Huntington\'s Disease treatment, awareness, or family assistance. The cause is chosen based on where funds can have the greatest direct impact on HD patients and families.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How many families does the UC Davis HD Center serve?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The UC Davis Huntington\'s Disease Center of Excellence in Sacramento serves over 90 Northern Nevada families. The team includes 2 movement disorder neurologists, 2 psychiatrists, 1 genetic counselor, 1 social worker, 2 physical therapists, and 3 research coordinators.' },
+    },
+  ],
+}
+
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'NVforHD Charity Causes',
+  url: 'https://www.nvforhd.com/causes',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.speakable-causes'],
+  },
 }
 
 const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=causes'
@@ -43,6 +85,8 @@ export default function CausesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(causesFaqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <Nav />
       <PageHero
         kicker="Our Charity Causes"
@@ -73,10 +117,10 @@ export default function CausesPage() {
 
           <div className="grid-2" style={{ alignItems: 'start' }}>
             <ScrollReveal>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '1.5rem' }}>
+              <p className="speakable-causes" style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '1.5rem' }}>
                 For 2026 we are returning to support the <strong style={{ color: 'var(--ink)' }}>UC Davis Huntington&apos;s Disease Center of Excellence</strong> — the only specialty HD clinic serving Northern Nevada and our own beautiful Christine.
               </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '2.5rem' }}>
+              <p className="speakable-causes" style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '2.5rem' }}>
                 This clinic operates entirely on private donation. Without continued support, over 90 families in our region lose access to the specialised neurologists, psychiatrists, and genetic counselors who guide them through their worst days. <strong style={{ color: 'var(--ink)' }}>Your round of golf directly funds this team.</strong>
               </p>
               <a href={BOOK} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--ink)', color: 'var(--cream)', padding: '1rem 2.5rem', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', transition: 'background 0.2s' }}>

@@ -7,11 +7,18 @@ export const metadata: Metadata = {
     template: '%s | NVforHD — Cure Huntington\'s Disease',
   },
   description: 'NVforHD is a Nevada non-profit raising awareness and funds to battle Huntington\'s Disease through an annual golf tournament. Donate or play — May 29, 2026 at Gray\'s Crossing, Truckee CA.',
-  metadataBase: new URL('https://nvforhd.com'),
+  metadataBase: new URL('https://www.nvforhd.com'),
+  alternates: { canonical: 'https://www.nvforhd.com' },
   openGraph: {
     siteName: 'NVforHD',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/images/hero-couple.jpg', width: 1200, height: 630, alt: 'NVforHD — Nevada\'s fight against Huntington\'s Disease' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@nvforhd',
+    images: ['/images/hero-couple.jpg'],
   },
   robots: { index: true, follow: true },
 }

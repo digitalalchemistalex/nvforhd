@@ -3,8 +3,10 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Cancellation Policy',
-  description: 'NVforHD Cancellation Policy for the annual golf tournament.',
+  title: 'Cancellation Policy | NVforHD',
+  description: 'NVforHD Cancellation Policy for the annual golf tournament. Golf events are refundable 14 days prior to the event date.',
+  alternates: { canonical: 'https://www.nvforhd.com/cancellation' },
+  robots: { index: false, follow: false },
 }
 
 export default function CancellationPage() {

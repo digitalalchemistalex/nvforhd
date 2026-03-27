@@ -3,8 +3,10 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions',
-  description: 'NVforHD Terms & Conditions.',
+  title: 'Terms & Conditions | NVforHD',
+  description: 'NVforHD Terms & Conditions. Governing law, cancellation policy, privacy, and contact information.',
+  alternates: { canonical: 'https://www.nvforhd.com/terms' },
+  robots: { index: false, follow: false },
 }
 
 export default function TermsPage() {
