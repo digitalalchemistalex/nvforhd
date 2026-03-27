@@ -359,6 +359,31 @@ export default function HomePage() {
               </p>
               {/* Desktop: full */}
               <p className="puccini-copy-desktop">The 2024 tournament raised $25,000. That funded IVF for Brandon and Rylee Puccini. The transfer was successful. <strong style={{ color: '#fff' }}>That baby exists because people bought a round of golf.</strong></p>
+
+              {/* Proof stat */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', margin: '2rem 0', padding: '1.25rem 1.5rem', background: 'rgba(255,255,255,0.05)', borderLeft: '3px solid var(--gold-light)' }}>
+                <div style={{ textAlign: 'center', flexShrink: 0 }}>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.8rem,3vw,2.5rem)', fontWeight: 600, color: 'var(--gold-light)', lineHeight: 1 }}>135+</div>
+                  <div style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginTop: '0.3rem' }}>Families helped</div>
+                </div>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.72)', margin: 0 }}>
+                  HelpCureHD has helped over 135 families nationally have children free from Huntington&apos;s Disease. Brandon &amp; Rylee are one of them.
+                </p>
+              </div>
+
+              {/* CTAs */}
+              <div className="puccini-ctas">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <a href={D100} target="_blank" rel="noopener" className="cta-primary">Fund the Next Family →</a>
+                  <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', color: 'var(--gold-light)', letterSpacing: '0.08em' }}>May 29 · Gray&apos;s Crossing · Limited spots</span>
+                </div>
+                <a href={GOLF} target="_blank" rel="noopener" className="cta-ghost">Play Golf May 29 ↗</a>
+              </div>
+
+              {/* Read story link */}
+              <a href="/impact" className="puccini-story-link">
+                Read their full story →
+              </a>
             </div>
           </ScrollReveal>
         </div>
@@ -712,6 +737,9 @@ export default function HomePage() {
         .rylee-block::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%); pointer-events: none; }
         .rylee-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem,2.5vw,2.2rem); font-weight: 300; color: #fff; line-height: 1.35; margin-bottom: 1rem; }
         .rylee-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+        .puccini-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+        .puccini-story-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+        .puccini-story-link:hover { color: rgba(255,255,255,0.9); }
 
         /* ── TIMELINE ── */
         .timeline-desktop-wrapper { display: block; }
@@ -765,6 +793,9 @@ export default function HomePage() {
           .puccini-frame { display: none; }
           .puccini-copy-mobile  { display: block; }
           .puccini-copy-desktop { display: none; }
+          .puccini-ctas { display: flex; flex-direction: column; align-items: stretch; gap: 0.75rem; }
+          .puccini-ctas .cta-primary { text-align: center; }
+          .puccini-ctas .cta-ghost { text-align: center; }
 
           /* Packages: mobile version */
           .packages-desktop { display: none; }
