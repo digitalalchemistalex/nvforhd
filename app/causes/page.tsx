@@ -133,7 +133,7 @@ export default function CausesPage() {
               <p className="speakable-causes" style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '2.5rem' }}>
                 This clinic operates entirely on private donation. Families like Tiffany&apos;s, Mikey and Holly&apos;s, and Leilani&apos;s — over 90 Northern Nevada families — depend on it for neurologists, psychiatrists, genetic counselors, and social workers who guide them through their worst days. <strong style={{ color: 'var(--ink)' }}>Your round of golf directly funds this team.</strong>
               </p>
-              <a href={BOOK} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--ink)', color: 'var(--cream)', padding: '1rem 2.5rem', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', transition: 'background 0.2s' }}>
+              <a href={BOOK} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff', padding: '1rem 2.5rem', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', boxShadow: '0 4px 20px rgba(59,130,246,0.4)', transition: 'all 0.25s ease' }}>
                 Support This Cause →
               </a>
             </ScrollReveal>

@@ -245,23 +245,23 @@ export default function SponsorsPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div style={{ background: 'var(--navy)', padding: 'clamp(2.5rem,4vw,4rem)' }}>
+              <div style={{ background: 'linear-gradient(135deg, #071525 0%, #0D2040 50%, #0A1E3D 100%)', padding: 'clamp(2.5rem,4vw,4rem)', borderTop: '3px solid #F59E0B', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 300, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.2 }}>
                   Spots for 2026 are limited.<br />
-                  <em style={{ color: 'rgba(255,255,255,0.75)' }}>Title and Gold go first.</em>
+                  <em style={{ color: 'rgba(255,255,255,0.90)' }}>Title and Gold go first.</em>
                 </div>
-                <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, marginBottom: '2rem' }}>
+                <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, marginBottom: '2rem' }}>
                   Email Sean directly or call. He&apos;ll walk you through the options and make it easy.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <a href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry" style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.15rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+                  <a href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry" style={{ display: 'block', textAlign: 'center', background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff', padding: '1.15rem', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', boxShadow: '0 4px 20px rgba(59,130,246,0.45)' }}>
                     Email About Sponsorship →
                   </a>
                   <a href="tel:7756918860" style={{ display: 'block', textAlign: 'center', background: 'rgba(255,255,255,0.08)', color: '#fff', border: '1px solid rgba(255,255,255,0.70)', padding: '1.1rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                     📞 Call Sean: 775-691-8860
                   </a>
                 </div>
-                <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.68rem', color: 'rgba(255,255,255,0.75)' }}>
+                <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.68rem', color: 'rgba(255,255,255,0.90)' }}>
                   Or <a href={BOOK} target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'underline' }}>register to play golf May 29 ↗</a>
                 </p>
               </div>

@@ -530,7 +530,7 @@ export default function ContactPage() {
       )}
 
       {/* DIRECT CONTACT */}
-      <section style={{ background: 'var(--navy)', padding: 'clamp(3rem,5vw,5rem) var(--px)' }}>
+      <section style={{ background: 'linear-gradient(135deg, #071525 0%, #0D2040 50%, #0A1E3D 100%)', padding: 'clamp(3rem,5vw,5rem) var(--px)', borderTop: '3px solid #F59E0B' }}>
         <div className="inner contact-direct-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
           {[
             { icon: '📞', label: 'Call Sean directly', value: '775-691-8860', href: 'tel:7756918860', note: 'Golf, sponsorship, hotel discounts, anything.' },
@@ -539,12 +539,12 @@ export default function ContactPage() {
           ].map(({ icon, label, value, href, note }) => (
             <div key={label} style={{ padding: '2rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>{icon}</div>
-              <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(249,248,246,0.45)', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--sans)' }}>{label}</div>
+              <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(249,248,246,0.80)', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--sans)' }}>{label}</div>
               {href
                 ? <a href={href} style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.3rem)', color: '#fff', textDecoration: 'none', display: 'block', marginBottom: '0.5rem' }}>{value}</a>
                 : <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.3rem)', color: '#fff', marginBottom: '0.5rem' }}>{value}</div>
               }
-              <p style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.5)', lineHeight: 1.6, margin: 0 }}>{note}</p>
+              <p style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.78)', lineHeight: 1.6, margin: 0 }}>{note}</p>
             </div>
           ))}
         </div>

@@ -204,19 +204,19 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
             {/* ── INLINE CTA — placed after article body, before author ── */}
             <ScrollReveal style={{ margin: '3.5rem 0' }}>
-              <div style={{ background: 'var(--navy)', padding: 'clamp(2rem,4vw,3.5rem)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)' }} />
+              <div style={{ background: 'linear-gradient(135deg, #071525 0%, #0D2040 50%, #0A1E3D 100%)', padding: 'clamp(2rem,4vw,3.5rem)', position: 'relative', overflow: 'hidden', borderTop: '3px solid #F59E0B' }}>
+                
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2.5vw,2rem)', fontWeight: 300, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.2 }}>
                   {cta.headline}
                 </div>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, marginBottom: '1.75rem' }}>{cta.sub}</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75, marginBottom: '1.75rem' }}>{cta.sub}</p>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <a href={cta.primaryHref} target={cta.primaryHref.startsWith('http') ? '_blank' : undefined} rel={cta.primaryHref.startsWith('http') ? 'noopener' : undefined}
-                    style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '0.9rem 1.75rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+                    style={{ display: 'inline-block', background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff', padding: '0.95rem 1.75rem', fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', boxShadow: '0 4px 20px rgba(59,130,246,0.45)' }}>
                     {cta.primary}
                   </a>
                   <a href={cta.secondaryHref} target={cta.secondaryHref.startsWith('http') ? '_blank' : undefined} rel={cta.secondaryHref.startsWith('http') ? 'noopener' : undefined}
-                    style={{ display: 'inline-block', background: 'transparent', color: 'rgba(255,255,255,0.7)', border: '1.5px solid rgba(255,255,255,0.25)', padding: '0.88rem 1.5rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+                    style={{ display: 'inline-block', background: 'rgba(255,255,255,0.08)', color: '#fff', border: '1.5px solid rgba(255,255,255,0.65)', padding: '0.88rem 1.5rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                     {cta.secondary}
                   </a>
                 </div>
@@ -243,7 +243,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <aside className="blog-sidebar">
             {/* Sticky donate card */}
             <div style={{ background: 'var(--white)', border: '2px solid var(--blue)', padding: '1.75rem', marginBottom: '2rem', position: 'sticky', top: '90px' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--blue)' }} />
+              
               <div style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', color: 'var(--ink)', marginBottom: '0.5rem', lineHeight: 1.2 }}>
                 Fight HD today.
               </div>
