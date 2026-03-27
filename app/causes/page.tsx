@@ -203,7 +203,7 @@ export default function CausesPage() {
               Hear directly from families whose lives were changed by the same care team your donation supports.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '900px', margin: '0 auto' }} className="causes-testimonials-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }} className="causes-testimonials-grid">
             <VideoTestimonial
               youtubeId="7nDr5ous818"
               name="Tiffany"
@@ -216,10 +216,16 @@ export default function CausesPage() {
               role="HD Patient & Family — UC Davis Care Team"
               quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
             />
+            <VideoTestimonial
+              youtubeId="7jrefyflRVc"
+              name="Leilani Dunmoyer"
+              role="Gene-Positive — UC Davis Patient Family"
+              quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
+            />
           </div>
         </div>
         <style dangerouslySetInnerHTML={{ __html: `
-          @media (max-width: 768px) { .causes-testimonials-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 900px) { .causes-testimonials-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 600px) { .causes-testimonials-grid { grid-template-columns: 1fr !important; } }
         ` }} />
       </section>
 
