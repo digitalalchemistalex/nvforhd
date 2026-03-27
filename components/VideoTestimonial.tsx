@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface VideoTestimonialProps {
   youtubeId: string
@@ -23,12 +24,13 @@ export default function VideoTestimonial({ youtubeId, name, role, quote, fallbac
       >
         {/* Thumbnail — uses fallback site image */}
         <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', background: 'var(--navy)' }}>
-          <img
+          <Image
             src={fallbackImage}
             alt={`${name} — HD family story`}
-            loading="lazy"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }}
+            fill
+            style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }}
             className="vt-thumb"
+            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
           />
           {/* Dark overlay */}
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(6,13,26,0.55)', transition: 'background 0.3s' }} className="vt-overlay" />
