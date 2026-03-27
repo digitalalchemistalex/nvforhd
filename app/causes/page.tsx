@@ -123,7 +123,7 @@ export default function CausesPage() {
               </p>
 
               {/* Pull quote — Tiffany */}
-              <blockquote style={{ borderLeft: '3px solid var(--gold-dark)', paddingLeft: '1.5rem', margin: '2rem 0', background: 'var(--cream-2)', padding: '1.5rem 1.5rem 1.5rem 2rem', border: '1px solid var(--cream-3)', borderLeft: '3px solid var(--gold-dark)' }}>
+              <blockquote style={{ paddingLeft: '2rem', margin: '2rem 0', background: 'var(--cream-2)', padding: '1.5rem 1.5rem 1.5rem 2rem', border: '1px solid var(--cream-3)', borderLeft: '3px solid var(--gold-dark)' }}>
                 <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'var(--ink)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
                   &ldquo;They didn&apos;t just treat the medical side of Huntington&apos;s Disease. They cared about the whole journey.&rdquo;
                 </p>
@@ -302,7 +302,7 @@ export default function CausesPage() {
           {[
             { href: '/sponsors', title: 'Become a Sponsor', desc: 'Put your name on the cause. Packages from $100.' },
             { href: '/about', title: 'Meet the Board', desc: 'The people who choose and steward every cause.' },
-            { href: '/blog/hd-family-story-tiffany-uc-davis', title: "Tiffany's Story", desc: 'One family's 24-year journey with HD and the UC Davis team.' },
+            { href: '/blog/hd-family-story-tiffany-uc-davis', title: "Tiffany's Story", desc: "One family's 24-year journey with HD and the UC Davis team." },
             { href: '/blog/hd-family-story-mikey-holly-uc-davis', title: "Mikey & Holly's Story", desc: 'How the UC Davis team walks alongside HD patients every step.' },
             { href: '/blog/hd-family-story-leilani-dunmoyer-uc-davis', title: "Leilani's Story", desc: 'Gene-positive, three kids at risk — and still running marathons for HD.' },
             { href: '/contact', title: 'Donate Now', desc: '100% goes directly to UC Davis HD families.' },
