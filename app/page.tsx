@@ -215,7 +215,7 @@ export default function HomePage() {
                 <div style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', fontWeight: 700, color: accent, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.85rem' }}>
                   {sub}
                 </div>
-                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: dark ? 'rgba(249,248,246,0.65)' : 'var(--ink-mid)', margin: 0 }}>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: dark ? 'rgba(255,255,255,0.88)' : 'var(--ink-mid)', margin: 0 }}>
                   {line}
                 </p>
               </div>
@@ -231,7 +231,7 @@ export default function HomePage() {
               </div>
               <div className="rylee-ctas">
                 <a href={D100} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '0.9rem 1.75rem', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>Fund a Family →</a>
-                <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>or play golf May 29</a>
+                <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.75)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>or play golf May 29</a>
               </div>
             </div>
           </ScrollReveal>
@@ -535,10 +535,10 @@ export default function HomePage() {
           font-family: var(--sans);
         }
         .hero-btn-golf {
-          display: inline-block; background: transparent; color: rgba(255,255,255,0.7);
-          border: 1.5px solid rgba(255,255,255,0.28); padding: 1rem 1.5rem;
+          display: inline-block; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.95);
+          border: 1.5px solid rgba(255,255,255,0.6); padding: 1rem 1.5rem;
           font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-          font-weight: 400; text-decoration: none; font-family: var(--sans);
+          font-weight: 600; text-decoration: none; font-family: var(--sans);
         }
 
         /* ── STATS ── */

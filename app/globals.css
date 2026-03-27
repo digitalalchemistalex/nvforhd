@@ -118,6 +118,8 @@ a { color: inherit; }
 .btn-primary { background:var(--blue); color:#fff; box-shadow:0 1px 3px rgba(29,78,216,0.3); }
 .btn-primary:hover { background:var(--blue-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(29,78,216,0.35); }
 .btn-secondary { background:transparent; color:var(--blue); border:1.5px solid var(--blue); }
+.on-dark .btn-secondary { color:#fff; border-color:rgba(255,255,255,0.6); }
+.on-dark .btn-secondary:hover { background:rgba(255,255,255,0.1); }
 .btn-secondary:hover { background:var(--blue); color:#fff; transform:translateY(-2px); }
 .on-dark .btn-secondary { color:var(--snow); border-color:rgba(249,248,246,0.3); }
 .on-dark .btn-secondary:hover { background:rgba(249,248,246,0.1); color:var(--snow); border-color:var(--snow); }

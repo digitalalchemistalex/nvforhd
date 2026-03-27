@@ -104,7 +104,7 @@ export default function Nav() {
             </a>
           )}
           <a href={GOLF} target="_blank" rel="noopener" style={{
-            border: '1.5px solid rgba(249,248,246,0.3)', color: 'rgba(249,248,246,0.8)',
+            border: '1.5px solid rgba(255,255,255,0.6)', color: 'rgba(255,255,255,0.95)',
             padding: '0.58rem 1.1rem', fontSize: '0.64rem', letterSpacing: '0.1em',
             textTransform: 'uppercase', textDecoration: 'none', fontFamily: 'var(--sans)', fontWeight: 400,
           }}>
@@ -155,7 +155,7 @@ export default function Nav() {
             Donate Now — from $100
           </a>
           <a href={GOLF} target="_blank" rel="noopener" onClick={close}
-            style={{ display: 'block', textAlign: 'center', border: '1.5px solid rgba(249,248,246,0.25)', color: 'rgba(249,248,246,0.8)', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+            style={{ display: 'block', textAlign: 'center', border: '1.5px solid rgba(255,255,255,0.55)', color: 'rgba(255,255,255,0.95)', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
             Play Golf — May 29, 2026 ↗
           </a>
           <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>

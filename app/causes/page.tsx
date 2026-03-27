@@ -173,17 +173,17 @@ export default function CausesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: 'clamp(2.5rem,4vw,4rem)', flexWrap: 'wrap' }}>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(6rem,12vw,11rem)', fontWeight: 700, color: 'rgba(255,255,255,0.12)', lineHeight: 1, userSelect: 'none', letterSpacing: '-0.03em' }}>2025</div>
               <div>
-                <div style={{ display: 'inline-block', border: '1px solid rgba(245,242,234,0.12)', color: 'var(--white-dimmer)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', marginBottom: '0.75rem', fontWeight: 500 }}>Completed</div>
+                <div style={{ display: 'inline-block', border: '1px solid rgba(245,242,234,0.12)', color: 'rgba(255,255,255,0.85)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', marginBottom: '0.75rem', fontWeight: 500 }}>Completed</div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2.5rem)', color: '#fff' }}>UC Davis HD Center of Excellence</div>
               </div>
             </div>
           </ScrollReveal>
           <div style={{ maxWidth: '820px' }}>
             <ScrollReveal>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--white-dim)', marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.88)', marginBottom: '1.5rem' }}>
                 In 2025 we made a deliberate change — shifting our focus to help <strong style={{ color: '#fff' }}>more people in our Northern Nevada region</strong> with specialised care they cannot access anywhere else nearby.
               </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--white-dim)', marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.88)', marginBottom: '1.5rem' }}>
                 We chose the <strong style={{ color: '#fff' }}>Huntington&apos;s Disease Center of Excellence at UC Davis</strong> — the closest specialty care our community can reach. By choosing this team, we were able to directly assist over <strong style={{ color: '#fff' }}>45 Northern Nevada patients</strong> with 2 neurologists, 2 psychiatrists, a genetic counselor, social worker, physical therapists, and research coordinators all dedicated to HD.
               </p>
 
