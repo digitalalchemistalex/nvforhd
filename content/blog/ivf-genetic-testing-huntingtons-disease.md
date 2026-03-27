@@ -16,6 +16,8 @@ That money went to HelpCureHD. HelpCureHD put it through their grant cycle — v
 
 :::pull "Brandon and Rylee are now expecting. Their baby will not have Huntington's Disease.
 
+:::image /images/rb-letter.png | Thank-you letter from Rylee and Brandon Puccini | The letter that arrived after the 2024 tournament — from Rylee & Brandon Puccini
+
 That is what $25,000 and one sold-out golf tournament did.
 
 :::stat $25,000 | Raised at the 2024 NVforHD inaugural tournament

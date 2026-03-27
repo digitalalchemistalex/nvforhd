@@ -20,6 +20,8 @@ NVforHD was built around one belief: that a community that shows up can do real,
 :::stat 100% | Goes directly to HD care
 :::end
 
+:::image /images/event-foursome-1.jpg | Golfers at the NVforHD 2024 charity tournament | Join the foursome — May 29, 2026 at Gray's Crossing, Truckee
+
 ## 1. Play Golf on May 29
 
 The most direct way to contribute to NVforHD is to join us at the **third annual charity golf tournament at Gray's Crossing Golf Club in Truckee, CA** on May 29, 2026.

@@ -24,6 +24,8 @@ Register before this one fills too.
 
 ## The Course
 
+:::image /images/event-green.webp | Gray's Crossing Golf Club fairway, Truckee CA | Gray's Crossing — Sierra Nevada pines at 6,000 feet
+
 Gray's Crossing is a Peter Jacobsen/Jim Hardy design in the Sierra Nevada pines above Truckee, just off Donner Pass Road. Elevation: around 6,000 feet. Views that make you stop mid-swing.
 
 The course plays differently than anything in the valley. Narrow tree-lined fairways. Elevation changes that demand course management. A layout that rewards smarts over power.
@@ -40,6 +42,8 @@ Box lunch included. Post-round gathering.
 
 :::pull "Discount rooms at Atlantis Casino Resort Spa and Peppermill in Reno — call Sean at 775-691-8860 for rates not available anywhere else."
 
+:::photos /gallery/DSC0660-scaled.jpg,/gallery/DSC0664-scaled.jpg,/gallery/DSC0697-scaled.jpg
+
 ## The Cause
 
 100% of proceeds go to the UC Davis Huntington's Disease Center of Excellence in Sacramento — the only HD specialist clinic serving Northern Nevada families.
@@ -55,6 +59,8 @@ No overhead. No administrative cut. The money you spend on your round goes direc
 - **Sponsorships from $3,500.** Title, Gold, and Lunch sponsorships. Your logo on the course all day.
 - **Hole signs — $100+.** Your name on the course. Every group sees you.
 - **Can't make it? — From $100.** Donate without attending. Same cause, same impact.
+
+:::image /images/event-crowd.jpg | NVforHD supporters at the 2024 charity golf tournament | The 2024 crowd — every one of them making a difference
 
 ## 2024 Sold Out. 2025 Sold Out. Don't Miss 2026.
 

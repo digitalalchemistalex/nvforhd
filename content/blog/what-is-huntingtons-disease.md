@@ -20,6 +20,8 @@ This is for those people. The ones who just received a diagnosis. The ones whose
 :::stat 50% | Chance each child inherits it
 :::end
 
+:::image /images/hd-ribbon.jpg | Blue ribbon — the symbol of Huntington's Disease awareness | The HD awareness ribbon — blue, like the hope we carry
+
 ## What HD Actually Feels Like
 
 Neurologists describe HD as Parkinson's disease, ALS, and Alzheimer's disease — simultaneously. In one body. In one person you love.
@@ -48,6 +50,8 @@ This is the particular cruelty of HD. Many people pass the gene to their childre
 
 ## The Only Way to Break the Cycle
 
+:::image /images/hero-couple.jpg | A couple facing Huntington's Disease together | Every HD family deserves hope
+
 IVF with preimplantation genetic testing (PGT) can screen embryos before implantation. A couple carrying the HD gene can have a child who is completely HD-free. The mutation stops with their generation.
 
 :::fact PGT-M (preimplantation genetic testing for monogenic disorders) is FDA-cleared and has a success rate above 95% for identifying HD-free embryos. Source: HDSA
@@ -60,7 +64,11 @@ In 2024, the NVforHD golf tournament raised $25,000 for HelpCureHD — a nonprof
 
 **One golf tournament. One day. One family's entire future.**
 
+:::photos /gallery/DSC0572-scaled.jpg,/gallery/DSC0626-scaled.jpg,/gallery/DSC0697-scaled.jpg
+
 ## Care When There Is No Cure
+
+:::video WiqN6qpqK50 | What is Huntington's Disease? — HDSA Official Video
 
 For the 90+ Northern Nevada families already living with an HD diagnosis, the UC Davis Huntington's Disease Center of Excellence in Sacramento is the only specialist clinic within reach.
 

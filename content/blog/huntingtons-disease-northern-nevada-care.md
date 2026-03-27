@@ -22,6 +22,8 @@ For 90+ families in our region, that drive is not optional. It is the only path 
 :::stat 48 | HDSA Centers of Excellence in the US
 :::end
 
+:::photos /gallery/DSC0572-scaled.jpg,/gallery/DSC0588-scaled.jpg,/gallery/DSC0602-scaled.jpg
+
 ## What a Huntington's Disease Center of Excellence Actually Is
 
 The National Huntington's Disease Society of America (HDSA) designates Centers of Excellence at medical institutions that meet strict standards for HD-specialized care. These are not general neurology clinics that see HD patients occasionally. They are purpose-built teams with deep, specific expertise in the disease.

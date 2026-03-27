@@ -85,9 +85,21 @@ function renderMarkdown(md: string): string {
     // :::warning Warning/hard truth text
     .replace(/^:::warning (.+)$/gm, (_, text) =>
       `<div class="blog-warning"><span class="blog-warning-icon">!</span><span>${text}</span></div>`)
-    // :::stats-grid start/end (wraps multiple :::stat lines)
+    // :::stats-grid start/end
     .replace(/^:::stats-grid$/gm, '<div class="blog-stats-grid">')
     .replace(/^:::end$/gm, '</div>')
+    // :::image /path/to/image.jpg | Alt text | Optional caption
+    .replace(/^:::image (.+?) \| (.+?)(?:\s*\|\s*(.+))?$/gm, (_, src, alt, caption) =>
+      `<figure class="blog-figure"><img src="${src}" alt="${alt}" loading="lazy" class="blog-img" />${caption ? `<figcaption class="blog-caption">${caption}</figcaption>` : ''}</figure>`)
+    // :::video YOUTUBE_ID | Caption
+    .replace(/^:::video ([A-Za-z0-9_-]{11})(?:\s*\|\s*(.+))?$/gm, (_, id, caption) =>
+      `<figure class="blog-video-wrap"><div class="blog-video"><iframe src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1" title="${caption || 'Video'}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>${caption ? `<figcaption class="blog-caption">${caption}</figcaption>` : ''}</figure>`)
+    // :::photos — inline event photo strip (3 photos side by side)
+    .replace(/^:::photos (.+)$/gm, (_, photos) => {
+      const srcs = photos.split(',').map((s: string) => s.trim())
+      const imgs = srcs.map((src: string) => `<img src="${src}" alt="NVforHD event photo" loading="lazy" class="blog-strip-img" />`).join('')
+      return `<div class="blog-photo-strip">${imgs}</div>`
+    })
 
     // ── Standard markdown ───────────────────────────────────────────────
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
@@ -103,7 +115,7 @@ function renderMarkdown(md: string): string {
     .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
     .replace(/\n\n/g, '</p><p>')
     .replace(/^(?!<[hbluiop])(.+)$/gm, (m) => m.trim() ? m : '')
-    .replace(/^<\/p><p>(<h[1-6]|<ul|<blockquote|<hr|<div)/gm, '$1')
+    .replace(/^<\/p><p>(<h[1-6]|<ul|<blockquote|<hr|<div|<fig)/gm, '$1')
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
@@ -525,7 +537,62 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           margin-top: 2px;
         }
 
-        /* ── RESPONSIVE ── */
+        /* ── IMAGES ── */
+        .blog-figure {
+          margin: 2.5rem 0;
+        }
+        .blog-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          max-height: 520px;
+          object-fit: cover;
+        }
+        .blog-caption {
+          font-size: 0.75rem;
+          color: var(--ink-dim);
+          font-family: var(--sans);
+          margin-top: 0.6rem;
+          font-style: italic;
+          text-align: center;
+          letter-spacing: 0.02em;
+        }
+
+        /* ── VIDEO EMBED ── */
+        .blog-video-wrap {
+          margin: 2.5rem 0;
+        }
+        .blog-video {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+          background: var(--navy);
+        }
+        .blog-video iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        /* ── PHOTO STRIP ── */
+        .blog-photo-strip {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 4px;
+          margin: 2.5rem 0;
+        }
+        .blog-strip-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+        }
+        @media (max-width: 600px) {
+          .blog-photo-strip { grid-template-columns: repeat(2, 1fr); }
+          .blog-strip-img { height: 140px; }
+        }
         @media (max-width: 900px) {
           .blog-layout { grid-template-columns: 1fr !important; }
           .blog-sidebar { display: none; }
