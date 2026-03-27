@@ -300,9 +300,9 @@ export default function HomePage() {
         {/* Mobile — 3 full-bleed tap cards */}
         <div className="timeline-mobile-wrapper">
           {[
-            { year: '2024', tag: 'Sold Out', title: '$25,000 raised', sub: 'Brandon & Rylee — HD-free baby.', href: '/causes', img: '/images/event-crowd.jpg', done: true },
-            { year: '2025', tag: '90+ Families', title: 'UC Davis funded', sub: 'The only HD clinic in Northern NV.', href: '/causes', img: '/images/event-group-2.jpg', done: true },
             { year: '2026', tag: 'Register Now', title: 'May 29 — Join us', sub: "Gray's Crossing, Truckee. Open.", href: GOLF, img: '/images/course-1.jpg', done: false },
+            { year: '2025', tag: '90+ Families', title: 'UC Davis funded', sub: 'The only HD clinic in Northern NV.', href: '/causes', img: '/images/event-group-2.jpg', done: true },
+            { year: '2024', tag: 'Sold Out', title: '$25,000 raised', sub: 'Brandon & Rylee — HD-free baby.', href: '/causes', img: '/images/event-crowd.jpg', done: true },
           ].map(({ year, tag, title, sub, href, img, done }) => (
             <a key={year} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener' : undefined}
               style={{ display: 'block', textDecoration: 'none', position: 'relative', overflow: 'hidden', height: '180px' }}>
