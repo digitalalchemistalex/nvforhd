@@ -379,7 +379,7 @@ export default function HomePage() {
               Why we show up<br /><em style={{ color: 'rgba(255,255,255,0.3)' }}>every year.</em>
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '900px', margin: '0 auto' }} className="testimonials-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }} className="testimonials-grid">
             <VideoTestimonial
               youtubeId="zij5RaT5GsY"
               name="Mikey & Holly"
@@ -392,10 +392,16 @@ export default function HomePage() {
               role="HD Family — UC Davis Patient"
               quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
             />
+            <VideoTestimonial
+              youtubeId="7jrefyflRVc"
+              name="Leilani Dunmoyer"
+              role="Gene-Positive — UC Davis Patient Family"
+              quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
+            />
           </div>
         </div>
         <style dangerouslySetInnerHTML={{ __html: `
-          @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr !important; } }
         ` }} />
       </section>
 
