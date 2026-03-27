@@ -4,8 +4,8 @@ excerpt: "When Tiffany's husband started showing symptoms of Huntington's Diseas
 date: "2026-03-27"
 author: "NVforHD"
 category: "Patient Stories"
-coverImage: "/images/event-group-3.jpg"
-coverAlt: "NVforHD supporters at the charity golf tournament"
+coverImage: "/images/blog-tiffany.jpg"
+coverAlt: "Couple together in hospital — Tiffany and her husband navigating HD"
 readingTime: 4
 featured: true
 ---
