@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Sponsor NVforHD | Huntington's Disease Charity Golf 2026",
   description: "Put your brand on the fight against HD. Title, Gold, Lunch and Hole sponsorships for the May 29, 2026 charity golf tournament at Gray's Crossing, Truckee.",
   openGraph: {
-    title: 'Sponsor NVforHD | Huntington's Disease Charity Golf 2026',
+    title: "Sponsor NVforHD | Huntington's Disease Charity Golf 2026",
     description: 'Meet our 2025 sponsors and become a 2026 sponsor. Packages from $100.',
     images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Sponsors' }],
     type: 'website',

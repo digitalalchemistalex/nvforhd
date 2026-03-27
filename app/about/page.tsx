@@ -46,7 +46,7 @@ const personSchema = {
         name: 'Mike Milligan',
         jobTitle: 'Board Member',
         worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
-        description: 'NVforHD was founded after Sean Schaeffer's wife was diagnosed with HD. Meet the board behind Nevada's fastest-growing Huntington's Disease charity golf tournament.',
+        description: "Director of Sales, Golf the High Sierra. Former President of Golf the High Sierra 2005-2014. Reno/Lake Tahoe golf industry since 2004.",
         image: 'https://nvforhd.com/images/headshot-milligan.webp',
       },
     },

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Stories from HD families, Huntington's Disease education, and updates on NVforHD's annual charity golf tournament raising funds for a cure in Nevada.",
   openGraph: {
     title: 'Blog | NVforHD — Huntington\'s Disease News & Stories',
-    description: 'Read stories from HD families, learn about Huntington's Disease, and follow NVforHD's annual charity golf tournament raising funds for a cure in Northern Nevada.',
+    description: "Read stories from HD families, learn about Huntington's Disease, and follow NVforHD's annual charity golf tournament raising funds for a cure in Northern Nevada.",
     images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Blog' }],
   },
   twitter: {
