@@ -95,7 +95,7 @@ export default function PackagesSection() {
                   {/* Solid inline CTA — not a tiny text link */}
                   <a href={BOOK} target="_blank" rel="noopener" style={{
                     display: 'inline-block',
-                    background: id === 'donate' ? 'var(--blue)' : 'var(--ink)',
+                    background: id === 'donate' ? 'linear-gradient(135deg,#1D4ED8,#3B82F6)' : 'var(--ink)',
                     color: '#fff',
                     fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase',
                     fontWeight: 700, textDecoration: 'none',

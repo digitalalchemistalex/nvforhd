@@ -182,7 +182,8 @@ export default function SponsorsSection() {
               overflow: 'hidden',
             }} className="sponsor-cta-grid">
               {/* Attention corner — can't miss it */}
-              <div style={{ position: 'absolute', top: 0, left: 0, background: 'var(--blue)', color: '#fff', fontSize: '0.52rem', letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 700, padding: '0.35rem 1rem' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff',
+                  boxShadow: '0 4px 20px rgba(59,130,246,0.45)', fontSize: '0.52rem', letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 700, padding: '0.35rem 1rem' }}>
                 Limited Spots · 2026
               </div>
               <div style={{ paddingTop: '1rem' }}>
@@ -199,7 +200,8 @@ export default function SponsorsSection() {
                   href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=sponsors-cta"
                   style={{
                     display: 'block', textAlign: 'center',
-                    background: 'var(--blue)', color: '#fff',
+                    background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff',
+                  boxShadow: '0 4px 20px rgba(59,130,246,0.45)',
                     padding: '1.1rem 1.5rem',
                     fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase',
                     fontWeight: 700, textDecoration: 'none',

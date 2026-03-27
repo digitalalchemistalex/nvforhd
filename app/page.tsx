@@ -230,8 +230,11 @@ export default function HomePage() {
                 — Rylee Puccini · Funded by the 2024 Tournament
               </div>
               <div className="rylee-ctas">
-                <a href={D100} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '0.9rem 1.75rem', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>Fund a Family →</a>
-                <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.75)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>or play golf May 29</a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <a href={D100} target="_blank" rel="noopener" className="cta-primary-glow">Fund a Family →</a>
+                  <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', color: '#D4A843', letterSpacing: '0.08em' }}>May 29 · Gray's Crossing · Limited spots</span>
+                </div>
+                <a href={GOLF} target="_blank" rel="noopener" className="cta-ghost-warm">Play Golf May 29 ↗</a>
               </div>
             </div>
           </ScrollReveal>
@@ -529,17 +532,113 @@ export default function HomePage() {
         .hero-body-desktop { font-size: clamp(0.98rem,1.4vw,1.05rem); line-height: 1.9; color: rgba(255,255,255,0.82); font-weight: 300; margin: 0; }
         .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
         .hero-btn-donate {
-          display: inline-block; background: var(--blue); color: #fff;
-          padding: 1.05rem 2rem; font-size: 0.7rem; letter-spacing: 0.1em;
+          display: inline-block;
+          background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #1D4ED8 100%);
+          background-size: 200% 200%;
+          color: #fff;
+          padding: 1.05rem 2.25rem; font-size: 0.72rem; letter-spacing: 0.12em;
           text-transform: uppercase; font-weight: 700; text-decoration: none;
           font-family: var(--sans);
+          box-shadow: 0 4px 20px rgba(59,130,246,0.5), 0 0 0 0 rgba(59,130,246,0.4);
+          transition: all 0.3s ease;
+          animation: ctaPulse 2.5s ease-in-out infinite;
+          position: relative; overflow: hidden;
+        }
+        .hero-btn-donate::after {
+          content: '';
+          position: absolute; top: 0; left: -100%;
+          width: 60%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          animation: shimmer 3s ease-in-out infinite;
+        }
+        .hero-btn-donate:hover {
+          background-position: right center;
+          box-shadow: 0 8px 32px rgba(59,130,246,0.7);
+          transform: translateY(-2px);
         }
         .hero-btn-golf {
-          display: inline-block; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.95);
-          border: 1.5px solid rgba(255,255,255,0.6); padding: 1rem 1.5rem;
-          font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+          display: inline-block; background: rgba(255,255,255,0.08); color: #fff;
+          border: 1.5px solid rgba(255,255,255,0.7); padding: 1rem 2rem;
+          font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
           font-weight: 600; text-decoration: none; font-family: var(--sans);
+          transition: all 0.25s ease;
         }
+        .hero-btn-golf:hover {
+          background: rgba(255,255,255,0.18); border-color: #fff;
+          transform: translateY(-2px); box-shadow: 0 4px 16px rgba(255,255,255,0.15);
+        }
+
+        /* ── CTA ANIMATIONS ── */
+        @keyframes ctaPulse {
+          0%, 100% { box-shadow: 0 4px 20px rgba(59,130,246,0.5), 0 0 0 0 rgba(59,130,246,0.35); }
+          50% { box-shadow: 0 4px 28px rgba(59,130,246,0.65), 0 0 0 8px rgba(59,130,246,0); }
+        }
+        @keyframes shimmer {
+          0% { left: -100%; }
+          60%, 100% { left: 150%; }
+        }
+        .cta-primary-glow {
+          display: inline-block;
+          background: linear-gradient(135deg, #2563EB, #3B82F6);
+          color: #fff; padding: 1rem 2rem;
+          font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+          font-weight: 700; text-decoration: none; font-family: var(--sans);
+          box-shadow: 0 4px 24px rgba(59,130,246,0.55);
+          transition: all 0.25s ease;
+          position: relative; overflow: hidden;
+        }
+        .cta-primary-glow::after {
+          content: ''; position: absolute; top: 0; left: -100%;
+          width: 60%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+          animation: shimmer 2.8s ease-in-out infinite;
+        }
+        .cta-primary-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(59,130,246,0.7); }
+        .cta-ghost-warm {
+          display: inline-block;
+          background: transparent; color: #fff;
+          border: 1.5px solid rgba(255,255,255,0.55);
+          padding: 0.95rem 1.75rem;
+          font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+          font-weight: 600; text-decoration: none; font-family: var(--sans);
+          transition: all 0.25s ease;
+        }
+        .cta-ghost-warm:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.9); transform: translateY(-1px); }
+
+        /* ── CTA SYSTEM ── */
+        @keyframes heroPulse {
+          0%, 100% { box-shadow: 0 4px 24px rgba(59,130,246,0.55), 0 0 0 0 rgba(59,130,246,0.3); }
+          60% { box-shadow: 0 4px 32px rgba(59,130,246,0.7), 0 0 0 10px rgba(59,130,246,0); }
+        }
+        @keyframes shimmer {
+          0% { left: -100%; }
+          60%, 100% { left: 150%; }
+        }
+        .cta-primary {
+          display: inline-block; position: relative; overflow: hidden;
+          background: linear-gradient(135deg, #1D4ED8, #3B82F6);
+          color: #fff; padding: 1rem 2rem;
+          font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+          font-weight: 700; text-decoration: none; font-family: var(--sans);
+          box-shadow: 0 4px 20px rgba(59,130,246,0.5);
+          transition: all 0.25s ease;
+        }
+        .cta-primary::before {
+          content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+          animation: shimmer 3s ease-in-out 2s infinite;
+        }
+        .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(59,130,246,0.65); }
+        .cta-ghost {
+          display: inline-block;
+          background: transparent; color: rgba(255,255,255,0.92);
+          border: 1.5px solid rgba(255,255,255,0.6);
+          padding: 0.95rem 1.75rem;
+          font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+          font-weight: 600; text-decoration: none; font-family: var(--sans);
+          transition: all 0.25s ease;
+        }
+        .cta-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; transform: translateY(-1px); }
 
         /* ── STATS ── */
         .stats-section { background: var(--white); border-top: 1px solid var(--cream-3); border-bottom: 1px solid var(--cream-3); }
@@ -552,9 +651,10 @@ export default function HomePage() {
         .disease-copy-desktop { font-size: clamp(1rem,1.5vw,1.15rem); line-height: 1.9; color: var(--ink-mid); max-width: 640px; font-weight: 300; margin-bottom: clamp(3rem,5vw,6rem); }
         .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--cream-3); margin-bottom: 1.5px; }
         .facts-mobile { display: none; }
-        .rylee-block { background: var(--navy); padding: clamp(2rem,4vw,4.5rem); }
+        .rylee-block { background: linear-gradient(135deg, #060D1A 0%, #0B1A35 60%, #0F2040 100%); padding: clamp(2rem,4vw,4.5rem); border-top: 3px solid #D4A843; position: relative; overflow: hidden; }
+        .rylee-block::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%); pointer-events: none; }
         .rylee-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem,2.5vw,2.2rem); font-weight: 300; color: #fff; line-height: 1.35; margin-bottom: 1rem; }
-        .rylee-ctas { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .rylee-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
 
         /* ── TIMELINE ── */
         .timeline-desktop-wrapper { display: block; }
@@ -584,7 +684,6 @@ export default function HomePage() {
           .hero-body-mobile  { display: block; }
           .hero-body-desktop { display: none; }
           .hero-ctas { flex-direction: column; gap: 0.6rem; }
-          .hero-btn-donate, .hero-btn-golf { width: 100%; text-align: center; padding: 1rem; }
 
           /* Stats: 2×2 compact */
           .stats-grid-4 { grid-template-columns: 1fr 1fr !important; }
@@ -595,7 +694,10 @@ export default function HomePage() {
           .facts-desktop { display: none !important; }
           .facts-mobile  { display: block !important; }
           .rylee-block { padding: 2rem 1.5rem; }
-          .rylee-ctas { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+          .rylee-ctas { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+          .cta-primary-glow { text-align: center; padding: 1.1rem 1.5rem; }
+          .cta-ghost-warm { text-align: center; padding: 1rem 1.5rem; }
+          .hero-btn-donate, .hero-btn-golf { width: 100%; text-align: center; padding: 1.1rem; }
 
           /* Timeline: mobile cards */
           .timeline-desktop-wrapper { display: none; }
