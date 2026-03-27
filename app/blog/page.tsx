@@ -188,6 +188,23 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* ── INTERNAL LINK HUB ── */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(2.5rem,4vw,4rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner hub-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem' }}>
+          {[
+            { href: '/causes', title: 'Our Charity Causes', desc: 'See exactly where every dollar raised goes — year by year.' },
+            { href: '/about', title: 'Meet the Board', desc: 'The people behind NVforHD and their personal connection to HD.' },
+            { href: '/sponsors', title: 'Sponsor the Tournament', desc: 'Put your brand on the fight. Packages from $100.' },
+            { href: '/contact', title: 'Play or Donate', desc: 'Register for May 29 or donate directly to HD families.' },
+          ].map(({ href, title, desc }) => (
+            <a key={href} href={href} style={{ display: 'block', padding: '1.5rem', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none' }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 500, color: 'var(--blue)', marginBottom: '0.4rem' }}>{title} →</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', lineHeight: 1.6 }}>{desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <Footer />
 
       <style>{`

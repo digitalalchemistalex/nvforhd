@@ -110,7 +110,7 @@ There is no step where money is diverted, held, or skimmed.
 
 NVforHD was founded because Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. This is personal. The board has skin in this game — not in a metaphorical sense, but literally. Christine is one of the 90+ families served by UC Davis.
 
-That is why the overhead is zero. That is why the cause is chosen carefully. That is why the accountability is public.
+That is why the overhead is zero. [Learn more about our causes page](/causes) for the full year-by-year breakdown. That is why the cause is chosen carefully. That is why the accountability is public.
 
 [Join us May 29](/contact) or [donate now](/contact) — and know exactly what you are funding.
 

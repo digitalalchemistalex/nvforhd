@@ -73,7 +73,7 @@ Have something specific in mind? A product activation, a hospitality component, 
 
 ## The Cause You Are Supporting
 
-Every dollar of your sponsorship goes to the UC Davis Huntington's Disease Center of Excellence in Sacramento — the only HD specialist clinic serving Northern Nevada's 90+ HD families.
+Every dollar of your sponsorship goes to the [UC Davis Huntington's Disease Center of Excellence](/causes) in Sacramento — the only HD specialist clinic serving Northern Nevada's 90+ HD families.
 
 :::fact The UC Davis HD Center employs 2 neurologists, 2 psychiatrists, a genetic counselor, a social worker, 2 physical therapists, and 3 research coordinators — all specialising in HD. Source: UC Davis Health / NVforHD
 
@@ -95,7 +95,7 @@ Sponsoring a sold-out charity event with a genuine local cause attached is a dif
 - **Audience:** 100+ Reno/Truckee professionals
 - **Deadline to confirm sponsorship:** April 30, 2026
 
-To discuss any package or ask questions, contact Sean Schaeffer directly:
+To discuss any package or ask questions, [meet the board behind NVforHD](/about) or contact Sean Schaeffer directly:
 
 📞 775-691-8860
 ✉ info@nvforhd.com

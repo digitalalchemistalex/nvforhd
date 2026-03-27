@@ -12,7 +12,7 @@ featured: false
 
 Huntington's Disease does not have a cure yet. But there is a lot that can be done right now — for the families living with it today.
 
-NVforHD was built around one belief: that a community that shows up can do real, measurable good for real people. Here are five ways to be part of it.
+NVforHD was built around one belief: that a community that shows up can do real, measurable good for real people. Here are five ways to be part of it. Already know the cause? [Contact us directly](/contact) or [read the tournament details](/blog/nvforhd-golf-tournament-2026). See [where every dollar goes](/causes) and [the full tournament details](/blog/nvforhd-golf-tournament-2026).
 
 :::stats-grid
 :::stat May 29 | 2026 Tournament Date

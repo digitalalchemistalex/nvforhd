@@ -12,7 +12,7 @@ featured: true
 
 In 2024, NVforHD raised $25,000 at our inaugural golf tournament at Old Greenwood in Truckee.
 
-That money went to HelpCureHD. HelpCureHD put it through their grant cycle — vetting families in genuine financial need who carried the Huntington's Disease gene mutation. And they selected Brandon and Rylee Puccini.
+That money went to HelpCureHD — [see where all NVforHD money goes](/causes). [See our full transparency report](/blog/nvforhd-transparency-where-money-goes). HelpCureHD put it through their grant cycle — vetting families in genuine financial need who carried the Huntington's Disease gene mutation. And they selected Brandon and Rylee Puccini.
 
 :::pull "Brandon and Rylee are now expecting. Their baby will not have Huntington's Disease.
 
@@ -73,7 +73,7 @@ In 2026 our focus shifts to the UC Davis HD Center of Excellence — the clinic 
 
 If you or someone you know is HD-positive and considering having children, genetic counseling is the first step. The UC Davis HD Center of Excellence — which NVforHD supports — has a dedicated genetic counselor on staff specifically for this.
 
-And if you want to be part of making more stories like Brandon and Rylee's possible, join us on **May 29, 2026** at Gray's Crossing Golf Club in Truckee.
+And if you want to be part of making more stories like Brandon and Rylee's possible, join us on **[May 29, 2026 at Gray's Crossing](/blog/nvforhd-golf-tournament-2026)** at Gray's Crossing Golf Club in Truckee.
 
 You do not have to be a golfer. You can donate directly. Every amount matters, because we have seen exactly what it can do.
 ---

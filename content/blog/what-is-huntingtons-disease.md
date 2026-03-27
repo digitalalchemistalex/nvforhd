@@ -92,4 +92,6 @@ Without private funding, that team cannot operate. Those 90+ families lose the o
 
 HD is terminal. But the cycle can be broken. And the people who have it right now deserve the best care we can give them.
 
-:::pull "This is why we play."
+:::pull "This is why we play.
+
+[Read the full HD symptoms and stages guide](/blog/huntingtons-disease-symptoms-stages) — and [contact us](/contact) to join the fight on May 29."

@@ -14,7 +14,7 @@ If you live in Northern Nevada and someone in your family has Huntington's Disea
 
 There is no HD specialist in Reno. No HD specialty clinic in the state. The closest comprehensive Huntington's Disease Center of Excellence is in Sacramento — at UC Davis Medical Center — over 130 miles away.
 
-For 90+ families in our region, that drive is not optional. It is the only path to the specialized care that HD demands.
+For 90+ families in our region, that drive is not optional. [See what NVforHD does to keep this clinic funded](/causes) and [learn about HD symptoms and stages](/blog/huntingtons-disease-symptoms-stages). It is the only path to the specialized care that HD demands.
 
 :::stats-grid
 :::stat 90+ | Nevada families served by UC Davis HD clinic
