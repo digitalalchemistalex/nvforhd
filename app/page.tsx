@@ -385,18 +385,21 @@ export default function HomePage() {
               name="Mikey & Holly"
               role="HD Patient & Family — UC Davis Care Team"
               quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
+              fallbackImage="/images/event-group-2.jpg"
             />
             <VideoTestimonial
               youtubeId="7nDr5ous818"
               name="Tiffany"
               role="HD Family — UC Davis Patient"
               quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
+              fallbackImage="/images/event-group-3.jpg"
             />
             <VideoTestimonial
               youtubeId="7jrefyflRVc"
               name="Leilani Dunmoyer"
               role="Gene-Positive — UC Davis Patient Family"
               quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
+              fallbackImage="/images/event-group-4.jpg"
             />
           </div>
         </div>
