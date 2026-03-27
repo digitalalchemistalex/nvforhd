@@ -21,12 +21,13 @@ const NAV_LINKS = [
 ]
 
 // Mobile tab bar — 5 primary destinations only
+// Order: understand HD → where money goes → primary action → social proof
 const TAB_ITEMS = [
-  { href: '/',        label: 'Home',    icon: HomeIcon },
-  { href: '/story',   label: 'Story',   icon: StoryIcon },
-  { href: '/causes',  label: 'Causes',  icon: CausesIcon },
-  { href: DONATE,     label: 'Donate',  icon: HeartIcon,  external: true, primary: true },
-  { href: '/contact', label: 'Contact', icon: ContactIcon },
+  { href: '/',         label: 'Home',    icon: HomeIcon },
+  { href: '/cause',    label: 'HD',      icon: CauseIcon },
+  { href: '/causes',   label: 'Causes',  icon: CausesIcon },
+  { href: DONATE,      label: 'Donate',  icon: HeartIcon,  external: true, primary: true },
+  { href: '/gallery',  label: 'Gallery', icon: GalleryIcon },
 ]
 
 export default function Nav() {
@@ -239,11 +240,11 @@ function HomeIcon({ active, primary }: { active: boolean; primary?: boolean }) {
     </svg>
   )
 }
-function StoryIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+function CauseIcon({ active, primary }: { active: boolean; primary?: boolean }) {
   const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
     </svg>
   )
 }
@@ -251,7 +252,7 @@ function CausesIcon({ active, primary }: { active: boolean; primary?: boolean })
   const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
     </svg>
   )
 }
@@ -259,15 +260,18 @@ function HeartIcon({ active, primary }: { active: boolean; primary?: boolean }) 
   const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill={primary ? 'rgba(255,255,255,0.3)' : 'none'} stroke={c} strokeWidth={primary ? 2 : active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+      <polyline points="9 11 12 14 22 4" />
     </svg>
   )
 }
-function ContactIcon({ active, primary }: { active: boolean; primary?: boolean }) {
+function GalleryIcon({ active, primary }: { active: boolean; primary?: boolean }) {
   const c = primary ? '#fff' : active ? 'var(--blue-faint)' : 'rgba(249,248,246,0.45)'
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      <polyline points="21 15 16 10 5 21" />
     </svg>
   )
 }
