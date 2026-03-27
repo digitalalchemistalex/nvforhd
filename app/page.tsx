@@ -7,6 +7,7 @@ import SponsorsSection from '@/components/SponsorsSection'
 import AnimatedCounter from '@/components/AnimatedCounter'
 import Image from 'next/image'
 import Link from 'next/link'
+import VideoTestimonial from '@/components/VideoTestimonial'
 
 export const metadata: Metadata = {
   title: "NVforHD — Charity Golf Tournament for Huntington's Disease",
@@ -358,6 +359,44 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
         </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════
+          TESTIMONIALS — Real HD families
+          2 videos: Mikey & Holly + Tiffany
+          Both UC Davis patients — placed after emotional Puccini moment
+      ══════════════════════════════════════ */}
+      <section style={{ background: 'var(--navy)', padding: 'var(--py-lg) var(--px)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="inner">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem,4vw,4rem)' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
+              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>Real Families. Real Impact.</span>
+              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
+            </div>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 300, color: '#fff', lineHeight: 0.95, letterSpacing: '-0.02em' }}>
+              Why we show up<br /><em style={{ color: 'rgba(255,255,255,0.3)' }}>every year.</em>
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '900px', margin: '0 auto' }} className="testimonials-grid">
+            <VideoTestimonial
+              youtubeId="zij5RaT5GsY"
+              name="Mikey & Holly"
+              role="HD Patient & Family — UC Davis Care Team"
+              quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
+            />
+            <VideoTestimonial
+              youtubeId="7nDr5ous818"
+              name="Tiffany"
+              role="HD Family — UC Davis Patient"
+              quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
+            />
+          </div>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr !important; } }
+        ` }} />
       </section>
 
       {/* Packages + Sponsors — only on desktop, mobile too long */}
