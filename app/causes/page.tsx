@@ -121,8 +121,17 @@ export default function CausesPage() {
               <p className="speakable-causes" style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '1.5rem' }}>
                 For 2026 we are returning to support the <strong style={{ color: 'var(--ink)' }}>UC Davis Huntington&apos;s Disease Center of Excellence</strong> — the only specialty HD clinic serving Northern Nevada and our own beautiful Christine.
               </p>
+
+              {/* Pull quote — Tiffany */}
+              <blockquote style={{ borderLeft: '3px solid var(--gold-dark)', paddingLeft: '1.5rem', margin: '2rem 0', background: 'var(--cream-2)', padding: '1.5rem 1.5rem 1.5rem 2rem', border: '1px solid var(--cream-3)', borderLeft: '3px solid var(--gold-dark)' }}>
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'var(--ink)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                  &ldquo;They didn&apos;t just treat the medical side of Huntington&apos;s Disease. They cared about the whole journey.&rdquo;
+                </p>
+                <cite style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', color: 'var(--gold-dark)', fontWeight: 600, fontStyle: 'normal', letterSpacing: '0.06em' }}>— Tiffany, HD Family &amp; UC Davis Patient</cite>
+              </blockquote>
+
               <p className="speakable-causes" style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '2.5rem' }}>
-                This clinic operates entirely on private donation. Without continued support, over 90 families in our region lose access to the specialised neurologists, psychiatrists, and genetic counselors who guide them through their worst days. <strong style={{ color: 'var(--ink)' }}>Your round of golf directly funds this team.</strong>
+                This clinic operates entirely on private donation. Families like Tiffany&apos;s, Mikey and Holly&apos;s, and Leilani&apos;s — over 90 Northern Nevada families — depend on it for neurologists, psychiatrists, genetic counselors, and social workers who guide them through their worst days. <strong style={{ color: 'var(--ink)' }}>Your round of golf directly funds this team.</strong>
               </p>
               <a href={BOOK} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--ink)', color: 'var(--cream)', padding: '1rem 2.5rem', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', transition: 'background 0.2s' }}>
                 Support This Cause →
@@ -177,6 +186,14 @@ export default function CausesPage() {
               <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--white-dim)', marginBottom: '1.5rem' }}>
                 We chose the <strong style={{ color: '#fff' }}>Huntington&apos;s Disease Center of Excellence at UC Davis</strong> — the closest specialty care our community can reach. By choosing this team, we were able to directly assist over <strong style={{ color: '#fff' }}>45 Northern Nevada patients</strong> with 2 neurologists, 2 psychiatrists, a genetic counselor, social worker, physical therapists, and research coordinators all dedicated to HD.
               </p>
+
+              {/* Pull quote — Mikey */}
+              <blockquote style={{ borderLeft: '3px solid rgba(255,255,255,0.3)', paddingLeft: '1.5rem', margin: '2rem 0' }}>
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                  &ldquo;Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn&apos;t for them.&rdquo;
+                </p>
+                <cite style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', fontWeight: 600, fontStyle: 'normal', letterSpacing: '0.06em' }}>— Mikey, HD Caregiver &amp; Family</cite>
+              </blockquote>
             </ScrollReveal>
           </div>
         </div>
@@ -285,7 +302,9 @@ export default function CausesPage() {
           {[
             { href: '/sponsors', title: 'Become a Sponsor', desc: 'Put your name on the cause. Packages from $100.' },
             { href: '/about', title: 'Meet the Board', desc: 'The people who choose and steward every cause.' },
-            { href: '/blog', title: 'Read the IVF Story', desc: 'How $25,000 gave the Puccini family an HD-free baby.' },
+            { href: '/blog/hd-family-story-tiffany-uc-davis', title: "Tiffany's Story", desc: 'One family's 24-year journey with HD and the UC Davis team.' },
+            { href: '/blog/hd-family-story-mikey-holly-uc-davis', title: "Mikey & Holly's Story", desc: 'How the UC Davis team walks alongside HD patients every step.' },
+            { href: '/blog/hd-family-story-leilani-dunmoyer-uc-davis', title: "Leilani's Story", desc: 'Gene-positive, three kids at risk — and still running marathons for HD.' },
             { href: '/contact', title: 'Donate Now', desc: '100% goes directly to UC Davis HD families.' },
           ].map(({ href, title, desc }) => (
             <a key={href} href={href} style={{ display: 'block', padding: '1.5rem', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none' }}>
