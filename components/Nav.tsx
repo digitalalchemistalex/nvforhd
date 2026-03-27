@@ -145,7 +145,7 @@ export default function Nav() {
               animation: menuOpen ? `fadeup 0.5s ease ${i * 0.04 + 0.1}s both` : 'none',
             }}>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,5vw,2.5rem)', fontWeight: 300, color: pathname === href ? 'var(--blue-faint)' : '#fff', lineHeight: 1, marginBottom: sub ? '0.35rem' : 0 }}>{label}</div>
-              {sub && <div style={{ fontSize: '0.72rem', color: 'rgba(249,248,246,0.38)', fontWeight: 300 }}>{sub}</div>}
+              {sub && <div style={{ fontSize: '0.72rem', color: 'rgba(249,248,246,0.72)', fontWeight: 300 }}>{sub}</div>}
             </Link>
           ))}
         </nav>
@@ -159,7 +159,7 @@ export default function Nav() {
             Play Golf — May 29, 2026 ↗
           </a>
           <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
-            <a href="tel:7756918860" style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.35)', textDecoration: 'none' }}>📞 775-691-8860 · Call Sean</a>
+            <a href="tel:7756918860" style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.70)', textDecoration: 'none' }}>📞 775-691-8860 · Call Sean</a>
           </div>
         </div>
       </div>
@@ -259,7 +259,7 @@ function CausesIcon({ active, primary }: { active: boolean; primary?: boolean })
 function HeartIcon({ active, primary }: { active: boolean; primary?: boolean }) {
   const c = primary ? '#fff' : active ? '#ffffff' : 'rgba(255,255,255,0.75)'
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill={primary ? 'rgba(255,255,255,0.3)' : 'none'} stroke={c} strokeWidth={primary ? 2 : active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill={primary ? 'rgba(255,255,255,0.75)' : 'none'} stroke={c} strokeWidth={primary ? 2 : active ? 2.5 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
       <polyline points="9 11 12 14 22 4" />
     </svg>

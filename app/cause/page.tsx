@@ -19,7 +19,7 @@ export default function CausePage() {
 
       <PageHero
         kicker="Nevada for Huntington's Disease"
-        headline={<>Terminal.<br /><em style={{ color: 'rgba(255,255,255,0.35)' }}>Hereditary.</em><br /><span style={{ color: 'var(--gold)' }}>No cure.</span></>}
+        headline={<>Terminal.<br /><em style={{ color: 'rgba(255,255,255,0.75)' }}>Hereditary.</em><br /><span style={{ color: 'var(--gold)' }}>No cure.</span></>}
         sub="HD destroys nerve cells — likened to Parkinson's, ALS, and Alzheimer's at the same time. Every child of an HD parent has a 50% chance of inheriting it."
         photo="/images/hd-ribbon.jpg"
         photoPosition="center"

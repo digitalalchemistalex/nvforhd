@@ -172,7 +172,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Breadcrumb */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             <Link href="/blog" style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: 'var(--sans)' }}>Blog</Link>
-            <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.6rem' }}>›</span>
+            <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.6rem' }}>›</span>
             <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: 'var(--sans)' }}>{post.category}</span>
           </div>
           <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.8rem,4vw,4rem)', fontWeight: 300, color: '#fff', lineHeight: 1.1, marginBottom: '1.25rem', letterSpacing: '-0.02em', maxWidth: '800px' }}>
@@ -180,9 +180,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--sans)' }}>{formatDate(post.date)}</span>
-            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.3)' }} />
+            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.75)' }} />
             <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--sans)' }}>{post.readingTime} min read</span>
-            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.3)' }} />
+            <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.75)' }} />
             <span style={{ fontSize: '0.68rem', color: 'var(--blue-faint)', fontFamily: 'var(--sans)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{post.category}</span>
           </div>
         </div>

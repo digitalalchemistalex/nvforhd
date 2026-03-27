@@ -14,10 +14,10 @@
   --ink:        #111827;
   --ink-mid:    #374151;
   --ink-dim:    #6B7280;
-  --ink-faint:  #9CA3AF;
+  --ink-faint:  #6B7280;
   --snow:       #F9F8F6;
-  --snow-dim:   rgba(249,248,246,0.65);
-  --snow-faint: rgba(249,248,246,0.35);
+  --snow-dim:   rgba(249,248,246,0.85);
+  --snow-faint: rgba(249,248,246,0.70);
   --blue:       #3B82F6;
   --blue-dark:  #1E3A8A;
   --blue-mid:   #2563EB;
@@ -38,8 +38,8 @@
   --py-sm:  clamp(2rem, 3vw, 3.5rem);
   --max:    1440px;
   /* legacy */
-  --white-dim:    rgba(249,248,246,0.65);
-  --white-dimmer: rgba(249,248,246,0.35);
+  --white-dim:    rgba(249,248,246,0.85);
+  --white-dimmer: rgba(249,248,246,0.70);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -121,9 +121,9 @@ a { color: inherit; }
 .on-dark .btn-secondary { color:#fff; border-color:rgba(255,255,255,0.6); }
 .on-dark .btn-secondary:hover { background:rgba(255,255,255,0.1); }
 .btn-secondary:hover { background:var(--blue); color:#fff; transform:translateY(-2px); }
-.on-dark .btn-secondary { color:var(--snow); border-color:rgba(249,248,246,0.3); }
+.on-dark .btn-secondary { color:#fff; border-color:rgba(249,248,246,0.65); }
 .on-dark .btn-secondary:hover { background:rgba(249,248,246,0.1); color:var(--snow); border-color:var(--snow); }
-.btn-ghost-dark { background:rgba(255,255,255,0.08); color:var(--snow); border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(8px); }
+.btn-ghost-dark { background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(8px); }
 .btn-ghost-dark:hover { background:rgba(255,255,255,0.15); transform:translateY(-2px); }
 /* legacy */
 .btn-gold { background:var(--gold-light); color:var(--navy-deep); display:inline-block; text-decoration:none; font-family:var(--sans); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; padding:0.95rem 2rem; transition:all 0.25s var(--ease); }
@@ -133,7 +133,7 @@ a { color: inherit; }
 
 /* ── AMOUNT BUTTONS ── */
 .amt-btn { padding:0.75rem 1.5rem; font-size:0.9rem; font-weight:500; text-decoration:none; display:inline-block; transition:all 0.2s; font-family:var(--sans); cursor:pointer; }
-.on-dark  .amt-btn { border:1.5px solid rgba(249,248,246,0.2); color:var(--snow-dim); background:transparent; }
+.on-dark  .amt-btn { border:1.5px solid rgba(249,248,246,0.5); color:var(--snow-dim); background:transparent; }
 .on-dark  .amt-btn:hover { border-color:var(--snow); color:var(--snow); background:rgba(249,248,246,0.08); }
 .on-light .amt-btn { border:1.5px solid var(--cream-3); color:var(--ink-mid); background:var(--white); }
 .on-light .amt-btn:hover { border-color:var(--blue); color:var(--blue); }

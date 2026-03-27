@@ -131,7 +131,7 @@ export default function AboutPage() {
       <Nav />
       <PageHero
         kicker="About NVforHD"
-        headline={<>The people<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.35)' }}>behind</em> the fight.</>}
+        headline={<>The people<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.75)' }}>behind</em> the fight.</>}
         sub="Four board members united by a single mission — raise awareness, raise funds, and fight Huntington's Disease until there is a cure."
         photo="/images/event-crowd.jpg"
         photoPosition="center 30%"

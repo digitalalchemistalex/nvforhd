@@ -91,7 +91,7 @@ export default function CausesPage() {
       <Nav />
       <PageHero
         kicker="Our Charity Causes"
-        headline={<>One cause.<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.35)' }}>Every year.</em></>}
+        headline={<>One cause.<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.75)' }}>Every year.</em></>}
         sub="Every dollar raised at NVforHD goes directly to one chosen cause. No overhead. No splitting. We pick the most impactful target each year and give everything."
         photo="/images/event-foursome-1.jpg"
         photoPosition="center 40%"
@@ -188,11 +188,11 @@ export default function CausesPage() {
               </p>
 
               {/* Pull quote — Mikey */}
-              <blockquote style={{ borderLeft: '3px solid rgba(255,255,255,0.3)', paddingLeft: '1.5rem', margin: '2rem 0' }}>
+              <blockquote style={{ borderLeft: '3px solid rgba(255,255,255,0.75)', paddingLeft: '1.5rem', margin: '2rem 0' }}>
                 <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
                   &ldquo;Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn&apos;t for them.&rdquo;
                 </p>
-                <cite style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', fontWeight: 600, fontStyle: 'normal', letterSpacing: '0.06em' }}>— Mikey, HD Caregiver &amp; Family</cite>
+                <cite style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', color: 'rgba(255,255,255,0.75)', fontWeight: 600, fontStyle: 'normal', letterSpacing: '0.06em' }}>— Mikey, HD Caregiver &amp; Family</cite>
               </blockquote>
             </ScrollReveal>
           </div>

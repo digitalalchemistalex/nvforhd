@@ -248,7 +248,7 @@ export default function SponsorsPage() {
               <div style={{ background: 'var(--navy)', padding: 'clamp(2.5rem,4vw,4rem)' }}>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 300, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.2 }}>
                   Spots for 2026 are limited.<br />
-                  <em style={{ color: 'rgba(255,255,255,0.45)' }}>Title and Gold go first.</em>
+                  <em style={{ color: 'rgba(255,255,255,0.75)' }}>Title and Gold go first.</em>
                 </div>
                 <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, marginBottom: '2rem' }}>
                   Email Sean directly or call. He&apos;ll walk you through the options and make it easy.
@@ -257,11 +257,11 @@ export default function SponsorsPage() {
                   <a href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry" style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.15rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                     Email About Sponsorship →
                   </a>
-                  <a href="tel:7756918860" style={{ display: 'block', textAlign: 'center', background: 'rgba(255,255,255,0.08)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', padding: '1.1rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+                  <a href="tel:7756918860" style={{ display: 'block', textAlign: 'center', background: 'rgba(255,255,255,0.08)', color: '#fff', border: '1px solid rgba(255,255,255,0.70)', padding: '1.1rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                     📞 Call Sean: 775-691-8860
                   </a>
                 </div>
-                <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.68rem', color: 'rgba(255,255,255,0.3)' }}>
+                <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.68rem', color: 'rgba(255,255,255,0.75)' }}>
                   Or <a href={BOOK} target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'underline' }}>register to play golf May 29 ↗</a>
                 </p>
               </div>

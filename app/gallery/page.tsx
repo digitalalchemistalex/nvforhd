@@ -71,7 +71,7 @@ export default function GalleryPage() {
       <Nav />
       <PageHero
         kicker="2024 Event Gallery"
-        headline={<>The inaugural<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.35)' }}>tournament.</em></>}
+        headline={<>The inaugural<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.75)' }}>tournament.</em></>}
         sub="May 2024 · Old Greenwood Golf Club, Truckee CA (Jack Nicklaus Signature Course). Sold out. $25,000 raised. One family changed forever."
         photo="/images/event-foursome-2.jpg"
         photoPosition="center 35%"
@@ -121,7 +121,7 @@ export default function GalleryPage() {
         <div className="inner" style={{ textAlign: 'center', position: 'relative', zIndex: 1, maxWidth: '700px', margin: '0 auto' }}>
           <div className="kicker" style={{ justifyContent: 'center', marginBottom: '1.5rem' }}>May 29, 2026</div>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,5rem)', fontWeight: 300, color: '#fff', marginBottom: '1.5rem' }}>
-            Be in <em style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.35)' }}>next year&apos;s</em> photos.
+            Be in <em style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.75)' }}>next year&apos;s</em> photos.
           </h2>
           <p style={{ fontSize: '1rem', color: 'var(--white-dim)', fontWeight: 300, lineHeight: 1.8, marginBottom: '2.5rem' }}>
             Gray&apos;s Crossing Golf Club, Truckee CA. 12:00 PM Shotgun. All proceeds to UC Davis HD Center of Excellence.

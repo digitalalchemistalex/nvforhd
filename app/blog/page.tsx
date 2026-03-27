@@ -68,7 +68,7 @@ export default function BlogPage() {
 
       <PageHero
         kicker="NVforHD Blog"
-        headline={<>Stories from<br /><em style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.35)' }}>the fight.</em></>}
+        headline={<>Stories from<br /><em style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.75)' }}>the fight.</em></>}
         sub="Education, impact stories, and updates from our community. Every post is written to help HD families, raise awareness, and fund the cure."
         photo="/images/event-crowd.jpg"
         photoPosition="center 35%"

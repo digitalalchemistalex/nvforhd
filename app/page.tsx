@@ -89,7 +89,7 @@ export default function HomePage() {
 
           {/* Headline — different sizes per device, same copy */}
           <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(3rem,8vw,8rem)', fontWeight: 300, lineHeight: 0.92, color: '#fff', letterSpacing: '-0.025em', marginBottom: '1.5rem', animation: 'fadeup 1s ease 0.35s both' }}>
-            HD takes<br />everything.<br /><em style={{ color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}>We fight back.</em>
+            HD takes<br />everything.<br /><em style={{ color: 'rgba(255,255,255,0.70)', fontStyle: 'italic' }}>We fight back.</em>
           </h1>
 
           {/* Body — mobile: 1 sentence. Desktop: 2 sentences via CSS */}
@@ -104,7 +104,7 @@ export default function HomePage() {
             <a href={GOLF} target="_blank" rel="noopener" className="hero-btn-golf">Play Golf May 29</a>
           </div>
 
-          <p style={{ marginTop: '1rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.28)', animation: 'fadeup 0.9s ease 0.8s both' }}>
+          <p style={{ marginTop: '1rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.75)', animation: 'fadeup 0.9s ease 0.8s both' }}>
             100% → UC Davis HD Center of Excellence
           </p>
         </div>
@@ -336,7 +336,7 @@ export default function HomePage() {
               <Image src="/images/baby-hands.jpg" alt="Two parents holding their HD-free newborn" width={800} height={600}
                 style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 1, boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }} quality={85} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2, padding: '1.25rem 1.5rem 1.5rem', background: 'linear-gradient(to top, rgba(6,13,26,0.9), transparent)' }}>
-                <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>Brandon & Rylee Puccini · 2025 · HD-Free</div>
+                <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>Brandon & Rylee Puccini · 2025 · HD-Free</div>
               </div>
             </div>
           </ScrollReveal>
@@ -376,7 +376,7 @@ export default function HomePage() {
               <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
             </div>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 300, color: '#fff', lineHeight: 0.95, letterSpacing: '-0.02em' }}>
-              Why we show up<br /><em style={{ color: 'rgba(255,255,255,0.3)' }}>every year.</em>
+              Why we show up<br /><em style={{ color: 'rgba(255,255,255,0.75)' }}>every year.</em>
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }} className="testimonials-grid">

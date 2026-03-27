@@ -259,7 +259,7 @@ export default function Footer() {
           gap: 0.75rem;
           padding: 1.5rem 0 calc(1.5rem + env(safe-area-inset-bottom, 0px));
           font-size: 0.65rem;
-          color: rgba(249,248,246,0.25);
+          color: rgba(249,248,246,0.65);
         }
         .footer-gths-link {
           color: rgba(249,248,246,0.4);

@@ -66,7 +66,7 @@ export default function StoryPage() {
                 <a href="#2024" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '1rem 2rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                   Read the Story ↓
                 </a>
-                <a href={DONATE} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'transparent', color: 'rgba(255,255,255,0.7)', border: '1.5px solid rgba(255,255,255,0.3)', padding: '1rem 2rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+                <a href={DONATE} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'transparent', color: 'rgba(255,255,255,0.7)', border: '1.5px solid rgba(255,255,255,0.75)', padding: '1rem 2rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                   Donate Now
                 </a>
               </div>
@@ -252,11 +252,11 @@ export default function StoryPage() {
                 <a href={GOLF} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '1.15rem 2.5rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', transition: 'background 0.2s' }}>
                   Register to Play →
                 </a>
-                <a href={DONATE} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1.5px solid rgba(255,255,255,0.3)', padding: '1.1rem 2rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
+                <a href={DONATE} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1.5px solid rgba(255,255,255,0.75)', padding: '1.1rem 2rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
                   Donate Without Playing
                 </a>
               </div>
-              <p style={{ marginTop: '1rem', fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)' }}>
+              <p style={{ marginTop: '1rem', fontSize: '0.7rem', color: 'rgba(255,255,255,0.75)' }}>
                 12:00 PM Shotgun · Four-Person Scramble · Lunch Included · Gray&apos;s Crossing, Truckee CA
               </p>
             </ScrollReveal>
