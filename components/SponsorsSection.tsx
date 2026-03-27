@@ -14,10 +14,55 @@ const LINKS = {
   flowingTide:  `https://flowingtidepub.com${UTM}sponsors-flowingtide`,
 }
 
+const majorSponsors = [
+  {
+    href: LINKS.ucDavis,
+    logo: '/images/uc-davis.png', logoBg: '#fff',
+    alt: 'UC Davis Health — Huntington\'s Disease Center of Excellence',
+    badgeText: 'Platinum · 2025 & 2026 Charity Partner',
+    badgeBg: '#2563EB', badgeColor: '#fff',
+    name: 'UC Davis Health',
+    desc: 'Huntington\'s Disease Center of Excellence — the only HD specialty clinic serving 90+ Northern Nevada families.',
+    linkLabel: 'health.ucdavis.edu',
+    accentTop: '#2563EB',
+  },
+  {
+    href: LINKS.cHawk,
+    logo: '/images/c-hawk.png', logoBg: '#1A4A1A',
+    alt: 'C-Hawk Technology — Advanced Manufacturing & Engineering',
+    badgeText: 'Gold Sponsor',
+    badgeBg: '#E8C97A', badgeColor: '#0F1729',
+    name: 'C-Hawk Technology',
+    desc: 'Advanced Manufacturing & Engineering. Proud supporter of NVforHD\'s mission to defeat Huntington\'s Disease.',
+    linkLabel: 'c-hawk.com',
+    accentTop: '#E8C97A',
+  },
+  {
+    href: null,
+    logo: '/images/fleet-heating-ac.png', logoBg: '#0D1B3E',
+    alt: 'Fleet Heating & Air Conditioning',
+    badgeText: 'Gold Sponsor',
+    badgeBg: '#E8C97A', badgeColor: '#0F1729',
+    name: 'Fleet Heating & Air Conditioning',
+    desc: 'Keeping Northern Nevada comfortable — and proudly helping NVforHD keep the fight against Huntington\'s Disease alive.',
+    linkLabel: null,
+    accentTop: '#E8C97A',
+  },
+]
+
+const holeSponsors = [
+  { name: 'Matt & Kari Woodhead',  sub: 'Lunch Sponsor',           url: null },
+  { name: 'Pace Supply Corp',       sub: 'Hole Sponsor',            url: LINKS.paceSup },
+  { name: 'Blue Reef Enterprises',  sub: 'Builders · Hole Sponsor', url: null },
+  { name: 'Washoe Wealth Advisors', sub: 'Hole Sponsor',            url: null },
+  { name: 'Golf The High Sierra',   sub: 'Event Partner',           url: LINKS.gths },
+  { name: 'Flowing Tide Pub',       sub: 'Hole Sponsor',            url: LINKS.flowingTide },
+  { name: 'Rebuilding Together NV', sub: 'Event Partner',           url: LINKS.rtnnv },
+]
+
 export default function SponsorsSection() {
   return (
     <>
-      {/* ── DARK SECTION: Title + Major Sponsors ── */}
       <section id="sponsors" className="section-dark dark-section on-dark" style={{ padding: 'var(--py-lg) var(--px)', position: 'relative' }}>
         <div className="photo-texture" style={{ backgroundImage: "url('/images/event-booth.jpg')", opacity: 0.07, filter: 'grayscale(30%)' }} />
         <div className="divider-gold" />
@@ -40,10 +85,11 @@ export default function SponsorsSection() {
           <ScrollReveal style={{ marginBottom: '2px' }}>
             <a href={LINKS.aguirre} target="_blank" rel="noopener noreferrer"
               style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', textDecoration: 'none', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)', borderTop: '3px solid #E8C97A', transition: 'background 0.3s' }}
+              className="title-sponsor-grid"
               onMouseEnter={e => (e.currentTarget.style.background='rgba(255,255,255,0.07)')}
               onMouseLeave={e => (e.currentTarget.style.background='rgba(255,255,255,0.04)')}>
               <div style={{ background: '#fff', padding: 'clamp(2rem,4vw,4rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-                <Image src="/images/aguirre-riley.png" alt="Aguirre Riley P.C. — Estate Planning, Business & Tax Law" width={260} height={110} style={{ width: '100%', maxWidth: '240px', height: 'auto', objectFit: 'contain' }} />
+                <Image src="/images/aguirre-riley.png" alt="Aguirre Riley P.C." width={260} height={110} style={{ width: '100%', maxWidth: '240px', height: 'auto', objectFit: 'contain' }} />
               </div>
               <div style={{ padding: 'clamp(2rem,3vw,3.5rem)' }}>
                 <div style={{ display: 'inline-block', fontSize: '0.6rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '1rem', background: '#E8C97A', color: '#0F1729', padding: '0.3rem 0.75rem' }}>🏆 Title Sponsor</div>
@@ -51,52 +97,18 @@ export default function SponsorsSection() {
                 <p style={{ fontSize: '0.88rem', color: 'var(--white-dim)', lineHeight: 1.75, marginBottom: '1.5rem', maxWidth: '340px' }}>
                   Estate Planning, Business &amp; Tax Law. Northern Nevada&apos;s trusted legal partner — proudly supporting the fight against Huntington&apos;s Disease.
                 </p>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.1)', border: '1px solid rgba(232,201,122,0.3)', padding: '0.45rem 0.9rem' }}>
+                <a href={LINKS.aguirre} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.1)', border: '1px solid rgba(232,201,122,0.3)', padding: '0.45rem 0.9rem', textDecoration: 'none' }}>
                   aguirreriley.com ↗
-                </div>
+                </a>
               </div>
             </a>
           </ScrollReveal>
 
-          {/* ── UC Davis + C-Hawk side by side ── */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2px', marginBottom: '2px' }}>
-            {[
-              {
-                href: LINKS.ucDavis,
-                logo: '/images/uc-davis.png', logoBg: '#fff',
-                alt: 'UC Davis Health — Huntington\'s Disease Center of Excellence',
-                badgeText: 'Platinum · 2025 & 2026 Charity Partner',
-                badgeBg: '#1D4ED8', badgeColor: '#fff',
-                name: 'UC Davis Health',
-                desc: 'Huntington\'s Disease Center of Excellence — the only HD specialty clinic serving 90+ Northern Nevada families.',
-                linkLabel: 'health.ucdavis.edu',
-                accentTop: '#1D4ED8',
-              },
-              {
-                href: LINKS.cHawk,
-                logo: '/images/c-hawk.png', logoBg: '#1A4A1A',
-                alt: 'C-Hawk Technology — Advanced Manufacturing & Engineering',
-                badgeText: 'Gold Sponsor',
-                badgeBg: '#E8C97A', badgeColor: '#0F1729',
-                name: 'C-Hawk Technology',
-                desc: 'Advanced Manufacturing & Engineering. Proud supporter of NVforHD\'s mission to defeat Huntington\'s Disease.',
-                linkLabel: 'c-hawk.com',
-                accentTop: '#E8C97A',
-              },
-              {
-                href: null,
-                logo: '/images/fleet-heating-ac.png', logoBg: '#0D1B3E',
-                alt: 'Fleet Heating & Air Conditioning',
-                badgeText: 'Gold Sponsor',
-                badgeBg: '#E8C97A', badgeColor: '#0F1729',
-                name: 'Fleet Heating & Air Conditioning',
-                desc: 'Keeping Northern Nevada comfortable — and proudly helping NVforHD keep the fight against Huntington\'s Disease alive.',
-                linkLabel: null,
-                accentTop: '#E8C97A',
-              },
-            ].map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
-              <div key={name}
-                style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}` }}>
+          {/* ── Major sponsors: DESKTOP 3-col grid / MOBILE touch carousel ── */}
+          {/* Desktop */}
+          <div className="sponsors-desktop-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2px', marginBottom: '2px' }}>
+            {majorSponsors.map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
+              <div key={name} style={{ display: 'flex', flexDirection: 'column', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}` }}>
                 <div style={{ background: logoBg, padding: 'clamp(1.5rem,3vw,3rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '130px' }}>
                   <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '180px', height: 'auto', objectFit: 'contain' }} />
                 </div>
@@ -104,8 +116,8 @@ export default function SponsorsSection() {
                   <div style={{ display: 'inline-block', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.75rem', background: badgeBg, color: badgeColor, padding: '0.25rem 0.6rem' }}>{badgeText}</div>
                   <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', color: '#fff', marginBottom: '0.4rem' }}>{name}</div>
                   <p style={{ fontSize: '0.82rem', color: 'var(--white-dim)', lineHeight: 1.65, marginBottom: '1rem' }}>{desc}</p>
-                  {linkLabel && (
-                    <a href={href ?? undefined} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
+                  {linkLabel && href && (
+                    <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
                       {linkLabel} ↗
                     </a>
                   )}
@@ -113,14 +125,36 @@ export default function SponsorsSection() {
               </div>
             ))}
           </div>
+
+          {/* Mobile carousel */}
+          <div className="sponsors-mobile-carousel">
+            <div className="sponsors-scroll-track">
+              {majorSponsors.map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
+                <div key={name} className="sponsor-slide" style={{ borderTop: `3px solid ${accentTop}` }}>
+                  <div style={{ background: logoBg, padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '120px' }}>
+                    <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '160px', height: 'auto', objectFit: 'contain' }} />
+                  </div>
+                  <div style={{ padding: '1.25rem' }}>
+                    <div style={{ display: 'inline-block', fontSize: '0.56rem', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.6rem', background: badgeBg, color: badgeColor, padding: '0.22rem 0.55rem' }}>{badgeText}</div>
+                    <div style={{ fontFamily: 'var(--serif)', fontSize: '1.15rem', color: '#fff', marginBottom: '0.4rem' }}>{name}</div>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--white-dim)', lineHeight: 1.6, marginBottom: '0.75rem' }}>{desc}</p>
+                    {linkLabel && href && (
+                      <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.1)', border: '1px solid rgba(232,201,122,0.3)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
+                        {linkLabel} ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p style={{ textAlign: 'center', fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', marginTop: '0.75rem', textTransform: 'uppercase' }}>← Swipe →</p>
+          </div>
         </div>
       </section>
 
-      {/* ── LIGHT SECTION: Hole & Event Sponsors ── */}
+      {/* ── Hole & Event Sponsors ── */}
       <section className="on-light" style={{ background: 'var(--cream)', padding: 'var(--py-lg) var(--px)', position: 'relative' }}>
-        {/* subtle top rule */}
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, var(--blue-hd) 30%, var(--blue-hd) 70%, transparent)' }} />
-
         <div className="inner">
           <ScrollReveal style={{ marginBottom: 'clamp(2.5rem,4vw,5rem)' }}>
             <div className="kicker" style={{ marginBottom: '0.75rem' }}>⛳ Hole &amp; Event Sponsors</div>
@@ -130,86 +164,39 @@ export default function SponsorsSection() {
           </ScrollReveal>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '0.75rem' }}>
-            {[
-              { name: 'Matt & Kari Woodhead',  sub: 'Lunch Sponsor',              url: null },
-              { name: 'Pace Supply Corp',       sub: 'Hole Sponsor',               url: LINKS.paceSup },
-              { name: 'Blue Reef Enterprises',  sub: 'Builders · Hole Sponsor',    url: null },
-              { name: 'Washoe Wealth Advisors', sub: 'Hole Sponsor',               url: null },
-              { name: 'Golf The High Sierra',   sub: 'Event Partner',              url: LINKS.gths },
-              { name: 'Flowing Tide Pub',       sub: 'Hole Sponsor',               url: LINKS.flowingTide },
-              { name: 'Rebuilding Together NV', sub: 'Event Partner',              url: LINKS.rtnnv },
-            ].map(({ name, sub, url }) => {
+            {holeSponsors.map(({ name, sub, url }) => {
               const card = (
-                <div style={{
-                  padding: '1.4rem 1.6rem',
-                  background: '#fff',
-                  border: '1px solid var(--cream-3)',
-                  borderLeft: `3px solid ${url ? 'var(--blue-hd)' : 'var(--cream-3)'}`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '0.75rem',
-                  height: '100%',
-                  transition: 'box-shadow 0.2s, border-left-color 0.2s',
-                }}>
+                <div style={{ padding: '1.4rem 1.6rem', background: '#fff', border: '1px solid var(--cream-3)', borderLeft: `3px solid ${url ? 'var(--blue-hd)' : 'var(--cream-3)'}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', height: '100%' }}>
                   <div>
                     <div style={{ fontFamily: 'var(--serif)', fontSize: '1.05rem', color: 'var(--ink)', fontWeight: 600, lineHeight: 1.3 }}>{name}</div>
                     <div style={{ fontSize: '0.7rem', color: 'var(--ink-dim)', marginTop: '0.25rem', letterSpacing: '0.04em' }}>{sub}</div>
                   </div>
-                  {url && (
-                    <div style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: 'var(--blue-hd)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: '#fff', fontWeight: 700 }}>↗</div>
-                  )}
+                  {url && <div style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: 'var(--blue-hd)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: '#fff', fontWeight: 700 }}>↗</div>}
                 </div>
               )
-              return url ? (
-                <a key={name} href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}
-                  onMouseEnter={e => { const d = e.currentTarget.firstChild as HTMLElement; d.style.boxShadow='0 4px 20px rgba(29,78,216,0.12)'; d.style.borderLeftColor='var(--blue-hd)' }}
-                  onMouseLeave={e => { const d = e.currentTarget.firstChild as HTMLElement; d.style.boxShadow='none'; d.style.borderLeftColor='var(--blue-hd)' }}>
-                  {card}
-                </a>
-              ) : <div key={name}>{card}</div>
+              return url
+                ? <a key={name} href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}>{card}</a>
+                : <div key={name}>{card}</div>
             })}
           </div>
 
-          {/* ── Become sponsor CTA ── */}
+          {/* Become a Sponsor CTA */}
           <ScrollReveal style={{ marginTop: '4rem' }}>
-            {/* Flip: white card on cream section — maximum contrast, stands out from dark sponsors above */}
-            <div style={{
-              background: 'var(--white)',
-              border: '2px solid var(--blue)',
-              padding: 'clamp(2.5rem,4vw,4rem)',
-              position: 'relative',
-              overflow: 'hidden',
-            }} className="sponsor-cta-grid">
-              {/* Attention corner — can't miss it */}
-              <div style={{ position: 'absolute', top: 0, left: 0, background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff',
-                  boxShadow: '0 4px 20px rgba(59,130,246,0.45)', fontSize: '0.52rem', letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 700, padding: '0.35rem 1rem' }}>
+            <div style={{ background: 'var(--white)', border: '2px solid var(--blue)', padding: 'clamp(2.5rem,4vw,4rem)', position: 'relative', overflow: 'hidden' }} className="sponsor-cta-grid">
+              <div style={{ position: 'absolute', top: 0, left: 0, background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff', boxShadow: '0 4px 20px rgba(59,130,246,0.45)', fontSize: '0.52rem', letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 700, padding: '0.35rem 1rem' }}>
                 Limited Spots · 2026
               </div>
               <div style={{ paddingTop: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3vw,2.8rem)', fontWeight: 300, color: 'var(--ink)', marginBottom: '0.75rem', lineHeight: 1.1 }}>
-                  Put your name on the fight<br />against Huntington's Disease.
+                  Put your name on the fight<br />against Huntington&apos;s Disease.
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--ink-mid)', lineHeight: 1.75, marginBottom: '0' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--ink-mid)', lineHeight: 1.75 }}>
                   Title ($3,500) · Gold ($3,000) · Lunch ($3,000) · Hole signs ($100) · Custom packages available.<br />
                   <strong style={{ color: 'var(--ink)' }}>Your logo on the course. Your name in the fight. 100% goes to UC Davis HD families.</strong>
                 </p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'stretch', flexShrink: 0 }}>
-                <a
-                  href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=sponsors-cta"
-                  style={{
-                    display: 'block', textAlign: 'center',
-                    background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff',
-                  boxShadow: '0 4px 20px rgba(59,130,246,0.45)',
-                    padding: '1.1rem 1.5rem',
-                    fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-                    fontWeight: 700, textDecoration: 'none',
-                    fontFamily: 'var(--sans)', whiteSpace: 'nowrap',
-                    transition: 'background 0.2s, transform 0.2s',
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--blue-dark)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'var(--blue)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}>
+                <a href="mailto:info@nvforhd.com?subject=2026%20Sponsorship%20Enquiry" style={{ display: 'block', textAlign: 'center', background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff', boxShadow: '0 4px 20px rgba(59,130,246,0.45)', padding: '1.1rem 1.5rem', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', transition: 'all 0.2s' }}>
                   Get Sponsorship Info →
                 </a>
                 <a href="tel:7756918860" style={{ display: 'block', textAlign: 'center', fontSize: '0.72rem', color: 'var(--ink-dim)', textDecoration: 'none', fontWeight: 500 }}>
@@ -220,6 +207,55 @@ export default function SponsorsSection() {
           </ScrollReveal>
         </div>
       </section>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* Desktop: show grid, hide carousel */
+        .sponsors-desktop-grid { display: grid; }
+        .sponsors-mobile-carousel { display: none; }
+
+        /* Title sponsor: 2-col on desktop, stack on mobile */
+        .title-sponsor-grid { grid-template-columns: 1fr 1fr !important; }
+
+        /* Sponsor CTA grid */
+        .sponsor-cta-grid {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        /* Mobile carousel */
+        @media (max-width: 768px) {
+          .sponsors-desktop-grid { display: none !important; }
+          .sponsors-mobile-carousel { display: block; }
+
+          .sponsors-scroll-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 12px;
+            padding-bottom: 8px;
+            scrollbar-width: none;
+          }
+          .sponsors-scroll-track::-webkit-scrollbar { display: none; }
+
+          .sponsor-slide {
+            flex: 0 0 82vw;
+            scroll-snap-align: start;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+          }
+
+          /* Title sponsor stacks on mobile */
+          .title-sponsor-grid { grid-template-columns: 1fr !important; }
+          .title-sponsor-grid > div:first-child { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+          /* Sponsor CTA stacks on mobile */
+          .sponsor-cta-grid { grid-template-columns: 1fr !important; }
+        }
+      ` }} />
     </>
   )
 }

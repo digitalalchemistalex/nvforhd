@@ -655,7 +655,7 @@ export default function HomePage() {
         .rylee-block { background: linear-gradient(135deg, #060D1A 0%, #0B1A35 60%, #0F2040 100%); padding: clamp(2rem,4vw,4.5rem); border-top: 3px solid #D4A843; position: relative; overflow: hidden; }
         .rylee-block::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%); pointer-events: none; }
         .rylee-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem,2.5vw,2.2rem); font-weight: 300; color: #fff; line-height: 1.35; margin-bottom: 1rem; }
-        .rylee-ctas { display: flex; align-items: flex-start; gap: 0; flex-wrap: wrap; }
+        .rylee-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
 
         /* ── TIMELINE ── */
         .timeline-desktop-wrapper { display: block; }
