@@ -9,12 +9,12 @@ const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfo
 
 const NAV_LINKS = [
   { href: '/',          label: 'Home',       sub: null },
-  { href: '/cause',     label: 'The Cause',  sub: "What is Huntington's Disease" },
-  { href: '/story',     label: 'Our Story',  sub: '$50K raised · 3 years' },
-  { href: '/impact',    label: 'Impact',     sub: 'The Puccini family · IVF success' },
+  { href: '/cause',     label: 'The Cause',  sub: "What is Huntington's Disease?" },
+  { href: '/story',     label: 'Our Story',  sub: 'How NVforHD began · $50K raised' },
   { href: '/causes',    label: 'Causes',     sub: '2024 HelpCureHD · 2025/26 UC Davis' },
-  { href: '/blog',      label: 'Blog',       sub: 'HD education, stories & event news' },
+  { href: '/impact',    label: 'Impact',     sub: 'The Puccini family · UC Davis families' },
   { href: '/gallery',   label: 'Gallery',    sub: '47 photos from the 2024 tournament' },
+  { href: '/blog',      label: 'Blog',       sub: 'Patient stories, HD education & news' },
   { href: '/sponsors',  label: 'Sponsors',   sub: 'Aguirre Riley · UC Davis · C-Hawk' },
   { href: '/about',     label: 'About Us',   sub: 'Meet the 4-member board' },
   { href: '/contact',   label: 'Contact',    sub: 'info@nvforhd.com · 775-691-8860' },
