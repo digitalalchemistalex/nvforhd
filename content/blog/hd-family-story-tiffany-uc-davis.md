@@ -10,6 +10,8 @@ readingTime: 4
 featured: true
 ---
 
+:::video 7nDr5ous818 | Tiffany shares her family's journey with Huntington's Disease and the UC Davis care team
+
 Twenty-four years ago, Tiffany's father-in-law called with news that would change everything. He had Huntington's Disease.
 
 "We knew nothing about it," Tiffany recalls. "I started researching, but it wasn't until 2005 that our journey really began."
