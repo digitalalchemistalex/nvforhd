@@ -440,6 +440,26 @@ export default function HomePage() {
 
       <SponsorsSection />
 
+
+      {/* Pull quote — Leilani — bridges testimonials to FAQ */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(3rem,5vw,5rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner" style={{ maxWidth: '760px', textAlign: 'center' }}>
+          <ScrollReveal>
+            <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,3vw,2.2rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.4, fontStyle: 'italic', marginBottom: '1.5rem' }}>
+              &ldquo;We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go.&rdquo;
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
+              <div style={{ width: '32px', height: '1px', background: 'var(--blue)' }} />
+              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--blue)', fontWeight: 600 }}>Leilani Dunmoyer — Gene-Positive, UC Davis Patient Family</span>
+              <div style={{ width: '32px', height: '1px', background: 'var(--blue)' }} />
+            </div>
+            <div style={{ marginTop: '1.5rem' }}>
+              <a href="/blog/hd-family-story-leilani-dunmoyer-uc-davis" style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.9rem', color: 'var(--blue)', textDecoration: 'none' }}>Read her full story →</a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section style={{ background: 'var(--white)', padding: 'var(--py-lg) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
         <div className="inner" style={{ maxWidth: '800px' }}>
@@ -450,8 +470,8 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           {[
-            { q: "What is Huntington's Disease?", a: "A hereditary, fatal brain disorder with no known cure — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of a parent with HD has a 50% chance of inheriting it." },
-            { q: "Where does my money go?", a: "100% to one chosen HD cause — zero overhead. In 2024: IVF for the Puccini family (HD-free baby on the way). In 2025 & 2026: UC Davis HD Center of Excellence, serving 90+ Northern Nevada families." },
+            { q: "What is Huntington's Disease?", a: "A hereditary, fatal brain disorder with no known cure — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of a parent with HD has a 50% chance of inheriting it. As one family we support put it: 'We just felt hopeless and helpless' — until they found the right care team." },
+            { q: "Where does my money go?", a: "100% to one chosen HD cause — zero overhead. In 2024: IVF for the Puccini family (HD-free baby born HD-free). In 2025 & 2026: UC Davis HD Center of Excellence, serving 90+ Northern Nevada families including Tiffany, Mikey & Holly, and Leilani's family — all of whom have shared their stories on this site." },
             { q: "When and where is the 2026 tournament?", a: "May 29, 2026 · Gray's Crossing Golf Club · Truckee, CA · 12:00 PM shotgun · Four-person scramble. Hotel discounts at Atlantis & Peppermill — call Sean: 775-691-8860." },
             { q: "Can I donate without playing?", a: "Yes. $100 minimum. Email info@nvforhd.com or call 775-691-8860. 100% goes directly to the cause." },
           ].map(({ q, a }, i) => (
