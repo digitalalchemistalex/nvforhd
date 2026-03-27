@@ -11,6 +11,21 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+// ─── Rate limiting — max 3 submissions per IP per hour ────────────────────────
+const rateMap = new Map<string, { count: number; reset: number }>()
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateMap.get(ip)
+  if (!entry || now > entry.reset) {
+    rateMap.set(ip, { count: 1, reset: now + 60 * 60 * 1000 })
+    return true
+  }
+  if (entry.count >= 3) return false
+  entry.count++
+  return true
+}
+
 // ─── Shared styles ────────────────────────────────────────────────────────────
 const BLUE   = '#2B5BE0'
 const NAVY   = '#0D1B3E'
@@ -227,10 +242,24 @@ function clientHtml(name: string, intentTitle: string) {
 // ─── Route handler ─────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit by IP
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+    }
+
     const { subject, body, replyTo, name, intentTitle } = await req.json()
 
     if (!subject || !body || !replyTo || !name) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+    }
+
+    // Basic input validation
+    if (name.length > 200 || replyTo.length > 200 || body.length > 5000) {
+      return NextResponse.json({ error: 'Invalid input' }, { status: 400 })
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(replyTo)) {
+      return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
     }
 
     const isTest = process.env.NODE_ENV !== 'production' || process.env.TEST_MODE === 'true'
