@@ -14,6 +14,14 @@ featured: true
 
 Twenty-four years ago, Tiffany's father-in-law called with news that would change everything. He had Huntington's Disease.
 
+
+<div class="blog-video-wrap">
+  <div class="blog-video">
+    <iframe src="https://www.youtube.com/embed/7nDr5ous818?rel=0" title="Tiffany shares her family's 24-year journey with Huntington's Disease and the UC Davis care team" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="blog-caption">Tiffany shares her family's 24-year journey with Huntington's Disease and the UC Davis care team</p>
+</div>
+
 "We knew nothing about it," Tiffany recalls. "I started researching, but it wasn't until 2005 that our journey really began."
 
 That was the year her husband started showing symptoms at work. They made the decision to get him tested. The results set in motion a relationship that Tiffany says has been one of the defining pillars of their family's life — their connection to the UC Davis Huntington's Disease Care Team.
