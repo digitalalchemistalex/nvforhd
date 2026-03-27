@@ -41,18 +41,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Font preconnect — must come before stylesheet */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Font stylesheet — display=swap prevents FOIT, non-render-blocking */}
+        {/* Font stylesheet — trimmed to used weights only, display=swap non-blocking */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        {/* Preload LCP hero image — desktop and mobile */}
+        {/* Preload LCP hero image — next/image priority also handles this but explicit hint wins */}
         <link rel="preload" as="image" href="/images/hero-couple.jpg" fetchPriority="high" />
-        {/* GA4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KT4C16M4V" />
+        {/* GA4 — deferred until after load to not compete with LCP */}
         <script dangerouslySetInnerHTML={{
-          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-3KT4C16M4V');`
+          __html: `window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-3KT4C16M4V';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-3KT4C16M4V');});`
         }} />
         <script
           type="application/ld+json"
