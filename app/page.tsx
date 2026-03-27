@@ -179,7 +179,7 @@ export default function HomePage() {
                 stat: 'No cure.',
                 sub: 'Not yet. Maybe not in time for your family.',
                 line: 'HD is always fatal. Every family fighting it right now needs care — not a promise.',
-                accent: 'var(--blue)',
+                accent: 'var(--blue-bright)',
               },
               {
                 dark: false,
@@ -193,7 +193,7 @@ export default function HomePage() {
                 stat: '90 families.',
                 sub: 'One clinic. 130 miles from home.',
                 line: 'UC Davis HD Center is the only specialist care in reach of Northern Nevada. It runs on private donation.',
-                accent: 'var(--blue)',
+                accent: 'var(--blue-bright)',
               },
               {
                 dark: false,
