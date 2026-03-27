@@ -10,6 +10,8 @@ readingTime: 4
 featured: true
 ---
 
+:::video 7jrefyflRVc | Leilani Dunmoyer shares her family's 16-year journey living with Huntington's Disease
+
 Sixteen years ago, Leilani Dunmoyer's mother received a diagnosis that the family had never heard of.
 
 Huntington's Disease.
