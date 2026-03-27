@@ -14,6 +14,14 @@ featured: true
 
 Holly was diagnosed with Huntington's Disease in Sacramento in October 2023 — by the UC Davis care team who would go on to become, in her husband Mikey's words, true partners in their journey.
 
+
+<div class="blog-video-wrap">
+  <div class="blog-video">
+    <iframe src="https://www.youtube.com/embed/zij5RaT5GsY?rel=0" title="Mikey and Holly speak about their experience with the UC Davis HD Center of Excellence" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="blog-caption">Mikey and Holly speak about their experience with the UC Davis HD Center of Excellence</p>
+</div>
+
 "Their care for us is not transactional," Mikey says. "They are in this journey with us."
 
 It's a distinction that matters enormously to families navigating HD. So much of medicine is transactional — appointments, prescriptions, referrals, forms. What the UC Davis HD Center of Excellence offers is something rarer: a team that shows up for the whole person, and the whole family.
