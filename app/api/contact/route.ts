@@ -17,64 +17,73 @@ const NAVY   = '#0D1B3E'
 const CREAM  = '#F9F8F6'
 const INK    = '#1a1a2e'
 const DIMMED = '#6B7280'
+const WHITE_DIM  = '#8899BB'  // replaces rgba(255,255,255,0.45)
+const WHITE_FAINT = '#4A5E80' // replaces rgba(255,255,255,0.35)
 
-const base = (content: string) => `
-<!DOCTYPE html>
+const base = (content: string) => `<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-</head>
-<body style="margin:0;padding:0;background:${CREAM};font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:${CREAM};padding:40px 20px;">
-    <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /></head>
+<body style="margin:0;padding:0;background-color:${CREAM};font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" bgcolor="${CREAM}" style="background-color:${CREAM};">
+<tr><td align="center" style="padding:40px 20px;">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 
-        <!-- Header -->
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="${NAVY}" style="background-color:${NAVY};padding:32px 40px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
-          <td style="background:${NAVY};padding:32px 40px;border-radius:4px 4px 0 0;">
-            <table width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td>
-                  <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:600;margin-bottom:6px;">Nevada for HD</div>
-                  <div style="font-size:26px;font-weight:300;color:#fff;letter-spacing:-0.5px;">NVforHD</div>
-                </td>
-                <td align="right">
-                  <div style="width:40px;height:40px;background:${BLUE};border-radius:50%;display:inline-block;line-height:40px;text-align:center;font-size:18px;">💙</div>
-                </td>
-              </tr>
-            </table>
-            <div style="height:3px;background:${BLUE};margin-top:20px;border-radius:2px;"></div>
+          <td style="vertical-align:middle;">
+            <img src="https://nvforhd.com/images/NVforHD-logo-1.png" alt="NVforHD" width="140" height="auto" style="display:block;border:0;max-width:140px;" />
           </td>
-        </tr>
-
-        <!-- Body -->
-        <tr>
-          <td style="background:#fff;padding:40px;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;">
-            ${content}
-          </td>
-        </tr>
-
-        <!-- Footer -->
-        <tr>
-          <td style="background:${NAVY};padding:24px 40px;border-radius:0 0 4px 4px;">
-            <table width="100%" cellpadding="0" cellspacing="0">
+          <td align="right" style="vertical-align:middle;">
+            <table cellpadding="0" cellspacing="0">
               <tr>
-                <td style="font-size:11px;color:rgba(255,255,255,0.35);line-height:1.7;">
-                  NVforHD · Nevada Non-Profit · Cure Huntington's Disease<br />
-                  2600 Mill St. #400, Reno, NV 89502 · <a href="tel:7756918860" style="color:rgba(255,255,255,0.5);text-decoration:none;">775-691-8860</a> · <a href="mailto:info@nvforhd.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">info@nvforhd.com</a>
-                </td>
-                <td align="right">
-                  <a href="https://nvforhd.com" style="font-size:11px;color:${BLUE};text-decoration:none;letter-spacing:1px;text-transform:uppercase;font-weight:600;">nvforhd.com</a>
+                <td bgcolor="${BLUE}" style="background-color:${BLUE};width:40px;height:40px;text-align:center;vertical-align:middle;font-size:20px;">
+                  &#128153;
                 </td>
               </tr>
             </table>
           </td>
         </tr>
-
       </table>
-    </td></tr>
-  </table>
+      <!-- Blue accent bar -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:20px;">
+        <tr><td bgcolor="${BLUE}" style="background-color:${BLUE};height:3px;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- BODY -->
+  <tr>
+    <td bgcolor="#ffffff" style="background-color:#ffffff;padding:40px;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;">
+      ${content}
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="${NAVY}" style="background-color:${NAVY};padding:24px 40px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="font-size:11px;color:${WHITE_FAINT};line-height:1.8;">
+            NVforHD &middot; Nevada Non-Profit &middot; Cure Huntington&apos;s Disease<br />
+            2600 Mill St. #400, Reno, NV 89502<br />
+            <a href="tel:7756918860" style="color:${WHITE_DIM};text-decoration:none;">775-691-8860</a>
+            &nbsp;&middot;&nbsp;
+            <a href="mailto:info@nvforhd.com" style="color:${WHITE_DIM};text-decoration:none;">info@nvforhd.com</a>
+          </td>
+          <td align="right" style="vertical-align:bottom;">
+            <a href="https://nvforhd.com" style="font-size:11px;color:${BLUE};text-decoration:none;font-weight:700;letter-spacing:1px;text-transform:uppercase;">nvforhd.com</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+</td></tr>
+</table>
 </body>
 </html>`
 
@@ -85,35 +94,32 @@ function adminHtml(subject: string, body: string, replyTo: string, name: string)
     if (colonIdx > 0 && colonIdx < 30 && !line.startsWith(' ')) {
       const key = line.slice(0, colonIdx).trim()
       const val = line.slice(colonIdx + 1).trim()
-      return `
-        <tr>
-          <td style="padding:8px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:${DIMMED};vertical-align:top;white-space:nowrap;width:140px;">${key}</td>
-          <td style="padding:8px 12px;font-size:14px;color:${INK};line-height:1.6;">${val}</td>
-        </tr>`
+      return `<tr>
+        <td style="padding:8px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:${DIMMED};vertical-align:top;white-space:nowrap;width:140px;border-bottom:1px solid #f3f4f6;">${key}</td>
+        <td style="padding:8px 12px;font-size:14px;color:${INK};line-height:1.6;border-bottom:1px solid #f3f4f6;">${val}</td>
+      </tr>`
     }
     return `<tr><td colspan="2" style="padding:4px 12px;font-size:14px;color:${INK};line-height:1.6;">${line}</td></tr>`
   }).join('')
 
   return base(`
-    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:${BLUE};font-weight:600;margin-bottom:8px;">New Message</div>
-    <div style="font-size:22px;font-weight:300;color:${INK};margin-bottom:4px;letter-spacing:-0.3px;">${subject.replace('[NVforHD] ', '')}</div>
-    <div style="font-size:13px;color:${DIMMED};margin-bottom:32px;">${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
+    <p style="margin:0 0 4px 0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:${BLUE};font-weight:600;">New Message</p>
+    <p style="margin:0 0 4px 0;font-size:22px;font-weight:300;color:${INK};letter-spacing:-0.3px;">${subject.replace('[NVforHD] ', '')}</p>
+    <p style="margin:0 0 32px 0;font-size:13px;color:${DIMMED};">${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
 
-    <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:32px;">
-      <thead>
-        <tr style="background:${CREAM};">
-          <td colspan="2" style="padding:10px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:${DIMMED};border-bottom:1px solid #e5e7eb;">Submission Details</td>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
+    <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e7eb;margin-bottom:32px;">
+      <tr bgcolor="${CREAM}" style="background-color:${CREAM};">
+        <td colspan="2" style="padding:10px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:${DIMMED};border-bottom:1px solid #e5e7eb;">Submission Details</td>
+      </tr>
+      ${rows}
     </table>
 
-    <table width="100%" cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0">
       <tr>
-        <td>
+        <td bgcolor="${BLUE}" style="background-color:${BLUE};">
           <a href="mailto:${replyTo}?subject=Re: ${encodeURIComponent(subject)}"
-            style="display:inline-block;background:${BLUE};color:#fff;padding:14px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;">
-            Reply to ${name} →
+            style="display:inline-block;padding:14px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;text-decoration:none;color:#ffffff;font-family:Helvetica,Arial,sans-serif;">
+            Reply to ${name} &rarr;
           </a>
         </td>
       </tr>
@@ -172,32 +178,48 @@ function clientHtml(name: string, intentTitle: string) {
   }
 
   return base(`
-    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:${BLUE};font-weight:600;margin-bottom:8px;">Message received</div>
-    <div style="font-size:26px;font-weight:300;color:${INK};margin-bottom:24px;letter-spacing:-0.3px;">Hi ${firstName},<br /><em style="font-style:italic;color:${DIMMED}">${msg.headline}</em></div>
+    <p style="margin:0 0 4px 0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:${BLUE};font-weight:600;">Message received</p>
+    <p style="margin:0 0 24px 0;font-size:24px;font-weight:300;color:${INK};letter-spacing:-0.3px;line-height:1.3;">Hi ${firstName},<br /><em style="font-style:italic;color:${DIMMED};">${msg.headline}</em></p>
 
-    <p style="font-size:15px;line-height:1.9;color:#374151;margin:0 0 32px 0;border-left:3px solid ${BLUE};padding-left:16px;">${msg.body}</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
+      <tr>
+        <td style="border-left:3px solid ${BLUE};padding:4px 0 4px 16px;">
+          <p style="margin:0;font-size:15px;line-height:1.9;color:#374151;">${msg.body}</p>
+        </td>
+      </tr>
+    </table>
 
-    <div style="background:${CREAM};border:1px solid #e5e7eb;padding:20px 24px;border-radius:4px;margin-bottom:32px;">
-      <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:${DIMMED};margin-bottom:10px;">Get in touch directly</div>
-      <table cellpadding="0" cellspacing="0">
-        <tr>
-          <td style="padding:4px 0;font-size:13px;color:${INK};">📞&nbsp;</td>
-          <td style="padding:4px 0;"><a href="tel:7756918860" style="font-size:13px;color:${BLUE};text-decoration:none;font-weight:600;">775-691-8860</a> <span style="color:${DIMMED};font-size:12px;">— Call Sean directly</span></td>
-        </tr>
-        <tr>
-          <td style="padding:4px 0;font-size:13px;color:${INK};">✉&nbsp;</td>
-          <td style="padding:4px 0;"><a href="mailto:info@nvforhd.com" style="font-size:13px;color:${BLUE};text-decoration:none;font-weight:600;">info@nvforhd.com</a></td>
-        </tr>
-      </table>
-    </div>
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
+      <tr>
+        <td bgcolor="${CREAM}" style="background-color:${CREAM};padding:20px 24px;border:1px solid #e5e7eb;">
+          <p style="margin:0 0 10px 0;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:${DIMMED};">Get in touch directly</p>
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:4px 0;font-size:13px;color:${INK};">&#128222;&nbsp;</td>
+              <td style="padding:4px 0;"><a href="tel:7756918860" style="font-size:13px;color:${BLUE};text-decoration:none;font-weight:600;">775-691-8860</a> <span style="color:${DIMMED};font-size:12px;">&mdash; Call Sean directly</span></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;font-size:13px;color:${INK};">&#9993;&nbsp;</td>
+              <td style="padding:4px 0;"><a href="mailto:info@nvforhd.com" style="font-size:13px;color:${BLUE};text-decoration:none;font-weight:600;">info@nvforhd.com</a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
 
-    <a href="${msg.ctaHref}" style="display:inline-block;background:${BLUE};color:#fff;padding:14px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;">
-      ${msg.cta}
-    </a>
+    <table cellpadding="0" cellspacing="0">
+      <tr>
+        <td bgcolor="${BLUE}" style="background-color:${BLUE};">
+          <a href="${msg.ctaHref}" style="display:inline-block;padding:14px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;text-decoration:none;color:#ffffff;font-family:Helvetica,Arial,sans-serif;">
+            ${msg.cta}
+          </a>
+        </td>
+      </tr>
+    </table>
 
     <p style="font-size:12px;color:${DIMMED};margin-top:32px;line-height:1.7;">
       You received this because you submitted a message on nvforhd.com.<br />
-      Annual charity golf tournament · May 29, 2026 · Gray's Crossing, Truckee CA
+      Annual charity golf tournament &middot; May 29, 2026 &middot; Gray&apos;s Crossing, Truckee CA
     </p>
   `)
 }
