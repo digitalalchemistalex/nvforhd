@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
 import Image from 'next/image'
+import VideoTestimonial from '@/components/VideoTestimonial'
 
 export const metadata: Metadata = {
   title: "How NVforHD Funds the Fight Against Huntington's Disease",
@@ -179,6 +180,47 @@ export default function CausesPage() {
             </ScrollReveal>
           </div>
         </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════
+          TESTIMONIALS — UC Davis families
+          Placed between 2025 and 2024 sections
+          Maximum relevance: both speakers are UC Davis patients
+      ══════════════════════════════════════ */}
+      <section style={{ background: 'var(--cream)', padding: 'var(--py-lg) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem,4vw,4rem)' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
+              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>From the Families We Serve</span>
+              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
+            </div>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2rem,4vw,4.5rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 0.95, letterSpacing: '-0.02em' }}>
+              What UC Davis<br /><em style={{ color: 'var(--ink-dim)' }}>means to us.</em>
+            </h2>
+            <p style={{ marginTop: '1.25rem', fontSize: '1rem', lineHeight: 1.8, color: 'var(--ink-dim)', maxWidth: '560px', margin: '1.25rem auto 0' }}>
+              Hear directly from families whose lives were changed by the same care team your donation supports.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '900px', margin: '0 auto' }} className="causes-testimonials-grid">
+            <VideoTestimonial
+              youtubeId="7nDr5ous818"
+              name="Tiffany"
+              role="HD Family — UC Davis Patient"
+              quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
+            />
+            <VideoTestimonial
+              youtubeId="zij5RaT5GsY"
+              name="Mikey & Holly"
+              role="HD Patient & Family — UC Davis Care Team"
+              quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
+            />
+          </div>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) { .causes-testimonials-grid { grid-template-columns: 1fr !important; } }
+        ` }} />
       </section>
 
       {/* 2024 — light with Puccini letter */}
