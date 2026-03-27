@@ -154,7 +154,13 @@ export default function ContactPage() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subject: buildSubject(), body: buildBody(), replyTo: form.email, name: form.name }),
+        body: JSON.stringify({
+          subject: buildSubject(),
+          body: buildBody(),
+          replyTo: form.email,
+          name: form.name,
+          intentTitle: selected?.title || '',
+        }),
       })
       if (!res.ok) throw new Error()
       setSent(true)
