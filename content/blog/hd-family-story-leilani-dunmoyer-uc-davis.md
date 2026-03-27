@@ -14,6 +14,14 @@ featured: true
 
 Sixteen years ago, Leilani Dunmoyer's mother received a diagnosis that the family had never heard of.
 
+
+<div class="blog-video-wrap">
+  <div class="blog-video">
+    <iframe src="https://www.youtube.com/embed/7jrefyflRVc?rel=0" title="Leilani Dunmoyer — gene-positive, HD family advocate, and marathon runner for the HD cause" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="blog-caption">Leilani Dunmoyer — gene-positive, HD family advocate, and marathon runner for the HD cause</p>
+</div>
+
 Huntington's Disease.
 
 "It came as such a shock," Leilani says. "We did not know where to turn. We just felt hopeless and helpless."
