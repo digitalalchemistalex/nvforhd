@@ -84,7 +84,7 @@ export default function HomePage() {
           {/* Eyebrow */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.25rem', animation: 'fadeup 0.7s ease 0.2s both' }}>
             <div style={{ width: '16px', height: '2px', background: 'var(--blue)', flexShrink: 0 }} />
-            <span style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', letterSpacing: '0.26em', textTransform: 'uppercase', fontWeight: 600, color: 'rgba(29,78,216,0.9)' }}>For every family living with HD</span>
+            <span style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', letterSpacing: '0.26em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue-bright)' }}>For every family living with HD</span>
           </div>
 
           {/* Headline — different sizes per device, same copy */}

@@ -41,7 +41,7 @@ export default function StoryPage() {
             <ScrollReveal>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
                 <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
-                <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'rgba(29,78,216,0.9)' }}>The Origin Story · Founded 2024</span>
+                <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue-bright)' }}>The Origin Story · Founded 2024</span>
               </div>
             </ScrollReveal>
 
