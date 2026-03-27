@@ -9,8 +9,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Let's Cure HD — NVforHD Charity Golf Tournament May 29, 2026",
-  description: "NVforHD raises funds to fight Huntington's Disease. Annual golf tournament May 29, 2026 at Gray's Crossing, Truckee CA. $50K+ raised. One HD-free baby funded. 90+ Nevada families served.",
+  title: "NVforHD — Charity Golf Tournament for Huntington's Disease",
+  description: "Join Nevada's charity golf tournament May 29, 2026 at Gray's Crossing, Truckee. 100% fights Huntington's Disease. $50K+ raised. Register or donate.",
   alternates: { canonical: 'https://www.nvforhd.com' },
   openGraph: {
     title: "NVforHD — Let's Cure Huntington's Disease",

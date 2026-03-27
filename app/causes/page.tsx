@@ -6,8 +6,8 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Charity Causes 2024–2026 | NVforHD',
-  description: "NVforHD selects one cause per year. 2024: HelpCureHD — IVF for HD families. 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.",
+  title: "How NVforHD Funds the Fight Against Huntington's Disease",
+  description: "Every dollar raised goes to one cause. 2024: IVF for an HD-free baby. 2025 & 2026: UC Davis HD Center serving 90+ Nevada families. See where your donation goes.",
   openGraph: {
     title: 'NVforHD Charity Causes — One Worthy Cause Every Year',
     description: '2024: HelpCureHD IVF funding. 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.',

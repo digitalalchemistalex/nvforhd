@@ -6,10 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '2025 Sponsors | NVforHD — Huntington\'s Disease Charity Golf',
-  description: 'NVforHD 2025 sponsors: Aguirre Riley (Title), UC Davis Health (Platinum), C-Hawk (Gold). Join them — become a 2026 sponsor and put your name on the fight against HD.',
+  title: "Sponsor NVforHD | Huntington's Disease Charity Golf 2026",
+  description: "Put your brand on the fight against HD. Title, Gold, Lunch and Hole sponsorships for the May 29, 2026 charity golf tournament at Gray's Crossing, Truckee.",
   openGraph: {
-    title: 'NVforHD Sponsors — Support the Fight Against HD',
+    title: 'Sponsor NVforHD | Huntington's Disease Charity Golf 2026',
     description: 'Meet our 2025 sponsors and become a 2026 sponsor. Packages from $100.',
     images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Sponsors' }],
     type: 'website',

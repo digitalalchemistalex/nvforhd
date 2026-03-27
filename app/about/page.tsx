@@ -6,8 +6,8 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About Us — Board Members | NVforHD',
-  description: "Meet the NVforHD board: Sean Schaeffer (founder), Mike Milligan, Michael Eskuchen, and John McGinnes. United by one mission — cure Huntington's Disease.",
+  title: "About NVforHD | Fighting Huntington's Disease Since 2024",
+  description: "NVforHD was founded after Sean Schaeffer's wife was diagnosed with HD. Meet the board behind Nevada's Huntington's Disease charity golf tournament.",
   openGraph: {
     title: 'About NVforHD — Meet the Board',
     description: "Four board members united by one mission — cure Huntington's Disease.",
@@ -46,7 +46,7 @@ const personSchema = {
         name: 'Mike Milligan',
         jobTitle: 'Board Member',
         worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
-        description: 'Director of Sales, Golf the High Sierra. Former President of Golf the High Sierra 2005–2014.',
+        description: 'NVforHD was founded after Sean Schaeffer's wife was diagnosed with HD. Meet the board behind Nevada's fastest-growing Huntington's Disease charity golf tournament.',
         image: 'https://nvforhd.com/images/headshot-milligan.webp',
       },
     },

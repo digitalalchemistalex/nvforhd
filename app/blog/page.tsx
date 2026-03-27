@@ -8,11 +8,11 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { getAllPosts, formatDate } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Blog | NVforHD — Huntington\'s Disease News & Stories',
-  description: 'Stories, education, and updates from NVforHD. Learn about Huntington\'s Disease, follow our annual tournament, and meet the families we fight for.',
+  title: "NVforHD Blog | Huntington's Disease Stories & Updates",
+  description: "Stories from HD families, Huntington's Disease education, and updates on NVforHD's annual charity golf tournament raising funds for a cure in Nevada.",
   openGraph: {
     title: 'Blog | NVforHD — Huntington\'s Disease News & Stories',
-    description: 'Stories, education, and updates from NVforHD.',
+    description: 'Read stories from HD families, learn about Huntington's Disease, and follow NVforHD's annual charity golf tournament raising funds for a cure in Northern Nevada.',
     images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'NVforHD Blog' }],
   },
   twitter: {
