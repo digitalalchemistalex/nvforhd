@@ -4,8 +4,8 @@ excerpt: "Sixteen years ago, Leilani Dunmoyer's mother was diagnosed with Huntin
 date: "2026-03-27"
 author: "NVforHD"
 category: "Patient Stories"
-coverImage: "/images/event-group-4.jpg"
-coverAlt: "NVforHD supporters at the charity golf tournament"
+coverImage: "/images/blog-leilani.jpg"
+coverAlt: "Woman running in a race — Leilani Dunmoyer, HD advocate and marathon runner"
 readingTime: 4
 featured: true
 ---
