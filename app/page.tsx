@@ -382,7 +382,8 @@ export default function HomePage() {
               Why we show up<br /><em style={{ color: 'rgba(255,255,255,0.75)' }}>every year.</em>
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }} className="testimonials-grid">
+          {/* Desktop: 3-col grid */}
+          <div className="testimonials-desktop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }}>
             <VideoTestimonial
               youtubeId="zij5RaT5GsY"
               name="Mikey & Holly"
@@ -405,9 +406,64 @@ export default function HomePage() {
               fallbackImage="/images/event-group-4.jpg"
             />
           </div>
+
+          {/* Mobile: touch carousel */}
+          <div className="testimonials-mobile-carousel">
+            <div className="testimonials-scroll-track">
+              <div className="testimonial-slide">
+                <VideoTestimonial
+                  youtubeId="zij5RaT5GsY"
+                  name="Mikey & Holly"
+                  role="HD Patient & Family — UC Davis Care Team"
+                  quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
+                  fallbackImage="/images/event-group-2.jpg"
+                />
+              </div>
+              <div className="testimonial-slide">
+                <VideoTestimonial
+                  youtubeId="7nDr5ous818"
+                  name="Tiffany"
+                  role="HD Family — UC Davis Patient"
+                  quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
+                  fallbackImage="/images/event-group-3.jpg"
+                />
+              </div>
+              <div className="testimonial-slide">
+                <VideoTestimonial
+                  youtubeId="7jrefyflRVc"
+                  name="Leilani Dunmoyer"
+                  role="Gene-Positive — UC Davis Patient Family"
+                  quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
+                  fallbackImage="/images/event-group-4.jpg"
+                />
+              </div>
+            </div>
+            <p style={{ textAlign: 'center', fontSize: '0.6rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.12em', marginTop: '0.75rem', textTransform: 'uppercase' }}>← Swipe to see all 3 stories →</p>
+          </div>
         </div>
         <style dangerouslySetInnerHTML={{ __html: `
-          @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr !important; } }
+          /* Desktop: grid visible, carousel hidden */
+          .testimonials-desktop-grid { display: grid; }
+          .testimonials-mobile-carousel { display: none; }
+
+          @media (max-width: 768px) {
+            .testimonials-desktop-grid { display: none !important; }
+            .testimonials-mobile-carousel { display: block; }
+            .testimonials-scroll-track {
+              display: flex;
+              overflow-x: auto;
+              scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch;
+              gap: 12px;
+              padding-bottom: 4px;
+              scrollbar-width: none;
+            }
+            .testimonials-scroll-track::-webkit-scrollbar { display: none; }
+            .testimonial-slide {
+              flex: 0 0 85vw;
+              scroll-snap-align: start;
+            }
+          }
         ` }} />
       </section>
 

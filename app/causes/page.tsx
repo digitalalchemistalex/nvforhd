@@ -220,32 +220,33 @@ export default function CausesPage() {
               Hear directly from families whose lives were changed by the same care team your donation supports.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }} className="causes-testimonials-grid">
-            <VideoTestimonial
-              youtubeId="7nDr5ous818"
-              name="Tiffany"
-              role="HD Family — UC Davis Patient"
-              quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
-              fallbackImage="/images/event-group-3.jpg"
-            />
-            <VideoTestimonial
-              youtubeId="zij5RaT5GsY"
-              name="Mikey & Holly"
-              role="HD Patient & Family — UC Davis Care Team"
-              quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
-              fallbackImage="/images/event-group-2.jpg"
-            />
-            <VideoTestimonial
-              youtubeId="7jrefyflRVc"
-              name="Leilani Dunmoyer"
-              role="Gene-Positive — UC Davis Patient Family"
-              quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
-              fallbackImage="/images/event-group-4.jpg"
-            />
+          {/* Desktop: 3-col grid */}
+          <div className="causes-t-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '1100px', margin: '0 auto' }}>
+            <VideoTestimonial youtubeId="7nDr5ous818" name="Tiffany" role="HD Family — UC Davis Patient" quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey." fallbackImage="/images/event-group-3.jpg" />
+            <VideoTestimonial youtubeId="zij5RaT5GsY" name="Mikey & Holly" role="HD Patient & Family — UC Davis Care Team" quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them." fallbackImage="/images/event-group-2.jpg" />
+            <VideoTestimonial youtubeId="7jrefyflRVc" name="Leilani Dunmoyer" role="Gene-Positive — UC Davis Patient Family" quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go." fallbackImage="/images/event-group-4.jpg" />
+          </div>
+
+          {/* Mobile: touch carousel */}
+          <div className="causes-t-mobile">
+            <div className="causes-t-track">
+              <div className="causes-t-slide"><VideoTestimonial youtubeId="7nDr5ous818" name="Tiffany" role="HD Family — UC Davis Patient" quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey." fallbackImage="/images/event-group-3.jpg" /></div>
+              <div className="causes-t-slide"><VideoTestimonial youtubeId="zij5RaT5GsY" name="Mikey & Holly" role="HD Patient & Family — UC Davis Care Team" quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them." fallbackImage="/images/event-group-2.jpg" /></div>
+              <div className="causes-t-slide"><VideoTestimonial youtubeId="7jrefyflRVc" name="Leilani Dunmoyer" role="Gene-Positive — UC Davis Patient Family" quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go." fallbackImage="/images/event-group-4.jpg" /></div>
+            </div>
+            <p style={{ textAlign: 'center', fontSize: '0.6rem', color: 'rgba(17,24,39,0.45)', letterSpacing: '0.12em', marginTop: '0.75rem', textTransform: 'uppercase' }}>← Swipe to see all 3 stories →</p>
           </div>
         </div>
         <style dangerouslySetInnerHTML={{ __html: `
-          @media (max-width: 900px) { .causes-testimonials-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 600px) { .causes-testimonials-grid { grid-template-columns: 1fr !important; } }
+          .causes-t-desktop { display: grid; }
+          .causes-t-mobile { display: none; }
+          @media (max-width: 768px) {
+            .causes-t-desktop { display: none !important; }
+            .causes-t-mobile { display: block; }
+            .causes-t-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 4px; scrollbar-width: none; }
+            .causes-t-track::-webkit-scrollbar { display: none; }
+            .causes-t-slide { flex: 0 0 85vw; scroll-snap-align: start; }
+          }
         ` }} />
       </section>
 
