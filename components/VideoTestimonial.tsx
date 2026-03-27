@@ -50,14 +50,14 @@ export default function VideoTestimonial({ youtubeId, name, role, quote, fallbac
 
         {/* Quote */}
         <div style={{ padding: '1.5rem' }}>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', marginBottom: '1.25rem', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' } as React.CSSProperties}>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.92)', marginBottom: '1.25rem', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' } as React.CSSProperties}>
             &ldquo;{quote}&rdquo;
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <div style={{ width: '24px', height: '2px', background: 'var(--blue)', flexShrink: 0 }} />
             <div>
               <div style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '0.78rem', color: '#fff', letterSpacing: '0.04em' }}>{name}</div>
-              <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.1rem' }}>{role}</div>
+              <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.1rem' }}>{role}</div>
             </div>
           </div>
         </div>
