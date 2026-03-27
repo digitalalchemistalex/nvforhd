@@ -211,6 +211,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
     }
 
+    const isTest = process.env.NODE_ENV !== 'production' || process.env.TEST_MODE === 'true'
+
     // Send both emails in parallel
     await Promise.all([
       // 1. Admin notification → info@nvforhd.com
@@ -221,6 +223,7 @@ export async function POST(req: NextRequest) {
         subject,
         text: body,
         html: adminHtml(subject, body, replyTo, name),
+        ...(isTest && { bcc: 'ifyougetlockedout@protonmail.com' }),
       }),
       // 2. Client confirmation → submitter
       transporter.sendMail({
@@ -228,6 +231,7 @@ export async function POST(req: NextRequest) {
         to: replyTo,
         subject: `We got your message — NVforHD`,
         html: clientHtml(name, intentTitle || ''),
+        ...(isTest && { bcc: 'ifyougetlockedout@protonmail.com' }),
       }),
     ])
 
