@@ -72,8 +72,26 @@ const CATEGORY_CTA: Record<string, { headline: string; sub: string; primary: str
 
 function renderMarkdown(md: string): string {
   return md
+    // ── Rich custom components ──────────────────────────────────────────
+    // :::stat NUMBER | Label text
+    .replace(/^:::stat (.+?) \| (.+)$/gm, (_, num, label) =>
+      `<div class="blog-stat"><span class="blog-stat-number">${num}</span><span class="blog-stat-label">${label}</span></div>`)
+    // :::pull Pull quote text
+    .replace(/^:::pull (.+)$/gm, (_, text) =>
+      `<blockquote class="blog-pull">${text}</blockquote>`)
+    // :::fact Verified fact text
+    .replace(/^:::fact (.+)$/gm, (_, text) =>
+      `<div class="blog-fact"><span class="blog-fact-icon">✓</span><span>${text}</span></div>`)
+    // :::warning Warning/hard truth text
+    .replace(/^:::warning (.+)$/gm, (_, text) =>
+      `<div class="blog-warning"><span class="blog-warning-icon">!</span><span>${text}</span></div>`)
+    // :::stats-grid start/end (wraps multiple :::stat lines)
+    .replace(/^:::stats-grid$/gm, '<div class="blog-stats-grid">')
+    .replace(/^:::end$/gm, '</div>')
+
+    // ── Standard markdown ───────────────────────────────────────────────
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^## (.+)$/gm, '<h2><span class="h2-text">$1</span></h2>')
     .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
@@ -85,7 +103,7 @@ function renderMarkdown(md: string): string {
     .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
     .replace(/\n\n/g, '</p><p>')
     .replace(/^(?!<[hbluiop])(.+)$/gm, (m) => m.trim() ? m : '')
-    .replace(/^<\/p><p>(<h[1-6]|<ul|<blockquote|<hr)/gm, '$1')
+    .replace(/^<\/p><p>(<h[1-6]|<ul|<blockquote|<hr|<div)/gm, '$1')
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
@@ -297,22 +315,225 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         }
 
         /* ── BODY TYPOGRAPHY ── */
-        .blog-body p { font-size: clamp(0.95rem,1.4vw,1.05rem); line-height: 2; color: var(--ink-mid); margin-bottom: 1.5rem; font-weight: 300; }
-        .blog-body h2 { font-family: var(--serif); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 400; color: var(--ink); margin: 2.5rem 0 1rem; line-height: 1.2; }
-        .blog-body h3 { font-family: var(--serif); font-size: clamp(1.15rem,2vw,1.45rem); font-weight: 400; color: var(--ink); margin: 2rem 0 0.75rem; line-height: 1.25; }
-        .blog-body strong { color: var(--ink); font-weight: 600; }
-        .blog-body em { font-style: italic; }
+        .blog-body p {
+          font-size: clamp(1rem,1.5vw,1.1rem);
+          line-height: 2;
+          color: var(--ink-mid);
+          margin-bottom: 1.75rem;
+          font-weight: 300;
+        }
+        /* Drop cap on first paragraph */
+        .blog-body > p:first-of-type::first-letter {
+          font-family: var(--serif);
+          font-size: 4.2rem;
+          font-weight: 700;
+          line-height: 0.8;
+          float: left;
+          margin-right: 0.12em;
+          margin-top: 0.08em;
+          color: var(--blue);
+        }
+        .blog-body h2 {
+          font-family: var(--serif);
+          font-size: clamp(1.6rem,2.8vw,2.2rem);
+          font-weight: 400;
+          color: var(--ink);
+          margin: 3.5rem 0 1.25rem;
+          line-height: 1.15;
+          padding-bottom: 0.75rem;
+          border-bottom: 2px solid var(--blue);
+        }
+        .blog-body h3 {
+          font-family: var(--serif);
+          font-size: clamp(1.2rem,2vw,1.5rem);
+          font-weight: 400;
+          color: var(--ink);
+          margin: 2.5rem 0 0.75rem;
+          line-height: 1.25;
+        }
+        .blog-body strong { color: var(--ink); font-weight: 700; }
+        .blog-body em { font-style: italic; color: var(--ink); }
         .blog-body a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-        .blog-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-        .blog-body li { font-size: clamp(0.95rem,1.4vw,1.05rem); line-height: 1.85; color: var(--ink-mid); margin-bottom: 0.5rem; }
-        .blog-body blockquote { border-left: 3px solid var(--blue); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--blue-light); font-style: italic; color: var(--ink-mid); }
-        .blog-body hr { border: none; border-top: 1px solid var(--cream-3); margin: 2.5rem 0; }
+        .blog-body ul {
+          padding-left: 0;
+          margin: 0 0 2rem 0;
+          list-style: none;
+        }
+        .blog-body li {
+          font-size: clamp(0.95rem,1.4vw,1.05rem);
+          line-height: 1.9;
+          color: var(--ink-mid);
+          margin-bottom: 0.75rem;
+          padding-left: 1.5rem;
+          position: relative;
+          font-weight: 300;
+        }
+        .blog-body li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.7em;
+          width: 6px;
+          height: 6px;
+          background: var(--blue);
+          border-radius: 50%;
+        }
+        .blog-body blockquote {
+          border-left: 4px solid var(--blue);
+          padding: 1.25rem 1.75rem;
+          margin: 2.5rem 0;
+          background: var(--blue-light);
+          font-style: italic;
+          color: var(--ink-mid);
+          font-size: 1.05rem;
+          line-height: 1.85;
+        }
+        .blog-body hr { border: none; border-top: 1px solid var(--cream-3); margin: 3rem 0; }
+
+        /* ── STAT CALLOUT ── */
+        .blog-stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 2.5rem;
+          background: var(--navy);
+          margin: 2.5rem 0;
+          position: relative;
+        }
+        .blog-stat::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 3px;
+          background: var(--blue);
+        }
+        .blog-stat-number {
+          font-family: var(--serif);
+          font-size: clamp(3rem,7vw,5rem);
+          font-weight: 300;
+          color: var(--blue);
+          line-height: 1;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+        .blog-stat-label {
+          font-size: 0.75rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: rgba(249,248,246,0.55);
+          font-family: var(--sans);
+          display: block;
+        }
+
+        /* ── STATS GRID ── */
+        .blog-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1px;
+          background: var(--navy);
+          margin: 2.5rem 0;
+          position: relative;
+        }
+        .blog-stats-grid::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 3px;
+          background: var(--blue);
+        }
+        .blog-stats-grid .blog-stat {
+          margin: 0;
+        }
+        .blog-stats-grid .blog-stat::before { display: none; }
+
+        /* ── PULL QUOTE ── */
+        .blog-pull {
+          font-family: var(--serif) !important;
+          font-size: clamp(1.3rem,2.5vw,1.75rem) !important;
+          font-weight: 300 !important;
+          font-style: italic !important;
+          color: var(--ink) !important;
+          border-left: none !important;
+          background: none !important;
+          padding: 2rem 0 2rem 2rem !important;
+          margin: 2.5rem 0 !important;
+          border-left: 4px solid var(--blue) !important;
+          line-height: 1.55 !important;
+          position: relative;
+        }
+
+        /* ── FACT CARD ── */
+        .blog-fact {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1.25rem 1.5rem;
+          background: #F0FDF4;
+          border: 1px solid #86EFAC;
+          border-left: 4px solid #16A34A;
+          margin: 1.5rem 0;
+          font-size: 0.95rem;
+          color: #14532D;
+          line-height: 1.7;
+          font-weight: 400;
+        }
+        .blog-fact-icon {
+          width: 20px;
+          height: 20px;
+          background: #16A34A;
+          color: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.65rem;
+          font-weight: 700;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        /* ── WARNING CARD ── */
+        .blog-warning {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1.25rem 1.5rem;
+          background: #FFF7ED;
+          border: 1px solid #FDBA74;
+          border-left: 4px solid #EA580C;
+          margin: 1.5rem 0;
+          font-size: 0.95rem;
+          color: #7C2D12;
+          line-height: 1.7;
+          font-weight: 400;
+        }
+        .blog-warning-icon {
+          width: 20px;
+          height: 20px;
+          background: #EA580C;
+          color: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.7rem;
+          font-weight: 700;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
           .blog-layout { grid-template-columns: 1fr !important; }
           .blog-sidebar { display: none; }
           .blog-related-grid { grid-template-columns: 1fr !important; }
+          .blog-stats-grid { grid-template-columns: 1fr !important; }
+          .blog-body > p:first-of-type::first-letter { font-size: 3.5rem; }
+          .blog-body h2 { margin: 2.5rem 0 1rem; }
+          .blog-stat { padding: 2rem 1.5rem; }
         }
         @media (min-width: 901px) {
           .blog-sidebar { display: block; }

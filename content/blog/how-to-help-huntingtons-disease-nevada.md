@@ -14,6 +14,12 @@ Huntington's Disease does not have a cure yet. But there is a lot that can be do
 
 NVforHD was built around one belief: that a community that shows up can do real, measurable good for real people. Here are five ways to be part of it.
 
+:::stats-grid
+:::stat May 29 | 2026 Tournament Date
+:::stat $100 | Minimum donation
+:::stat 100% | Goes directly to HD care
+:::end
+
 ## 1. Play Golf on May 29
 
 The most direct way to contribute to NVforHD is to join us at the **third annual charity golf tournament at Gray's Crossing Golf Club in Truckee, CA** on May 29, 2026.

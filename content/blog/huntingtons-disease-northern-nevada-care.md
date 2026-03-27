@@ -16,6 +16,12 @@ There is no HD specialist in Reno. No HD specialty clinic in the state. The clos
 
 For 90+ families in our region, that drive is not optional. It is the only path to the specialized care that HD demands.
 
+:::stats-grid
+:::stat 90+ | Nevada families served by UC Davis HD clinic
+:::stat 130 | Miles from Reno to nearest HD specialist
+:::stat 48 | HDSA Centers of Excellence in the US
+:::end
+
 ## What a Huntington's Disease Center of Excellence Actually Is
 
 The National Huntington's Disease Society of America (HDSA) designates Centers of Excellence at medical institutions that meet strict standards for HD-specialized care. These are not general neurology clinics that see HD patients occasionally. They are purpose-built teams with deep, specific expertise in the disease.

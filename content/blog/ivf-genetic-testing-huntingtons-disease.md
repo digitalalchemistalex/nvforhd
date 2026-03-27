@@ -14,9 +14,13 @@ In 2024, NVforHD raised $25,000 at our inaugural golf tournament at Old Greenwoo
 
 That money went to HelpCureHD. HelpCureHD put it through their grant cycle — vetting families in genuine financial need who carried the Huntington's Disease gene mutation. And they selected Brandon and Rylee Puccini.
 
-Brandon and Rylee are now expecting. Their baby will not have Huntington's Disease.
+:::pull "Brandon and Rylee are now expecting. Their baby will not have Huntington's Disease.
 
 That is what $25,000 and one sold-out golf tournament did.
+
+:::stat $25,000 | Raised at the 2024 NVforHD inaugural tournament
+
+:::fact Preimplantation Genetic Testing for Monogenic disorders (PGT-M) identifies embryos carrying specific genetic mutations before implantation. Success rate for HD: above 95%. Source: HDSA Medical Advisory Board
 
 ## The Science Behind It
 

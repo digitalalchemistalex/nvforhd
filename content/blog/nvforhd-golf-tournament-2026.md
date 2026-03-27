@@ -4,7 +4,7 @@ excerpt: "Peter Jacobsen designed it. The Sierra Nevada surrounds it. And every 
 date: "2026-03-20"
 author: "NVforHD"
 category: "Event"
-coverImage: "/images/course-1.jpg"
+coverImage: "/images/event-green.webp"
 coverAlt: "Gray's Crossing Golf Club, Truckee CA — venue for the 2026 NVforHD charity tournament"
 readingTime: 5
 featured: false
@@ -16,13 +16,21 @@ The 2024 event sold out before half of Reno knew it was happening. The 2025 tour
 
 Register before this one fills too.
 
+:::stats-grid
+:::stat $50K+ | Raised across 2 tournaments
+:::stat 90+ | Nevada HD families supported
+:::stat 100% | Of proceeds to the cause
+:::end
+
 ## The Course
 
 Gray's Crossing is a Peter Jacobsen/Jim Hardy design in the Sierra Nevada pines above Truckee, just off Donner Pass Road. Elevation: around 6,000 feet. Views that make you stop mid-swing.
 
 The course plays differently than anything in the valley. Narrow tree-lined fairways. Elevation changes that demand course management. A layout that rewards smarts over power.
 
-For the 2024 inaugural event, we played Old Greenwood — another Nicklaus design in the same neighborhood. Gray's Crossing is the upgrade.
+:::fact Gray's Crossing Golf Club sits at approximately 6,000 feet elevation in the Sierra Nevada mountains, Truckee CA. Designed by Peter Jacobsen and Jim Hardy.
+
+For the 2024 inaugural event, we played Old Greenwood — a Jack Nicklaus design in the same neighborhood. Gray's Crossing is the upgrade.
 
 ## The Format
 
@@ -30,7 +38,7 @@ Four-person scramble. Everyone hits, everyone picks the best shot, play continue
 
 Box lunch included. Post-round gathering.
 
-Discount rooms at Atlantis Casino Resort Spa and Peppermill Resort Spa Casino in Reno — call Sean directly at 775-691-8860 for rates that won't be available anywhere else.
+:::pull "Discount rooms at Atlantis Casino Resort Spa and Peppermill in Reno — call Sean at 775-691-8860 for rates not available anywhere else."
 
 ## The Cause
 
@@ -38,27 +46,23 @@ Discount rooms at Atlantis Casino Resort Spa and Peppermill Resort Spa Casino in
 
 No overhead. No administrative cut. The money you spend on your round goes directly to neurologists, psychiatrists, a genetic counselor, a social worker, and physical therapists who specialize in HD.
 
-90+ families in Reno, Sparks, and the Sierra Foothills rely on this clinic. They make a 130-mile drive to Sacramento because it is the only option.
-
-Your round of golf keeps that drive worth making.
+:::warning 90+ families in Reno, Sparks, and the Sierra Foothills make a 130-mile drive to Sacramento because it is the only specialist option within reach. Your round keeps that worth making.
 
 ## Packages
 
-**Foursome — $880.** Four golfers, box lunch, all day.
-
-**Single entry — $220.** Play with a group we'll form for you, or bring three friends and submit separately.
-
-**Sponsorships from $3,500.** Title, Gold, and Lunch sponsorships available. Your logo on the course, in the program, and in front of every golfer all day.
-
-**Hole signs — $100.** Your name on the course. 18 tee boxes. Every group sees you.
-
-**Can't make it? — From $100.** Donate without attending. Same cause, same impact.
+- **Foursome — $880.** Four golfers, box lunch, all day.
+- **Single entry — $220.** Play with a group we'll form, or bring three friends separately.
+- **Sponsorships from $3,500.** Title, Gold, and Lunch sponsorships. Your logo on the course all day.
+- **Hole signs — $100+.** Your name on the course. Every group sees you.
+- **Can't make it? — From $100.** Donate without attending. Same cause, same impact.
 
 ## 2024 Sold Out. 2025 Sold Out. Don't Miss 2026.
 
-The inaugural 2024 event at Old Greenwood raised $25,000 for HelpCureHD. That money funded IVF for Brandon and Rylee Puccini — a young couple carrying the HD gene. Rylee is now pregnant with an HD-free baby.
+:::stat $25,000 | Raised at the sold-out 2024 inaugural event
 
-One tournament. One couple. One generation freed from this disease.
+The inaugural 2024 event raised $25,000 for HelpCureHD. That money funded IVF for Brandon and Rylee Puccini — a young couple carrying the HD gene. Rylee is now pregnant with an HD-free baby.
+
+:::pull "One tournament. One couple. One generation freed from this disease."
 
 In 2025 we shifted focus to the UC Davis clinic — protecting specialist care for the 90+ Nevada families already living with HD.
 
