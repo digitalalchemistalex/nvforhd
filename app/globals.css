@@ -331,3 +331,13 @@ a { color: inherit; }
 @media (max-width: 480px) {
   .footer-cols { grid-template-columns: 1fr !important; }
 }
+
+/* ─── INTERNAL LINK HUB GRIDS ─── */
+@media (max-width: 768px) {
+  .hub-grid   { grid-template-columns: 1fr 1fr !important; }
+  .hub-grid-4 { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 480px) {
+  .hub-grid   { grid-template-columns: 1fr !important; }
+  .hub-grid-4 { grid-template-columns: 1fr !important; }
+}

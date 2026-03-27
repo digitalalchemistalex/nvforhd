@@ -270,6 +270,22 @@ export default function SponsorsPage() {
         </div>
       </section>
 
+      {/* ── INTERNAL LINKS ── */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(2.5rem,4vw,4rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}>
+          {[
+          { href: '/causes', title: 'Our Charity Causes', desc: "100% of sponsorship goes directly to HD families." },
+          { href: '/gallery', title: '2024 Event Gallery', desc: "See what your sponsorship makes possible." },
+          { href: '/contact', title: 'Enquire Now', desc: "Talk to Sean directly about 2026 sponsorship packages." },
+          ].map(({ href, title, desc }) => (
+            <a key={href} href={href} style={{ display: 'block', padding: '1.5rem', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none' }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 500, color: 'var(--blue)', marginBottom: '0.4rem' }}>{title} →</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', lineHeight: 1.6 }}>{desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <Footer />
 
       <style dangerouslySetInnerHTML={{ __html: `

@@ -228,6 +228,23 @@ export default function CausesPage() {
         </div>
       </section>
 
+      {/* ── INTERNAL LINKS ── */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(2.5rem,4vw,4rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner hub-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem' }}>
+          {[
+            { href: '/sponsors', title: 'Become a Sponsor', desc: 'Put your name on the cause. Packages from $100.' },
+            { href: '/about', title: 'Meet the Board', desc: 'The people who choose and steward every cause.' },
+            { href: '/blog', title: 'Read the IVF Story', desc: 'How $25,000 gave the Puccini family an HD-free baby.' },
+            { href: '/contact', title: 'Donate Now', desc: '100% goes directly to UC Davis HD families.' },
+          ].map(({ href, title, desc }) => (
+            <a key={href} href={href} style={{ display: 'block', padding: '1.5rem', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none' }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 500, color: 'var(--blue)', marginBottom: '0.4rem' }}>{title} →</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', lineHeight: 1.6 }}>{desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <Footer />
     </>
   )

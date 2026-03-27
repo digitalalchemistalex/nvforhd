@@ -80,13 +80,13 @@ The clinic runs entirely on private donation. It employs 2 movement disorder neu
 
 Without private funding, that team cannot operate. Those 90+ families lose the only specialist care available to them.
 
-**NVforHD funds that clinic.** That is what your participation in our golf tournament — or your donation — directly pays for.
+**[NVforHD](/causes) funds that clinic.** That is what your participation in our golf tournament — or your donation — directly pays for.
 
 ## What You Can Do Right Now
 
 **If your family is affected by HD:** Contact the UC Davis HD Center of Excellence. They serve Northern Nevada and are equipped to help you navigate every stage of this disease.
 
-**If you want to help:** Join us May 29, 2026 at Gray's Crossing Golf Club, Truckee CA. One foursome. One round. 100% of proceeds to HD care. Or donate directly — every dollar goes to the clinic.
+**If you want to help:** Join us May 29, 2026 — [see the full event details](/blog/nvforhd-golf-tournament-2026) or register at Gray's Crossing Golf Club, Truckee CA. One foursome. One round. 100% of proceeds to HD care. Or donate directly — every dollar goes to the clinic.
 
 **If you know a business that cares:** Sponsorship opportunities are open for 2026. Your name alongside something genuinely good.
 

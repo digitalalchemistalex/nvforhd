@@ -133,6 +133,22 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      {/* ── INTERNAL LINKS ── */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(2.5rem,4vw,4rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}>
+          {[
+          { href: '/blog', title: 'HD Stories & Education', desc: "Read about the families your participation supports." },
+          { href: '/causes', title: 'Where Funds Go', desc: "See exactly what the tournament raises and funds each year." },
+          { href: '/contact', title: 'Join Us in 2026', desc: "Register for the May 29 tournament at Gray's Crossing." },
+          ].map(({ href, title, desc }) => (
+            <a key={href} href={href} style={{ display: 'block', padding: '1.5rem', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none' }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 500, color: 'var(--blue)', marginBottom: '0.4rem' }}>{title} →</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', lineHeight: 1.6 }}>{desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <Footer />
     </>
   )

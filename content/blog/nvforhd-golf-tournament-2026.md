@@ -46,7 +46,7 @@ Box lunch included. Post-round gathering.
 
 ## The Cause
 
-100% of proceeds go to the UC Davis Huntington's Disease Center of Excellence in Sacramento — the only HD specialist clinic serving Northern Nevada families.
+100% of proceeds go to the [UC Davis Huntington's Disease Center of Excellence](/causes) — Huntington's Disease Center of Excellence in Sacramento — the only HD specialist clinic serving Northern Nevada families — [read more about our causes](/causes).
 
 No overhead. No administrative cut. The money you spend on your round goes directly to neurologists, psychiatrists, a genetic counselor, a social worker, and physical therapists who specialize in HD.
 
@@ -66,7 +66,7 @@ No overhead. No administrative cut. The money you spend on your round goes direc
 
 :::stat $25,000 | Raised at the sold-out 2024 inaugural event
 
-The inaugural 2024 event raised $25,000 for HelpCureHD. That money funded IVF for Brandon and Rylee Puccini — a young couple carrying the HD gene. Rylee is now pregnant with an HD-free baby.
+The inaugural 2024 event raised $25,000 for HelpCureHD — [read the full IVF story](/blog/ivf-genetic-testing-huntingtons-disease). That money funded IVF for Brandon and Rylee Puccini — a young couple carrying the HD gene. Rylee is now pregnant with an HD-free baby.
 
 :::pull "One tournament. One couple. One generation freed from this disease."
 

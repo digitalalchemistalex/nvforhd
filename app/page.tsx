@@ -417,6 +417,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── INTERNAL LINK HUB ── */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(3rem,5vw,5rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner">
+          <div style={{ fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--ink-dim)', marginBottom: '2rem', fontFamily: 'var(--sans)' }}>Explore NVforHD</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="hub-grid">
+            {[
+              { href: '/causes', icon: '💙', title: 'Our Causes', desc: 'See exactly where every dollar goes — year by year.' },
+              { href: '/about', icon: '🤝', title: 'Meet the Board', desc: 'Four people. One mission. Sean Schaeffer and the team behind NVforHD.' },
+              { href: '/sponsors', icon: '🏆', title: 'Become a Sponsor', desc: 'Put your brand on the fight. Packages from $100.' },
+              { href: '/gallery', icon: '📸', title: '2024 Gallery', desc: 'Photos from our sold-out inaugural tournament at Old Greenwood.' },
+              { href: '/blog', icon: '📖', title: 'HD Education', desc: 'Learn about Huntington\'s Disease, IVF, and what NVforHD has achieved.' },
+              { href: '/contact', icon: '✉️', title: 'Get In Touch', desc: 'Play, donate, sponsor, volunteer, or reach out as an HD family.' },
+            ].map(({ href, icon, title, desc }) => (
+              <a key={href} href={href} style={{ display: 'block', padding: 'clamp(1.25rem,2vw,1.75rem)', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none', transition: 'all 0.2s' }}>
+                <span style={{ fontSize: '1.4rem', display: 'block', marginBottom: '0.75rem' }}>{icon}</span>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 500, color: 'var(--ink)', marginBottom: '0.4rem' }}>{title}</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', lineHeight: 1.6 }}>{desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
 
       <style dangerouslySetInnerHTML={{ __html: `
@@ -519,6 +542,14 @@ export default function HomePage() {
           /* Packages: mobile version */
           .packages-desktop { display: none; }
           .packages-mobile  { display: block; }
+
+          /* Hub grids */
+          .hub-grid   { grid-template-columns: 1fr 1fr !important; }
+          .hub-grid-4 { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .hub-grid   { grid-template-columns: 1fr !important; }
+          .hub-grid-4 { grid-template-columns: 1fr !important; }
         }
       ` }} />
     </>

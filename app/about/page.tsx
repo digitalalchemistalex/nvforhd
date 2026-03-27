@@ -180,6 +180,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── INTERNAL LINKS ── */}
+      <section style={{ background: 'var(--cream)', padding: 'clamp(2.5rem,4vw,4rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
+        <div className="inner hub-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}>
+          {[
+            { href: '/causes', title: 'Our Charity Causes', desc: 'See where the board directs every dollar raised.' },
+            { href: '/blog', title: 'HD Education & Stories', desc: 'Learn about Huntington\'s Disease and the families we fight for.' },
+            { href: '/contact', title: 'Join the Mission', desc: 'Play, donate, sponsor, or volunteer with the team.' },
+          ].map(({ href, title, desc }) => (
+            <a key={href} href={href} style={{ display: 'block', padding: '1.5rem', background: 'var(--white)', border: '1px solid var(--cream-3)', textDecoration: 'none' }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '1rem', fontWeight: 500, color: 'var(--blue)', marginBottom: '0.4rem' }}>{title} →</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', lineHeight: 1.6 }}>{desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <Footer />
     </>
   )

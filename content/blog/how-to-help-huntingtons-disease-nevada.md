@@ -24,7 +24,7 @@ NVforHD was built around one belief: that a community that shows up can do real,
 
 ## 1. Play Golf on May 29
 
-The most direct way to contribute to NVforHD is to join us at the **third annual charity golf tournament at Gray's Crossing Golf Club in Truckee, CA** on May 29, 2026.
+The most direct way to contribute to NVforHD is to join us at the **third annual charity golf tournament at Gray's Crossing Golf Club in Truckee, CA** on May 29, 2026 — [full tournament details](/blog/nvforhd-golf-tournament-2026).
 
 It is a four-person scramble — beginner-friendly, beautiful course, genuinely fun day. Registration includes your round of golf, on-course activities, and post-round dinner and awards.
 
