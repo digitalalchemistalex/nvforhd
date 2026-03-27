@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://nvforhd.com/sitemap.xml
+Sitemap: https://www.nvforhd.com/sitemap.xml

@@ -13,7 +13,7 @@ function fileMtime(relPath: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://nvforhd.com'
+  const base = 'https://www.nvforhd.com'
 
   const posts = getAllPosts().map(post => ({
     url: `${base}/blog/${post.slug}`,

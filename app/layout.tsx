@@ -28,14 +28,14 @@ const orgSchema = {
   '@type': 'NonprofitOrganization',
   name: 'NVforHD',
   alternateName: 'Nevada for HD',
-  url: 'https://nvforhd.com',
-  logo: 'https://nvforhd.com/images/logo.png',
+  url: 'https://www.nvforhd.com',
+  logo: 'https://www.nvforhd.com/images/logo.png',
   description: 'Nevada non-profit raising awareness and funds to battle Huntington\'s Disease.',
   telephone: '+17756918860',
   email: 'info@nvforhd.com',
   foundingDate: '2024',
   areaServed: 'Nevada',
-  sameAs: ['http://www.helpcurehd.com'],
+  sameAs: ['http://www.helpcurehd.com', 'https://nvforhd.com'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
