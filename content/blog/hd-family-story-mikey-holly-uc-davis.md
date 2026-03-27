@@ -4,8 +4,8 @@ excerpt: "Holly was diagnosed with Huntington's Disease in October 2023. Her hus
 date: "2026-03-27"
 author: "NVforHD"
 category: "Patient Stories"
-coverImage: "/images/event-group-2.jpg"
-coverAlt: "NVforHD supporters at the charity golf tournament"
+coverImage: "/images/blog-mikey-holly.jpg"
+coverAlt: "Two hands holding each other with care — Mikey and Holly"
 readingTime: 5
 featured: true
 ---
