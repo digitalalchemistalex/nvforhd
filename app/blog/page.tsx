@@ -34,11 +34,12 @@ const breadcrumbSchema = {
 }
 
 const CATEGORY_COLORS: Record<string, { bg: string; color: string }> = {
-  Education:      { bg: 'var(--blue-hd)',    color: '#fff' },
-  Impact:         { bg: 'var(--gold-dark)',  color: '#fff' },
-  Event:          { bg: 'var(--ink)',        color: 'var(--cream)' },
-  'Get Involved': { bg: '#2D6A4F',           color: '#fff' },
-  General:        { bg: 'var(--ink-dim)',    color: '#fff' },
+  Education:         { bg: 'var(--blue-hd)',    color: '#fff' },
+  Impact:            { bg: 'var(--gold-dark)',  color: '#fff' },
+  Event:             { bg: 'var(--ink)',        color: 'var(--cream)' },
+  'Get Involved':    { bg: '#2D6A4F',           color: '#fff' },
+  'Patient Stories': { bg: '#7B2D8B',           color: '#fff' },
+  General:           { bg: 'var(--ink-dim)',    color: '#fff' },
 }
 
 export default function BlogPage() {
