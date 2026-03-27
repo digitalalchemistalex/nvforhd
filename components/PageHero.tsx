@@ -2,6 +2,8 @@
 // PageHero — editorial split layout
 // Desktop: text left (42%) | photo right (58%) — dramatic, magazine-grade
 // Mobile: full-bleed photo, text bottom-pinned
+import React from 'react'
+import Image from 'next/image'
 
 interface PageHeroProps {
   kicker: string
@@ -48,14 +50,33 @@ export default function PageHero({
           <div className="ph-left-edge" />
         </div>
 
-        {/* RIGHT PANEL — photo */}
+        {/* RIGHT PANEL — photo (next/image with priority for LCP) */}
         <div className="ph-right">
-          <div className="ph-photo" style={{ backgroundImage: `url('${photo}')`, backgroundPosition: photoPosition }} />
+          <Image
+            src={photo}
+            alt=""
+            fill
+            priority
+            quality={85}
+            sizes="(max-width: 768px) 0vw, 58vw"
+            style={{ objectFit: 'cover', objectPosition: photoPosition }}
+            className="ph-photo-img"
+          />
           <div className="ph-photo-fade" />
         </div>
 
-        {/* MOBILE layers */}
-        <div className="ph-mobile-photo" style={{ backgroundImage: `url('${photo}')`, backgroundPosition: photoPosition }} />
+        {/* MOBILE layers — same image, priority */}
+        <div className="ph-mobile-photo">
+          <Image
+            src={photo}
+            alt=""
+            fill
+            priority
+            quality={80}
+            sizes="(max-width: 768px) 100vw, 0vw"
+            style={{ objectFit: 'cover', objectPosition: photoPosition }}
+          />
+        </div>
         <div className="ph-mobile-overlay" />
 
       </div>
@@ -159,10 +180,7 @@ export default function PageHero({
           position: relative;
           overflow: hidden;
         }
-        .ph-photo {
-          position: absolute;
-          inset: 0;
-          background-size: cover;
+        .ph-photo-img {
           animation: drift 22s ease-in-out infinite alternate;
           will-change: transform;
         }
@@ -170,8 +188,9 @@ export default function PageHero({
           position: absolute;
           inset: 0;
           background: linear-gradient(to right, var(--navy) 0%, rgba(8,12,24,0.55) 20%, rgba(8,12,24,0.1) 55%, transparent 100%);
+          z-index: 1;
         }
-        .ph-mobile-photo { display: none; }
+        .ph-mobile-photo { display: none; position: relative; }
         .ph-mobile-overlay { display: none; }
 
         @media (max-width: 768px) {
@@ -184,7 +203,9 @@ export default function PageHero({
             display: block;
             position: absolute;
             inset: 0;
-            background-size: cover;
+            overflow: hidden;
+          }
+          .ph-mobile-photo img {
             animation: drift 22s ease-in-out infinite alternate;
           }
           .ph-mobile-overlay {

@@ -8,6 +8,24 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Charity Causes 2024–2026 | NVforHD',
   description: "NVforHD selects one cause per year. 2024: HelpCureHD — IVF for HD families. 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.",
+  openGraph: {
+    title: 'NVforHD Charity Causes — One Worthy Cause Every Year',
+    description: '2024: HelpCureHD IVF funding. 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.',
+    images: ['/images/event-crowd.jpg'],
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://nvforhd.com/causes',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'Charity Causes', item: 'https://nvforhd.com/causes' },
+  ],
 }
 
 const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=causes'
@@ -24,6 +42,7 @@ const ucDavisTeam = [
 export default function CausesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <PageHero
         kicker="Our Charity Causes"

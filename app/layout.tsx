@@ -36,8 +36,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="icon" href="/images/favicon.png" />
+        {/* Google Search Console verification */}
+        <meta name="google-site-verification" content="dzMmgHd7knYIS59vlZo5Nz23g1-IdTioOAfHhI0LfFU" />
+        {/* Font preconnect — must come before stylesheet */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Font stylesheet — display=swap prevents FOIT, non-render-blocking */}
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        {/* Preload LCP hero image — desktop and mobile */}
+        <link rel="preload" as="image" href="/images/hero-couple.jpg" fetchPriority="high" />
         {/* GA4 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KT4C16M4V" />
         <script dangerouslySetInnerHTML={{

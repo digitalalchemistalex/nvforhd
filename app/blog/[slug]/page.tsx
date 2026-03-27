@@ -26,6 +26,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       images: post.coverImage ? [post.coverImage] : ['/images/hero-couple.jpg'],
       type: 'article',
     },
+    alternates: {
+      canonical: `https://nvforhd.com/blog/${post.slug}`,
+    },
   }
 }
 

@@ -8,13 +8,83 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'About Us — Board Members | NVforHD',
   description: "Meet the NVforHD board: Sean Schaeffer (founder), Mike Milligan, Michael Eskuchen, and John McGinnes. United by one mission — cure Huntington's Disease.",
+  openGraph: {
+    title: 'About NVforHD — Meet the Board',
+    description: "Four board members united by one mission — cure Huntington's Disease.",
+    images: ['/images/event-crowd.jpg'],
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://nvforhd.com/about',
+  },
+}
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'NVforHD Board Members',
+  itemListElement: [
+    {
+      '@type': 'ListItem', position: 1,
+      item: {
+        '@type': 'Person',
+        name: 'Sean Schaeffer',
+        jobTitle: 'Founder',
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        description: 'Founder of NVforHD. 30+ years in sales. CEO of publicly traded technology company. Founded NVforHD after wife Christine was diagnosed with Huntington\'s Disease.',
+        image: 'https://nvforhd.com/images/headshot-sean.webp',
+      },
+    },
+    {
+      '@type': 'ListItem', position: 2,
+      item: {
+        '@type': 'Person',
+        name: 'Mike Milligan',
+        jobTitle: 'Board Member',
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        description: 'Director of Sales, Golf the High Sierra. Former President of Golf the High Sierra 2005–2014.',
+        image: 'https://nvforhd.com/images/headshot-milligan.webp',
+      },
+    },
+    {
+      '@type': 'ListItem', position: 3,
+      item: {
+        '@type': 'Person',
+        name: 'Michael R. Eskuchen',
+        jobTitle: 'Board Member',
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        description: 'Account Manager, Golf the High Sierra. Former GM & COO of Hidden Valley CC, Reno, NV.',
+        image: 'https://nvforhd.com/images/headshot-eskuchen.webp',
+      },
+    },
+    {
+      '@type': 'ListItem', position: 4,
+      item: {
+        '@type': 'Person',
+        name: 'John McGinnes',
+        jobTitle: 'Board Member',
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        description: 'Executive Director of Sales, Atlantis Casino Resort Spa. 30 years in hotel sales.',
+        image: 'https://nvforhd.com/images/headshot-mcginnes.webp',
+      },
+    },
+  ],
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://nvforhd.com/about' },
+  ],
 }
 
 const board = [
   {
     name: 'Sean Schaeffer',
     role: 'Founder',
-    img: '/images/headshot-sean.jpg',
+    img: '/images/headshot-sean.webp',
     bio: [
       "Sean Schaeffer has spent the last 30 years in the Sales and Customer Service industries. His entrepreneurial spirit has led him to create several of his own companies and ground-breaking technologies. Over the years he has run large call center operations with hundreds of thousands of annual transactions in the Hospitality and Gaming sectors. Most recently, he served as CEO of a publicly traded technology company.",
       "Sean is our founder and has a deeply personal connection to Huntington's Disease. His lovely wife of 30+ years, Christine, was recently diagnosed with this horrible disease. Sean and his family are new to the HD community but will throw every bit of effort they have into raising awareness, finding a cure, and assisting others.",
@@ -23,7 +93,7 @@ const board = [
   {
     name: 'Mike Milligan',
     role: 'Board Member',
-    img: '/images/headshot-milligan.png',
+    img: '/images/headshot-milligan.webp',
     bio: [
       "A native of Santa Rosa, CA, Mike has been part of the golf industry in the Reno/Lake Tahoe area since 2004. He built the tournament golf sales department at Tahoe Mountain Club in Truckee, served as President of Golf the High Sierra from 2005 to 2014, and returned as Director of Sales in 2020 — helping grow its regional significance in the Reno/Lake Tahoe marketplace.",
       "Mike is an avid golfer and an able soccer goalkeeper at 54 years old. He is first and foremost a family man and amateur farmer, raising his son Jones, 2 donkeys, 2 cows, 4 goats, 2 sheep, 2 horses, 4 dogs, and a cat with his wife Marilyn.",
@@ -32,7 +102,7 @@ const board = [
   {
     name: 'Michael R. Eskuchen',
     role: 'Board Member',
-    img: '/images/headshot-eskuchen.png',
+    img: '/images/headshot-eskuchen.webp',
     bio: [
       "Mike began his career in golf in Palm Springs, CA before moving to Sparks, NV to manage sales at Red Hawk — the Golf Club at Wingfield Springs. He became Director of Sales at Duncan Golf Management, growing the organisation from 2 to 9 courses in under 5 years. He then served as GM and COO of Hidden Valley CC in Reno before joining Golf the High Sierra as Account Manager.",
       "Mike has a love for animals and enjoys coaching football and baseball for his twin boys.",
@@ -41,7 +111,7 @@ const board = [
   {
     name: 'John McGinnes',
     role: 'Board Member',
-    img: '/images/headshot-mcginnes.jpg',
+    img: '/images/headshot-mcginnes.webp',
     bio: [
       "John is Executive Director of Sales for the #1 Reno-Tahoe resort ranked by TripAdvisor in Northern Nevada. With 30 years in hotel sales, he progressed from parking cars to leading sales for 16 years at the Eldorado Hotel Casino, then led teams at Intercontinental Hotel Group, and in 2016 returned to lead the Atlantis Casino Resort Spa.",
       "McGinnes holds a BA in Communications from Monmouth College and his commission as a Field Artillery officer in the U.S. Army. He served 8 years in the Army Reserve, is Secretary of the Regional Air Service Corporation (RASC), and was three-term President of the Reno-Tahoe Chapter of SKÄL International 2019–2021.",
@@ -52,6 +122,8 @@ const board = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <PageHero
         kicker="About NVforHD"

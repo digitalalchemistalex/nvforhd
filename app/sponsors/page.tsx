@@ -8,6 +8,24 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: '2025 Sponsors | NVforHD — Huntington\'s Disease Charity Golf',
   description: 'NVforHD 2025 sponsors: Aguirre Riley (Title), UC Davis Health (Platinum), C-Hawk (Gold). Join them — become a 2026 sponsor and put your name on the fight against HD.',
+  openGraph: {
+    title: 'NVforHD Sponsors — Support the Fight Against HD',
+    description: 'Meet our 2025 sponsors and become a 2026 sponsor. Packages from $100.',
+    images: ['/images/event-crowd.jpg'],
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://nvforhd.com/sponsors',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sponsors', item: 'https://nvforhd.com/sponsors' },
+  ],
 }
 
 const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=sponsors-page'
@@ -15,6 +33,7 @@ const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforH
 export default function SponsorsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
 
       {/* ── HERO — light, human, purposeful ── */}
