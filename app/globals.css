@@ -18,12 +18,12 @@
   --snow:       #F9F8F6;
   --snow-dim:   rgba(249,248,246,0.65);
   --snow-faint: rgba(249,248,246,0.35);
-  --blue:       #2563EB;
+  --blue:       #3B82F6;
   --blue-dark:  #1E3A8A;
   --blue-mid:   #2563EB;
   --blue-light: #EFF6FF;
   --blue-faint: #DBEAFE;
-  --blue-bright: #93C5FD;  /* bright sky blue — readable on dark navy */
+  --blue-bright: #93C5FD;  /* bright sky blue — emphasis on dark navy */
   --gold:       #B8860B;
   --gold-light: #F59E0B;
   --gold-pale:  #FEF3C7;
