@@ -34,13 +34,14 @@ const base = (content: string) => `<!DOCTYPE html>
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td style="vertical-align:middle;">
-            <img src="https://nvforhd.com/images/NVforHD-logo-1.png" alt="NVforHD" width="140" height="auto" style="display:block;border:0;max-width:140px;" />
+            <p style="margin:0 0 4px 0;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:${WHITE_DIM};font-weight:600;">Nevada for HD</p>
+            <p style="margin:0;font-size:28px;font-weight:300;color:#ffffff;letter-spacing:-0.5px;font-family:Georgia,serif;">NVforHD</p>
           </td>
           <td align="right" style="vertical-align:middle;">
             <table cellpadding="0" cellspacing="0">
               <tr>
-                <td bgcolor="${BLUE}" style="background-color:${BLUE};width:40px;height:40px;text-align:center;vertical-align:middle;font-size:20px;">
-                  &#128153;
+                <td bgcolor="${BLUE}" style="background-color:${BLUE};width:42px;height:42px;text-align:center;vertical-align:middle;">
+                  <span style="font-size:20px;line-height:42px;display:block;">&#128153;</span>
                 </td>
               </tr>
             </table>
@@ -170,7 +171,7 @@ function clientHtml(name: string, intentTitle: string) {
     },
   }
 
-  const msg = intentMessages[intentTitle] || {
+  const msg = intentMessages[intentTitle] || intentMessages[intentTitle.replace('I want to ', '')] || {
     headline: 'Message received.',
     body: `Sean reads every message personally and will be in touch within 24 hours.`,
     cta: 'Visit nvforhd.com →',

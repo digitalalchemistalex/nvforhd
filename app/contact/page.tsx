@@ -159,7 +159,7 @@ export default function ContactPage() {
           body: buildBody(),
           replyTo: form.email,
           name: form.name,
-          intentTitle: selected?.title || '',
+          intentTitle: selected?.title || intent || '',
         }),
       })
       if (!res.ok) throw new Error()
