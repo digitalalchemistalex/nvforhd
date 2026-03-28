@@ -88,20 +88,24 @@ export default function Footer() {
             </div>
 
             {/* Col 4 — Impact Stats */}
-            <div>
+            <div className="footer-col-stats">
               <div className="footer-col-head">What We&apos;ve Done</div>
-              {[
-                { n: '$50K+', label: 'Raised in 2 years' },
-                { n: '1',     label: 'HD-free baby funded' },
-                { n: '90+',   label: 'Families at UC Davis' },
-              ].map(({ n, label }) => (
-                <div key={n} className="footer-stat-row">
-                  <span className="footer-stat-n">{n}</span>
-                  <span className="footer-stat-label">{label}</span>
-                </div>
-              ))}
+              <div className="footer-stats-block">
+                {[
+                  { n: '$50K+', label: 'Raised in 2 years' },
+                  { n: '1',     label: 'HD-free baby funded' },
+                  { n: '90+',   label: 'Families at UC Davis' },
+                ].map(({ n, label }) => (
+                  <div key={n} className="footer-stat-row">
+                    <span className="footer-stat-n">{n}</span>
+                    <span className="footer-stat-label">{label}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="footer-stat-divider" />
               <a href="https://health.ucdavis.edu/huntingtons-disease" target="_blank" rel="noopener" className="footer-ucd-link">
-                2026 Beneficiary:<br />UC Davis HD Center ↗
+                <span className="footer-ucd-year">2026 Beneficiary:</span>
+                <span className="footer-ucd-name">UC Davis HD Center ↗</span>
               </a>
             </div>
           </div>
@@ -220,37 +224,68 @@ export default function Footer() {
           transition: color 0.2s;
         }
         .footer-link:hover { color: #fff; }
+
+        /* ─── STATS COL ─── */
+        .footer-col-stats {
+          display: flex;
+          flex-direction: column;
+        }
+        .footer-stats-block {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
         .footer-stat-row {
           display: flex;
           align-items: baseline;
-          gap: 0.6rem;
-          margin-bottom: 0.9rem;
+          gap: 0.75rem;
+          padding: 0.55rem 0;
         }
         .footer-stat-n {
           font-family: var(--serif);
-          font-size: 1.6rem;
-          font-weight: 600;
-          color: #fff;
+          font-size: 1.75rem;
+          font-weight: 400;
+          color: rgba(249,248,246,0.95);
           line-height: 1;
           flex-shrink: 0;
+          letter-spacing: -0.02em;
         }
         .footer-stat-label {
           font-size: 0.72rem;
-          color: rgba(249,248,246,0.5);
+          color: rgba(249,248,246,0.45);
           line-height: 1.4;
+          font-weight: 300;
+          letter-spacing: 0.02em;
+        }
+        .footer-stat-divider {
+          height: 1px;
+          background: rgba(255,255,255,0.1);
+          margin: 0.85rem 0;
+          width: 60%;
         }
         .footer-ucd-link {
-          display: block;
-          margin-top: 0.75rem;
-          padding-top: 0.75rem;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          font-size: 0.7rem;
-          color: rgba(249,248,246,0.4);
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
           text-decoration: none;
-          line-height: 1.7;
-          transition: color 0.2s;
+          transition: opacity 0.2s;
         }
-        .footer-ucd-link:hover { color: rgba(249,248,246,0.7); }
+        .footer-ucd-link:hover { opacity: 0.85; }
+        .footer-ucd-year {
+          font-size: 0.62rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: rgba(249,248,246,0.35);
+          font-family: var(--sans);
+        }
+        .footer-ucd-name {
+          font-family: var(--serif);
+          font-size: 0.95rem;
+          color: rgba(249,248,246,0.65);
+          font-style: italic;
+          letter-spacing: 0.01em;
+        }
+
         .footer-bottom {
           display: flex;
           justify-content: space-between;
