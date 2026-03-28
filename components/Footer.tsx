@@ -48,12 +48,11 @@ export default function Footer() {
 
       {/* ═══════════════════════════════════════
           BAND 2 — NAVY INFO
-          Uses CSS classes so media queries work
       ═══════════════════════════════════════ */}
       <div className="footer-navy">
         <div className="footer-navy-inner">
 
-          {/* 4-col → 2-col → 1-col via CSS class */}
+          {/* Desktop: 4-col. Mobile: brand full-width, then nav+cause, then stats strip */}
           <div className="footer-cols">
 
             {/* Col 1 — Brand */}
@@ -87,8 +86,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Col 4 — Impact Stats */}
-            <div className="footer-col-stats">
+            {/* Col 4 — Impact Stats (desktop: vertical column. mobile: hidden here, shown in strip below) */}
+            <div className="footer-col-stats-desktop">
               <div className="footer-col-head">What We&apos;ve Done</div>
               <div className="footer-stats-block">
                 {[
@@ -106,6 +105,27 @@ export default function Footer() {
               <a href="https://health.ucdavis.edu/huntingtons-disease" target="_blank" rel="noopener" className="footer-ucd-link">
                 <span className="footer-ucd-year">2026 Beneficiary:</span>
                 <span className="footer-ucd-name">UC Davis HD Center ↗</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Mobile-only stats strip — compact horizontal, full-width */}
+          <div className="footer-stats-strip">
+            <div className="footer-strip-head">What We&apos;ve Done</div>
+            <div className="footer-strip-row">
+              {[
+                { n: '$50K+', label: 'Raised' },
+                { n: '1',     label: 'HD-free baby' },
+                { n: '90+',   label: 'Families helped' },
+              ].map(({ n, label }) => (
+                <div key={n} className="footer-strip-stat">
+                  <span className="footer-strip-n">{n}</span>
+                  <span className="footer-strip-label">{label}</span>
+                </div>
+              ))}
+              <a href="https://health.ucdavis.edu/huntingtons-disease" target="_blank" rel="noopener" className="footer-strip-ucd">
+                <span className="footer-strip-ucd-label">2026 Beneficiary</span>
+                <span className="footer-strip-ucd-name">UC Davis HD Center ↗</span>
               </a>
             </div>
           </div>
@@ -225,15 +245,14 @@ export default function Footer() {
         }
         .footer-link:hover { color: #fff; }
 
-        /* ─── STATS COL ─── */
-        .footer-col-stats {
+        /* ─── STATS COL (desktop only) ─── */
+        .footer-col-stats-desktop {
           display: flex;
           flex-direction: column;
         }
         .footer-stats-block {
           display: flex;
           flex-direction: column;
-          gap: 0;
         }
         .footer-stat-row {
           display: flex;
@@ -286,6 +305,10 @@ export default function Footer() {
           letter-spacing: 0.01em;
         }
 
+        /* ─── MOBILE STATS STRIP (hidden on desktop) ─── */
+        .footer-stats-strip { display: none; }
+
+        /* ─── BOTTOM BAR ─── */
         .footer-bottom {
           display: flex;
           justify-content: space-between;
@@ -307,18 +330,106 @@ export default function Footer() {
             grid-template-columns: 1fr !important;
             gap: 2.5rem;
           }
-          .footer-cta-left { text-align: left; }
           .footer-cols {
             grid-template-columns: 1fr 1fr !important;
-            gap: 2rem !important;
+            gap: 1.75rem 2rem !important;
+            padding-bottom: 0 !important;
+            border-bottom: none !important;
           }
+          /* Brand spans full width */
           .footer-col-brand { grid-column: 1 / -1; }
           .footer-brand-copy { max-width: 100%; }
+          /* Hide desktop stats col on mobile */
+          .footer-col-stats-desktop { display: none !important; }
+
+          /* Show mobile stats strip */
+          .footer-stats-strip {
+            display: block;
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 2px;
+            margin-bottom: 1.75rem;
+          }
+          .footer-strip-head {
+            font-size: 0.55rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(249,248,246,0.35);
+            font-weight: 600;
+            font-family: var(--sans);
+            margin-bottom: 1rem;
+          }
+          .footer-strip-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            align-items: center;
+            gap: 0.5rem 1rem;
+          }
+          .footer-strip-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+          }
+          .footer-strip-n {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(249,248,246,0.95);
+            line-height: 1;
+            letter-spacing: -0.02em;
+          }
+          .footer-strip-label {
+            font-size: 0.6rem;
+            color: rgba(249,248,246,0.4);
+            font-weight: 300;
+            line-height: 1.3;
+          }
+          .footer-strip-ucd {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            text-decoration: none;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding-left: 1rem;
+            transition: opacity 0.2s;
+          }
+          .footer-strip-ucd:hover { opacity: 0.8; }
+          .footer-strip-ucd-label {
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(249,248,246,0.3);
+            font-family: var(--sans);
+          }
+          .footer-strip-ucd-name {
+            font-family: var(--serif);
+            font-size: 0.85rem;
+            color: rgba(249,248,246,0.7);
+            font-style: italic;
+          }
+          .footer-bottom { flex-direction: column; text-align: center; gap: 0.4rem; }
         }
+
         @media (max-width: 480px) {
-          .footer-cols { grid-template-columns: 1fr 1fr !important; }
           .footer-btn-primary, .footer-btn-secondary { font-size: 0.7rem; padding: 1rem; }
-          .footer-bottom { flex-direction: column; text-align: center; }
+          /* On very small screens, stats strip becomes 3-col + stacked UCD */
+          .footer-strip-row {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+          .footer-strip-ucd {
+            grid-column: 1 / -1;
+            border-left: none;
+            padding-left: 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 0.75rem;
+            margin-top: 0.25rem;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+          }
+          .footer-strip-ucd-label::after { content: ':'; }
         }
       ` }} />
     </footer>
