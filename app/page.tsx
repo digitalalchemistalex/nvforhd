@@ -323,6 +323,98 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════
+          UC DAVIS LETTER — Dr. Duffy endorsement
+          Light editorial centered design
+          After timeline (3 years of results) → institutional validation → Puccini (conversion)
+      ══════════════════════════════════════ */}
+      <section style={{ background: 'var(--white)', padding: 'clamp(3.5rem,6vw,6rem) var(--px)', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
+        <div className="inner" style={{ maxWidth: '680px', textAlign: 'center' }}>
+          <ScrollReveal>
+            {/* UC Davis seal + gold rules */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(1rem,3vw,1.5rem)', marginBottom: '1.75rem' }}>
+              <div style={{ flex: '0 1 48px', height: '1px', background: 'var(--gold)' }} />
+              <div style={{ width: '56px', height: '56px', background: '#002855', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1.5px solid rgba(218,170,0,0.3)' }}>
+                <span style={{ color: '#DAAA00', fontWeight: 700, fontSize: '0.68rem', letterSpacing: '0.1em' }}>UCD</span>
+              </div>
+              <div style={{ flex: '0 1 48px', height: '1px', background: 'var(--gold)' }} />
+            </div>
+
+            {/* Section label */}
+            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, marginBottom: 'clamp(2rem,4vw,3rem)' }}>
+              UC Davis HD Center of Excellence
+            </div>
+
+            {/* Pull quote */}
+            <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.25rem,2.8vw,1.85rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto clamp(1.75rem,3vw,2.5rem)', fontStyle: 'italic', maxWidth: '580px' }}>
+              &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
+            </p>
+
+            {/* Stats row */}
+            <div className="ucd-stats-row" style={{ display: 'flex', justifyContent: 'center', gap: 'clamp(1.5rem,4vw,2.5rem)', marginBottom: 'clamp(1.75rem,3vw,2.5rem)', padding: 'clamp(1rem,2vw,1.5rem) 0', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3.5vw,2.2rem)', fontWeight: 600, color: '#002855', lineHeight: 1 }}>32</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '0.3rem' }}>Years serving HD</div>
+              </div>
+              <div style={{ width: '1px', background: 'var(--cream-3)' }} />
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3.5vw,2.2rem)', fontWeight: 600, color: '#002855', lineHeight: 1 }}>90+</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '0.3rem' }}>NV families in care</div>
+              </div>
+              <div style={{ width: '1px', background: 'var(--cream-3)' }} />
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3.5vw,2.2rem)', fontWeight: 600, color: '#002855', lineHeight: 1 }}>11+</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '0.3rem' }}>HD specialists</div>
+              </div>
+            </div>
+
+            {/* Attribution */}
+            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.82rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra (Sasha) Duffy, DO</div>
+            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'var(--ink-faint)', marginTop: '0.2rem' }}>Director, UC Davis HD Center of Excellence</div>
+            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-dim)', marginTop: '0.15rem' }}>Clinical Professor · Vice Chair of Education · Dept. of Neurology</div>
+
+            {/* Expandable letter */}
+            <div style={{ marginTop: '1.5rem' }}>
+              <details className="ucd-letter-details">
+                <summary className="ucd-letter-summary">
+                  <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
+                </summary>
+                <div style={{ padding: '1.5rem 0 0', textAlign: 'left' }}>
+                  <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--ink)', marginBottom: '1rem' }}>Dear HD Community,</p>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
+                    We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 32 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
+                  </p>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
+                    In 2025 we were able to offer the addition of a <strong style={{ color: 'var(--ink)' }}>neuropsychologist</strong> and <strong style={{ color: 'var(--ink)' }}>OB/GYN experts</strong> to our HD clinic to better serve patient needs. While our focus is on clinical care, we also engage in many educational events to teach others about HD, train the next generation of HD care providers, and are an active HD research trial site.
+                  </p>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
+                    While we remain optimistic and very hopeful about developing HD therapies and the impressive landscape of research trials being conducted in HD, we need to continue to provide quality clinical care for those living with HD symptoms today. The horizon is bright for future meaningful treatments, however we also remain committed to providing families living with HD today clinical expertise and support through our HDSA Center of Excellence.
+                  </p>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '1rem' }}>
+                    With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.
+                  </p>
+                  <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.88rem', color: 'var(--ink-mid)', marginBottom: '0.4rem' }}>With gratitude,</p>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--ink-dim)' }}>The care team at UC Davis HD Center of Excellence</p>
+                </div>
+              </details>
+            </div>
+          </ScrollReveal>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ucd-letter-details { cursor: pointer; }
+          .ucd-letter-summary {
+            font-family: var(--sans); font-size: 0.78rem; color: var(--blue); font-weight: 500;
+            padding: 0.75rem 0; list-style: none;
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            user-select: none; transition: color 0.2s;
+          }
+          .ucd-letter-summary::-webkit-details-marker { display: none; }
+          .ucd-letter-summary:hover { color: var(--blue-dark); }
+          .ucd-letter-arrow { display: inline-block; transition: transform 0.25s ease; font-size: 0.65rem; }
+          .ucd-letter-details[open] .ucd-letter-arrow { transform: rotate(90deg); }
+        ` }} />
+      </section>
+
+      {/* ══════════════════════════════════════
           PUCCINI — The conversion moment
           MOBILE: photo top, white donate card below
           DESKTOP: side by side
@@ -489,82 +581,6 @@ export default function HomePage() {
               scroll-snap-align: start;
             }
           }
-        ` }} />
-      </section>
-
-      {/* ══════════════════════════════════════
-          UC DAVIS LETTER — Dr. Duffy endorsement
-          Option B: Pull-quote + expandable full letter
-          Placed after testimonials (families praise UC Davis → UC Davis responds)
-      ══════════════════════════════════════ */}
-      <section style={{ background: 'var(--cream)', padding: 'clamp(3rem,5vw,5rem) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
-        <div className="inner" style={{ maxWidth: '760px' }}>
-          <ScrollReveal>
-            {/* Eyebrow */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
-              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
-              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>A Message From Our Partners</span>
-            </div>
-
-            {/* Pull quote */}
-            <div style={{ borderLeft: '4px solid var(--blue)', paddingLeft: 'clamp(1rem,2vw,1.5rem)', marginBottom: '2rem' }}>
-              <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2.8vw,2rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.45, margin: 0, fontStyle: 'italic' }}>
-                &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
-              </p>
-            </div>
-
-            {/* Attribution */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.5rem' }}>
-              <div style={{ width: '44px', height: '44px', background: '#002855', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ color: '#DAAA00', fontWeight: 700, fontSize: '0.6rem', letterSpacing: '0.08em' }}>UCD</span>
-              </div>
-              <div>
-                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.82rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra (Sasha) Duffy, DO</div>
-                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'var(--ink-faint)' }}>Director, UC Davis HD Center of Excellence</div>
-              </div>
-            </div>
-
-            {/* Expandable full letter */}
-            <details className="ucd-letter-details">
-              <summary className="ucd-letter-summary">
-                <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
-              </summary>
-              <div style={{ padding: '1.25rem 0 0' }}>
-                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1rem', color: 'var(--ink)', marginBottom: '1rem' }}>Dear HD Community,</p>
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
-                  We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 32 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
-                </p>
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
-                  In 2025 we were able to offer the addition of a <strong style={{ color: 'var(--ink)' }}>neuropsychologist</strong> and <strong style={{ color: 'var(--ink)' }}>OB/GYN experts</strong> to our HD clinic to better serve patient needs. While our focus is on clinical care, we also engage in many educational events to teach others about HD, train the next generation of HD care providers, and are an active HD research trial site.
-                </p>
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
-                  While we remain optimistic and very hopeful about developing HD therapies and the impressive landscape of research trials being conducted in HD, we need to continue to provide quality clinical care for those living with HD symptoms today. The horizon is bright for future meaningful treatments, however we also remain committed to providing families living with HD today clinical expertise and support through our HDSA Center of Excellence.
-                </p>
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '1rem' }}>
-                  With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.
-                </p>
-                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.9rem', color: 'var(--ink-mid)', marginBottom: '0.5rem' }}>With gratitude,</p>
-                <p style={{ fontSize: '0.82rem', color: 'var(--ink-dim)', marginBottom: '1rem' }}>The care team at UC Davis HD Center of Excellence</p>
-                <div style={{ borderTop: '1px solid var(--cream-3)', paddingTop: '0.85rem' }}>
-                  <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--ink)' }}>Alexandra (Sasha) Duffy, DO</div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--ink-faint)', lineHeight: 1.6 }}>Clinical Professor · Adult Neurology Residency Program Director · Vice Chair of Education · Director, UC Davis HD Center of Excellence · Department of Neurology</div>
-                </div>
-              </div>
-            </details>
-          </ScrollReveal>
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .ucd-letter-details { cursor: pointer; }
-          .ucd-letter-summary {
-            font-family: var(--sans); font-size: 0.8rem; color: var(--blue); font-weight: 500;
-            padding: 0.85rem 0; border-top: 1px solid var(--cream-3);
-            list-style: none; display: flex; align-items: center; gap: 0.5rem;
-            user-select: none; transition: color 0.2s;
-          }
-          .ucd-letter-summary::-webkit-details-marker { display: none; }
-          .ucd-letter-summary:hover { color: var(--blue-dark); }
-          .ucd-letter-arrow { display: inline-block; transition: transform 0.25s ease; font-size: 0.7rem; }
-          .ucd-letter-details[open] .ucd-letter-arrow { transform: rotate(90deg); }
         ` }} />
       </section>
 
