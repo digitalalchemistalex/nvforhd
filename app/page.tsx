@@ -242,6 +242,51 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════
+          UC DAVIS LETTER — MOBILE ONLY
+          Compact: pull-quote + stats + attribution, no expandable
+          After Rylee quote (emotional gut-punch) → institutional validation → timeline
+      ══════════════════════════════════════ */}
+      <section className="ucd-mobile" style={{ background: 'var(--white)', padding: '2.5rem 1.5rem', borderTop: '1px solid var(--cream-3)' }}>
+        <div style={{ textAlign: 'center' }}>
+          {/* Seal */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
+            <div style={{ flex: '0 1 32px', height: '1px', background: 'var(--gold)' }} />
+            <div style={{ width: '44px', height: '44px', background: '#002855', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(218,170,0,0.3)' }}>
+              <span style={{ color: '#DAAA00', fontWeight: 700, fontSize: '0.55rem', letterSpacing: '0.08em' }}>UCD</span>
+            </div>
+            <div style={{ flex: '0 1 32px', height: '1px', background: 'var(--gold)' }} />
+          </div>
+
+          <div style={{ fontFamily: 'var(--sans)', fontSize: '0.5rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, marginBottom: '1.25rem' }}>
+            UC Davis HD Center of Excellence
+          </div>
+
+          {/* Quote — shorter line length for mobile */}
+          <p style={{ fontFamily: 'var(--serif)', fontSize: '1.15rem', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto 1.25rem', fontStyle: 'italic', maxWidth: '340px' }}>
+            &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
+          </p>
+
+          {/* Compact stats */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', marginBottom: '1.25rem', padding: '0.85rem 0', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
+            {[
+              { n: '32', l: 'Years' },
+              { n: '90+', l: 'Families' },
+              { n: '11+', l: 'Specialists' },
+            ].map(({ n, l }) => (
+              <div key={l} style={{ textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: '#002855', lineHeight: 1 }}>{n}</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.5rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '0.2rem' }}>{l}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Attribution — compact */}
+          <div style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra Duffy, DO</div>
+          <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-faint)', marginTop: '0.15rem' }}>Director, UC Davis HD Center of Excellence</div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           TIMELINE
           DESKTOP: 3-col with track line + photos
           MOBILE: 3 tap-to-go photo cards, full-bleed
@@ -327,7 +372,7 @@ export default function HomePage() {
           Light editorial centered design
           After timeline (3 years of results) → institutional validation → Puccini (conversion)
       ══════════════════════════════════════ */}
-      <section style={{ background: 'var(--white)', padding: 'clamp(3.5rem,6vw,6rem) var(--px)', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
+      <section className="ucd-desktop" style={{ background: 'var(--white)', padding: 'clamp(3.5rem,6vw,6rem) var(--px)', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
         <div className="inner" style={{ maxWidth: '680px', textAlign: 'center' }}>
           <ScrollReveal>
             {/* UC Davis seal + gold rules */}
@@ -833,6 +878,10 @@ export default function HomePage() {
         .puccini-story-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
         .puccini-story-link:hover { color: rgba(255,255,255,0.9); }
 
+        /* ── UC DAVIS LETTER ── */
+        .ucd-desktop { display: block; }
+        .ucd-mobile  { display: none; }
+
         /* ── TIMELINE ── */
         .timeline-desktop-wrapper { display: block; }
         .timeline-mobile-wrapper { display: none; }
@@ -875,6 +924,10 @@ export default function HomePage() {
           .cta-primary-glow { text-align: center; padding: 1.1rem 1.5rem; }
           .cta-ghost-warm { text-align: center; padding: 1rem 1.5rem; }
           .hero-btn-donate, .hero-btn-golf { width: 100%; text-align: center; padding: 1.1rem; }
+
+          /* UC Davis letter: swap placement */
+          .ucd-desktop { display: none !important; }
+          .ucd-mobile  { display: block !important; }
 
           /* Timeline: mobile cards */
           .timeline-desktop-wrapper { display: none; }
