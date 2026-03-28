@@ -347,8 +347,8 @@ export default function Footer() {
             display: block;
             margin-top: 1.5rem;
             padding: 1.25rem 1.5rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
             border-radius: 2px;
             margin-bottom: 1.75rem;
           }
