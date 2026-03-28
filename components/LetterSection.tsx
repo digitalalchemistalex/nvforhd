@@ -53,10 +53,10 @@ export default function LetterSection() {
             <p style={{ fontSize: '0.88rem', color: 'var(--white-dim)', fontWeight: 300, marginBottom: '1.5rem', lineHeight: 1.7 }}>
               No golf required. Your donation funds IVF for the next family carrying the HD gene.
             </p>
-            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1rem', alignItems: 'flex-end' }}>
-              <a href={D100} target="_blank" rel="noopener" className="amt-btn on-dark">$100</a>
-              <a href={D220} target="_blank" rel="noopener" className="amt-btn on-dark featured" style={{ marginTop: '1.2rem' }}>$220</a>
-              <a href={D500} target="_blank" rel="noopener" className="amt-btn on-dark">$500</a>
+            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', alignItems: 'flex-end' }}>
+              <a href={D100} target="_blank" rel="noopener" className="amt-btn on-dark" style={{ flex: 1, textAlign: 'center', padding: '0.75rem 0.5rem' }}>$100</a>
+              <a href={D220} target="_blank" rel="noopener" className="amt-btn on-dark featured" style={{ flex: 1, textAlign: 'center', padding: '0.85rem 0.5rem', marginTop: '1.2rem' }}>$220</a>
+              <a href={D500} target="_blank" rel="noopener" className="amt-btn on-dark" style={{ flex: 1, textAlign: 'center', padding: '0.75rem 0.5rem' }}>$500</a>
             </div>
             <a href={GOLF} target="_blank" rel="noopener" style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--white-dimmer)', textDecoration: 'none' }}>
               Prefer to play golf? Book May 29 →
