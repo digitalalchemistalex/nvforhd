@@ -283,6 +283,36 @@ export default function HomePage() {
           {/* Attribution — compact */}
           <div style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra Duffy, DO</div>
           <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-faint)', marginTop: '0.15rem' }}>Director, UC Davis HD Center of Excellence</div>
+
+          {/* Expandable letter — same as desktop */}
+          <div style={{ marginTop: '1.25rem' }}>
+            <details className="ucd-letter-details">
+              <summary className="ucd-letter-summary">
+                <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
+              </summary>
+              <div style={{ padding: '1.25rem 0 0', textAlign: 'left' }}>
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--ink)', marginBottom: '0.85rem' }}>Dear HD Community,</p>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>
+                  We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 32 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
+                </p>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>
+                  In 2025 we were able to offer the addition of a <strong style={{ color: 'var(--ink)' }}>neuropsychologist</strong> and <strong style={{ color: 'var(--ink)' }}>OB/GYN experts</strong> to our HD clinic to better serve patient needs. While our focus is on clinical care, we also engage in many educational events to teach others about HD, train the next generation of HD care providers, and are an active HD research trial site.
+                </p>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>
+                  While we remain optimistic and very hopeful about developing HD therapies and the impressive landscape of research trials being conducted in HD, we need to continue to provide quality clinical care for those living with HD symptoms today. The horizon is bright for future meaningful treatments, however we also remain committed to providing families living with HD today clinical expertise and support through our HDSA Center of Excellence.
+                </p>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
+                  With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.
+                </p>
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.85rem', color: 'var(--ink-mid)', marginBottom: '0.35rem' }}>With gratitude,</p>
+                <p style={{ fontSize: '0.75rem', color: 'var(--ink-dim)', marginBottom: '0.85rem' }}>The care team at UC Davis HD Center of Excellence</p>
+                <div style={{ borderTop: '1px solid var(--cream-3)', paddingTop: '0.75rem' }}>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--ink)' }}>Alexandra (Sasha) Duffy, DO</div>
+                  <div style={{ fontSize: '0.62rem', color: 'var(--ink-faint)', lineHeight: 1.6 }}>Clinical Professor · Adult Neurology Residency Program Director · Vice Chair of Education · Director, UC Davis HD Center of Excellence · Department of Neurology</div>
+                </div>
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
