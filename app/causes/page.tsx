@@ -108,8 +108,11 @@ export default function CausesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: 'clamp(2.5rem,4vw,4rem)', flexWrap: 'wrap' }}>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(6rem,12vw,11rem)', fontWeight: 700, color: 'rgba(17,24,39,0.1)', lineHeight: 1, userSelect: 'none', letterSpacing: '-0.03em' }}>2026</div>
               <div>
-                <div style={{ display: 'inline-block', background: 'rgba(139,105,20,0.1)', border: '1px solid rgba(139,105,20,0.3)', color: 'var(--gold-dark)', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.3rem 0.9rem', marginBottom: '0.75rem', fontWeight: 700 }}>
-                  ✦ Current Year — Active
+                <div className="active-badge">
+                  <span className="active-dot">
+                    <span className="active-dot-ring" />
+                  </span>
+                  Current Year — Active
                 </div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.4rem,2.5vw,2.5rem)', color: 'var(--ink)' }}>UC Davis HD Center of Excellence</div>
               </div>
