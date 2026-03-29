@@ -1,5 +1,6 @@
 'use client'
 import ScrollReveal from '@/components/ScrollReveal'
+import SponsorCardAnimated from '@/components/SponsorCardAnimated'
 
 const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=packages'
 
@@ -39,6 +40,9 @@ export default function PackagesSection() {
             </p>
           </div>
         </ScrollReveal>
+
+        {/* ── Animated sponsor card — mobile only ── */}
+        <SponsorCardAnimated />
 
         {/* ── Top tier sponsorships — high contrast, bold ── */}
         <div className="grid-3" style={{ gap: '1.5rem', marginBottom: '1.5rem' }}>
