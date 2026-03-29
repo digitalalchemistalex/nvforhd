@@ -5,7 +5,7 @@ import SponsorCardAnimated from '@/components/SponsorCardAnimated'
 const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=packages'
 
 const pkgs = [
-  { id: 'title',  badge: '🏆 Title Sponsor',  price: 3500, label: 'Title Sponsor',     what: '4 golfers + lunch + logo everywhere', cta: 'Secure Title Sponsorship',  urgent: 'Only 1 available',  top: true  },
+  { id: 'title',  badge: '🏆 Title Sponsor',  price: 3500, label: 'Title Sponsor',     what: '4 golfers + lunch + logo everywhere', cta: 'Secure Title Sponsorship',  urgent: 'Sold Out',          top: true  },
   { id: 'gold',   badge: '🥇 Gold Sponsor',   price: 3000, label: 'Gold Sponsor',      what: '4 golfers + lunch + logo at all events', cta: 'Become a Gold Sponsor', urgent: 'Sold Out',           top: true  },
   { id: 'lunch',  badge: '🍽 Lunch Sponsor',  price: 3000, label: 'Lunch Sponsor',     what: '4 golfers included + lunch sponsor credit', cta: 'Sponsor the Lunch',   urgent: '1 spot available',  top: true  },
   { id: 'four',   badge: '⛳ Foursome',        price: 880,  label: 'Golf for 4',        what: 'Golf + box lunch for your group of 4',   cta: 'Book Your Foursome',     urgent: null,                top: false },
