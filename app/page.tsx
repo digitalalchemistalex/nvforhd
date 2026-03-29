@@ -8,7 +8,8 @@ import AnimatedCounter from '@/components/AnimatedCounter'
 import Image from 'next/image'
 import Link from 'next/link'
 import VideoTestimonial from '@/components/VideoTestimonial'
-import SponsorCardAnimated from '@/components/SponsorCardAnimated'
+import dynamic from 'next/dynamic'
+const SponsorCardAnimated = dynamic(() => import('@/components/SponsorCardAnimated'), { ssr: false })
 
 export const metadata: Metadata = {
   title: "NVforHD — Charity Golf Tournament for Huntington's Disease",
