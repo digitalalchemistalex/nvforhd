@@ -55,9 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
-          media="print"
-          // @ts-ignore
-          onLoad="this.media='all'"
         />
         {/* Preload LCP hero image — next/image priority also handles this but explicit hint wins */}
         <link rel="preload" as="image" href="/images/hero-couple.jpg" fetchPriority="high" />
