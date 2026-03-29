@@ -57,6 +57,21 @@ const causesFaqSchema = {
       name: 'How many families does the UC Davis HD Center serve?',
       acceptedAnswer: { '@type': 'Answer', text: 'The UC Davis Huntington\'s Disease Center of Excellence in Sacramento serves over 90 Northern Nevada families. The team includes 2 movement disorder neurologists, 2 psychiatrists, 1 genetic counselor, 1 social worker, 2 physical therapists, and 3 research coordinators.' },
     },
+    {
+      '@type': 'Question',
+      name: 'Who is Dr. Alexandra Duffy?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Dr. Alexandra (Sasha) Duffy, DO is the Director of the UC Davis Huntington\'s Disease Center of Excellence. She is a Clinical Professor, Vice Chair of Education, and Adult Neurology Residency Program Director at UC Davis. She leads the team that serves over 90 Northern Nevada HD families.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the symptoms of Huntington\'s Disease?',
+      acceptedAnswer: { '@type': 'Answer', text: "Huntington's Disease causes progressive breakdown of nerve cells in the brain, producing symptoms comparable to Parkinson's disease, ALS, and Alzheimer's simultaneously. These include involuntary movements (chorea), cognitive decline, and significant personality and behavioral changes. HD is always fatal and there is no cure or disease-modifying treatment." },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who are Brandon and Rylee Puccini?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Brandon and Rylee Puccini are the 2024 NVforHD beneficiaries. The $25,000 raised at the 2024 tournament funded their IVF treatment through HelpCureHD, allowing them to have a baby free from Huntington\'s Disease. Their thank-you letter is featured on the NVforHD website.' },
+    },
   ],
 }
 

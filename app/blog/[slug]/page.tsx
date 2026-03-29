@@ -132,10 +132,17 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.date,
+    articleSection: post.category,
+    wordCount: post.body.split(/\s+/).length,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.nvforhd.com/blog/${post.slug}` },
     author: { '@type': 'Organization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
     publisher: { '@type': 'Organization', name: 'NVforHD', logo: { '@type': 'ImageObject', url: 'https://www.nvforhd.com/images/logo.png' } },
-    image: post.coverImage ? `https://www.nvforhd.com${post.coverImage}` : 'https://www.nvforhd.com/images/hero-couple.jpg',
+    image: { '@type': 'ImageObject', url: post.coverImage ? `https://www.nvforhd.com${post.coverImage}` : 'https://www.nvforhd.com/images/hero-couple.jpg', width: 1200, height: 630 },
     url: `https://www.nvforhd.com/blog/${post.slug}`,
+    isPartOf: { '@type': 'Blog', name: 'NVforHD Blog', url: 'https://www.nvforhd.com/blog' },
+    about: { '@type': 'MedicalCondition', name: "Huntington's Disease", alternateName: 'HD', url: 'https://www.nvforhd.com/causes' },
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.speakable-blog'] },
   }
 
   const breadcrumbSchema = {
@@ -195,7 +202,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Article body */}
           <article>
             {/* Excerpt / standfirst */}
-            <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.1rem,2vw,1.35rem)', lineHeight: 1.75, color: 'var(--ink-mid)', marginBottom: '3rem', borderLeft: '3px solid var(--blue)', paddingLeft: '1.5rem', fontStyle: 'italic' }}>
+            <p className="speakable-blog" style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.1rem,2vw,1.35rem)', lineHeight: 1.75, color: 'var(--ink-mid)', marginBottom: '3rem', borderLeft: '3px solid var(--blue)', paddingLeft: '1.5rem', fontStyle: 'italic' }}>
               {post.excerpt}
             </p>
 
