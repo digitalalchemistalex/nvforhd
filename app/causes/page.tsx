@@ -136,6 +136,50 @@ export default function CausesPage() {
               <p className="speakable-causes" style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'var(--ink-dim)', marginBottom: '2.5rem' }}>
                 This clinic operates entirely on private donation. Families like Tiffany&apos;s, Mikey and Holly&apos;s, and Leilani&apos;s — over 90 Northern Nevada families — depend on it for neurologists, psychiatrists, genetic counselors, and social workers who guide them through their worst days. <strong style={{ color: 'var(--ink)' }}>Your round of golf directly funds this team.</strong>
               </p>
+              {/* Dr. Duffy letter — proof before the ask */}
+              <div style={{ margin: '2rem 0', padding: '2rem', background: 'var(--white)', border: '1px solid var(--cream-3)', borderLeft: '3px solid var(--gold-dark)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
+                  <div style={{ width: '40px', height: '40px', background: '#002855', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(218,170,0,0.3)' }}>
+                    <span style={{ color: '#DAAA00', fontWeight: 700, fontSize: '0.5rem', letterSpacing: '0.08em' }}>UCD</span>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--sans)', fontSize: '0.5rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold-dark)', fontWeight: 700 }}>Letter of Recognition</div>
+                    <div style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', color: 'var(--ink-dim)', marginTop: '0.15rem' }}>UC Davis HD Center of Excellence</div>
+                  </div>
+                </div>
+                <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.05rem', color: 'var(--ink)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                  &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
+                </p>
+                <div style={{ display: 'flex', gap: '1.5rem', padding: '0.85rem 0', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)', marginBottom: '1rem' }}>
+                  {[{ n: '32', l: 'Years' }, { n: '90+', l: 'Families' }, { n: '11+', l: 'Specialists' }].map(({ n, l }) => (
+                    <div key={l}>
+                      <div style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontWeight: 600, color: '#002855', lineHeight: 1 }}>{n}</div>
+                      <div style={{ fontFamily: 'var(--sans)', fontSize: '0.5rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '0.2rem' }}>{l}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra Duffy, DO</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-faint)', marginTop: '0.15rem', marginBottom: '1rem' }}>Director, UC Davis HD Center of Excellence</div>
+                <details className="ucd-letter-details">
+                  <summary className="ucd-letter-summary">
+                    <span className="ucd-letter-arrow">▸</span> Read the full letter from Dr. Duffy
+                  </summary>
+                  <div style={{ padding: '1.25rem 0 0' }}>
+                    <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--ink)', marginBottom: '0.85rem' }}>Dear HD Community,</p>
+                    <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 32 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.</p>
+                    <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>In 2025 we were able to offer the addition of a <strong style={{ color: 'var(--ink)' }}>neuropsychologist</strong> and <strong style={{ color: 'var(--ink)' }}>OB/GYN experts</strong> to our HD clinic to better serve patient needs. While our focus is on clinical care, we also engage in many educational events to teach others about HD, train the next generation of HD care providers, and are an active HD research trial site.</p>
+                    <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>While we remain optimistic and very hopeful about developing HD therapies and the impressive landscape of research trials being conducted in HD, we need to continue to provide quality clinical care for those living with HD symptoms today. The horizon is bright for future meaningful treatments, however we also remain committed to providing families living with HD today clinical expertise and support through our HDSA Center of Excellence.</p>
+                    <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.</p>
+                    <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.85rem', color: 'var(--ink-mid)', marginBottom: '0.35rem' }}>With gratitude,</p>
+                    <p style={{ fontSize: '0.75rem', color: 'var(--ink-dim)', marginBottom: '0.85rem' }}>The care team at UC Davis HD Center of Excellence</p>
+                    <div style={{ borderTop: '1px solid var(--cream-3)', paddingTop: '0.75rem' }}>
+                      <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--ink)' }}>Alexandra (Sasha) Duffy, DO</div>
+                      <div style={{ fontSize: '0.62rem', color: 'var(--ink-faint)', lineHeight: 1.6 }}>Clinical Professor · Vice Chair of Education · Director, UC Davis HD Center of Excellence</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
               <a href={BOOK} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)', color: '#fff', padding: '1rem 2.5rem', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)', boxShadow: '0 4px 20px rgba(59,130,246,0.4)', transition: 'all 0.25s ease' }}>
                 Support This Cause →
               </a>
