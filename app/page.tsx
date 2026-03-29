@@ -8,6 +8,7 @@ import AnimatedCounter from '@/components/AnimatedCounter'
 import Image from 'next/image'
 import Link from 'next/link'
 import VideoTestimonial from '@/components/VideoTestimonial'
+import SponsorCardAnimated from '@/components/SponsorCardAnimated'
 
 export const metadata: Metadata = {
   title: "NVforHD — Charity Golf Tournament for Huntington's Disease",
@@ -626,32 +627,8 @@ export default function HomePage() {
 
       {/* Packages + Sponsors — only on desktop, mobile too long */}
       <div className="packages-desktop"><PackagesSection /></div>
-      <div className="packages-mobile">
-        <section style={{ background: 'var(--cream)', padding: 'var(--py-lg) var(--px)', borderTop: '1px solid var(--cream-3)' }}>
-          <div className="inner">
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
-              <div style={{ width: '18px', height: '2px', background: 'var(--blue)' }} />
-              <span style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)' }}>May 29, 2026 · Join Us</span>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
-              {[
-                { price: '$220', label: 'Single Golfer', sub: 'Full round + lunch' },
-                { price: '$880', label: 'Foursome', sub: 'Golf for 4 + lunch' },
-                { price: '$100', label: 'Donate', sub: 'No golf needed' },
-                { price: '$100+', label: 'Hole Sign', sub: 'Your name on course' },
-              ].map(({ price, label, sub }) => (
-                <a key={label} href={GOLF} target="_blank" rel="noopener" style={{ display: 'block', background: 'var(--white)', border: '1px solid var(--cream-3)', padding: '1.25rem 1rem', textDecoration: 'none' }}>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: '1.5rem', fontWeight: 600, color: 'var(--blue)', lineHeight: 1, marginBottom: '0.3rem' }}>{price}</div>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--ink)', fontFamily: 'var(--sans)' }}>{label}</div>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--ink-dim)' }}>{sub}</div>
-                </a>
-              ))}
-            </div>
-            <a href={GOLF} target="_blank" rel="noopener" style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.1rem', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-              Register for May 29 →
-            </a>
-          </div>
-        </section>
+      <div className="packages-mobile" style={{ padding: 'var(--py-lg) var(--px)', background: 'var(--cream)', borderTop: '1px solid var(--cream-3)' }}>
+        <SponsorCardAnimated />
       </div>
 
       <SponsorsSection />
