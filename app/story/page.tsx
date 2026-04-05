@@ -9,8 +9,18 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Our Story - Three Years of Fighting HD | NVforHD",
   description: "Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. He didn't hold a fundraiser. He started a fight. $50,000 raised. One HD-free baby. 90+ families served.",
+  alternates: { canonical: 'https://www.nvforhd.com/story' },
   openGraph: {
-    images: [{ url: '/images/hero-couple.jpg' }],
+    title: "Our Story — How NVforHD Began",
+    description: "Sean Schaeffer's wife Christine was diagnosed with HD. He didn't hold a fundraiser. He started a fight.",
+    images: [{ url: '/images/hero-couple.jpg', width: 1200, height: 630, alt: 'Sean and Christine Schaeffer — NVforHD Story' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Our Story — How NVforHD Began",
+    description: "$50,000 raised. One HD-free baby. 90+ families served. This is why NVforHD exists.",
+    images: ['/images/hero-couple.jpg'],
   },
 }
 

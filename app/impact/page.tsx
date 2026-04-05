@@ -10,6 +10,19 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Impact — The Puccini Family Story | NVforHD',
   description: '2024 NVforHD raised $25,000 to fund IVF for Brandon and Rylee Puccini. Rylee is now pregnant with an HD-free baby. This is why we fight.',
+  alternates: { canonical: 'https://www.nvforhd.com/impact' },
+  openGraph: {
+    title: 'The Puccini Family Story — NVforHD 2024 Impact',
+    description: 'Your 2024 donation funded IVF for Brandon and Rylee Puccini. They are expecting an HD-free baby.',
+    images: [{ url: '/images/rb-letter.png', width: 1200, height: 630, alt: 'Brandon and Rylee Puccini — NVforHD 2024 Impact' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Puccini Family Story — NVforHD 2024 Impact',
+    description: 'Your 2024 donation funded IVF for Brandon and Rylee Puccini. They are expecting an HD-free baby.',
+    images: ['/images/rb-letter.png'],
+  },
 }
 
 const D100 = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=impact-100'
