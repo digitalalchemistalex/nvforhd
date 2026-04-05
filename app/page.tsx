@@ -43,14 +43,11 @@ const eventSchema = {
   description: "Annual charity golf tournament raising funds for the UC Davis HD Center of Excellence and Huntington's Disease families in Northern Nevada.",
   url: 'https://www.nvforhd.com',
   image: 'https://www.nvforhd.com/images/hero-couple.jpg',
-  offers: {
-    '@type': 'Offer',
-    url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament',
-    availability: 'https://schema.org/InStock',
-    price: '0',
-    priceCurrency: 'USD',
-    validFrom: '2026-01-01',
-  },
+  offers: [
+    { '@type': 'Offer', name: 'Single Golfer', price: '220', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
+    { '@type': 'Offer', name: 'Golf Foursome', price: '880', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
+    { '@type': 'Offer', name: 'Direct Donation', price: '100', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
+  ],
 }
 
 const breadcrumbSchema = {

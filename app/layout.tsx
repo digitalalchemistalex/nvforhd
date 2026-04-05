@@ -37,7 +37,11 @@ const orgSchema = {
   email: 'info@nvforhd.com',
   foundingDate: '2024',
   areaServed: 'Nevada',
-  sameAs: ['http://www.helpcurehd.com', 'https://nvforhd.com'],
+  sameAs: [
+    'https://www.nvforhd.com',
+    'https://health.ucdavis.edu/huntingtons-disease',
+    'https://www.guidestar.org',
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
