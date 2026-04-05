@@ -47,18 +47,10 @@ const eventSchema = {
     '@type': 'Offer',
     url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament',
     availability: 'https://schema.org/InStock',
+    price: '0',
     priceCurrency: 'USD',
     validFrom: '2026-01-01',
   },
-}
-const faqSchema = {
-  '@context': 'https://schema.org', '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: "What is Huntington's Disease?", acceptedAnswer: { '@type': 'Answer', text: "Huntington's Disease is a hereditary, fatal brain disorder with no known cure. It causes progressive breakdown of nerve cells — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of an HD parent has a 50% chance of inheriting it." } },
-    { '@type': 'Question', name: 'What does NVforHD do?', acceptedAnswer: { '@type': 'Answer', text: "NVforHD hosts an annual charity golf tournament and directs 100% of proceeds to one chosen HD cause each year." } },
-    { '@type': 'Question', name: 'When is the 2026 NVforHD golf tournament?', acceptedAnswer: { '@type': 'Answer', text: "Friday, May 29, 2026 at Gray's Crossing Golf Club in Truckee, California. 12:00 PM shotgun start." } },
-    { '@type': 'Question', name: 'How can I donate without playing golf?', acceptedAnswer: { '@type': 'Answer', text: "Direct donations start at $100. Email info@nvforhd.com or call 775-691-8860." } },
-  ],
 }
 
 const breadcrumbSchema = {
@@ -74,7 +66,6 @@ export default function HomePage() {
     <>
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* ══════════════════════════════════════
