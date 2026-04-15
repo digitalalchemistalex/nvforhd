@@ -263,9 +263,9 @@ export default function HomePage() {
             UC Davis HD Center of Excellence
           </div>
 
-          {/* Quote — stronger, more specific line */}
+          {/* Quote — her exact words */}
           <p style={{ fontFamily: 'var(--serif)', fontSize: '1.15rem', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto 1.25rem', fontStyle: 'italic', maxWidth: '340px' }}>
-            &ldquo;The horizon is bright for future meaningful treatments — and we remain committed to providing families living with HD today the clinical expertise and support they deserve.&rdquo;
+            &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
           </p>
 
           {/* Compact stats */}
@@ -434,9 +434,9 @@ export default function HomePage() {
               Dr. Duffy addressed our 2025 tournament guests in person. <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>Dr. Alexandra (Sasha) Duffy, DO</strong> — Director &amp; Department Head, UC Davis HD Center of Excellence — took time from her patients to speak directly to our audience, and we are deeply grateful.
             </p>
 
-            {/* Pull quote — stronger, more specific line */}
+            {/* Pull quote — her exact words */}
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.25rem,2.8vw,1.85rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto clamp(1.75rem,3vw,2.5rem)', fontStyle: 'italic', maxWidth: '580px' }}>
-              &ldquo;The horizon is bright for future meaningful treatments — and we remain committed to providing families living with HD today the clinical expertise and support they deserve.&rdquo;
+              &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
             </p>
 
             {/* Stats row */}
