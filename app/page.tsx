@@ -296,7 +296,7 @@ export default function HomePage() {
 
           {/* Letter — open by default */}
           <div style={{ marginTop: '1.25rem' }}>
-            <details className="ucd-letter-details" open>
+            <details className="ucd-letter-details">
               <summary className="ucd-letter-summary">
                 <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
               </summary>
@@ -471,7 +471,7 @@ export default function HomePage() {
 
             {/* Expandable letter */}
             <div style={{ marginTop: '1.5rem' }}>
-              <details className="ucd-letter-details" open>
+              <details className="ucd-letter-details">
                 <summary className="ucd-letter-summary">
                   <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
                 </summary>
