@@ -263,9 +263,9 @@ export default function HomePage() {
             UC Davis HD Center of Excellence
           </div>
 
-          {/* Quote — shorter line length for mobile */}
+          {/* Quote — stronger, more specific line */}
           <p style={{ fontFamily: 'var(--serif)', fontSize: '1.15rem', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto 1.25rem', fontStyle: 'italic', maxWidth: '340px' }}>
-            &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
+            &ldquo;The horizon is bright for future meaningful treatments — and we remain committed to providing families living with HD today the clinical expertise and support they deserve.&rdquo;
           </p>
 
           {/* Compact stats */}
@@ -283,19 +283,20 @@ export default function HomePage() {
           </div>
 
           {/* Attribution — compact with headshot */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.25rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.25rem', textAlign: 'left' }}>
             <div style={{ position: 'relative', width: '48px', height: '48px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '2px solid var(--cream-3)' }}>
               <Image src="/images/dr-duffy.png" alt="Dr. Alexandra Duffy, DO" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
             <div>
               <div style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra Duffy, DO</div>
               <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-faint)', marginTop: '0.1rem' }}>Director, UC Davis HD Center of Excellence</div>
+              <div style={{ fontFamily: 'var(--sans)', fontSize: '0.58rem', color: 'var(--ink-dim)', marginTop: '0.1rem', fontStyle: 'italic' }}>Spoke in person at our 2025 tournament</div>
             </div>
           </div>
 
-          {/* Expandable letter — same as desktop */}
+          {/* Letter — open by default */}
           <div style={{ marginTop: '1.25rem' }}>
-            <details className="ucd-letter-details">
+            <details className="ucd-letter-details" open>
               <summary className="ucd-letter-summary">
                 <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
               </summary>
@@ -430,12 +431,12 @@ export default function HomePage() {
 
             {/* Duffy intro — names her before you read the quote */}
             <p style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', letterSpacing: '0.04em', color: 'var(--ink-faint)', marginBottom: '1rem', lineHeight: 1.6 }}>
-              A message from <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>Dr. Alexandra (Sasha) Duffy, DO</strong> — Director &amp; Department Head, UC Davis HD Center of Excellence, who spoke directly to our tournament audience:
+              Dr. Duffy addressed our 2025 tournament guests in person. <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>Dr. Alexandra (Sasha) Duffy, DO</strong> — Director &amp; Department Head, UC Davis HD Center of Excellence — took time from her patients to speak directly to our audience, and we are deeply grateful.
             </p>
 
-            {/* Pull quote */}
+            {/* Pull quote — stronger, more specific line */}
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.25rem,2.8vw,1.85rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto clamp(1.75rem,3vw,2.5rem)', fontStyle: 'italic', maxWidth: '580px' }}>
-              &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
+              &ldquo;The horizon is bright for future meaningful treatments — and we remain committed to providing families living with HD today the clinical expertise and support they deserve.&rdquo;
             </p>
 
             {/* Stats row */}
@@ -470,7 +471,7 @@ export default function HomePage() {
 
             {/* Expandable letter */}
             <div style={{ marginTop: '1.5rem' }}>
-              <details className="ucd-letter-details">
+              <details className="ucd-letter-details" open>
                 <summary className="ucd-letter-summary">
                   <span className="ucd-letter-arrow">▸</span> Read the full letter from UC Davis
                 </summary>
