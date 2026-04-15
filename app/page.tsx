@@ -271,7 +271,7 @@ export default function HomePage() {
           {/* Compact stats */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', marginBottom: '1.25rem', padding: '0.85rem 0', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
             {[
-              { n: '32', l: 'Years' },
+              { n: '3', l: 'Years' },
               { n: '90+', l: 'Families' },
               { n: '11+', l: 'Specialists' },
             ].map(({ n, l }) => (
@@ -295,7 +295,7 @@ export default function HomePage() {
               <div style={{ padding: '1.25rem 0 0', textAlign: 'left' }}>
                 <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--ink)', marginBottom: '0.85rem' }}>Dear HD Community,</p>
                 <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>
-                  We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 32 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
+                  We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 3 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
                 </p>
                 <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.75rem' }}>
                   In 2025 we were able to offer the addition of a <strong style={{ color: 'var(--ink)' }}>neuropsychologist</strong> and <strong style={{ color: 'var(--ink)' }}>OB/GYN experts</strong> to our HD clinic to better serve patient needs. While our focus is on clinical care, we also engage in many educational events to teach others about HD, train the next generation of HD care providers, and are an active HD research trial site.
@@ -421,6 +421,11 @@ export default function HomePage() {
               UC Davis HD Center of Excellence
             </div>
 
+            {/* Duffy intro — names her before you read the quote */}
+            <p style={{ fontFamily: 'var(--sans)', fontSize: '0.72rem', letterSpacing: '0.04em', color: 'var(--ink-faint)', marginBottom: '1rem', lineHeight: 1.6 }}>
+              A message from <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>Dr. Alexandra (Sasha) Duffy, DO</strong> — Director &amp; Department Head, UC Davis HD Center of Excellence, who spoke directly to our tournament audience:
+            </p>
+
             {/* Pull quote */}
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.25rem,2.8vw,1.85rem)', fontWeight: 300, color: 'var(--ink)', lineHeight: 1.5, margin: '0 auto clamp(1.75rem,3vw,2.5rem)', fontStyle: 'italic', maxWidth: '580px' }}>
               &ldquo;With the generous support of people like you, our HD team is able to make a difference in the lives of people and families living with HD.&rdquo;
@@ -429,7 +434,7 @@ export default function HomePage() {
             {/* Stats row */}
             <div className="ucd-stats-row" style={{ display: 'flex', justifyContent: 'center', gap: 'clamp(1.5rem,4vw,2.5rem)', marginBottom: 'clamp(1.75rem,3vw,2.5rem)', padding: 'clamp(1rem,2vw,1.5rem) 0', borderTop: '1px solid var(--cream-3)', borderBottom: '1px solid var(--cream-3)' }}>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3.5vw,2.2rem)', fontWeight: 600, color: '#002855', lineHeight: 1 }}>32</div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem,3.5vw,2.2rem)', fontWeight: 600, color: '#002855', lineHeight: 1 }}>3</div>
                 <div style={{ fontFamily: 'var(--sans)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '0.3rem' }}>Years serving HD</div>
               </div>
               <div style={{ width: '1px', background: 'var(--cream-3)' }} />
@@ -458,7 +463,7 @@ export default function HomePage() {
                 <div style={{ padding: '1.5rem 0 0', textAlign: 'left' }}>
                   <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--ink)', marginBottom: '1rem' }}>Dear HD Community,</p>
                   <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
-                    We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 32 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
+                    We are incredibly grateful for the support the HD community has shown our UC Davis HDSA Center of Excellence Clinic over our 3 years. With the HD community&apos;s support, we are able to provide expert multidisciplinary HD care for our patients and their families having access to neurologists, psychiatrists, social worker, genetic counselor and physical therapists.
                   </p>
                   <p style={{ fontSize: '0.88rem', lineHeight: 1.85, color: 'var(--ink-mid)', marginBottom: '0.85rem' }}>
                     In 2025 we were able to offer the addition of a <strong style={{ color: 'var(--ink)' }}>neuropsychologist</strong> and <strong style={{ color: 'var(--ink)' }}>OB/GYN experts</strong> to our HD clinic to better serve patient needs. While our focus is on clinical care, we also engage in many educational events to teach others about HD, train the next generation of HD care providers, and are an active HD research trial site.
