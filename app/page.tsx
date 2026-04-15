@@ -282,9 +282,16 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Attribution — compact */}
-          <div style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra Duffy, DO</div>
-          <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-faint)', marginTop: '0.15rem' }}>Director, UC Davis HD Center of Excellence</div>
+          {/* Attribution — compact with headshot */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.25rem' }}>
+            <div style={{ position: 'relative', width: '48px', height: '48px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '2px solid var(--cream-3)' }}>
+              <Image src="/images/dr-duffy.png" alt="Dr. Alexandra Duffy, DO" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            </div>
+            <div>
+              <div style={{ fontFamily: 'var(--sans)', fontSize: '0.75rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra Duffy, DO</div>
+              <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-faint)', marginTop: '0.1rem' }}>Director, UC Davis HD Center of Excellence</div>
+            </div>
+          </div>
 
           {/* Expandable letter — same as desktop */}
           <div style={{ marginTop: '1.25rem' }}>
@@ -449,10 +456,17 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Attribution */}
-            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.82rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra (Sasha) Duffy, DO</div>
-            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'var(--ink-faint)', marginTop: '0.2rem' }}>Director, UC Davis HD Center of Excellence</div>
-            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-dim)', marginTop: '0.15rem' }}>Clinical Professor · Vice Chair of Education · Dept. of Neurology</div>
+            {/* Attribution with headshot */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginTop: '0.5rem' }}>
+              <div style={{ position: 'relative', width: '64px', height: '64px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '2px solid var(--cream-3)' }}>
+                <Image src="/images/dr-duffy.png" alt="Dr. Alexandra Duffy, DO — Director, UC Davis HD Center of Excellence" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.82rem', fontWeight: 600, color: 'var(--ink)' }}>Dr. Alexandra (Sasha) Duffy, DO</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'var(--ink-faint)', marginTop: '0.2rem' }}>Director, UC Davis HD Center of Excellence</div>
+                <div style={{ fontFamily: 'var(--sans)', fontSize: '0.62rem', color: 'var(--ink-dim)', marginTop: '0.15rem' }}>Clinical Professor · Vice Chair of Education · Dept. of Neurology</div>
+              </div>
+            </div>
 
             {/* Expandable letter */}
             <div style={{ marginTop: '1.5rem' }}>
