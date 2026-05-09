@@ -97,8 +97,10 @@ export default function HomePage() {
           MOBILE: full-bleed photo, text bottom-pinned, 2 CTAs visible above fold
       ══════════════════════════════════════ */}
       <section style={{ position: 'relative', height: '100vh', minHeight: '600px', maxHeight: '900px', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
-        <Image src="/images/hero-couple.jpg" alt="A couple embracing — every HD family" fill
-          style={{ objectFit: 'cover', objectPosition: 'center 28%' }} priority quality={85} sizes="100vw" />
+        {/* Plain img — preload URL must match exactly. next/image rewrites to /_next/image?... causing mismatch */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/hero-couple.webp" alt="A couple embracing — every HD family" fetchPriority="high" decoding="sync"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 28%' }} />
 
         {/* Desktop gradient: left heavy */}
         <div className="hero-grad-desktop" />
