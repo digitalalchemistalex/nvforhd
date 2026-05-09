@@ -14,7 +14,7 @@ const LINKS = {
   flowingTide:  `https://flowingtidepub.com${UTM}sponsors-flowingtide`,
 }
 
-const majorSponsors = [
+const platinumSponsors = [
   {
     href: LINKS.ucDavis,
     logo: '/images/uc-davis.png', logoBg: '#fff',
@@ -26,6 +26,9 @@ const majorSponsors = [
     linkLabel: 'health.ucdavis.edu',
     accentTop: '#2563EB',
   },
+]
+
+const goldSponsors = [
   {
     href: LINKS.cHawk,
     logo: '/images/c-hawk.png', logoBg: '#1A4A1A',
@@ -50,7 +53,7 @@ const majorSponsors = [
   },
   {
     href: 'https://www.homedepot.com',
-    logo: '/images/home-depot.png', logoBg: '#fff',
+    logo: '/images/home-depot.svg', logoBg: '#F96302',
     alt: 'The Home Depot',
     badgeText: 'Gold Sponsor',
     badgeBg: '#E8C97A', badgeColor: '#0F1729',
@@ -115,32 +118,55 @@ export default function SponsorsSection() {
             </a>
           </ScrollReveal>
 
-          {/* ── Major sponsors: DESKTOP 3-col grid / MOBILE touch carousel ── */}
+          {/* ── Platinum row (UC Davis — full width) + Gold row (3-col) ── */}
           {/* Desktop */}
-          <div className="sponsors-desktop-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2px', marginBottom: '2px' }}>
-            {majorSponsors.map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
-              <div key={name} style={{ display: 'flex', flexDirection: 'column', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}` }}>
-                <div style={{ background: logoBg, padding: 'clamp(1.5rem,3vw,3rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '130px' }}>
-                  <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '180px', height: 'auto', objectFit: 'contain' }} />
+          <div className="sponsors-desktop-grid">
+            {/* Platinum row — 1 col full width */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2px', marginBottom: '2px' }}>
+              {platinumSponsors.map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
+                <div key={name} style={{ display: 'flex', flexDirection: 'row', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}` }}>
+                  <div style={{ background: logoBg, padding: 'clamp(1.5rem,3vw,3rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: '220px', maxWidth: '280px' }}>
+                    <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '200px', height: 'auto', objectFit: 'contain' }} />
+                  </div>
+                  <div style={{ padding: 'clamp(1.2rem,2vw,2rem)', flex: 1 }}>
+                    <div style={{ display: 'inline-block', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.75rem', background: badgeBg, color: badgeColor, padding: '0.25rem 0.6rem' }}>{badgeText}</div>
+                    <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', color: '#fff', marginBottom: '0.4rem' }}>{name}</div>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--white-dim)', lineHeight: 1.65, marginBottom: '1rem' }}>{desc}</p>
+                    {linkLabel && href && (
+                      <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
+                        {linkLabel} ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div style={{ padding: 'clamp(1.2rem,2vw,2rem)', flex: 1 }}>
-                  <div style={{ display: 'inline-block', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.75rem', background: badgeBg, color: badgeColor, padding: '0.25rem 0.6rem' }}>{badgeText}</div>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', color: '#fff', marginBottom: '0.4rem' }}>{name}</div>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--white-dim)', lineHeight: 1.65, marginBottom: '1rem' }}>{desc}</p>
-                  {linkLabel && href && (
-                    <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
-                      {linkLabel} ↗
-                    </a>
-                  )}
+              ))}
+            </div>
+            {/* Gold row — 3 col */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2px', marginBottom: '2px' }}>
+              {goldSponsors.map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
+                <div key={name} style={{ display: 'flex', flexDirection: 'column', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderTop: `3px solid ${accentTop}` }}>
+                  <div style={{ background: logoBg, padding: 'clamp(1.5rem,3vw,3rem)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '130px' }}>
+                    <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '180px', height: 'auto', objectFit: 'contain' }} />
+                  </div>
+                  <div style={{ padding: 'clamp(1.2rem,2vw,2rem)', flex: 1 }}>
+                    <div style={{ display: 'inline-block', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.75rem', background: badgeBg, color: badgeColor, padding: '0.25rem 0.6rem' }}>{badgeText}</div>
+                    <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1rem,1.8vw,1.4rem)', color: '#fff', marginBottom: '0.4rem' }}>{name}</div>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--white-dim)', lineHeight: 1.65, marginBottom: '1rem' }}>{desc}</p>
+                    {linkLabel && href && (
+                      <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E8C97A', fontWeight: 600, background: 'rgba(232,201,122,0.08)', border: '1px solid rgba(232,201,122,0.25)', padding: '0.35rem 0.75rem', textDecoration: 'none' }}>
+                        {linkLabel} ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Mobile carousel */}
+          {/* Mobile carousel — all sponsors in one swipeable track */}
           <div className="sponsors-mobile-carousel">
             <div className="sponsors-scroll-track">
-              {majorSponsors.map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
+              {[...platinumSponsors, ...goldSponsors].map(({ href, logo, logoBg, alt, badgeText, badgeBg, badgeColor, name, desc, linkLabel, accentTop }) => (
                 <div key={name} className="sponsor-slide" style={{ borderTop: `3px solid ${accentTop}` }}>
                   <div style={{ background: logoBg, padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '120px' }}>
                     <Image src={logo} alt={alt} width={200} height={80} style={{ width: '100%', maxWidth: '160px', height: 'auto', objectFit: 'contain' }} />
@@ -221,7 +247,7 @@ export default function SponsorsSection() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         /* Desktop: show grid, hide carousel */
-        .sponsors-desktop-grid { display: grid; }
+        .sponsors-desktop-grid { display: block; }
         .sponsors-mobile-carousel { display: none; }
 
         /* Title sponsor: 2-col on desktop, stack on mobile */
