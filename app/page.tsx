@@ -101,8 +101,13 @@ export default function HomePage() {
       <section style={{ position: 'relative', height: '100vh', minHeight: '600px', maxHeight: '900px', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
         {/* Plain img — preload URL must match exactly. next/image rewrites to /_next/image?... causing mismatch */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/hero-couple.webp" alt="A couple embracing — every HD family" fetchPriority="high" decoding="sync"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 28%' }} />
+        <picture>
+          <source media="(max-width: 768px)" srcSet="/images/hero-couple-mobile.webp" type="image/webp" />
+          <source media="(min-width: 769px)" srcSet="/images/hero-couple.webp" type="image/webp" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/hero-couple.webp" alt="A couple embracing — every HD family" fetchPriority="high" decoding="sync"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 28%' }} />
+        </picture>
 
         {/* Desktop gradient: left heavy */}
         <div className="hero-grad-desktop" />

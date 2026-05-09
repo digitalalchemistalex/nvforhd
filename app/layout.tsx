@@ -71,7 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
         {/* Preload LCP hero — matches plain img src exactly, no /_next/image mismatch */}
-        <link rel="preload" as="image" href="/images/hero-couple.webp" fetchPriority="high" type="image/webp" />
+        {/* Preload LCP hero — responsive: mobile gets smaller file */}
+        <link rel="preload" as="image" href="/images/hero-couple-mobile.webp" fetchPriority="high" type="image/webp" media="(max-width: 768px)" />
+        <link rel="preload" as="image" href="/images/hero-couple.webp" fetchPriority="high" type="image/webp" media="(min-width: 769px)" />
         {/* GA4 — deferred until after load to not compete with LCP/FCP */}
         <script dangerouslySetInnerHTML={{
           __html: `window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-3KT4C16M4V';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-3KT4C16M4V');});`
