@@ -34,7 +34,7 @@ const D100  = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfor
 const eventSchema = {
   '@context': 'https://schema.org', '@type': 'SportsEvent',
   name: 'NVforHD Charity Golf Tournament 2026',
-  startDate: '2026-05-29T08:00:00-07:00',
+  startDate: '2026-05-29T12:00:00-07:00',
   endDate: '2026-05-29T18:00:00-07:00',
   eventStatus: 'https://schema.org/EventScheduled',
   location: { '@type': 'Place', name: "Gray's Crossing Golf Club", address: { '@type': 'PostalAddress', addressLocality: 'Truckee', addressRegion: 'CA', addressCountry: 'US' } },
@@ -44,7 +44,6 @@ const eventSchema = {
   url: 'https://www.nvforhd.com',
   image: 'https://www.nvforhd.com/images/hero-couple.jpg',
   offers: [
-    { '@type': 'Offer', name: 'Single Golfer', price: '220', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
     { '@type': 'Offer', name: 'Golf Foursome', price: '880', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
     { '@type': 'Offer', name: 'Direct Donation', price: '100', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
   ],
@@ -58,12 +57,38 @@ const breadcrumbSchema = {
   ],
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: "What is Huntington's Disease?", acceptedAnswer: { '@type': 'Answer', text: "A hereditary, fatal brain disorder with no known cure — likened to Parkinson's, ALS, and Alzheimer's simultaneously. Every child of a parent with HD has a 50% chance of inheriting it." } },
+    { '@type': 'Question', name: "Where does money donated to NVforHD go?", acceptedAnswer: { '@type': 'Answer', text: "100% to one chosen HD cause — zero overhead. In 2024: IVF for the Puccini family (HD-free baby). In 2025 & 2026: UC Davis HD Center of Excellence, serving 90+ Northern Nevada families." } },
+    { '@type': 'Question', name: "When and where is the 2026 NVforHD golf tournament?", acceptedAnswer: { '@type': 'Answer', text: "May 29, 2026 at Gray's Crossing Golf Club, Truckee, CA. 12:00 PM shotgun start. Four-person scramble format. Hotel discounts at Atlantis & Peppermill — call Sean: 775-691-8860." } },
+    { '@type': 'Question', name: "Can I donate to NVforHD without playing golf?", acceptedAnswer: { '@type': 'Answer', text: "Yes. $100 minimum donation. Email info@nvforhd.com or call 775-691-8860. 100% goes directly to the UC Davis HD Center of Excellence." } },
+  ],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'NVforHD',
+  url: 'https://www.nvforhd.com',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: 'https://www.nvforhd.com/blog?q={search_term_string}' },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
+
 export default function HomePage() {
   return (
     <>
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
       {/* ══════════════════════════════════════
           HERO

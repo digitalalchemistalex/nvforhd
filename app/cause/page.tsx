@@ -7,7 +7,7 @@ import DonateBlock from '@/components/DonateBlock'
 import MobileCTADock from '@/components/MobileCTADock'
 
 export const metadata: Metadata = {
-  title: "The Cause — What is Huntington's Disease | NVforHD",
+  title: "The Cause — What is Huntington's Disease",
   description: "Huntington's Disease is terminal, hereditary, and has no cure. Learn why NVforHD fights for HD families in Northern Nevada and beyond.",
 }
 

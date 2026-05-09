@@ -38,9 +38,10 @@ const orgSchema = {
   foundingDate: '2024',
   areaServed: 'Nevada',
   sameAs: [
-    'https://www.nvforhd.com',
     'https://health.ucdavis.edu/huntingtons-disease',
-    'https://www.guidestar.org',
+    'https://hdsa.org',
+    'https://www.helpcurehd.com',
+    'https://www.guidestar.org/profile/nvforhd',
   ],
 }
 
