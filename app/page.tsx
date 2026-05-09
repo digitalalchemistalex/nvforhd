@@ -375,8 +375,8 @@ export default function HomePage() {
               <div style={{ position: 'absolute', top: '28px', left: 0, width: '66%', height: '2px', background: 'var(--blue)' }} />
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
                 {[
-                  { year: '2024', done: true, tag: 'Sold Out', title: '$25,000 for HelpCureHD', body: "Funded IVF for Brandon & Rylee Puccini. Their baby will never have HD.", href: '/causes', cta: 'Their story →', img: '/images/event-crowd.jpg' },
-                  { year: '2025', done: true, tag: '90+ Families', title: 'UC Davis HD Center', body: "Helped fund the only HD Specialty Clinic for families in Northern Nevada and the Sierra's.", href: '/causes', cta: 'Read more →', img: '/images/event-group-2.jpg' },
+                  { year: '2024', done: true, tag: 'Sold Out', title: '$25,000 for HelpCureHD', body: "Funded IVF for Brandon & Rylee Puccini. Their baby will never have HD.", href: '/causes', cta: 'Their story →', img: '/images/event-crowd.webp' },
+                  { year: '2025', done: true, tag: '90+ Families', title: 'UC Davis HD Center', body: "Helped fund the only HD Specialty Clinic for families in Northern Nevada and the Sierra's.", href: '/causes', cta: 'Read more →', img: '/images/event-group-2.webp' },
                   { year: '2026', done: false, tag: 'Open Now', title: 'UC Davis — Again', body: "May 29 · Grays Crossing, Truckee CA. Play one round of golf and help over 90 families fight this insidious disease.", href: GOLF, cta: 'Register →', img: '/images/course-1.jpg' },
                 ].map(({ year, done, tag, title, body, href, cta, img }, i) => (
                   <ScrollReveal key={year} delay={i * 0.12}>
@@ -386,7 +386,7 @@ export default function HomePage() {
                     </div>
                     <div style={{ border: `1px solid ${!done ? 'var(--blue)' : 'var(--cream-3)'}`, borderTop: `3px solid ${done ? 'var(--blue)' : 'var(--cream-3)'}`, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                       <div style={{ position: 'relative', height: '140px', flexShrink: 0 }}>
-                        <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} />
+                        <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} loading="lazy" />
                         {!done && <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', background: 'var(--blue)', color: '#fff', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, padding: '0.2rem 0.55rem', fontFamily: 'var(--sans)' }}>Open Now</div>}
                       </div>
                       <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -408,12 +408,12 @@ export default function HomePage() {
         <div className="timeline-mobile-wrapper">
           {[
             { year: '2026', tag: 'Register Now', title: 'May 29 — Join us', sub: "Gray's Crossing, Truckee. Open.", href: GOLF, img: '/images/course-1.jpg', done: false },
-            { year: '2025', tag: '90+ Families', title: 'UC Davis funded', sub: 'The only HD clinic in Northern NV.', href: '/causes', img: '/images/event-group-2.jpg', done: true },
-            { year: '2024', tag: 'Sold Out', title: '$25,000 raised', sub: 'Brandon & Rylee — HD-free baby.', href: '/causes', img: '/images/event-crowd.jpg', done: true },
+            { year: '2025', tag: '90+ Families', title: 'UC Davis funded', sub: 'The only HD clinic in Northern NV.', href: '/causes', img: '/images/event-group-2.webp', done: true },
+            { year: '2024', tag: 'Sold Out', title: '$25,000 raised', sub: 'Brandon & Rylee — HD-free baby.', href: '/causes', img: '/images/event-crowd.webp', done: true },
           ].map(({ year, tag, title, sub, href, img, done }) => (
             <a key={year} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener' : undefined}
               style={{ display: 'block', textDecoration: 'none', position: 'relative', overflow: 'hidden', height: '180px' }}>
-              <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} />
+              <Image src={img} alt={title} fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} loading="lazy" />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,13,26,0.93) 0%, rgba(6,13,26,0.18) 60%)' }} />
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: done ? 'var(--blue)' : 'var(--gold-light)' }} />
               <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.25rem', right: '1.25rem' }}>
@@ -523,14 +523,14 @@ export default function HomePage() {
       ══════════════════════════════════════ */}
       <section style={{ position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <Image src="/images/pregnant-sunset.jpg" alt="Rylee and Brandon — funded by NVforHD" fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} quality={80} />
+          <Image src="/images/pregnant-sunset.webp" alt="Rylee and Brandon — funded by NVforHD" fill style={{ objectFit: 'cover', objectPosition: 'center 40%' }} quality={80} loading="lazy" />
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(6,13,26,0.88)' }} />
         </div>
         <div className="inner puccini-grid" style={{ position: 'relative', zIndex: 2, padding: 'var(--py-xl) var(--px)' }}>
           <ScrollReveal>
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', top: '-12px', left: '-12px', right: '12px', bottom: '12px', border: '1px solid rgba(29,78,216,0.4)', zIndex: 0 }} className="puccini-frame" />
-              <Image src="/images/baby-hands.jpg" alt="Two parents holding their HD-free newborn" width={800} height={600}
+              <Image src="/images/baby-hands.webp" alt="Two parents holding their HD-free newborn" width={800} height={600}
                 style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 1, boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }} quality={85} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2, padding: '1.25rem 1.5rem 1.5rem', background: 'linear-gradient(to top, rgba(6,13,26,0.9), transparent)' }}>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>Brandon & Rylee Puccini · 2025 · HD-Free</div>
@@ -608,21 +608,21 @@ export default function HomePage() {
               name="Mikey & Holly"
               role="HD Patient & Family — UC Davis Care Team"
               quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
-              fallbackImage="/images/event-group-2.jpg"
+              fallbackImage="/images/event-group-2.webp"
             />
             <VideoTestimonial
               youtubeId="7nDr5ous818"
               name="Tiffany"
               role="HD Family — UC Davis Patient"
               quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
-              fallbackImage="/images/event-group-3.jpg"
+              fallbackImage="/images/event-group-3.webp"
             />
             <VideoTestimonial
               youtubeId="7jrefyflRVc"
               name="Leilani Dunmoyer"
               role="Gene-Positive — UC Davis Patient Family"
               quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
-              fallbackImage="/images/event-group-4.jpg"
+              fallbackImage="/images/event-group-4.webp"
             />
           </div>
 
@@ -635,7 +635,7 @@ export default function HomePage() {
                   name="Mikey & Holly"
                   role="HD Patient & Family — UC Davis Care Team"
                   quote="Their care for us is not transactional — they are in this journey with us. We cannot have the quality of life that we have if it wasn't for them."
-                  fallbackImage="/images/event-group-2.jpg"
+                  fallbackImage="/images/event-group-2.webp"
                 />
               </div>
               <div className="testimonial-slide">
@@ -644,7 +644,7 @@ export default function HomePage() {
                   name="Tiffany"
                   role="HD Family — UC Davis Patient"
                   quote="From the moment we connected with them we were surrounded by people who understood what we were going through. They didn't just treat the medical side — they cared about the whole journey."
-                  fallbackImage="/images/event-group-3.jpg"
+                  fallbackImage="/images/event-group-3.webp"
                 />
               </div>
               <div className="testimonial-slide">
@@ -653,7 +653,7 @@ export default function HomePage() {
                   name="Leilani Dunmoyer"
                   role="Gene-Positive — UC Davis Patient Family"
                   quote="We just felt hopeless and helpless — and then we found the UC Davis Center of Excellence. They have become like family right from the get-go."
-                  fallbackImage="/images/event-group-4.jpg"
+                  fallbackImage="/images/event-group-4.webp"
                 />
               </div>
             </div>
