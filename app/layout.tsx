@@ -71,8 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             rel="stylesheet"
           />
         </noscript>
-        {/* Preload LCP hero as WebP — fastest format, explicit high-priority hint */}
-        <link rel="preload" as="image" href="/images/hero-couple.webp" fetchPriority="high" type="image/webp" />
+        {/* Preload LCP hero — must match exact URL next/image serves to avoid preload mismatch */}
+        <link rel="preload" as="image" href="/images/hero-couple.jpg" fetchPriority="high"
+          imageSrcSet="/_next/image?url=%2Fimages%2Fhero-couple.jpg&w=640&q=85 640w, /_next/image?url=%2Fimages%2Fhero-couple.jpg&w=828&q=85 828w, /_next/image?url=%2Fimages%2Fhero-couple.jpg&w=1080&q=85 1080w, /_next/image?url=%2Fimages%2Fhero-couple.jpg&w=1200&q=85 1200w, /_next/image?url=%2Fimages%2Fhero-couple.jpg&w=1920&q=85 1920w"
+          imageSizes="100vw"
+        />
         {/* GA4 — deferred until after load to not compete with LCP/FCP */}
         <script dangerouslySetInnerHTML={{
           __html: `window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-3KT4C16M4V';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-3KT4C16M4V');});`
