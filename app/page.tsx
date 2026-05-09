@@ -92,12 +92,12 @@ export default function HomePage() {
 
       {/* ══════════════════════════════════════
           HERO
-          LCP: hero-couple.jpg preloaded, priority=true
+          LCP: hero-couple.webp preloaded, priority=true
           DESKTOP: left-heavy gradient, text left
           MOBILE: full-bleed photo, text bottom-pinned, 2 CTAs visible above fold
       ══════════════════════════════════════ */}
       <section style={{ position: 'relative', height: '100vh', minHeight: '600px', maxHeight: '900px', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
-        <Image src="/images/hero-couple.jpg" alt="A couple embracing — every HD family" fill
+        <Image src="/images/hero-couple.webp" alt="A couple embracing — every HD family" fill
           style={{ objectFit: 'cover', objectPosition: 'center 28%' }} priority quality={85} sizes="100vw" />
 
         {/* Desktop gradient: left heavy */}

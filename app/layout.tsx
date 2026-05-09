@@ -55,14 +55,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Font preconnect — must come before stylesheet */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Font stylesheet — non-blocking via media=print swap trick */}
+        {/* Fonts — non-blocking: load as print, swap to all on load. Eliminates render-blocking. */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
+          media="print"
+          // @ts-expect-error onload is valid here
+          onLoad="this.media='all'"
         />
-        {/* Preload LCP hero image — next/image priority also handles this but explicit hint wins */}
-        <link rel="preload" as="image" href="/images/hero-couple.jpg" fetchPriority="high" />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
+        {/* Preload LCP hero as WebP — fastest format, explicit high-priority hint */}
+        <link rel="preload" as="image" href="/images/hero-couple.webp" fetchPriority="high" type="image/webp" />
         {/* GA4 — deferred until after load to not compete with LCP/FCP */}
         <script dangerouslySetInnerHTML={{
           __html: `window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-3KT4C16M4V';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-3KT4C16M4V');});`
