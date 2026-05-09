@@ -299,15 +299,28 @@ The blog body renderer supports custom HTML classes:
 
 | Page | Schema |
 |------|--------|
-| All | WebPage + Speakable + Organization + BreadcrumbList |
-| Home | SportsEvent + NonprofitOrganization + FAQPage |
+| All | NonprofitOrganization (layout.tsx) |
+| Home | SportsEvent + FAQPage + WebSite+SearchAction + BreadcrumbList |
 | About | Person ×4 |
 | Causes | FAQPage |
 | Blog posts | BlogPosting + BreadcrumbList |
 | Contact | ContactPage |
 
-Meta title: `[Topic] | NVforHD — Cure Huntington's Disease`
+Meta title: `[Topic]` — layout template appends `| NVforHD — Cure Huntington's Disease`
+**CRITICAL:** Do NOT end page titles with `| NVforHD` — creates double-brand suffix.
 Canonical: always `https://www.nvforhd.com/[path]` — no trailing slash
+
+### SEO Audit — May 2026 (all resolved)
+- ✅ FAQPage schema on homepage (4 Q&A pairs in JSON-LD)
+- ✅ WebSite + SearchAction schema on homepage
+- ✅ sameAs — removed self-ref, now: hdsa.org, helpcurehd.com, health.ucdavis.edu, guidestar.org/profile/nvforhd
+- ✅ Event startDate corrected to 12:00 noon (was 08:00)
+- ✅ $220 Single Golfer removed from Event offers[]
+- ✅ /cause page title double-brand fixed
+- ✅ /public/llms-full.txt created (comprehensive AI reference)
+- ✅ llms.txt — removed $220 line, fixed "1 in 100,000" stat
+- ✅ robots.txt allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+- ✅ Speakable via .speakable CSS class + native details/summary elements
 
 ---
 
