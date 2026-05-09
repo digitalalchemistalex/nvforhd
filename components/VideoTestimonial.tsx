@@ -21,13 +21,12 @@ export default function VideoTestimonial({ youtubeId, name, role, quote, fallbac
         style={{ cursor: 'pointer', background: 'var(--navy)', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden' }}
         className="vt-card"
       >
-        {/* Thumbnail — uses fallback site image */}
+        {/* Thumbnail — local image only, no external request on load */}
         <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', background: 'var(--navy)' }}>
           <img
-            src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+            src={fallbackImage}
             alt={`${name} — HD family story`}
             loading="lazy"
-            onError={(e) => { (e.target as HTMLImageElement).src = fallbackImage }}
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', transition: 'transform 0.4s ease' }}
             className="vt-thumb"
           />

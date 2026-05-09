@@ -52,9 +52,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/images/favicon.png" />
         {/* Google Search Console verification */}
         <meta name="google-site-verification" content="dzMmgHd7knYIS59vlZo5Nz23g1-IdTioOAfHhI0LfFU" />
-        {/* Font preconnect — must come before stylesheet */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* YouTube thumbnail preconnect — VideoTestimonial thumbnails */}
+        <link rel="preconnect" href="https://img.youtube.com" />
         {/* Fonts — non-blocking: load as print, swap to all on load. Eliminates render-blocking. */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
