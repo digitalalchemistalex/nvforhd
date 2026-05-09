@@ -23,7 +23,7 @@ export default function CausePage() {
         sub="HD destroys nerve cells — likened to Parkinson's, ALS, and Alzheimer's at the same time. Every child of an HD parent has a 50% chance of inheriting it."
         photo="/images/hd-ribbon.jpg"
         photoPosition="center"
-        stat1={{ n: '1 in 10K', label: 'people have HD globally' }}
+        stat1={{ n: '1 in 100K', label: 'people have HD globally' }}
         stat2={{ n: '50%', label: 'hereditary rate' }}
         stat3={{ n: '0', label: 'known cures' }}
       />
@@ -55,7 +55,7 @@ export default function CausePage() {
               { n: '01', body: <><strong>No known cure.</strong> HD is always fatal. Researchers are making progress but there is no approved treatment that slows or stops the disease.</> },
               { n: '02', body: <><strong>50% hereditary rate.</strong> IVF with preimplantation genetic testing permanently breaks the cycle. One procedure — no HD for future generations.</> },
               { n: '03', body: <><strong>UC Davis HD Center of Excellence</strong> — the only HD specialty clinic serving 90+ Northern Nevada families. 2 neurologists, 2 psychiatrists, 1 genetic counselor, 1 social worker, 2 PTs. Runs on private donation.</> },
-              { n: '04', body: <><strong>1 in 10,000 people globally have HD.</strong> Approximately 30,000 Americans are symptomatic. Another 200,000 are at risk of inheriting it.</> },
+              { n: '04', body: <><strong>1 in 100,000 people globally have HD.</strong> Approximately 30,000 Americans are symptomatic. Another 200,000 are at risk of inheriting it.</> },
             ].map(({ n, body }, i) => (
               <ScrollReveal key={n} delay={i * 0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2.5rem 1fr', gap: '1.2rem', padding: '1.75rem 0', borderBottom: '1px solid var(--cream-3)' }}>

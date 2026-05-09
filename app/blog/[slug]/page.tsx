@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 // Per-category CTAs — each audience gets what they need
 const CATEGORY_CTA: Record<string, { headline: string; sub: string; primary: string; primaryHref: string; secondary: string; secondaryHref: string }> = {
   'Education': {
-    headline: 'HD affects 1 in 10,000 people. Your awareness matters.',
+    headline: 'HD affects 1 in 100,000 people. Your awareness matters.',
     sub: 'Share this page. Join our tournament. Fund the UC Davis clinic that serves 90+ Northern Nevada families.',
     primary: 'Donate to UC Davis HD Care →', primaryHref: DONATE,
     secondary: 'Play Golf May 29', secondaryHref: GOLF,
