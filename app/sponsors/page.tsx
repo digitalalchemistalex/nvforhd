@@ -114,7 +114,7 @@ export default function SponsorsPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 'clamp(2rem,4vw,4rem)' }} className="dual-sponsor-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 'clamp(2rem,4vw,4rem)' }} className="dual-sponsor-grid">
 
             {/* UC Davis */}
             <ScrollReveal>
@@ -169,6 +169,26 @@ export default function SponsorsPage() {
                   <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--ink-mid)', flex: 1, marginBottom: '1.5rem' }}>
                     Keeping Northern Nevada comfortable — and proudly helping NVforHD keep the fight against Huntington&apos;s Disease alive.
                   </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* The Home Depot */}
+            <ScrollReveal delay={0.3}>
+              <div style={{ border: '1px solid var(--cream-3)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div className="sponsor-logo-box" style={{ background: '#fff', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '180px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold-light)', zIndex: 1 }} />
+                  <Image src="/images/home-depot.png" alt="The Home Depot" width={400} height={180} style={{ width: '100%', height: '180px', objectFit: 'contain', padding: '2rem' }} />
+                </div>
+                <div style={{ padding: 'clamp(1.75rem,3vw,2.75rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem,2vw,1.7rem)', fontWeight: 400, color: 'var(--ink)', marginBottom: '0.5rem' }}>The Home Depot</h3>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--ink-dim)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1rem', fontFamily: 'var(--sans)' }}>Gold Sponsor</p>
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--ink-mid)', flex: 1, marginBottom: '1.5rem' }}>
+                    Proud supporter of NVforHD and the fight against Huntington&apos;s Disease.
+                  </p>
+                  <a href="https://www.homedepot.com" target="_blank" rel="noopener" style={{ fontSize: '0.68rem', color: 'var(--ink)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', fontFamily: 'var(--sans)', borderBottom: '1.5px solid var(--ink)', paddingBottom: '2px', alignSelf: 'flex-start' }}>
+                    homedepot.com ↗
+                  </a>
                 </div>
               </div>
             </ScrollReveal>

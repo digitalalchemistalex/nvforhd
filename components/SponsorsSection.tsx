@@ -48,6 +48,17 @@ const majorSponsors = [
     linkLabel: null,
     accentTop: '#E8C97A',
   },
+  {
+    href: 'https://www.homedepot.com',
+    logo: '/images/home-depot.png', logoBg: '#fff',
+    alt: 'The Home Depot',
+    badgeText: 'Gold Sponsor',
+    badgeBg: '#E8C97A', badgeColor: '#0F1729',
+    name: 'The Home Depot',
+    desc: 'Proud supporter of NVforHD and the fight against Huntington\'s Disease.',
+    linkLabel: 'homedepot.com',
+    accentTop: '#E8C97A',
+  },
 ]
 
 const holeSponsors = [
