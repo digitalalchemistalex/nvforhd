@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import ScrollReveal from '@/components/ScrollReveal'
-import PackagesSection from '@/components/PackagesSection'
-import SponsorsSection from '@/components/SponsorsSection'
-import AnimatedCounter from '@/components/AnimatedCounter'
 import Image from 'next/image'
 import Link from 'next/link'
-import VideoTestimonial from '@/components/VideoTestimonial'
 import dynamic from 'next/dynamic'
+
+// Lazy-load all below-fold client components — keeps hero/LCP unblocked
+const ScrollReveal      = dynamic(() => import('@/components/ScrollReveal'),      { ssr: false, loading: () => <div /> })
+const AnimatedCounter   = dynamic(() => import('@/components/AnimatedCounter'),   { ssr: false, loading: () => <span>0</span> })
+const VideoTestimonial  = dynamic(() => import('@/components/VideoTestimonial'),  { ssr: false, loading: () => <div style={{ aspectRatio: '16/9', background: 'var(--navy)' }} /> })
+const PackagesSection   = dynamic(() => import('@/components/PackagesSection'),   { ssr: false, loading: () => <div /> })
+const SponsorsSection   = dynamic(() => import('@/components/SponsorsSection'),   { ssr: false, loading: () => <div /> })
 const SponsorCardAnimated = dynamic(() => import('@/components/SponsorCardAnimated'), { ssr: false })
 
 export const metadata: Metadata = {
