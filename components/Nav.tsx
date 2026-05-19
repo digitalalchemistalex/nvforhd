@@ -10,7 +10,7 @@ const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVfo
 const NAV_LINKS = [
   { href: '/',          label: 'Home',       sub: null },
   { href: '/cause',     label: 'The Cause',  sub: "What is Huntington's Disease?" },
-  { href: '/story',     label: 'Our Story',  sub: 'How NVforHD began · $50K raised' },
+  { href: '/story',     label: 'Our Story',  sub: 'How NVforHD began · $30K raised last year' },
   { href: '/causes',    label: 'Causes',     sub: '2024 HelpCureHD · 2025/26 UC Davis' },
   { href: '/impact',    label: 'Impact',     sub: 'The Puccini family · UC Davis families' },
   { href: '/gallery',   label: 'Gallery',    sub: '47 photos from the 2024 tournament' },

@@ -15,11 +15,11 @@ const SponsorCardAnimated = dynamic(() => import('@/components/SponsorCardAnimat
 
 export const metadata: Metadata = {
   title: "NVforHD — Charity Golf Tournament for Huntington's Disease",
-  description: "Join Nevada's charity golf tournament May 29, 2026 at Gray's Crossing, Truckee. 100% fights Huntington's Disease. $50K+ raised. Register or donate.",
+  description: "Join Nevada's charity golf tournament May 29, 2026 at Gray's Crossing, Truckee. 100% fights Huntington's Disease. $30K raised last year. Register or donate.",
   alternates: { canonical: 'https://www.nvforhd.com' },
   openGraph: {
     title: "NVforHD — Let's Cure Huntington's Disease",
-    description: "Golf tournament May 29, 2026. $50K+ raised. One HD-free baby funded. 90+ Nevada families served.",
+    description: "Golf tournament May 29, 2026. $30K raised last year. One HD-free baby funded. 90+ Nevada families served.",
     images: [{ url: '/images/hero-couple.jpg', width: 1200, height: 630, alt: "NVforHD Charity Golf Tournament 2026" }],
   },
   twitter: {
@@ -154,7 +154,7 @@ export default function HomePage() {
       <section className="stats-section">
         <div className="stats-grid-4">
           {[
-            { target: 50, prefix: '$', suffix: 'K+', label: 'Raised', sub: 'In 2 years', blue: false },
+            { target: 30, prefix: '$', suffix: 'K', label: 'Raised Last Year', sub: '2025 tournament', blue: false },
             { target: 90, prefix: '',  suffix: '+',  label: 'HD Families', sub: "This year's event will help benefit", blue: false },
             { target: 1,  prefix: '',  suffix: '',   label: 'HD-Free Baby', sub: 'Funded', blue: true },
             { target: 0,  prefix: '',  suffix: '',   label: 'Known Cures or Treatments', sub: "That's why we fight", blue: false },

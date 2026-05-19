@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: "Our Story - Three Years of Fighting HD | NVforHD",
-  description: "Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. He didn't hold a fundraiser. He started a fight. $50,000 raised. One HD-free baby. 90+ families served.",
+  description: "Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. He didn't hold a fundraiser. He started a fight. $30K raised last year. One HD-free baby. 90+ families served.",
   alternates: { canonical: 'https://www.nvforhd.com/story' },
   openGraph: {
     title: "Our Story — How NVforHD Began",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Our Story — How NVforHD Began",
-    description: "$50,000 raised. One HD-free baby. 90+ families served. This is why NVforHD exists.",
+    description: "$30K raised last year. One HD-free baby. 90+ families served. This is why NVforHD exists.",
     images: ['/images/hero-couple.jpg'],
   },
 }
@@ -282,7 +282,7 @@ export default function StoryPage() {
           {[
             { n: '$25K', label: 'Raised', sub: '2024 · First year' },
             { n: '$25K+', label: 'Raised', sub: '2025 · UC Davis' },
-            { n: '$50K+', label: 'Total raised', sub: 'Two years combined' },
+            { n: '$30K', label: 'Raised last year', sub: '2025 tournament' },
             { n: '1', label: 'HD-free baby', sub: 'On the way', blue: true },
           ].map(({ n, label, sub, blue }, i) => (
             <ScrollReveal key={n + i} delay={i * 0.08} style={{ padding: 'clamp(2.5rem,4vw,4rem) clamp(1.5rem,3vw,3rem)', borderRight: i < 3 ? '1px solid var(--cream-3)' : 'none', textAlign: 'center' }}>

@@ -110,7 +110,7 @@ export default function CausesPage() {
         sub="Every dollar raised at NVforHD goes directly to one chosen cause. No overhead. No splitting. We pick the most impactful target each year and give everything."
         photo="/images/event-foursome-1.jpg"
         photoPosition="center 40%"
-        stat1={{ n: '$50K+', label: 'Total raised' }}
+        stat1={{ n: '$30K', label: 'Raised last year' }}
         stat2={{ n: '90+', label: 'HD families served' }}
         stat3={{ n: '3', label: 'Causes funded' }}
       />

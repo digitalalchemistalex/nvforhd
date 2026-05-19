@@ -86,7 +86,7 @@ export default function RegisterPage() {
 
       {/* ── TRUST BAR ── */}
       <div className="reg-trust-bar">
-        {['100% to UC Davis HD Center', '$50K+ raised since 2024', '90+ families served', 'Nevada Non-Profit'].map(t => (
+        {['100% to UC Davis HD Center', '$30K raised last year', '90+ families served', 'Nevada Non-Profit'].map(t => (
           <div key={t} className="reg-trust-item">
             <span className="reg-trust-dot" />
             {t}

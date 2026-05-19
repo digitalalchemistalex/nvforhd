@@ -136,7 +136,7 @@ export default function AboutPage() {
         photo="/images/event-crowd.jpg"
         photoPosition="center 30%"
         stat1={{ n: '4', label: 'Board Members' }}
-        stat2={{ n: '$50K+', label: 'Raised together' }}
+        stat2={{ n: '$30K', label: 'Raised last year' }}
         stat3={{ n: '3', label: 'Years fighting' }}
       />
 

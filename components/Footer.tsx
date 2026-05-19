@@ -91,7 +91,7 @@ export default function Footer() {
               <div className="footer-col-head">What We&apos;ve Done</div>
               <div className="footer-stats-block">
                 {[
-                  { n: '$50K+', label: 'Raised in 2 years' },
+                  { n: '$30K', label: 'Raised last year' },
                   { n: '1',     label: 'HD-free baby funded' },
                   { n: '90+',   label: 'Families at UC Davis' },
                 ].map(({ n, label }) => (
@@ -114,7 +114,7 @@ export default function Footer() {
             <div className="footer-strip-head">What We&apos;ve Done</div>
             <div className="footer-strip-row">
               {[
-                { n: '$50K+', label: 'Raised' },
+                { n: '$30K', label: 'Raised last year' },
                 { n: '1',     label: 'HD-free baby' },
                 { n: '90+',   label: 'Families helped' },
               ].map(({ n, label }) => (
