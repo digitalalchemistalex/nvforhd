@@ -36,9 +36,9 @@ export default function Footer() {
             <Link href="/register" className="footer-btn-primary">
               Register Now — Raffle Tickets &amp; Mulligans →
             </Link>
-            <Link href="/register" className="footer-btn-secondary">
-              Play Golf — May 29, 2026
-            </Link>
+            <a href={GOLF} target="_blank" rel="noopener" className="footer-btn-secondary">
+              Play Golf — May 29, 2026 ↗
+            </a>
             <p style={{ textAlign: 'center', fontSize: '0.68rem', color: 'var(--ink-faint)' }}>
               Gray&apos;s Crossing, Truckee CA · 12:00 PM Shotgun
             </p>
