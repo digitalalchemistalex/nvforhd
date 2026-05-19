@@ -33,9 +33,9 @@ export default function Footer() {
             </div>
           </div>
           <div className="footer-cta-right">
-            <Link href="/register" className="footer-btn-primary">
-              Register Now — Raffle Tickets &amp; Mulligans →
-            </Link>
+            <a href={DONATE} target="_blank" rel="noopener" className="footer-btn-primary">
+              Donate Now — 100% to HD Families →
+            </a>
             <a href={GOLF} target="_blank" rel="noopener" className="footer-btn-secondary">
               Play Golf — May 29, 2026 ↗
             </a>
