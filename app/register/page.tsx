@@ -5,14 +5,32 @@ import Footer from '@/components/Footer'
 
 const PACKAGES = [
   {
-    id: 'raffle',
+    id: 'raffle-5',
     name: 'Raffle Tickets',
     price: '$50',
+    badge: '5 tickets',
     description: '5 raffle tickets for the May 29 tournament. Every ticket supports the UC Davis HD Center of Excellence.',
     icon: '🎟️',
     priceId: 'price_1TYvPZHzjKRbp7zjeunXt1kH',
   },
-  // Add more packages here as Sean creates them in Stripe
+  {
+    id: 'raffle-20',
+    name: 'Raffle Tickets',
+    price: '$100',
+    badge: '20 tickets — best value',
+    description: '20 raffle tickets for $100. Double your chances and double your impact for HD families.',
+    icon: '🎟️',
+    priceId: 'price_1TYvQbHzjKRbp7zjqNo0CrKe',
+  },
+  {
+    id: 'mulligan',
+    name: 'Mulligan',
+    price: '$20',
+    badge: 'per mulligan',
+    description: 'Get a second chance on your worst shot. Purchase on the day or in advance.',
+    icon: '⛳',
+    priceId: 'price_1TYvT5HzjKRbp7zjyt0TsbwP',
+  },
 ]
 
 export default function RegisterPage() {
@@ -80,9 +98,12 @@ export default function RegisterPage() {
                   <h2 style={{ fontFamily: 'var(--serif)', fontSize: '1.5rem', color: 'var(--navy)', margin: '0 0 0.25rem', fontWeight: 700 }}>
                     {pkg.name}
                   </h2>
-                  <p style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--blue)', margin: 0 }}>
+                  <p style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--blue)', margin: '0 0 0.35rem' }}>
                     {pkg.price}
                   </p>
+                  <span style={{ display: 'inline-block', fontSize: '0.7rem', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: 700, color: 'var(--blue)', background: 'var(--blue-faint)', padding: '0.2rem 0.6rem' }}>
+                    {pkg.badge}
+                  </span>
                 </div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--ink-mid)', lineHeight: 1.7, margin: 0, flexGrow: 1 }}>
                   {pkg.description}
