@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { href: '/sponsors',  label: 'Sponsors',   sub: 'Aguirre Riley · UC Davis · C-Hawk' },
   { href: '/about',     label: 'About Us',   sub: 'Meet the 4-member board' },
   { href: '/contact',   label: 'Contact',    sub: 'info@nvforhd.com · 775-691-8860' },
+  { href: '/register',  label: 'Register',   sub: 'Raffle tickets · More packages coming' },
 ]
 
 // Mobile tab bar — 5 primary destinations only
@@ -26,7 +27,7 @@ const TAB_ITEMS = [
   { href: '/',         label: 'Home',    icon: HomeIcon },
   { href: '/cause',    label: 'HD',      icon: CauseIcon },
   { href: '/causes',   label: 'Causes',  icon: CausesIcon },
-  { href: DONATE,      label: 'Donate',  icon: HeartIcon,  external: true, primary: true },
+  { href: '/register',  label: 'Register', icon: HeartIcon,  primary: true },
   { href: '/gallery',  label: 'Gallery', icon: GalleryIcon },
 ]
 
@@ -94,22 +95,22 @@ export default function Nav() {
         {/* Desktop CTAs — static + sticky donate after scroll */}
         <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', transition: 'all 0.3s' }} className="desktop-nav">
           {ctaVisible && (
-            <a href={DONATE} target="_blank" rel="noopener" style={{
+            <Link href="/register" style={{
               background: 'var(--blue)', color: '#fff', padding: '0.6rem 1.3rem',
               fontSize: '0.64rem', letterSpacing: '0.1em', textTransform: 'uppercase',
               fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)',
               animation: 'fadeup 0.3s ease both',
             }}>
-              Donate Now
-            </a>
+              Register Now
+            </Link>
           )}
-          <a href={GOLF} target="_blank" rel="noopener" style={{
+          <Link href="/register" style={{
             border: '1.5px solid rgba(255,255,255,0.6)', color: 'rgba(255,255,255,0.95)',
             padding: '0.58rem 1.1rem', fontSize: '0.64rem', letterSpacing: '0.1em',
             textTransform: 'uppercase', textDecoration: 'none', fontFamily: 'var(--sans)', fontWeight: 400,
           }}>
-            Play May 29 ↗
-          </a>
+            Play May 29
+          </Link>
         </div>
 
         {/* Hamburger — desktop only, hidden on mobile (tab bar handles mobile) */}
@@ -150,14 +151,14 @@ export default function Nav() {
           ))}
         </nav>
         <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', animation: menuOpen ? 'fadeup 0.5s ease 0.5s both' : 'none' }}>
-          <a href={DONATE} target="_blank" rel="noopener" onClick={close}
+          <Link href="/register" onClick={close}
             style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-            Donate Now — from $100
-          </a>
-          <a href={GOLF} target="_blank" rel="noopener" onClick={close}
+            Register — Raffle Tickets &amp; More
+          </Link>
+          <Link href="/register" onClick={close}
             style={{ display: 'block', textAlign: 'center', border: '1.5px solid rgba(255,255,255,0.55)', color: 'rgba(255,255,255,0.95)', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-            Play Golf — May 29, 2026 ↗
-          </a>
+            Play Golf — May 29, 2026
+          </Link>
           <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
             <a href="tel:7756918860" style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.70)', textDecoration: 'none' }}>📞 775-691-8860 · Call Sean</a>
           </div>
@@ -181,15 +182,12 @@ export default function Nav() {
         paddingBottom: 'env(safe-area-inset-bottom, 0px)',
         height: 'calc(58px + env(safe-area-inset-bottom, 0px))',
       }} className="mobile-tab-bar">
-        {TAB_ITEMS.map(({ href, label, icon: Icon, external, primary }) => {
-          const isActive = !external && (href === '/' ? pathname === '/' : pathname.startsWith(href))
+        {TAB_ITEMS.map(({ href, label, icon: Icon, primary }) => {
+          const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href)
           return (
             <a
               key={href}
-              href={external ? href : undefined}
-              {...(!external ? { onClick: (e) => { e.preventDefault(); window.location.href = href } } : {})}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener' : undefined}
+              onClick={() => { window.location.href = href }}
               style={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                 flex: 1, gap: '3px', textDecoration: 'none', cursor: 'pointer',
