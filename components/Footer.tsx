@@ -33,12 +33,12 @@ export default function Footer() {
             </div>
           </div>
           <div className="footer-cta-right">
-            <a href={DONATE} target="_blank" rel="noopener" className="footer-btn-primary">
-              Donate Now — 100% to HD Families →
-            </a>
-            <a href={GOLF} target="_blank" rel="noopener" className="footer-btn-secondary">
-              Play Golf — May 29, 2026 ↗
-            </a>
+            <Link href="/register" className="footer-btn-primary">
+              Register Now — Raffle Tickets &amp; Mulligans →
+            </Link>
+            <Link href="/register" className="footer-btn-secondary">
+              Play Golf — May 29, 2026
+            </Link>
             <p style={{ textAlign: 'center', fontSize: '0.68rem', color: 'var(--ink-faint)' }}>
               Gray&apos;s Crossing, Truckee CA · 12:00 PM Shotgun
             </p>
