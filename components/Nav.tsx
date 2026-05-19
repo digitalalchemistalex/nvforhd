@@ -61,7 +61,7 @@ export default function Nav() {
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 700,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: scrolled ? '0.75rem clamp(1.25rem,4vw,4rem)' : '1.4rem clamp(1.25rem,4vw,4rem)',
-        background: scrolled ? 'rgba(6,13,26,0.97)' : menuOpen ? 'rgba(6,13,26,0.99)' : 'rgba(6,13,26,0.15)',
+        background: scrolled ? 'rgba(6,13,26,0.97)' : menuOpen ? 'rgba(6,13,26,0.99)' : 'rgba(6,13,26,0.85)',
         backdropFilter: 'blur(20px)',
         borderBottom: scrolled ? '1px solid rgba(29,78,216,0.2)' : '1px solid transparent',
         transition: 'padding 0.4s ease, background 0.4s ease, border-color 0.4s ease',
@@ -77,14 +77,7 @@ export default function Nav() {
         <ul style={{ display: 'flex', gap: '1.1rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }} className="desktop-nav">
           {NAV_LINKS.filter(l => l.href !== '/').map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} style={{
-                color: pathname === href ? '#fff' : 'rgba(255,255,255,0.85)',
-                textDecoration: 'none', fontSize: '0.64rem',
-                letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: pathname === href ? 600 : 400,
-                transition: 'color 0.2s', fontFamily: 'var(--sans)',
-                borderBottom: pathname === href ? '1.5px solid var(--blue)' : '1.5px solid transparent',
-                paddingBottom: '2px',
-              }}>
+              <Link href={href} className={`nav-link${pathname === href ? ' nav-link--active' : ''}`}>
                 {label}
               </Link>
             </li>
@@ -214,6 +207,27 @@ export default function Nav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        .nav-link {
+          color: rgba(255,255,255,0.85);
+          text-decoration: none;
+          font-size: 0.64rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-family: var(--sans);
+          border-bottom: 1.5px solid transparent;
+          padding-bottom: 2px;
+          transition: color 0.2s, border-color 0.2s;
+        }
+        .nav-link:hover {
+          color: #fff;
+          border-bottom-color: rgba(255,255,255,0.4);
+        }
+        .nav-link--active {
+          color: #fff !important;
+          font-weight: 600;
+          border-bottom-color: var(--blue) !important;
+        }
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .hamburger   { display: flex !important; }
