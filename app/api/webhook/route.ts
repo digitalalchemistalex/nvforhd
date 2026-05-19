@@ -2,15 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import nodemailer from 'nodemailer'
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-})
 
 // ─── Shared email styles (matches contact form branding) ─────────────────────
 const BLUE        = '#2B5BE0'
@@ -209,7 +200,11 @@ export async function POST(req: NextRequest) {
   })
 
   const body = await req.text()
-  const sig  = req.headers.get('stripe-signature')!
+  const sig  = req.headers.get('stripe-signature')
+
+  if (!sig) {
+    return NextResponse.json({ error: 'No signature' }, { status: 400 })
+  }
 
   let event: Stripe.Event
   try {
@@ -221,30 +216,40 @@ export async function POST(req: NextRequest) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session
-    const customerEmail_ = session.customer_details?.email
+    const custEmail = session.customer_details?.email
+
+    const mailer = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+    })
+
+    console.log('Processing payment:', session.id, 'for', custEmail, 'amount:', session.amount_total)
 
     try {
-      await Promise.all([
-        // 1. Notify Sean
-        transporter.sendMail({
-          from: `"NVforHD Payments" <${process.env.GMAIL_USER}>`,
-          to: 'info@nvforhd.com',
-          subject: `[NVforHD] Payment received — $${((session.amount_total || 0) / 100).toFixed(2)} from ${session.customer_details?.name || 'Guest'}`,
-          html: adminEmail(session),
-        }),
-        // 2. Confirm to customer (only if we have their email)
-        ...(customerEmail_ ? [
-          transporter.sendMail({
-            from: `"Sean Schaeffer · NVforHD" <${process.env.GMAIL_USER}>`,
-            to: customerEmail_,
-            subject: `Payment confirmed — NVforHD · May 29, 2026`,
-            html: customerEmail(session),
-          }),
-        ] : []),
-      ])
+      await mailer.sendMail({
+        from: `"NVforHD Payments" <${process.env.GMAIL_USER}>`,
+        to: 'info@nvforhd.com',
+        subject: `[NVforHD] Payment received — $${((session.amount_total || 0) / 100).toFixed(2)} from ${session.customer_details?.name || 'Guest'}`,
+        html: adminEmail(session),
+      })
+      console.log('Admin email sent')
+
+      if (custEmail) {
+        await mailer.sendMail({
+          from: `"Sean Schaeffer · NVforHD" <${process.env.GMAIL_USER}>`,
+          to: custEmail,
+          subject: `Payment confirmed — NVforHD · May 29, 2026`,
+          html: customerEmail(session),
+        })
+        console.log('Customer email sent to', custEmail)
+      }
     } catch (emailErr) {
       console.error('Email send failed:', emailErr)
-      // Don't return 500 — Stripe would retry the webhook
     }
   }
 
