@@ -4,11 +4,7 @@ import { useState } from 'react'
 
 const PRODUCTS = [
   { id: 'golfer-single',   label: 'Single Golfer',  amount: 22000 },
-  { id: 'golfer-foursome', label: 'Foursome',        amount: 79900 },
-  { id: 'donation-50',     label: 'Donation $50',    amount: 5000  },
-  { id: 'donation-100',    label: 'Donation $100',   amount: 10000 },
-  { id: 'donation-250',    label: 'Donation $250',   amount: 25000 },
-  { id: 'donation-500',    label: 'Donation $500',   amount: 50000 },
+  { id: 'golfer-foursome', label: 'Foursome',        amount: 88000 },
 ]
 
 type Step = 'selecting' | 'waiting' | 'success' | 'error'
