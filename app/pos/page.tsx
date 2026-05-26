@@ -80,7 +80,7 @@ export default function POSPage() {
     if (!terminalRef.current) return
     setStep('connecting')
     addLog('Discovering readers...')
-    const result = await terminalRef.current.discoverReaders({ simulated: false })
+    const result = await terminalRef.current.discoverReaders({ simulated: false, discovery_method: 'internet' })
     if (result.error) {
       addLog(`❌ Discovery error: ${result.error.message}`)
       setStep('error')
