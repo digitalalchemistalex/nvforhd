@@ -14,14 +14,14 @@ export async function POST(req: NextRequest) {
     }
 
     const paymentIntent = await stripe.paymentIntents.create({
-      amount,                // in cents
+      amount,
       currency: 'usd',
       payment_method_types: ['card_present'],
       capture_method: 'automatic',
       description: description || 'NVforHD Event Payment',
     })
 
-    return NextResponse.json({ client_secret: paymentIntent.client_secret })
+    return NextResponse.json({ id: paymentIntent.id, client_secret: paymentIntent.client_secret })
   } catch (err) {
     console.error('Terminal payment intent error:', err)
     return NextResponse.json({ error: 'Failed to create payment intent' }, { status: 500 })
