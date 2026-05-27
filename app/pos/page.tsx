@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 const PRODUCTS = [
+  { id: 'mulligan',   label: 'Mulligan',                 amount: 2000,  priceId: 'price_1TYvT5HzjKRbp7zjyt0TsbwP' },
   { id: 'raffle-100', label: 'Raffle Tickets (20/$100)', amount: 10000, priceId: 'price_1TYvQbHzjKRbp7zjqNo0CrKe' },
   { id: 'raffle-50',  label: 'Raffle Tickets (5/$50)',   amount: 5000,  priceId: 'price_1TYvPZHzjKRbp7zjeunXt1kH' },
 ]
