@@ -1,11 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const PRODUCTS = [
   { id: 'raffle-100', label: 'Raffle Tickets (20/$100)', amount: 10000, priceId: 'price_1TYvQbHzjKRbp7zjqNo0CrKe' },
   { id: 'raffle-50',  label: 'Raffle Tickets (5/$50)',   amount: 5000,  priceId: 'price_1TYvPZHzjKRbp7zjeunXt1kH' },
 ]
+
+const STORAGE_KEY = 'nvforhd_pos_transactions'
 
 type Step = 'selecting' | 'waiting' | 'success' | 'error'
 type Transaction = { time: string; product: string; amount: number; status: 'success' | 'failed' }
@@ -16,15 +18,26 @@ export default function POSPage() {
   const [log, setLog]                    = useState<string[]>([])
   const [transactions, setTransactions]  = useState<Transaction[]>([])
 
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved) setTransactions(JSON.parse(saved))
+    } catch {}
+  }, [])
+
   const addLog = (msg: string) => setLog(prev => [`${new Date().toLocaleTimeString()} — ${msg}`, ...prev.slice(0, 19)])
 
   const addTransaction = (product: typeof PRODUCTS[0], status: 'success' | 'failed') => {
-    setTransactions(prev => [{
-      time: new Date().toLocaleTimeString(),
-      product: product.label,
-      amount: product.amount,
-      status,
-    }, ...prev])
+    setTransactions(prev => {
+      const updated = [{
+        time: new Date().toLocaleTimeString(),
+        product: product.label,
+        amount: product.amount,
+        status,
+      }, ...prev]
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(updated)) } catch {}
+      return updated
+    })
   }
 
   const totalCollected = transactions.filter(t => t.status === 'success').reduce((sum, t) => sum + t.amount, 0)
@@ -200,7 +213,13 @@ export default function POSPage() {
         {/* ── TRANSACTION LOG ── */}
         {transactions.length > 0 && (
           <div className="pos-card">
-            <h2>Transactions This Session</h2>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+              <h2 style={{ margin: 0 }}>Transaction History</h2>
+              <button className="btn" style={{ background: 'rgba(220,38,38,0.2)', color: '#f87171', border: '1px solid rgba(220,38,38,0.3)', padding: '6px 14px', fontSize: 12 }}
+                onClick={() => { if(confirm('Clear all transaction history?')) { setTransactions([]); try { localStorage.removeItem('nvforhd_pos_transactions') } catch {} } }}>
+                Clear History
+              </button>
+            </div>
             <table className="tx-table">
               <thead>
                 <tr>
