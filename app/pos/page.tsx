@@ -91,7 +91,17 @@ export default function POSPage() {
 
   async function cancelPayment() {
     addLog('Canceling...')
-    await fetch('/api/terminal/cancel', { method: 'POST' })
+    try {
+      const res = await fetch('/api/terminal/cancel', { method: 'POST' })
+      const data = await res.json()
+      if (data.error) {
+        addLog(`❌ Cancel failed: ${data.error}`)
+      } else {
+        addLog('✅ Canceled — reader cleared')
+      }
+    } catch (e: any) {
+      addLog(`❌ Cancel error: ${e?.message}`)
+    }
     setStep('selecting')
     setSelected(null)
   }
