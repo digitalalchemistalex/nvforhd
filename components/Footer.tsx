@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const DONATE = 'mailto:info@nvforhd.com'
+const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-donate'
 const GOLF   = 'mailto:info@nvforhd.com'
 
 export default function Footer() {

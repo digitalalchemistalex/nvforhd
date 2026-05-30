@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const DONATE = 'mailto:info@nvforhd.com'
+const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-donate'
 const GOLF   = 'mailto:info@nvforhd.com'
 
 const NAV_LINKS = [
