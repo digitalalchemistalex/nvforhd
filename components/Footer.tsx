@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+const UC_DAVIS = 'https://health.ucdavis.edu/huntingtons-disease?utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-donate'
 const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-donate'
 const GOLF   = 'mailto:info@nvforhd.com'
 
@@ -33,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="footer-cta-right">
-            <a href={DONATE} target="_blank" rel="noopener" className="footer-btn-primary">
+            <a href={UC_DAVIS} target="_blank" rel="noopener" className="footer-btn-primary">
               Donate to UC Davis →
             </a>
             <a href={GOLF} target="_blank" rel="noopener" className="footer-btn-secondary">

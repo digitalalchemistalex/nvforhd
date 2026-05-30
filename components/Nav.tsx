@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+const UC_DAVIS = 'https://health.ucdavis.edu/huntingtons-disease?utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-donate'
 const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-donate'
 const GOLF   = 'mailto:info@nvforhd.com'
 
@@ -87,7 +88,7 @@ export default function Nav() {
         {/* Desktop CTAs — static + sticky donate after scroll */}
         <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', transition: 'all 0.3s' }} className="desktop-nav">
           {ctaVisible && (
-            <a href={DONATE} target="_blank" rel="noopener" style={{
+            <a href={UC_DAVIS} target="_blank" rel="noopener" style={{
               background: 'var(--blue)', color: '#fff', padding: '0.6rem 1.3rem',
               fontSize: '0.64rem', letterSpacing: '0.1em', textTransform: 'uppercase',
               fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)',
@@ -143,7 +144,7 @@ export default function Nav() {
           ))}
         </nav>
         <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', animation: menuOpen ? 'fadeup 0.5s ease 0.5s both' : 'none' }}>
-          <a href={DONATE} target="_blank" rel="noopener" onClick={close}
+          <a href={UC_DAVIS} target="_blank" rel="noopener" onClick={close}
             style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
             Donate to UC Davis
           </a>
