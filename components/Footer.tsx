@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-donate'
-const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-golf'
+const DONATE = 'mailto:info@nvforhd.com'
+const GOLF   = 'mailto:info@nvforhd.com'
 
 export default function Footer() {
   return (
@@ -34,10 +34,10 @@ export default function Footer() {
           </div>
           <div className="footer-cta-right">
             <a href={DONATE} target="_blank" rel="noopener" className="footer-btn-primary">
-              Donate Now — 100% to HD Families →
+              Donate to UC Davis →
             </a>
             <a href={GOLF} target="_blank" rel="noopener" className="footer-btn-secondary">
-              Play Golf — May 29, 2026 ↗
+              2027 Waitlist — Join Us
             </a>
             <p style={{ textAlign: 'center', fontSize: '0.68rem', color: 'var(--ink-faint)' }}>
               Gray&apos;s Crossing, Truckee CA · 12:00 PM Shotgun
