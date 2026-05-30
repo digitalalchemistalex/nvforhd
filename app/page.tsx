@@ -671,7 +671,16 @@ export default function HomePage() {
       </section>
 
       {/* Packages + Sponsors — only on desktop, mobile too long */}
-      <div className="packages-desktop"><PackagesSection /></div>
+      <div className="packages-desktop">
+        <section style={{ background: 'var(--cream)', padding: 'clamp(3rem,5vw,5rem) var(--px)', borderTop: '1px solid var(--cream-3)', textAlign: 'center' }}>
+          <div className="inner" style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)', marginBottom: '1rem' }}>Save the Date</div>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.8rem,3vw,3rem)', fontWeight: 300, color: 'var(--ink)', marginBottom: '1rem' }}>2027 Tournament<br /><em style={{ color: 'var(--ink-dim)', fontStyle: 'italic' }}>Coming Soon</em></h2>
+            <p style={{ fontSize: '0.9rem', color: 'var(--ink-dim)', lineHeight: 1.8, marginBottom: '1.5rem' }}>Registration for the 2027 NVforHD Charity Golf Tournament will open soon. Get in touch to be first on the list.</p>
+            <a href="mailto:info@nvforhd.com" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '0.75rem 2rem', fontFamily: 'var(--sans)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.04em' }}>Join the Waitlist</a>
+          </div>
+        </section>
+      </div>
       <div className="packages-mobile" style={{ padding: 'var(--py-lg) var(--px)', background: 'var(--cream)', borderTop: '1px solid var(--cream-3)' }}>
         <SponsorCardAnimated />
       </div>
