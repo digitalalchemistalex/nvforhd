@@ -130,14 +130,14 @@ export default function HomePage() {
 
           {/* Body — mobile: 1 sentence. Desktop: 2 sentences via CSS */}
           <div style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '1.25rem', marginBottom: '2rem', animation: 'fadeup 0.9s ease 0.5s both' }}>
-            <p className="hero-body-mobile">Someone near and dear to us was diagnosed with HD — a fatal, hereditary brain disorder with no cure. We replaced despair with hope. Join us May 29 at Grays Crossing Golf Club, Truckee, CA.</p>
-            <p className="hero-body-desktop">Someone near and dear to us was diagnosed with HD — a fatal, hereditary brain disorder with no cure. We decided to replace despair with hope and help others wherever we can. Please consider joining us in this fight as we raise funds for those in need via our Annual Golf Tournament. This year&apos;s event will be held at Grays Crossing Golf Club in Truckee, CA.</p>
+            <p className="hero-body-mobile">Thank you for an incredible 2026 tournament. Together we raised funds for the UC Davis HD Center of Excellence — specialist care for 90+ Northern Nevada families. See you next year.</p>
+            <p className="hero-body-desktop">Thank you for an incredible 2026 tournament. Together we raised funds for the UC Davis HD Center of Excellence — specialist care for 90+ Northern Nevada families. We are humbled by your generosity and support. See you next year.</p>
           </div>
 
           {/* CTAs — stacked on mobile, side by side on desktop */}
           <div className="hero-ctas" style={{ animation: 'fadeup 0.9s ease 0.65s both' }}>
-            <a href={D100} target="_blank" rel="noopener" className="hero-btn-donate">Reserve Now →</a>
-            <a href={GOLF} target="_blank" rel="noopener" className="hero-btn-golf">Play Golf May 29</a>
+            <a href="/gallery" className="hero-btn-donate">View Gallery →</a>
+            <a href="mailto:info@nvforhd.com" className="hero-btn-golf">Donate to UC Davis</a>
           </div>
 
           <p style={{ marginTop: '1rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.75)', animation: 'fadeup 0.9s ease 0.8s both' }}>
