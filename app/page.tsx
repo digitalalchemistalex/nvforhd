@@ -130,14 +130,14 @@ export default function HomePage() {
 
           {/* Body — mobile: 1 sentence. Desktop: 2 sentences via CSS */}
           <div style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '1.25rem', marginBottom: '2rem', animation: 'fadeup 0.9s ease 0.5s both' }}>
-            <p className="hero-body-mobile">Thank you for an incredible 2026 tournament. Together we raised funds for the UC Davis HD Center of Excellence — specialist care for 90+ Northern Nevada families. See you next year.</p>
-            <p className="hero-body-desktop">Thank you for an incredible 2026 tournament. Together we raised funds for the UC Davis HD Center of Excellence — specialist care for 90+ Northern Nevada families. We are humbled by your generosity and support. See you next year.</p>
+            <p className="hero-body-mobile">Someone near and dear to us was diagnosed with HD — a fatal, hereditary brain disorder with no cure. We replaced despair with hope. Join us May 29 at Grays Crossing Golf Club, Truckee, CA.</p>
+            <p className="hero-body-desktop">Someone near and dear to us was diagnosed with HD — a fatal, hereditary brain disorder with no cure. We decided to replace despair with hope and help others wherever we can. Please consider joining us in this fight as we raise funds for those in need via our Annual Golf Tournament. This year&apos;s event will be held at Grays Crossing Golf Club in Truckee, CA.</p>
           </div>
 
           {/* CTAs — stacked on mobile, side by side on desktop */}
           <div className="hero-ctas" style={{ animation: 'fadeup 0.9s ease 0.65s both' }}>
-            <a href="/gallery" className="hero-btn-donate">View Gallery →</a>
-            <a href="mailto:info@nvforhd.com" className="hero-btn-golf">Donate to UC Davis</a>
+            <a href={D100} target="_blank" rel="noopener" className="hero-btn-donate">Reserve Now →</a>
+            <a href={GOLF} target="_blank" rel="noopener" className="hero-btn-golf">Play Golf May 29</a>
           </div>
 
           <p style={{ marginTop: '1rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.75)', animation: 'fadeup 0.9s ease 0.8s both' }}>
@@ -671,16 +671,7 @@ export default function HomePage() {
       </section>
 
       {/* Packages + Sponsors — only on desktop, mobile too long */}
-      <div className="packages-desktop">
-        <section style={{ background: 'var(--cream)', padding: 'clamp(3rem,5vw,5rem) var(--px)', borderTop: '1px solid var(--cream-3)', textAlign: 'center' }}>
-          <div className="inner" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.6rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--blue)', marginBottom: '1rem' }}>Save the Date</div>
-            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.8rem,3vw,3rem)', fontWeight: 300, color: 'var(--ink)', marginBottom: '1rem' }}>2027 Tournament<br /><em style={{ color: 'var(--ink-dim)', fontStyle: 'italic' }}>Coming Soon</em></h2>
-            <p style={{ fontSize: '0.9rem', color: 'var(--ink-dim)', lineHeight: 1.8, marginBottom: '1.5rem' }}>Registration for the 2027 NVforHD Charity Golf Tournament will open soon. Get in touch to be first on the list.</p>
-            <a href="mailto:info@nvforhd.com" style={{ display: 'inline-block', background: 'var(--blue)', color: '#fff', padding: '0.75rem 2rem', fontFamily: 'var(--sans)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', letterSpacing: '0.04em' }}>Join the Waitlist</a>
-          </div>
-        </section>
-      </div>
+      <div className="packages-desktop"><PackagesSection /></div>
       <div className="packages-mobile" style={{ padding: 'var(--py-lg) var(--px)', background: 'var(--cream)', borderTop: '1px solid var(--cream-3)' }}>
         <SponsorCardAnimated />
       </div>

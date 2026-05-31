@@ -4,9 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const UC_DAVIS = 'https://health.ucdavis.edu/huntingtons-disease?utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-donate'
 const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-donate'
-const GOLF   = 'mailto:info@nvforhd.com'
+const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=nav-golf'
 
 const NAV_LINKS = [
   { href: '/',          label: 'Home',       sub: null },
@@ -88,13 +87,13 @@ export default function Nav() {
         {/* Desktop CTAs — static + sticky donate after scroll */}
         <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', transition: 'all 0.3s' }} className="desktop-nav">
           {ctaVisible && (
-            <a href={UC_DAVIS} target="_blank" rel="noopener" style={{
+            <a href={DONATE} target="_blank" rel="noopener" style={{
               background: 'var(--blue)', color: '#fff', padding: '0.6rem 1.3rem',
               fontSize: '0.64rem', letterSpacing: '0.1em', textTransform: 'uppercase',
               fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)',
               animation: 'fadeup 0.3s ease both',
             }}>
-              Donate to UC Davis
+              Donate Now
             </a>
           )}
           <a href={GOLF} target="_blank" rel="noopener" style={{
@@ -102,7 +101,7 @@ export default function Nav() {
             padding: '0.58rem 1.1rem', fontSize: '0.64rem', letterSpacing: '0.1em',
             textTransform: 'uppercase', textDecoration: 'none', fontFamily: 'var(--sans)', fontWeight: 400,
           }}>
-            2027 Waitlist ↗
+            Play May 29 ↗
           </a>
         </div>
 
@@ -144,13 +143,13 @@ export default function Nav() {
           ))}
         </nav>
         <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', animation: menuOpen ? 'fadeup 0.5s ease 0.5s both' : 'none' }}>
-          <a href={UC_DAVIS} target="_blank" rel="noopener" onClick={close}
+          <a href={DONATE} target="_blank" rel="noopener" onClick={close}
             style={{ display: 'block', textAlign: 'center', background: 'var(--blue)', color: '#fff', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-            Donate to UC Davis
+            Donate Now — from $100
           </a>
           <a href={GOLF} target="_blank" rel="noopener" onClick={close}
             style={{ display: 'block', textAlign: 'center', border: '1.5px solid rgba(255,255,255,0.55)', color: 'rgba(255,255,255,0.95)', padding: '1.1rem', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 400, textDecoration: 'none', fontFamily: 'var(--sans)' }}>
-            2027 Waitlist ↗
+            Play Golf — May 29, 2026 ↗
           </a>
           <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
             <a href="tel:7756918860" style={{ fontSize: '0.78rem', color: 'rgba(249,248,246,0.70)', textDecoration: 'none' }}>📞 775-691-8860 · Call Sean</a>

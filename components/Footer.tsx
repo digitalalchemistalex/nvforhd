@@ -2,9 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const UC_DAVIS = 'https://health.ucdavis.edu/huntingtons-disease?utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-donate'
 const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-donate'
-const GOLF   = 'mailto:info@nvforhd.com'
+const GOLF   = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=footer-golf'
 
 export default function Footer() {
   return (
@@ -34,11 +33,11 @@ export default function Footer() {
             </div>
           </div>
           <div className="footer-cta-right">
-            <a href={UC_DAVIS} target="_blank" rel="noopener" className="footer-btn-primary">
-              Donate to UC Davis →
+            <a href={DONATE} target="_blank" rel="noopener" className="footer-btn-primary">
+              Donate Now — 100% to HD Families →
             </a>
             <a href={GOLF} target="_blank" rel="noopener" className="footer-btn-secondary">
-              2027 Waitlist — Join Us
+              Play Golf — May 29, 2026 ↗
             </a>
             <p style={{ textAlign: 'center', fontSize: '0.68rem', color: 'var(--ink-faint)' }}>
               Gray&apos;s Crossing, Truckee CA · 12:00 PM Shotgun
