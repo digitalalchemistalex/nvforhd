@@ -8,7 +8,7 @@ import VideoTestimonial from '@/components/VideoTestimonial'
 
 export const metadata: Metadata = {
   title: "How NVforHD Funds the Fight Against Huntington's Disease",
-  description: "Every dollar goes to one cause. 2024: IVF for an HD-free baby. 2025 & 2026: UC Davis HD Center serving 90+ Nevada families. See exactly where your donation goes.",
+  description: "Every dollar goes to one cause. 2024: IVF for an HD-free baby. 2025 & 2026: UC Davis HD Center serving 90+ Nevada families. See where your donation goes.",
   openGraph: {
     title: 'NVforHD Charity Causes — One Worthy Cause Every Year',
     description: '2024: HelpCureHD IVF funding. 2025 & 2026: UC Davis HD Center of Excellence serving 90+ Northern Nevada families.',
