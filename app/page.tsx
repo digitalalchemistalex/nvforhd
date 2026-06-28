@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NVforHD — Let's Cure Huntington's Disease",
     description: "Golf tournament May 29, 2026. $30K raised last year. One HD-free baby funded. 90+ Nevada families served.",
+    type: 'website',
+    url: 'https://www.nvforhd.com',
+    siteName: 'NVforHD',
+    locale: 'en_US',
     images: [{ url: '/images/hero-couple.jpg', width: 1200, height: 630, alt: "NVforHD Charity Golf Tournament 2026" }],
   },
   twitter: {

@@ -24,6 +24,7 @@ const contactSchema = {
   name: 'Contact NVforHD',
   url: 'https://www.nvforhd.com/contact',
   description: 'Contact NVforHD to play golf, donate, sponsor, volunteer, or reach out as an HD family.',
+  speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
   mainEntity: {
     '@type': 'Organization',
     name: 'NVforHD',

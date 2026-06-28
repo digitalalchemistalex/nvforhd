@@ -84,6 +84,16 @@ const breadcrumbSchema = {
   ],
 }
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'About NVforHD — Meet the Board',
+  url: 'https://www.nvforhd.com/about',
+  description: 'NVforHD was founded after Sean Schaeffer\'s wife was diagnosed with HD. Meet the four board members behind Nevada\'s Huntington\'s Disease charity golf tournament.',
+  speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+  isPartOf: { '@type': 'WebSite', name: 'NVforHD', url: 'https://www.nvforhd.com' },
+}
+
 const board = [
   {
     name: 'Sean Schaeffer',
@@ -128,6 +138,7 @@ export default function AboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Nav />
       <PageHero
         kicker="About NVforHD"

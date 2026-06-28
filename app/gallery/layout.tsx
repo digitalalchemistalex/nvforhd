@@ -24,6 +24,7 @@ const gallerySchema = {
   name: 'NVforHD 2024 Golf Tournament Gallery',
   description: 'Photos from the NVforHD 2024 charity golf tournament at Old Greenwood Golf Club, Truckee CA.',
   url: 'https://www.nvforhd.com/gallery',
+  speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
   associatedMedia: [
     { '@type': 'ImageObject', contentUrl: 'https://www.nvforhd.com/gallery/DSC0572-scaled.jpg', name: 'NVforHD 2024 Tournament Registration' },
     { '@type': 'ImageObject', contentUrl: 'https://www.nvforhd.com/gallery/DSC0588-scaled.jpg', name: 'NVforHD 2024 Players on Course' },
