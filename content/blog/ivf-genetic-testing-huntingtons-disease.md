@@ -1,6 +1,6 @@
 ---
 title: "How IVF Can Break the Huntington's Disease Cycle — and How NVforHD Made It Happen"
-excerpt: "Brandon and Rylee Puccini are expecting a healthy baby, HD-free. It started with a golf tournament in Truckee and a grant from HelpCureHD. Here is how preimplantation genetic testing is changing the story for HD families."
+excerpt: 'Brandon and Rylee Puccini are expecting a healthy baby, HD-free. It started with a golf tournament in Truckee and a grant from HelpCureHD. Here is how...'
 date: "2026-02-28"
 author: "NVforHD"
 category: "Impact"

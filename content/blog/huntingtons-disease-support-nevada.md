@@ -1,6 +1,6 @@
 ---
 title: "Huntington's Disease Support in Nevada: Resources for Reno & Sierra Foothills Families"
-excerpt: "There is no HD clinic in Nevada. But there is specialist care within reach, a community of families who understand, and an organisation fighting to keep those resources funded. Here is everything Northern Nevada HD families need to know."
+excerpt: 'There is no HD clinic in Nevada. But there is specialist care within reach, a community of families who understand, and an organisation fighting to keep...'
 date: "2026-04-01"
 author: "NVforHD"
 category: "Education"

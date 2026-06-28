@@ -34,10 +34,21 @@ const breadcrumbSchema = {
 
 const BOOK = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=sponsors-page'
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: "Sponsor NVforHD | Huntington's Disease Charity Golf 2026",
+  url: 'https://www.nvforhd.com/sponsors',
+  description: "Put your brand on the fight against HD. Meet 2025 sponsors and explore 2026 sponsorship packages for the NVforHD charity golf tournament at Gray's Crossing, Truckee CA.",
+  isPartOf: { '@type': 'WebSite', name: 'NVforHD', url: 'https://www.nvforhd.com' },
+  speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+}
+
 export default function SponsorsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Nav />
 
       {/* ── HERO — light, human, purposeful ── */}

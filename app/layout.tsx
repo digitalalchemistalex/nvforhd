@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 export const metadata: Metadata = {
   title: {
     default: 'NVforHD — Let\'s Cure Huntington\'s Disease',
-    template: '%s | NVforHD — Cure Huntington\'s Disease',
+    template: '%s | NVforHD',
   },
   description: 'NVforHD is a Nevada non-profit raising awareness and funds to battle Huntington\'s Disease through an annual golf tournament. Donate or play — May 29, 2026 at Gray\'s Crossing, Truckee CA.',
   metadataBase: new URL('https://www.nvforhd.com'),

@@ -28,8 +28,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://nvforhd.com/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.nvforhd.com/blog' },
   ],
 }
 
@@ -52,11 +52,11 @@ export default function BlogPage() {
     '@type': 'Blog',
     name: 'NVforHD Blog',
     description: 'Stories, education, and updates from NVforHD — Nevada\'s HD charity golf tournament.',
-    url: 'https://nvforhd.com/blog',
+    url: 'https://www.nvforhd.com/blog',
     publisher: {
       '@type': 'NonprofitOrganization',
       name: 'NVforHD',
-      url: 'https://nvforhd.com',
+      url: 'https://www.nvforhd.com',
     },
   }
 

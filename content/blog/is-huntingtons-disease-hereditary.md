@@ -1,6 +1,6 @@
 ---
 title: "Is Huntington's Disease Hereditary? What Every Parent Needs to Know"
-excerpt: "If you have HD, your children have a 50% chance of inheriting it. But that coin flip can be eliminated — before the next generation is born. Here is what every HD family needs to understand about genetics, testing, and options."
+excerpt: 'If you have HD, your children have a 50% chance of inheriting it. But that coin flip can be eliminated — before the next generation is born. Here is what...'
 date: "2026-03-24"
 author: "NVforHD"
 category: "Education"

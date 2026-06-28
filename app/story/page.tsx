@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: "Our Story — Three Years of Fighting HD",
-  description: "Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. He didn't hold a fundraiser. He started a fight. $30K raised last year. One HD-free baby. 90+ families served.",
+  description: "Sean Schaeffer's wife Christine was diagnosed with HD. He didn't hold a fundraiser — he started a fight. $50,000+ raised. One HD-free baby. 90+ families served.",
   alternates: { canonical: 'https://www.nvforhd.com/story' },
   openGraph: {
     title: "Our Story — How NVforHD Began",

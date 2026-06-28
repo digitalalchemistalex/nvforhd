@@ -238,7 +238,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 <div style={{ fontSize: '0.7rem', color: 'var(--ink-dim)' }}>Nevada for HD · Non-profit fighting Huntington&apos;s Disease</div>
               </div>
               <div style={{ marginLeft: 'auto', display: 'flex', gap: '0.5rem' }}>
-                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://nvforhd.com/blog/${post.slug}`)}`} target="_blank" rel="noopener"
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://www.nvforhd.com/blog/${post.slug}`)}`} target="_blank" rel="noopener"
                   style={{ fontSize: '0.62rem', color: 'var(--blue)', textDecoration: 'none', fontFamily: 'var(--sans)', fontWeight: 600, border: '1px solid var(--blue-faint)', padding: '0.35rem 0.7rem', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Share →
                 </a>

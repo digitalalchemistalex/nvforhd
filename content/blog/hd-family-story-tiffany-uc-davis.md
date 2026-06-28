@@ -1,6 +1,6 @@
 ---
 title: 'They Didn't Just Treat the Medical Side — Tiffany's Journey with UC Davis HD Care'
-excerpt: "When Tiffany's husband started showing symptoms of Huntington's Disease, they didn't know where to turn. Then they found the UC Davis HD Center of Excellence — and everything changed."
+excerpt: 'When Tiffany's husband started showing symptoms of Huntington's Disease, they didn't know where to turn. Then they found the UC Davis HD Center of...'
 date: "2026-03-27"
 author: "NVforHD"
 category: "Patient Stories"

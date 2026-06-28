@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "About NVforHD | Fighting Huntington's Disease Since 2024",
-  description: "NVforHD was founded after Sean Schaeffer's wife was diagnosed with HD. Meet the board behind Nevada's Huntington's Disease charity golf tournament.",
+  description: "NVforHD was founded after Sean Schaeffer's wife was diagnosed with HD. Meet the four board members behind Nevada's Huntington's Disease charity golf tournament.",
   openGraph: {
     title: 'About NVforHD — Meet the Board',
     description: "Four board members united by one mission — cure Huntington's Disease.",
@@ -34,9 +34,9 @@ const personSchema = {
         '@type': 'Person',
         name: 'Sean Schaeffer',
         jobTitle: 'Founder',
-        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
         description: 'Founder of NVforHD. 30+ years in sales. CEO of publicly traded technology company. Founded NVforHD after wife Christine was diagnosed with Huntington\'s Disease.',
-        image: 'https://nvforhd.com/images/headshot-sean.webp',
+        image: 'https://www.nvforhd.com/images/headshot-sean.webp',
       },
     },
     {
@@ -45,9 +45,9 @@ const personSchema = {
         '@type': 'Person',
         name: 'Mike Milligan',
         jobTitle: 'Board Member',
-        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
         description: "Director of Sales, Golf the High Sierra. Former President of Golf the High Sierra 2005-2014. Reno/Lake Tahoe golf industry since 2004.",
-        image: 'https://nvforhd.com/images/headshot-milligan.webp',
+        image: 'https://www.nvforhd.com/images/headshot-milligan.webp',
       },
     },
     {
@@ -56,9 +56,9 @@ const personSchema = {
         '@type': 'Person',
         name: 'Michael R. Eskuchen',
         jobTitle: 'Board Member',
-        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
         description: 'Account Manager, Golf the High Sierra. Former GM & COO of Hidden Valley CC, Reno, NV.',
-        image: 'https://nvforhd.com/images/headshot-eskuchen.webp',
+        image: 'https://www.nvforhd.com/images/headshot-eskuchen.webp',
       },
     },
     {
@@ -67,9 +67,9 @@ const personSchema = {
         '@type': 'Person',
         name: 'John McGinnes',
         jobTitle: 'Board Member',
-        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://nvforhd.com' },
+        worksFor: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
         description: 'Executive Director of Sales, Atlantis Casino Resort Spa. 30 years in hotel sales.',
-        image: 'https://nvforhd.com/images/headshot-mcginnes.webp',
+        image: 'https://www.nvforhd.com/images/headshot-mcginnes.webp',
       },
     },
   ],
@@ -79,8 +79,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
-    { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://nvforhd.com/about' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://www.nvforhd.com/about' },
   ],
 }
 

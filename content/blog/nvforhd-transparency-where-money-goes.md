@@ -1,6 +1,6 @@
 ---
 title: "Where Does NVforHD Money Go? A Full Transparency Report"
-excerpt: "Zero overhead. One cause per year. Every dollar tracked. Here is exactly what NVforHD has raised, where it went, who it helped, and what your donation or tournament entry pays for in 2026."
+excerpt: 'Zero overhead. One cause per year. Every dollar tracked. Here is exactly what NVforHD has raised, where it went, who it helped, and what your donation or...'
 date: "2026-03-25"
 author: "NVforHD"
 category: "Impact"
