@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Contact NVforHD | Play, Donate, Sponsor or Volunteer",
+  title: "Contact | Play, Donate, Sponsor or Volunteer",
   description: "Get in touch with NVforHD. Register for the May 29 golf tournament, make a donation to HD research, become a sponsor, or volunteer. We respond within 24 hours.",
   openGraph: {
-    title: 'Contact NVforHD | Play, Donate, Sponsor or Volunteer',
+    title: 'Contact | Play, Donate, Sponsor or Volunteer',
     description: 'Play golf, donate, sponsor, volunteer, or connect as an HD family.',
     images: [{ url: '/images/event-crowd.jpg', width: 1200, height: 630, alt: 'Contact NVforHD' }],
     type: 'website',

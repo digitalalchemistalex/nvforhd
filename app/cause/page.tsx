@@ -9,11 +9,86 @@ import MobileCTADock from '@/components/MobileCTADock'
 export const metadata: Metadata = {
   title: "The Cause — What is Huntington's Disease",
   description: "Huntington's Disease is terminal, hereditary, and has no cure. Learn why NVforHD fights for HD families in Northern Nevada and beyond.",
+  alternates: { canonical: 'https://www.nvforhd.com/cause' },
+  openGraph: {
+    title: "The Cause — What is Huntington's Disease | NVforHD",
+    description: "HD is terminal, hereditary, and has no cure. 50% of children inherit it. Learn why NVforHD fights for HD families in Northern Nevada.",
+    images: [{ url: '/images/hd-ribbon.jpg', width: 1200, height: 630, alt: 'Huntington\'s Disease awareness — NVforHD' }],
+    type: 'website',
+  },
 }
+
+const causeSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: "What is Huntington's Disease?",
+        acceptedAnswer: { '@type': 'Answer', text: "Huntington's Disease (HD) is a hereditary, fatal brain disorder with no known cure. It causes progressive deterioration of nerve cells — likened to having Parkinson's, ALS, and Alzheimer's simultaneously. Every child of an HD parent has a 50% chance of inheriting it. Symptoms typically appear between ages 30–50." },
+      },
+      {
+        '@type': 'Question',
+        name: "Is Huntington's Disease hereditary?",
+        acceptedAnswer: { '@type': 'Answer', text: "Yes. Huntington's Disease is caused by a dominant genetic mutation. Every child of an HD-positive parent has a 50% chance of inheriting the gene. The disease does not skip generations. IVF with preimplantation genetic testing (PGT) can ensure children are born free of the HD gene." },
+      },
+      {
+        '@type': 'Question',
+        name: "Is there a cure for Huntington's Disease?",
+        acceptedAnswer: { '@type': 'Answer', text: "There is currently no known cure for Huntington's Disease and no approved treatment that slows or stops the disease. Researchers are making progress in gene silencing and other therapies. Specialty clinics like the UC Davis HD Center of Excellence provide expert multidisciplinary care while research continues." },
+      },
+      {
+        '@type': 'Question',
+        name: "How many people have Huntington's Disease?",
+        acceptedAnswer: { '@type': 'Answer', text: "Approximately 1 in 100,000 people globally have Huntington's Disease. In the United States, roughly 30,000 people are symptomatic and another 200,000 are at risk of inheriting it. In Northern Nevada, over 90 families receive care at the UC Davis HD Center of Excellence in Sacramento." },
+      },
+      {
+        '@type': 'Question',
+        name: "What does the UC Davis HD Center of Excellence do?",
+        acceptedAnswer: { '@type': 'Answer', text: "The UC Davis Huntington's Disease Center of Excellence in Sacramento is the only HD specialty clinic serving Northern Nevada families. It provides expert multidisciplinary care including 2 movement disorder neurologists, 2 psychiatrists, 1 genetic counselor, 1 social worker, 2 physical therapists, a neuropsychologist, and OB/GYN HD specialists. It runs entirely on private donation." },
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalCondition',
+    name: "Huntington's Disease",
+    alternateName: 'HD',
+    description: "A hereditary, fatal brain disorder with no known cure that causes progressive nerve cell deterioration likened to Parkinson's, ALS, and Alzheimer's simultaneously.",
+    cause: { '@type': 'MedicalCause', name: 'Dominant genetic mutation on chromosome 4' },
+    typicalAgeOfOnset: '30–50 years',
+    inheritancePattern: 'Autosomal dominant — 50% inheritance rate per child',
+    recognizingAuthority: { '@type': 'Organization', name: 'UC Davis HD Center of Excellence', url: 'https://health.ucdavis.edu/huntingtons-disease' },
+    relevantSpecialty: 'Neurology',
+    url: 'https://www.nvforhd.com/cause',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+      { '@type': 'ListItem', position: 2, name: 'The Cause', item: 'https://www.nvforhd.com/cause' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: "The Cause — What is Huntington's Disease",
+    url: 'https://www.nvforhd.com/cause',
+    description: "Huntington's Disease is terminal, hereditary, and has no cure. Learn why NVforHD fights for HD families in Northern Nevada.",
+    about: { '@type': 'MedicalCondition', name: "Huntington's Disease", alternateName: 'HD' },
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2', '.speakable'] },
+    isPartOf: { '@type': 'WebSite', name: 'NVforHD', url: 'https://www.nvforhd.com' },
+  },
+]
 
 export default function CausePage() {
   return (
     <>
+      {causeSchemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
       <Nav />
       <MobileCTADock />
 

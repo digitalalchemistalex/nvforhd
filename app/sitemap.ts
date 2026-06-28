@@ -30,6 +30,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${base}/cause`,
+      lastModified: fileMtime('app/cause/page.tsx'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/story`,
+      lastModified: fileMtime('app/story/page.tsx'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/impact`,
+      lastModified: fileMtime('app/impact/page.tsx'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${base}/about`,
       lastModified: fileMtime('app/about/page.tsx'),
       changeFrequency: 'monthly',

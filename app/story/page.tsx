@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Our Story - Three Years of Fighting HD | NVforHD",
+  title: "Our Story — Three Years of Fighting HD",
   description: "Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. He didn't hold a fundraiser. He started a fight. $30K raised last year. One HD-free baby. 90+ families served.",
   alternates: { canonical: 'https://www.nvforhd.com/story' },
   openGraph: {
@@ -27,9 +27,32 @@ export const metadata: Metadata = {
 const GOLF = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=story-golf'
 const DONATE = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=story-donate'
 
+const storySchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+      { '@type': 'ListItem', position: 2, name: 'Our Story', item: 'https://www.nvforhd.com/story' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Our Story — Three Years of Fighting HD',
+    url: 'https://www.nvforhd.com/story',
+    description: "Sean Schaeffer's wife Christine was diagnosed with Huntington's Disease. He didn't hold a fundraiser. He started a fight. $50,000+ raised across two years.",
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+    isPartOf: { '@type': 'WebSite', name: 'NVforHD', url: 'https://www.nvforhd.com' },
+  },
+]
+
 export default function StoryPage() {
   return (
     <>
+      {storySchemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
       <Nav />
       <MobileCTADock />
 

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "NVforHD 2024 Golf Tournament Photos | Truckee CA",
+  title: "2024 Charity Golf Tournament Photos | Gray's Crossing, Truckee CA",
   description: "See photos from our sold-out 2024 charity golf tournament at Old Greenwood, Truckee CA. $25,000 raised for Huntington's Disease families in one day.",
   openGraph: {
-    title: 'NVforHD 2024 Golf Tournament Photos | Truckee CA',
+    title: "2024 Charity Golf Tournament Photos | Gray's Crossing, Truckee CA",
     description: 'Photos from our inaugural 2024 charity golf tournament. $25,000 raised. Sold out.',
     images: [{ url: '/gallery/DSC0572-scaled.jpg', width: 1200, height: 800, alt: 'NVforHD 2024 Golf Tournament' }],
     type: 'website',

@@ -38,17 +38,13 @@ const eventSchema = {
   name: 'NVforHD Charity Golf Tournament 2026',
   startDate: '2026-05-29T12:00:00-07:00',
   endDate: '2026-05-29T18:00:00-07:00',
-  eventStatus: 'https://schema.org/EventScheduled',
+  eventStatus: 'https://schema.org/EventCompleted',
   location: { '@type': 'Place', name: "Gray's Crossing Golf Club", address: { '@type': 'PostalAddress', addressLocality: 'Truckee', addressRegion: 'CA', addressCountry: 'US' } },
   organizer: { '@type': 'NonprofitOrganization', name: 'NVforHD', url: 'https://www.nvforhd.com' },
   performer: { '@type': 'Organization', name: 'NVforHD' },
   description: "Annual charity golf tournament raising funds for the UC Davis HD Center of Excellence and Huntington's Disease families in Northern Nevada.",
   url: 'https://www.nvforhd.com',
   image: 'https://www.nvforhd.com/images/hero-couple.jpg',
-  offers: [
-    { '@type': 'Offer', name: 'Golf Foursome', price: '880', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
-    { '@type': 'Offer', name: 'Direct Donation', price: '100', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament', validFrom: '2026-01-01' },
-  ],
 }
 
 const breadcrumbSchema = {

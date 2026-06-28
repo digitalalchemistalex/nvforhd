@@ -27,8 +27,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://nvforhd.com' },
-    { '@type': 'ListItem', position: 2, name: 'Sponsors', item: 'https://nvforhd.com/sponsors' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sponsors', item: 'https://www.nvforhd.com/sponsors' },
   ],
 }
 

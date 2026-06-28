@@ -8,7 +8,7 @@ import LetterSection from '@/components/LetterSection'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Impact — The Puccini Family Story | NVforHD',
+  title: 'Impact — The Puccini Family Story',
   description: '2024 NVforHD raised $25,000 to fund IVF for Brandon and Rylee Puccini. Rylee is now pregnant with an HD-free baby. This is why we fight.',
   alternates: { canonical: 'https://www.nvforhd.com/impact' },
   openGraph: {
@@ -30,9 +30,32 @@ const D220 = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforH
 const D500 = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=impact-500'
 const GOLF = 'https://www.tripsee.travel/merchant/book/index.html?ref=2026NVforHDGolfTournament&utm_source=nvforhd&utm_medium=website&utm_campaign=2026tournament&utm_content=impact-golf'
 
+const impactSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nvforhd.com' },
+      { '@type': 'ListItem', position: 2, name: 'Impact', item: 'https://www.nvforhd.com/impact' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Impact — The Puccini Family Story',
+    url: 'https://www.nvforhd.com/impact',
+    description: '2024 NVforHD raised $25,000 to fund IVF for Brandon and Rylee Puccini — enabling an HD-free baby. This is why we fight.',
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+    isPartOf: { '@type': 'WebSite', name: 'NVforHD', url: 'https://www.nvforhd.com' },
+  },
+]
+
 export default function ImpactPage() {
   return (
     <>
+      {impactSchemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
       <Nav />
       <MobileCTADock />
 
