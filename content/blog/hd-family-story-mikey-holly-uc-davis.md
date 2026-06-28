@@ -1,5 +1,6 @@
 ---
 title: 'Their Care Is Not Transactional — Mikey and Holly's Story with the UC Davis HD Team'
+seoTitle: "Mikey & Holly's Story — UC Davis HD Care"
 excerpt: 'Holly was diagnosed with Huntington's Disease in October 2023. Her husband Mikey says the UC Davis care team didn't just treat her — they walked into the...'
 date: "2026-03-27"
 author: "NVforHD"

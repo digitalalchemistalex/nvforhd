@@ -1,5 +1,6 @@
 ---
 title: "How IVF Can Break the Huntington's Disease Cycle — and How NVforHD Made It Happen"
+seoTitle: "How IVF Breaks the Huntington's Disease Cycle"
 excerpt: 'Brandon and Rylee Puccini are expecting a healthy baby, HD-free. It started with a golf tournament in Truckee and a grant from HelpCureHD. Here is how...'
 date: "2026-02-28"
 author: "NVforHD"

@@ -1,5 +1,6 @@
 ---
 title: "May 29, 2026: Why Gray's Crossing Is Where You Want to Be This Memorial Weekend"
+seoTitle: "NVforHD Golf Tournament 2026 — May 29"
 excerpt: 'Peter Jacobsen designed it. The Sierra Nevada surrounds it. And every dollar you spend there goes to families fighting Huntington's Disease. Here's...'
 date: "2026-03-20"
 author: "NVforHD"

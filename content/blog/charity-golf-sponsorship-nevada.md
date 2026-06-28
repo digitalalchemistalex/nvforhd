@@ -1,5 +1,6 @@
 ---
 title: "Sponsoring a Charity Golf Tournament in Nevada: What Your Business Gets"
+seoTitle: "Sponsoring a Charity Golf Tournament in Nevada"
 excerpt: 'A $3,500 title sponsorship at NVforHD puts your brand in front of 100+ Reno/Truckee professionals, associates you with a cause people genuinely care about,...'
 date: "2026-03-26"
 author: "NVforHD"

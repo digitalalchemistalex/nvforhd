@@ -4,6 +4,7 @@ import path from 'path'
 export interface BlogPost {
   slug: string
   title: string
+  seoTitle: string      // short title for <title> tag (≤50 chars) — falls back to title
   excerpt: string
   date: string          // ISO string — e.g. "2026-03-20"
   author: string
@@ -41,6 +42,7 @@ export function getAllPosts(): BlogPost[] {
     return {
       slug,
       title:       meta.title       ?? '',
+      seoTitle:    meta.seoTitle     ?? meta.title ?? '',
       excerpt:     meta.excerpt      ?? '',
       date:        meta.date         ?? '',
       author:      meta.author       ?? 'NVforHD',
@@ -64,6 +66,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return {
     slug,
     title:       meta.title       ?? '',
+    seoTitle:    meta.seoTitle     ?? meta.title ?? '',
     excerpt:     meta.excerpt      ?? '',
     date:        meta.date         ?? '',
     author:      meta.author       ?? 'NVforHD',

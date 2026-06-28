@@ -1,5 +1,6 @@
 ---
 title: "What Is Huntington's Disease? The Truth No One Tells You Until It's Too Late"
+seoTitle: "What Is Huntington's Disease?"
 excerpt: "HD combines the cruelty of Parkinson's, ALS, and Alzheimer's into one hereditary disease. If one of your parents has it, flip a coin. That is your chance."
 date: "2026-03-18"
 author: "NVforHD"

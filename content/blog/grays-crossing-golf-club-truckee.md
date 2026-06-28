@@ -1,5 +1,6 @@
 ---
 title: "Gray's Crossing Golf Club, Truckee CA — Why We Play Here"
+seoTitle: "Gray's Crossing Golf Club — Why We Play Here"
 excerpt: 'Peter Jacobsen and Jim Hardy designed it. The Sierra Nevada surrounds it at 6,000 feet. And in 2026 it is the backdrop for Northern Nevada's most purposeful...'
 date: "2026-03-27"
 author: "NVforHD"

@@ -1,5 +1,6 @@
 ---
 title: "Genetic Testing for Huntington's Disease: A Guide for At-Risk Families"
+seoTitle: "Genetic Testing for HD: A Guide for Families"
 excerpt: 'If one of your parents has HD, you have a 50% chance of carrying the gene. Testing can tell you definitively. But the decision to test — or not — is one of...'
 date: "2026-04-03"
 author: "NVforHD"

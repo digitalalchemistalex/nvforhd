@@ -1,5 +1,6 @@
 ---
 title: "NVforHD 2025: What We Raised, Who We Helped, and What Comes Next"
+seoTitle: "NVforHD 2025: What We Raised & Who We Helped"
 excerpt: 'In 2025 we focused on the 90+ Northern Nevada families already living with HD — funding the UC Davis clinic that is their lifeline. Here is the...'
 date: "2026-04-05"
 author: "NVforHD"

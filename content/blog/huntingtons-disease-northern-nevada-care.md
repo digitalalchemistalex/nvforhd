@@ -1,5 +1,6 @@
 ---
 title: "Huntington's Disease Care in Northern Nevada: Why UC Davis Matters"
+seoTitle: "HD Care in Northern Nevada — Why UC Davis"
 excerpt: 'There is no HD specialty clinic in Nevada. For over 90 families in Reno, Sparks, and the Sierra Foothills, UC Davis in Sacramento is the closest lifeline...'
 date: "2026-03-10"
 author: "NVforHD"

@@ -1,5 +1,6 @@
 ---
 title: 'We Just Felt Hopeless — Until Leilani Found the UC Davis HD Center of Excellence'
+seoTitle: "Leilani's Story — From Hopeless to HD Advocate"
 excerpt: 'Sixteen years ago, Leilani Dunmoyer's mother was diagnosed with Huntington's Disease. Today, Leilani is gene-positive, her brother has HD, and her three...'
 date: "2026-03-27"
 author: "NVforHD"

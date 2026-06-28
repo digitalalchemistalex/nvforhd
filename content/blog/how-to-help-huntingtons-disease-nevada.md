@@ -1,5 +1,6 @@
 ---
 title: "5 Ways to Help the Fight Against Huntington's Disease in Nevada"
+seoTitle: "5 Ways to Help Fight HD in Nevada"
 excerpt: "You do not have to be a golfer or a millionaire to make a real difference. Here are five concrete ways to support HD families in Northern Nevada right now."
 date: "2026-02-15"
 author: "NVforHD"

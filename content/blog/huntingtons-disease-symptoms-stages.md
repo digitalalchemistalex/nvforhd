@@ -1,5 +1,6 @@
 ---
 title: "Huntington's Disease Symptoms & Stages: What Families Need to Know"
+seoTitle: "HD Symptoms & Stages: What Families Need to Know"
 excerpt: 'HD progresses through three stages — each stripping away something else. Knowing what is coming does not make it easier. But it helps families prepare,...'
 date: "2026-03-22"
 author: "NVforHD"
